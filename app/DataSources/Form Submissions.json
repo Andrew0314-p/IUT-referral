@@ -1,0 +1,99 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "cr065_formsubmissionses",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "cr065_formsubmissions",
+    "Name": "Form Submissions",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "{Attachments}": "Attachments",
+      "cr065_departmentofreporter": "Department of Reporter",
+      "cr065_fillingoutthisformonbehalfofsomeone": "Filling out this form on behalf of someone",
+      "cr065_formsubmissions_Annotations": "Notes",
+      "cr065_formsubmissions_AsyncOperations": "System Jobs",
+      "cr065_formsubmissions_BulkDeleteFailures": "Bulk Delete Failures",
+      "cr065_formsubmissions_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "cr065_formsubmissions_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "cr065_formsubmissions_ProcessSession": "Process Sessions",
+      "cr065_formsubmissions_SyncErrors": "Sync Errors",
+      "cr065_formsubmissionsid": "Form Submissions",
+      "cr065_newcolumn": "Employee",
+      "cr065_reportlastname": "Report Last Name",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Form Submissions",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Form Submissions (Views)",
+    "Name": "_cr065_formsubmissions_views",
+    "RelatedEntityName": "Form Submissions",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "140403f6-b17b-4d9d-9785-a3435fffb4fe": "Form Submissions Associated View",
+      "9e333f92-260a-4983-afd3-7227bed19f94": "Active Form Submissions",
+      "a78b11fe-a2b2-4f89-a6f4-9872bbbacea6": "Form Submissions Lookup View",
+      "db0479d8-bee2-492e-b4eb-f7b74c79d027": "Inactive Form Submissions",
+      "e799d612-5ba0-4c26-ac3f-4eac8c15a124": "Form Submissions Advanced Find View"
+    }
+  },
+  {
+    "DisplayName": "Status (Form Submissions)",
+    "Name": "cr065_formsubmissions_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Form Submissions"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Form Submissions",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Form Submissions)",
+    "Name": "cr065_formsubmissions_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Form Submissions"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Form Submissions",
+    "Type": "OptionSetInfo"
+  }
+]
