@@ -131,6 +131,8 @@
                     Height: =Parent.Height * (10/11)
                     Items: ='Referral Intake Tool Submissions'
                     Layout: =Layout.Vertical
+                    LayoutMinHeight: =287
+                    LayoutMinWidth: =320
                     LoadingSpinner: =LoadingSpinner.Data
                     TemplateFill: =If(ThisItem.IsSelected, RGBA(230, 230, 230, 1), RGBA(0, 0, 0, 0))
                     TemplatePadding: =0
@@ -399,42 +401,4 @@
                         X: =0
                         Y: =0
                         ZIndex: =3
-
-                        "'1st - Policyholder First Name2' As PowerAppsOneGridTemplate_dataField.textualColumn":
-                            FieldDisplayName: ="1st - Policyholder First Name"
-                            FieldName: ="cr065__1stpolicyholderfirstname"
-                            FieldType: ="s"
-                            FieldVariantName: ="textualColumn"
-                            Height: =100
-                            Order: =2
-                            Width: =0
-                            X: =0
-                            Y: =0
-                            ZIndex: =7
-
-                        "'1st - Policyholder Last Name2' As PowerAppsOneGridTemplate_dataField.textualColumn":
-                            FieldDisplayName: ="1st - Policyholder Last Name"
-                            FieldName: ="cr065__1stpolicyholderlastname"
-                            FieldType: ="s"
-                            FieldVariantName: ="textualColumn"
-                            HeaderText: =
-                            Height: =100
-                            Order: =3
-                            Width: =0
-                            X: =0
-                            Y: =0
-                            ZIndex: =8
-
-                        ID2 As PowerAppsOneGridTemplate_dataField.textualColumn:
-                            FieldDisplayName: ="ID"
-                            FieldName: ="cr065_id"
-                            FieldType: ="s"
-                            FieldVariantName: ="textualColumn"
-                            HeaderText: ="Referral ID"
-                            Height: =100
-                            Order: =1
-                            Width: =0
-                            X: =0
-                            Y: =0
-                            ZIndex: =9
 
