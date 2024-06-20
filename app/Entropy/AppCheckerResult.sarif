@@ -44,19 +44,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.ViewContainer.ControlContainer.SharedWorkBank.AccessibleLabel"
+                  "fullyQualifiedName": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.SelectContainer.Gallery1.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.ViewContainer.ControlContainer.SharedWorkBank.AccessibleLabel",
+                  "fullyQualifiedName": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.SelectContainer.Gallery1.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "Work Bank Screen",
-                "type": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.ViewContainer.ControlContainer.SharedWorkBank"
+                "type": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.SelectContainer.Gallery1"
               }
             }
           ],
@@ -74,19 +74,49 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.ViewContainer.ControlContainer.MyInTray.AccessibleLabel"
+                  "fullyQualifiedName": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.SelectContainer.Gallery1.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.ViewContainer.ControlContainer.MyInTray.AccessibleLabel",
+                  "fullyQualifiedName": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.SelectContainer.Gallery1.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Work Bank Screen",
+                "type": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.SelectContainer.Gallery1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.ViewContainer.ControlContainer.'Filter/AssignContainer'.RadioGroupCanvas2.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.ViewContainer.ControlContainer.'Filter/AssignContainer'.RadioGroupCanvas2.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "Work Bank Screen",
-                "type": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.ViewContainer.ControlContainer.MyInTray"
+                "type": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.ViewContainer.ControlContainer.'Filter/AssignContainer'.RadioGroupCanvas2"
               }
             }
           ],
@@ -104,19 +134,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.ViewContainer.ControlContainer.MyTeam.AccessibleLabel"
+                  "fullyQualifiedName": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.ViewContainer.ControlContainer.'Filter/AssignContainer'.RadioGroupCanvas1.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.ViewContainer.ControlContainer.MyTeam.AccessibleLabel",
+                  "fullyQualifiedName": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.ViewContainer.ControlContainer.'Filter/AssignContainer'.RadioGroupCanvas1.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "Work Bank Screen",
-                "type": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.ViewContainer.ControlContainer.MyTeam"
+                "type": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.ViewContainer.ControlContainer.'Filter/AssignContainer'.RadioGroupCanvas1"
               }
             }
           ],
@@ -134,19 +164,49 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.ViewContainer.ControlContainer.Reports.AccessibleLabel"
+                  "fullyQualifiedName": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.ViewContainer.ControlContainer.ButtonContainer.Reports.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.ViewContainer.ControlContainer.Reports.AccessibleLabel",
+                  "fullyQualifiedName": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.ViewContainer.ControlContainer.ButtonContainer.Reports.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "Work Bank Screen",
-                "type": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.ViewContainer.ControlContainer.Reports"
+                "type": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.ViewContainer.ControlContainer.ButtonContainer.Reports"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.ViewContainer.ControlContainer.ButtonContainer.MyTeam.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.ViewContainer.ControlContainer.ButtonContainer.MyTeam.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Work Bank Screen",
+                "type": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.ViewContainer.ControlContainer.ButtonContainer.MyTeam"
               }
             }
           ],
@@ -194,19 +254,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.SidebarContainer1.Gallery1.AccessibleLabel"
+                  "fullyQualifiedName": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.ViewContainer.ControlContainer.ButtonContainer.MyInTray.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.SidebarContainer1.Gallery1.AccessibleLabel",
+                  "fullyQualifiedName": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.ViewContainer.ControlContainer.ButtonContainer.MyInTray.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "Work Bank Screen",
-                "type": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.SidebarContainer1.Gallery1"
+                "type": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.ViewContainer.ControlContainer.ButtonContainer.MyInTray"
               }
             }
           ],
@@ -224,19 +284,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.SidebarContainer1.Gallery1.TabIndex"
+                  "fullyQualifiedName": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.ViewContainer.ControlContainer.ButtonContainer.SharedWorkBank.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.SidebarContainer1.Gallery1.TabIndex",
+                  "fullyQualifiedName": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.ViewContainer.ControlContainer.ButtonContainer.SharedWorkBank.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
-                "member": "TabIndex",
+                "member": "AccessibleLabel",
                 "module": "Work Bank Screen",
-                "type": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.SidebarContainer1.Gallery1"
+                "type": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.ViewContainer.ControlContainer.ButtonContainer.SharedWorkBank"
               }
             }
           ],
@@ -246,8 +306,8 @@
           "properties": {
             "level": "Medium"
           },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 1
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 0
         },
         {
           "locations": [
