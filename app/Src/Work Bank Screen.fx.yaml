@@ -84,7 +84,7 @@
                 RadiusTopRight: =8
                 ZIndex: =4
 
-            MainContainer1 As groupContainer.verticalAutoLayoutContainer:
+            ViewContainer As groupContainer.verticalAutoLayoutContainer:
                 DropShadow: =DropShadow.Light
                 Fill: =RGBA(255, 255, 255, 1)
                 FillPortions: =7
@@ -170,4 +170,28 @@
                         X: =0
                         Y: =0
                         ZIndex: =4
+
+                DataContainer As groupContainer.horizontalAutoLayoutContainer:
+                    DropShadow: =DropShadow.Light
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =250
+                    LayoutMode: =LayoutMode.Auto
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    ZIndex: =2
+
+                "'Filter/AssignContainer' As groupContainer.horizontalAutoLayoutContainer":
+                    DropShadow: =DropShadow.Light
+                    FillPortions: =0
+                    Height: =WorkBankHeader.Height / 2
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =250
+                    LayoutMode: =LayoutMode.Auto
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    ZIndex: =3
 
