@@ -35,6 +35,23 @@
             RadiusTopRight: =8
             ZIndex: =2
 
+            WorkBankHeader As Header:
+                DisplayMode: =DisplayMode.Edit
+                Height: =75
+                LayoutMinHeight: =75
+                LayoutMinWidth: =Parent.Width
+                Logo: =SF_Ovals_Rev_Standard_RGB_Microsoft
+                LogoTooltip: =
+                OnSelectLogo: =false
+                Title: ="Work Bank"
+                UserEmail: =User().Email
+                UserImage: =User().Image
+                UserName: =User().FullName
+                Width: =Parent.Width
+                X: =0
+                Y: =0
+                ZIndex: =1
+
         BottomContainer1 As groupContainer.horizontalAutoLayoutContainer:
             Fill: =RGBA(245, 245, 245, 1)
             LayoutAlignItems: =LayoutAlignItems.Stretch
@@ -80,4 +97,77 @@
                 RadiusTopLeft: =8
                 RadiusTopRight: =8
                 ZIndex: =5
+
+                ControlContainer As groupContainer.horizontalAutoLayoutContainer:
+                    DropShadow: =DropShadow.Light
+                    FillPortions: =0
+                    Height: =WorkBankHeader.Height / 2
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =250
+                    LayoutMode: =LayoutMode.Auto
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    ZIndex: =1
+
+                    SharedWorkBank As Button:
+                        AlignInContainer: =AlignInContainer.Stretch
+                        DisplayMode: =DisplayMode.Edit
+                        FillPortions: =1
+                        Height: =32
+                        LayoutMinHeight: =32
+                        LayoutMinWidth: =96
+                        OnSelect: |-
+                            =UpdateContext({sharedWorkBankMode: true, myInTrayMode: false, myTeamMode: false, reportsMode: false})
+                        Text: ="Shared Work Bank"
+                        Width: =96
+                        X: =0
+                        Y: =0
+                        ZIndex: =1
+
+                    MyInTray As Button:
+                        AlignInContainer: =AlignInContainer.Stretch
+                        DisplayMode: =DisplayMode.Edit
+                        FillPortions: =1
+                        Height: =32
+                        LayoutMinHeight: =32
+                        LayoutMinWidth: =96
+                        OnSelect: |-
+                            =UpdateContext({sharedWorkBankMode: false, myInTrayMode: true, myTeamMode: false, reportsMode: false})
+                        Text: ="My InTray"
+                        Width: =96
+                        X: =0
+                        Y: =0
+                        ZIndex: =2
+
+                    MyTeam As Button:
+                        AlignInContainer: =AlignInContainer.Stretch
+                        DisplayMode: =DisplayMode.Edit
+                        FillPortions: =1
+                        Height: =32
+                        LayoutMinHeight: =32
+                        LayoutMinWidth: =96
+                        OnSelect: |-
+                            =UpdateContext({sharedWorkBankMode: false, myInTrayMode: false, myTeamMode: true, reportsMode: false})
+                        Text: ="My Team"
+                        Width: =96
+                        X: =0
+                        Y: =0
+                        ZIndex: =3
+
+                    Reports As Button:
+                        AlignInContainer: =AlignInContainer.Stretch
+                        DisplayMode: =DisplayMode.Edit
+                        FillPortions: =1
+                        Height: =32
+                        LayoutMinHeight: =32
+                        LayoutMinWidth: =96
+                        OnSelect: |-
+                            =UpdateContext({sharedWorkBankMode: false, myInTrayMode: false, myTeamMode: false, reportsMode: true})
+                        Text: ="Reports"
+                        Width: =96
+                        X: =0
+                        Y: =0
+                        ZIndex: =4
 
