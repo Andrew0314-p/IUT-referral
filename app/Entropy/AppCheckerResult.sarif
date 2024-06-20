@@ -104,6 +104,66 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.ViewContainer.ControlContainer.ButtonContainer.ButtonCanvas1.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.ViewContainer.ControlContainer.ButtonContainer.ButtonCanvas1.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Work Bank Screen",
+                "type": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.ViewContainer.ControlContainer.ButtonContainer.ButtonCanvas1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Additional Information Screen'.ScreenContainer4.BottomContainer2.SidebarContainer1.TabList4.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Additional Information Screen'.ScreenContainer4.BottomContainer2.SidebarContainer1.TabList4.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Additional Information Screen",
+                "type": "'Additional Information Screen'.ScreenContainer4.BottomContainer2.SidebarContainer1.TabList4"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.ViewContainer.ControlContainer.ButtonContainer.Reports.AccessibleLabel"
                 }
               ],
@@ -164,19 +224,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.ViewContainer.DataContainer.Table1.AccessibleLabel"
+                  "fullyQualifiedName": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.ViewContainer.DataContainer.SubmissionTable.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.ViewContainer.DataContainer.Table1.AccessibleLabel",
+                  "fullyQualifiedName": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.ViewContainer.DataContainer.SubmissionTable.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "Work Bank Screen",
-                "type": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.ViewContainer.DataContainer.Table1"
+                "type": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.ViewContainer.DataContainer.SubmissionTable"
               }
             }
           ],
@@ -237,6 +297,66 @@
                 "member": "AccessibleLabel",
                 "module": "Work Bank Screen",
                 "type": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.ViewContainer.ControlContainer.ButtonContainer.SharedWorkBank"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "NewReferralDisclaimer.ScreenContainer3_1.FooterContainer1_1.WorkBankContinue_1.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "NewReferralDisclaimer.ScreenContainer3_1.FooterContainer1_1.WorkBankContinue_1.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "NewReferralDisclaimer",
+                "type": "NewReferralDisclaimer.ScreenContainer3_1.FooterContainer1_1.WorkBankContinue_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.SelectContainer.Container4.TextInput3.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.SelectContainer.Container4.TextInput3.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Work Bank Screen",
+                "type": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.SelectContainer.Container4.TextInput3"
               }
             }
           ],

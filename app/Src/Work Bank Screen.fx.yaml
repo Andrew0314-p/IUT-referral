@@ -83,19 +83,61 @@
                 RadiusTopLeft: =8
                 RadiusTopRight: =8
                 Visible: =If(myTeamMode = true Or reportsMode = true, false, true)
-                Width: =WorkBankHeader.Width * (1/5)
+                Width: =WorkBankHeader.Width * (1/4)
                 ZIndex: =1
 
+                Container4 As groupContainer.horizontalAutoLayoutContainer:
+                    DropShadow: =DropShadow.Light
+                    FillPortions: =0
+                    Height: =ControlContainer.Height
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =250
+                    LayoutMode: =LayoutMode.Auto
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    ZIndex: =1
+
+                    TextInput3 As text:
+                        BorderColor: =App.Theme.Colors.Darker40
+                        BorderThickness: =2
+                        Default: =
+                        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        DisabledFill: =RGBA(244, 244, 244, 1)
+                        FocusedBorderThickness: =4
+                        Font: =App.Theme.Font
+                        HintText: ="Search"
+                        HoverBorderColor: =App.Theme.Colors.Darker40
+                        HoverColor: =RGBA(0, 0, 0, 1)
+                        HoverFill: =RGBA(255, 255, 255, 1)
+                        PressedFill: =
+                        Size: =13
+                        ZIndex: =1
+
+                Seperator_1 As rectangle:
+                    AlignInContainer: =AlignInContainer.Stretch
+                    BorderColor: =App.Theme.Colors.Darker40
+                    Fill: =App.Theme.Colors.Primary
+                    Height: =1
+                    LayoutMinHeight: =1
+                    ZIndex: =2
+
                 "Gallery1 As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver5.0'":
+                    AlignInContainer: =AlignInContainer.Center
                     BorderColor: =App.Theme.Colors.Darker40
                     DelayItemLoading: =true
+                    Height: =Parent.Height * (10/11)
                     Items: ='Referral Intake Tool Submissions'
                     Layout: =Layout.Vertical
                     LoadingSpinner: =LoadingSpinner.Data
+                    TemplateFill: =If(ThisItem.IsSelected, RGBA(230, 230, 230, 1), RGBA(0, 0, 0, 0))
                     TemplatePadding: =0
                     TemplateSize: =90
-                    Width: =Parent.Width
-                    ZIndex: =1
+                    Transition: =Transition.Pop
+                    Width: =Parent.Width * (10/11)
+                    ZIndex: =3
 
                     Title2 As label:
                         Color: =RGBA(50, 49, 48, 1)
@@ -283,6 +325,24 @@
                             Y: =0
                             ZIndex: =4
 
+                        ButtonCanvas1 As Button:
+                            Align: =Align.Justify
+                            AlignInContainer: =AlignInContainer.Stretch
+                            Appearance: ='ButtonCanvas.Appearance'.Secondary
+                            DisplayMode: =DisplayMode.Edit
+                            FontColor: =RGBA(189, 49, 51, 1)
+                            Height: =32
+                            Icon: ="ArrowSync"
+                            Layout: ='ButtonCanvas.Layout'.IconOnly
+                            LayoutMinHeight: =32
+                            LayoutMinWidth: =96
+                            OnSelect: =Refresh('Referral Intake Tool Submissions')
+                            Text: ="Refresh"
+                            Width: =96
+                            X: =0
+                            Y: =0
+                            ZIndex: =5
+
                     "'Filter/AssignContainer' As groupContainer.horizontalAutoLayoutContainer":
                         FillPortions: =0
                         Height: =WorkBankHeader.Height / 2
@@ -320,7 +380,7 @@
                         Visible: =If(reportsMode = true, true, false)
                         ZIndex: =2
 
-                    Table1 As Table.pcfdataset:
+                    SubmissionTable As Table.pcfdataset:
                         AlignInContainer: =AlignInContainer.Stretch
                         DisplayMode: =DisplayMode.Edit
                         FillPortions: =1
@@ -334,6 +394,7 @@
                         onRowSelect: =false
                         onSave: =false
                         OnSelect: =false
+                        Visible: =If(reportsMode = false, true, false)
                         Width: =If(Self.X + 800 > Parent.Width, Parent.Width - Self.X, 800)
                         X: =0
                         Y: =0
@@ -356,6 +417,7 @@
                             FieldName: ="cr065__1stpolicyholderlastname"
                             FieldType: ="s"
                             FieldVariantName: ="textualColumn"
+                            HeaderText: =
                             Height: =100
                             Order: =3
                             Width: =0
@@ -368,6 +430,7 @@
                             FieldName: ="cr065_id"
                             FieldType: ="s"
                             FieldVariantName: ="textualColumn"
+                            HeaderText: ="Referral ID"
                             Height: =100
                             Order: =1
                             Width: =0

@@ -1,0 +1,118 @@
+"NewReferralDisclaimer As screen.'autoLayout_HeaderFooter_ver1.0'":
+    Fill: =Color.White
+    LoadingSpinnerColor: =App.Theme.Colors.Primary
+
+    ScreenContainer3_1 As groupContainer.verticalAutoLayoutContainer:
+        DropShadow: =DropShadow.Light
+        Fill: =RGBA(245, 245, 245, 1)
+        Height: =Parent.Height
+        LayoutAlignItems: =LayoutAlignItems.Stretch
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutGap: =16
+        LayoutMode: =LayoutMode.Auto
+        PaddingBottom: =16
+        PaddingLeft: =16
+        PaddingRight: =16
+        PaddingTop: =16
+        RadiusBottomLeft: =4
+        RadiusBottomRight: =4
+        RadiusTopLeft: =4
+        RadiusTopRight: =4
+        Width: =Parent.Width
+        ZIndex: =1
+
+        HeaderContainer3_1 As groupContainer.horizontalAutoLayoutContainer:
+            DropShadow: =DropShadow.Light
+            Fill: =RGBA(255, 255, 255, 1)
+            FillPortions: =0
+            Height: =75
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            RadiusBottomLeft: =8
+            RadiusBottomRight: =8
+            RadiusTopLeft: =8
+            RadiusTopRight: =8
+            ZIndex: =2
+
+            WBDHeader_1 As Header:
+                DisplayMode: =DisplayMode.Edit
+                Height: =75
+                LayoutMinHeight: =75
+                LayoutMinWidth: =Parent.Width
+                Logo: =SF_Ovals_Rev_Standard_RGB_Microsoft
+                LogoTooltip: =
+                OnSelectLogo: =Navigate('Home Screen')
+                Title: ="Disclaimer"
+                UserEmail: =User().Email
+                UserImage: =User().Image
+                UserName: =User().FullName
+                Width: =Parent.Width
+                X: =0
+                Y: =0
+                ZIndex: =1
+
+        MainContainer3_1 As groupContainer.verticalAutoLayoutContainer:
+            DropShadow: =DropShadow.Light
+            Fill: =RGBA(255, 255, 255, 1)
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            RadiusBottomLeft: =8
+            RadiusBottomRight: =8
+            RadiusTopLeft: =8
+            RadiusTopRight: =8
+            ZIndex: =3
+
+            TextCanvas1_1 As Text:
+                Align: ='TextCanvas.Align'.Center
+                AlignInContainer: =AlignInContainer.Stretch
+                AutoHeight: =false
+                DisplayMode: =DisplayMode.Edit
+                FillPortions: =1
+                FontItalic: =true
+                Height: =32
+                LayoutMinHeight: =70
+                LayoutMinWidth: =96
+                Size: =32
+                Text: |-
+                    ="Please do not include any confidential/sensitive, and/or personally identifiable data including, but not limited to, Nonpublic Personal Information (NPI) such as Social Security Numbers, Drivers License Numbers, Financial/Car account numbers, Dates of Birth, Health Policy information including Health Policy numbers, or any personal medical information.
+                    
+                    STATE FARM CONFIDENTIAL INFORMATION
+                    
+                    - Distribution on a Business Need to Know Basis Only -"
+                Width: =96
+                X: =0
+                Y: =0
+                ZIndex: =1
+
+        FooterContainer1_1 As groupContainer.horizontalAutoLayoutContainer:
+            DropShadow: =DropShadow.Light
+            Fill: =RGBA(255, 255, 255, 1)
+            FillPortions: =0
+            Height: =WBDHeader_1.Height / 2
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            RadiusBottomLeft: =8
+            RadiusBottomRight: =8
+            RadiusTopLeft: =8
+            RadiusTopRight: =8
+            ZIndex: =4
+
+            WorkBankContinue_1 As Button:
+                AlignInContainer: =AlignInContainer.Stretch
+                DisplayMode: =DisplayMode.Edit
+                FillPortions: =1
+                Height: =WBDHeader_1.Height / 2
+                LayoutMinHeight: =32
+                LayoutMinWidth: =96
+                OnSelect: |-
+                    =Launch("https://forms.office.com/Pages/ResponsePage.aspx?id=Lpgj-kZmM0qlxBqEjQL8xAuQ8IZrKVlEhWxplrcGWV5UQUFXVllVN1dKTTlVQ1lRSEdXSjU0TkZJNy4u")
+                Text: ="Continue"
+                Width: =96
+                X: =0
+                Y: =0
+                ZIndex: =1
+

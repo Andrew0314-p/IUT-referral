@@ -208,6 +208,21 @@
     "OverridableProperties": {},
     "Version": "1.0"
   },
+  "Tab list": {
+    "CustomGroupControlTemplateName": "",
+    "FirstParty": true,
+    "Id": "http://microsoft.com/appmagic/powercontrol/PowerApps_CoreControls_TabList",
+    "IsComponentTemplate": false,
+    "IsCustomGroupControlTemplate": false,
+    "IsPcfControl": true,
+    "IsPremiumPcfControl": false,
+    "IsWidgetTemplate": false,
+    "LastModifiedTimestamp": "0",
+    "Name": "PowerApps_CoreControls_TabList",
+    "OverridableProperties": {},
+    "TemplateDisplayName": "Tab list",
+    "Version": "2.2.26"
+  },
   "Table": {
     "CustomGroupControlTemplateName": "",
     "FirstParty": true,
@@ -222,6 +237,20 @@
     "OverridableProperties": {},
     "TemplateDisplayName": "Table",
     "Version": "1.0.200"
+  },
+  "text": {
+    "CustomGroupControlTemplateName": "",
+    "FirstParty": true,
+    "Id": "http://microsoft.com/appmagic/text",
+    "IsComponentTemplate": false,
+    "IsCustomGroupControlTemplate": false,
+    "IsPcfControl": false,
+    "IsPremiumPcfControl": false,
+    "IsWidgetTemplate": true,
+    "LastModifiedTimestamp": "0",
+    "Name": "text",
+    "OverridableProperties": {},
+    "Version": "2.3.2"
   },
   "Text": {
     "CustomGroupControlTemplateName": "",

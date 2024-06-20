@@ -135,6 +135,8 @@
   "ScreenOrder": [
     "Home Screen",
     "WorkBankDisclaimer",
-    "Work Bank Screen"
+    "NewReferralDisclaimer",
+    "Work Bank Screen",
+    "Additional Information Screen"
   ]
 }
