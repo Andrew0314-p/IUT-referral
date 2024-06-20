@@ -82,7 +82,7 @@
                 RadiusBottomRight: =8
                 RadiusTopLeft: =8
                 RadiusTopRight: =8
-                Visible: =false
+                Visible: =If(myTeamMode = true Or reportsMode = true, false, true)
                 Width: =WorkBankHeader.Width * (1/5)
                 ZIndex: =1
 
@@ -346,8 +346,40 @@
                         onSave: =false
                         OnSelect: =false
                         ReflowBehavior: ='PowerAppsOneGrid.ReflowBehavior'.Reflow
+                        Visible: =If(reportsMode = true, false, true)
                         Width: =If(Self.X + 800 > Parent.Width, Parent.Width - Self.X, 800)
                         X: =0
                         Y: =0
                         ZIndex: =1
+
+                        "'1st - Policyholder First Name1' As PowerAppsOneGridTemplate_dataField.textualColumn":
+                            FieldDisplayName: ="1st - Policyholder First Name"
+                            FieldName: ="cr065__1stpolicyholderfirstname"
+                            FieldType: ="s"
+                            FieldVariantName: ="textualColumn"
+                            Height: =100
+                            Order: =1
+                            Width: =0
+                            X: =0
+                            Y: =0
+                            ZIndex: =7
+
+                        "'1st - Policyholder Last Name1' As PowerAppsOneGridTemplate_dataField.textualColumn":
+                            FieldDisplayName: ="1st - Policyholder Last Name"
+                            FieldName: ="cr065__1stpolicyholderlastname"
+                            FieldType: ="s"
+                            FieldVariantName: ="textualColumn"
+                            Height: =100
+                            Order: =2
+                            Width: =0
+                            X: =0
+                            Y: =0
+                            ZIndex: =8
+
+                    PowerBI1 As powerbi:
+                        AlignInContainer: =AlignInContainer.Stretch
+                        BorderColor: =App.Theme.Colors.Darker40
+                        FillPortions: =1
+                        Visible: =If(reportsMode = true, true, false)
+                        ZIndex: =2
 
