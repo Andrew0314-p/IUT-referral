@@ -3,6 +3,10 @@
   "EntityName": "Referral Intake Tool Submissions",
   "environmentVariableName": "",
   "InstanceUrl": "https://orgaba2c960.crm.dynamics.com/",
+  "LocalReferenceDSJson": {
+    "entitySetName": "cr065_fraudreportforms",
+    "logicalName": "cr065_fraudreportform"
+  },
   "state": "Configured",
   "TableDefinition": {
     "BooleanOptionSetAttribute": "{\"@odata.context\":\"https://orgaba2c960.crm.dynamics.com/api/data/v9.0/$metadata#EntityDefinitions('cr065_fraudreportform')/Attributes/Microsoft.Dynamics.CRM.BooleanAttributeMetadata(MetadataId,LogicalName,SchemaName,DisplayName,OptionSet())\",\"value\":[]}",
