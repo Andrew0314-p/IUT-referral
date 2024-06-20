@@ -1,6 +1,13 @@
 {
   "QualifiedValues": [
     {
+      "Kind": "default.cds_cr065_anatesttable_forms",
+      "Namespace": "Ana Test Tables (Forms)",
+      "Values": {
+        "Information": "5515bbd6-2b45-4765-8c3f-fa4ccc43e7e1"
+      }
+    },
+    {
       "Kind": "default.cds_cr065_fraudreportform_forms",
       "Namespace": "Referral Intake Tool Submissions (Forms)",
       "Values": {
@@ -23,13 +30,6 @@
       "Namespace": "Form Submissions (Forms)",
       "Values": {
         "Information": "ce0ba7aa-2c62-4322-986f-88c36abe4e7c"
-      }
-    },
-    {
-      "Kind": "default.cds_cr065_anatesttable_forms",
-      "Namespace": "Ana Test Tables (Forms)",
-      "Values": {
-        "Information": "5515bbd6-2b45-4765-8c3f-fa4ccc43e7e1"
       }
     }
   ]
