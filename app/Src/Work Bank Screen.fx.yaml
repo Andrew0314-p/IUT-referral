@@ -42,7 +42,7 @@
                 LayoutMinWidth: =Parent.Width
                 Logo: =SF_Ovals_Rev_Standard_RGB_Microsoft
                 LogoTooltip: =
-                OnSelectLogo: =false
+                OnSelectLogo: =Navigate('Home Screen')
                 Title: ="Work Bank"
                 UserEmail: =User().Email
                 UserImage: =User().Image

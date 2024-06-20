@@ -320,6 +320,7 @@
                         Height: =32
                         LayoutMinHeight: =32
                         LayoutMinWidth: =Parent.Width
+                        OnSelect: =Navigate(WorkBankDisclaimer)
                         Text: ="Work Bank"
                         Width: =Parent.Width
                         X: =0
