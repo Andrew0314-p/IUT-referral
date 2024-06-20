@@ -35,7 +35,7 @@
             RadiusTopRight: =8
             ZIndex: =2
 
-            Header2 As Header:
+            WBDHeader As Header:
                 DisplayMode: =DisplayMode.Edit
                 Height: =75
                 LayoutMinHeight: =75
@@ -91,7 +91,7 @@
             DropShadow: =DropShadow.Light
             Fill: =RGBA(255, 255, 255, 1)
             FillPortions: =0
-            Height: =Header2.Height / 2
+            Height: =WBDHeader.Height / 2
             LayoutMinHeight: =100
             LayoutMinWidth: =250
             LayoutMode: =LayoutMode.Auto
@@ -101,11 +101,11 @@
             RadiusTopRight: =8
             ZIndex: =4
 
-            ButtonCanvas1 As Button:
+            WorkBankContinue As Button:
                 AlignInContainer: =AlignInContainer.Stretch
                 DisplayMode: =DisplayMode.Edit
                 FillPortions: =1
-                Height: =Header2.Height / 2
+                Height: =WBDHeader.Height / 2
                 LayoutMinHeight: =32
                 LayoutMinWidth: =96
                 OnSelect: =Navigate('Work Bank Screen')
