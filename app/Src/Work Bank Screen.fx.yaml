@@ -84,7 +84,7 @@
                 RadiusTopRight: =8
                 Visible: =false
                 Width: =WorkBankHeader.Width * (1/5)
-                ZIndex: =4
+                ZIndex: =1
 
                 "Gallery1 As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver5.0'":
                     BorderColor: =App.Theme.Colors.Darker40
@@ -202,7 +202,7 @@
                 RadiusBottomRight: =8
                 RadiusTopLeft: =8
                 RadiusTopRight: =8
-                ZIndex: =5
+                ZIndex: =3
 
                 ControlContainer As groupContainer.verticalAutoLayoutContainer:
                     DropShadow: =DropShadow.Regular
@@ -232,9 +232,14 @@
 
                         SharedWorkBank As Button:
                             AlignInContainer: =AlignInContainer.Stretch
+                            Appearance: =If(sharedWorkBankMode = true, 'ButtonCanvas.Appearance'.Primary, 'ButtonCanvas.Appearance'.Secondary)
+                            BasePaletteColor: =
                             DisplayMode: =DisplayMode.Edit
                             FillPortions: =1
+                            FontColor: |
+                                =If(sharedWorkBankMode = false,RGBA(189, 49, 51, 1), RGBA(255, 255, 255, 1))
                             Height: =32
+                            IconStyle: ='ButtonCanvas.IconStyle'.Outline
                             LayoutMinHeight: =32
                             LayoutMinWidth: =96
                             OnSelect: |-
@@ -247,8 +252,10 @@
 
                         MyInTray As Button:
                             AlignInContainer: =AlignInContainer.Stretch
+                            Appearance: =If(myInTrayMode = true, 'ButtonCanvas.Appearance'.Primary, 'ButtonCanvas.Appearance'.Secondary)
                             DisplayMode: =DisplayMode.Edit
                             FillPortions: =1
+                            FontColor: =If(myInTrayMode = false,RGBA(189, 49, 51, 1), RGBA(255, 255, 255, 1))
                             Height: =32
                             LayoutMinHeight: =32
                             LayoutMinWidth: =96
@@ -262,8 +269,10 @@
 
                         MyTeam As Button:
                             AlignInContainer: =AlignInContainer.Stretch
+                            Appearance: =If(myTeamMode = true, 'ButtonCanvas.Appearance'.Primary, 'ButtonCanvas.Appearance'.Secondary)
                             DisplayMode: =DisplayMode.Edit
                             FillPortions: =1
+                            FontColor: =If(myTeamMode = false,RGBA(189, 49, 51, 1), RGBA(255, 255, 255, 1))
                             Height: =32
                             LayoutMinHeight: =32
                             LayoutMinWidth: =96
@@ -277,8 +286,10 @@
 
                         Reports As Button:
                             AlignInContainer: =AlignInContainer.Stretch
+                            Appearance: =If(reportsMode = true, 'ButtonCanvas.Appearance'.Primary, 'ButtonCanvas.Appearance'.Secondary)
                             DisplayMode: =DisplayMode.Edit
                             FillPortions: =1
+                            FontColor: =If(reportsMode = false,RGBA(189, 49, 51, 1), RGBA(255, 255, 255, 1))
                             Height: =32
                             LayoutMinHeight: =32
                             LayoutMinWidth: =96
@@ -301,30 +312,6 @@
                         RadiusTopLeft: =4
                         RadiusTopRight: =4
                         ZIndex: =2
-
-                        RadioGroupCanvas1 As Radio.pcfdataset:
-                            AlignInContainer: =AlignInContainer.Stretch
-                            DisplayMode: =DisplayMode.Edit
-                            Height: =100
-                            Items: =["Single Policy", "Multiple Policies"]
-                            Layout: ='RadioGroupCanvas.Layout'.Horizontal
-                            LayoutMinWidth: =320
-                            Width: =320
-                            X: =0
-                            Y: =0
-                            ZIndex: =1
-
-                        RadioGroupCanvas2 As Radio.pcfdataset:
-                            AlignInContainer: =AlignInContainer.Stretch
-                            DisplayMode: =DisplayMode.Edit
-                            Height: ='Filter/AssignContainer'.Height
-                            Items: =["Fire", "Auto"]
-                            Layout: ='RadioGroupCanvas.Layout'.Horizontal
-                            LayoutMinWidth: =320
-                            Width: =SharedWorkBank.Width
-                            X: =0
-                            Y: =0
-                            ZIndex: =2
 
                     Seperator As rectangle:
                         AlignInContainer: =AlignInContainer.Stretch
