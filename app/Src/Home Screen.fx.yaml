@@ -140,6 +140,8 @@
                         Height: =32
                         LayoutMinHeight: =32
                         LayoutMinWidth: =Parent.Width
+                        OnSelect: |-
+                            =Launch("https://forms.office.com/Pages/ResponsePage.aspx?id=Lpgj-kZmM0qlxBqEjQL8xAuQ8IZrKVlEhWxplrcGWV5UQUFXVllVN1dKTTlVQ1lRSEdXSjU0TkZJNy4u")
                         Text: ="New Referral"
                         Width: =Parent.Width
                         X: =0
