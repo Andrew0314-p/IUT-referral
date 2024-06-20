@@ -594,7 +594,7 @@
       "MetaDataIDKey": "%FieldName.ID%",
       "Name": "DataCardKey1",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 0,
+      "ParentIndex": 1,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -1144,7 +1144,7 @@
       "MetaDataIDKey": "%FieldName.ID%",
       "Name": "DataCardKey2",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 0,
+      "ParentIndex": 1,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -1419,7 +1419,7 @@
       "MetaDataIDKey": "%FieldName.ID%",
       "Name": "DataCardKey3",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 0,
+      "ParentIndex": 1,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -1694,7 +1694,7 @@
       "MetaDataIDKey": "%FieldName.ID%",
       "Name": "DataCardKey4",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 0,
+      "ParentIndex": 1,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -1969,7 +1969,7 @@
       "MetaDataIDKey": "%FieldName.ID%",
       "Name": "DataCardKey5",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 0,
+      "ParentIndex": 1,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -3375,7 +3375,7 @@
       "MetaDataIDKey": "%FieldValue.ID%",
       "Name": "DataCardValue1",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 1,
+      "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -3696,7 +3696,7 @@
       "MetaDataIDKey": "%FieldValue.ID%",
       "Name": "DataCardValue2",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 1,
+      "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -4017,7 +4017,7 @@
       "MetaDataIDKey": "%FieldValue.ID%",
       "Name": "DataCardValue3",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 1,
+      "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -4338,7 +4338,7 @@
       "MetaDataIDKey": "%FieldValue.ID%",
       "Name": "DataCardValue4",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 1,
+      "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -4572,7 +4572,7 @@
           "AFDDataSourceName": "",
           "AutoRuleBindingEnabled": true,
           "AutoRuleBindingString": "",
-          "InvariantPropertyName": "Default",
+          "InvariantPropertyName": "Items",
           "IsLockable": true,
           "NameMapSourceSchema": "?"
         },
@@ -4581,14 +4581,6 @@
           "AutoRuleBindingEnabled": true,
           "AutoRuleBindingString": "",
           "InvariantPropertyName": "BorderColor",
-          "IsLockable": true,
-          "NameMapSourceSchema": "?"
-        },
-        {
-          "AFDDataSourceName": "",
-          "AutoRuleBindingEnabled": true,
-          "AutoRuleBindingString": "",
-          "InvariantPropertyName": "MaxLength",
           "IsLockable": true,
           "NameMapSourceSchema": "?"
         },
@@ -4608,45 +4600,57 @@
           "IsLockable": true,
           "NameMapSourceSchema": "?"
         },
-        "Mode",
-        "Format",
-        "VirtualKeyboardMode",
-        "DelayOutput",
+        "ItemFill",
+        "ItemColor",
+        "ItemHoverFill",
+        "ItemHoverColor",
+        "ItemPressedFill",
+        "ItemPressedColor",
+        "ItemDisabledFill",
+        "ItemDisabledColor",
+        "AddedItemFill",
+        "AddedItemColor",
+        "RemovedItemFill",
+        "RemovedItemColor",
+        "ItemErrorFill",
+        "ItemErrorColor",
+        "NoAttachmentsColor",
+        "AddAttachmentColor",
+        "MaxAttachmentsColor",
+        "DropTargetBorderStyle",
+        "DropTargetBorderColor",
+        "DropTargetBackgroundColor",
+        "DropTargetTextColor",
+        "Color",
+        "HoverColor",
+        "PressedColor",
+        "DisabledColor",
         "DisabledBorderColor",
-        "PressedBorderColor",
         "HoverBorderColor",
+        "PressedBorderColor",
         "BorderStyle",
         "FocusedBorderColor",
-        "Color",
-        "DisabledColor",
-        "PressedColor",
-        "HoverColor",
         "Fill",
         "DisabledFill",
         "PressedFill",
         "HoverFill",
         "Font",
         "FontWeight",
-        "Align",
         "X",
         "Y",
         "Width",
         "Height",
         "ZIndex",
+        "ItemSpacing",
+        "DropTargetBorderThickness",
         "BorderThickness",
         "FocusedBorderThickness",
         "Size",
-        "Italic",
-        "Underline",
-        "Strikethrough",
+        "IsInDataCard",
         "PaddingTop",
         "PaddingRight",
         "PaddingBottom",
-        "PaddingLeft",
-        "RadiusBottomLeft",
-        "RadiusBottomRight",
-        "RadiusTopLeft",
-        "RadiusTopRight"
+        "PaddingLeft"
       ],
       "HasDynamicProperties": false,
       "IsAutoGenerated": true,
@@ -4659,22 +4663,17 @@
       "MetaDataIDKey": "%FieldValue.ID%",
       "Name": "DataCardValue5",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 1,
+      "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
           "Category": "Data",
-          "PropertyName": "Default",
+          "PropertyName": "Items",
           "RuleProviderType": "Unknown"
         },
         {
           "Category": "Data",
-          "PropertyName": "DelayOutput",
-          "RuleProviderType": "Unknown"
-        },
-        {
-          "Category": "Data",
-          "PropertyName": "MaxLength",
+          "PropertyName": "IsInDataCard",
           "RuleProviderType": "Unknown"
         },
         {
@@ -4684,17 +4683,127 @@
         },
         {
           "Category": "Design",
-          "PropertyName": "Mode",
+          "PropertyName": "ItemFill",
           "RuleProviderType": "Unknown"
         },
         {
           "Category": "Design",
-          "PropertyName": "Format",
+          "PropertyName": "ItemColor",
           "RuleProviderType": "Unknown"
         },
         {
           "Category": "Design",
-          "PropertyName": "VirtualKeyboardMode",
+          "PropertyName": "ItemHoverFill",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "ItemHoverColor",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "ItemPressedFill",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "ItemPressedColor",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "ItemDisabledFill",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "ItemDisabledColor",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "AddedItemFill",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "AddedItemColor",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "RemovedItemFill",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "RemovedItemColor",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "ItemErrorFill",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "ItemErrorColor",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "NoAttachmentsColor",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "AddAttachmentColor",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "MaxAttachmentsColor",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "DropTargetBorderStyle",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "DropTargetBorderColor",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "DropTargetBackgroundColor",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "DropTargetTextColor",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "Color",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "HoverColor",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "PressedColor",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "DisabledColor",
           "RuleProviderType": "Unknown"
         },
         {
@@ -4709,12 +4818,12 @@
         },
         {
           "Category": "Design",
-          "PropertyName": "PressedBorderColor",
+          "PropertyName": "HoverBorderColor",
           "RuleProviderType": "Unknown"
         },
         {
           "Category": "Design",
-          "PropertyName": "HoverBorderColor",
+          "PropertyName": "PressedBorderColor",
           "RuleProviderType": "Unknown"
         },
         {
@@ -4725,26 +4834,6 @@
         {
           "Category": "Design",
           "PropertyName": "FocusedBorderColor",
-          "RuleProviderType": "Unknown"
-        },
-        {
-          "Category": "Design",
-          "PropertyName": "Color",
-          "RuleProviderType": "Unknown"
-        },
-        {
-          "Category": "Design",
-          "PropertyName": "DisabledColor",
-          "RuleProviderType": "Unknown"
-        },
-        {
-          "Category": "Design",
-          "PropertyName": "PressedColor",
-          "RuleProviderType": "Unknown"
-        },
-        {
-          "Category": "Design",
-          "PropertyName": "HoverColor",
           "RuleProviderType": "Unknown"
         },
         {
@@ -4779,11 +4868,6 @@
         },
         {
           "Category": "Design",
-          "PropertyName": "Align",
-          "RuleProviderType": "Unknown"
-        },
-        {
-          "Category": "Design",
           "PropertyName": "X",
           "RuleProviderType": "Unknown"
         },
@@ -4814,6 +4898,16 @@
         },
         {
           "Category": "Design",
+          "PropertyName": "ItemSpacing",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "DropTargetBorderThickness",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
           "PropertyName": "BorderThickness",
           "RuleProviderType": "Unknown"
         },
@@ -4825,21 +4919,6 @@
         {
           "Category": "Design",
           "PropertyName": "Size",
-          "RuleProviderType": "Unknown"
-        },
-        {
-          "Category": "Design",
-          "PropertyName": "Italic",
-          "RuleProviderType": "Unknown"
-        },
-        {
-          "Category": "Design",
-          "PropertyName": "Underline",
-          "RuleProviderType": "Unknown"
-        },
-        {
-          "Category": "Design",
-          "PropertyName": "Strikethrough",
           "RuleProviderType": "Unknown"
         },
         {
@@ -4861,29 +4940,9 @@
           "Category": "Design",
           "PropertyName": "PaddingLeft",
           "RuleProviderType": "Unknown"
-        },
-        {
-          "Category": "Design",
-          "PropertyName": "RadiusBottomLeft",
-          "RuleProviderType": "Unknown"
-        },
-        {
-          "Category": "Design",
-          "PropertyName": "RadiusBottomRight",
-          "RuleProviderType": "Unknown"
-        },
-        {
-          "Category": "Design",
-          "PropertyName": "RadiusTopLeft",
-          "RuleProviderType": "Unknown"
-        },
-        {
-          "Category": "Design",
-          "PropertyName": "RadiusTopRight",
-          "RuleProviderType": "Unknown"
         }
       ],
-      "StyleName": "defaultTextStyle",
+      "StyleName": "defaultAttachmentsStyle",
       "Type": "ControlInfo"
     },
     "DataCardValue6": {
@@ -6727,7 +6786,7 @@
       "MetaDataIDKey": "%ErrorMessage.ID%",
       "Name": "ErrorMessage1",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 2,
+      "ParentIndex": 3,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -7291,7 +7350,7 @@
       "MetaDataIDKey": "%ErrorMessage.ID%",
       "Name": "ErrorMessage2",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 5,
+      "ParentIndex": 3,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -7573,7 +7632,7 @@
       "MetaDataIDKey": "%ErrorMessage.ID%",
       "Name": "ErrorMessage3",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 2,
+      "ParentIndex": 3,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -7855,7 +7914,7 @@
       "MetaDataIDKey": "%ErrorMessage.ID%",
       "Name": "ErrorMessage4",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 2,
+      "ParentIndex": 3,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -8137,7 +8196,7 @@
       "MetaDataIDKey": "%ErrorMessage.ID%",
       "Name": "ErrorMessage5",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 2,
+      "ParentIndex": 3,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -9826,34 +9885,6 @@
         }
       ],
       "StyleName": "defaultGalleryStyle",
-      "Type": "ControlInfo"
-    },
-    "galleryTemplate1": {
-      "AllowAccessToGlobals": true,
-      "ControlPropertyState": [
-        "TemplateFill"
-      ],
-      "HasDynamicProperties": false,
-      "IsAutoGenerated": false,
-      "IsComponentDefinition": false,
-      "IsDataControl": true,
-      "IsFromScreenLayout": false,
-      "IsGroupControl": false,
-      "IsLocked": false,
-      "LayoutName": "",
-      "MetaDataIDKey": "",
-      "Name": "galleryTemplate1",
-      "OptimizeForDevices": "Off",
-      "ParentIndex": 0,
-      "PersistMetaDataIDKey": false,
-      "Properties": [
-        {
-          "Category": "Design",
-          "PropertyName": "TemplateFill",
-          "RuleProviderType": "Unknown"
-        }
-      ],
-      "StyleName": "",
       "Type": "ControlInfo"
     },
     "HeaderContainer1": {
@@ -13447,7 +13478,7 @@
       "MetaDataIDKey": "%FieldRequired.ID%",
       "Name": "StarVisible1",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 3,
+      "ParentIndex": 0,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -14011,7 +14042,7 @@
       "MetaDataIDKey": "%FieldRequired.ID%",
       "Name": "StarVisible2",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 6,
+      "ParentIndex": 0,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -14293,7 +14324,7 @@
       "MetaDataIDKey": "%FieldRequired.ID%",
       "Name": "StarVisible3",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 3,
+      "ParentIndex": 0,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -14575,7 +14606,7 @@
       "MetaDataIDKey": "%FieldRequired.ID%",
       "Name": "StarVisible4",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 3,
+      "ParentIndex": 0,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -14857,7 +14888,7 @@
       "MetaDataIDKey": "%FieldRequired.ID%",
       "Name": "StarVisible5",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 3,
+      "ParentIndex": 0,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {

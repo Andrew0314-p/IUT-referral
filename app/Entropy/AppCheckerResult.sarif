@@ -14,6 +14,1886 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.DataSource"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.DataSource",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 18,
+                  "charOffset": 0,
+                  "snippet": {
+                    "text": "'Form Submissions'"
+                  }
+                }
+              },
+              "properties": {
+                "member": "DataSource",
+                "module": "Screen2",
+                "type": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Form Submissions"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Department of Reporter_DataCard1'.DisplayName"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Department of Reporter_DataCard1'.DisplayName",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 18,
+                  "charOffset": 17,
+                  "snippet": {
+                    "text": "'Form Submissions'"
+                  }
+                }
+              },
+              "properties": {
+                "member": "DisplayName",
+                "module": "Screen2",
+                "type": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Department of Reporter_DataCard1'"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Form Submissions"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Department of Reporter_DataCard1'.DisplayName"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Department of Reporter_DataCard1'.DisplayName",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 14,
+                  "charOffset": 0,
+                  "snippet": {
+                    "text": "DataSourceInfo"
+                  }
+                }
+              },
+              "properties": {
+                "member": "DisplayName",
+                "module": "Screen2",
+                "type": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Department of Reporter_DataCard1'"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "DataSourceInfo"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidArgs-Func",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Department of Reporter_DataCard1'.DisplayName"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Department of Reporter_DataCard1'.DisplayName",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 26,
+                  "charOffset": 64,
+                  "snippet": {
+                    "text": "cr065_departmentofreporter"
+                  }
+                }
+              },
+              "properties": {
+                "member": "DisplayName",
+                "module": "Screen2",
+                "type": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Department of Reporter_DataCard1'"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "cr065_departmentofreporter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Department of Reporter_DataCard1'.DisplayName"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Department of Reporter_DataCard1'.DisplayName",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 91,
+                  "charOffset": 0,
+                  "snippet": {
+                    "text": "DataSourceInfo([@'Form Submissions'],DataSourceInfo.DisplayName,cr065_departmentofreporter)"
+                  }
+                }
+              },
+              "properties": {
+                "member": "DisplayName",
+                "module": "Screen2",
+                "type": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Department of Reporter_DataCard1'"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "_Min"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrBadType-Type",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Department of Reporter_DataCard1'.Default"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Department of Reporter_DataCard1'.Default",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 8,
+                  "charOffset": 0,
+                  "snippet": {
+                    "text": "ThisItem"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Default",
+                "module": "Screen2",
+                "type": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Department of Reporter_DataCard1'"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "ThisItem"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Department of Reporter_DataCard1'.Default"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Department of Reporter_DataCard1'.Default",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 25,
+                  "charOffset": 8,
+                  "snippet": {
+                    "text": ".'Department of Reporter'"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Default",
+                "module": "Screen2",
+                "type": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Department of Reporter_DataCard1'"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Error"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidDot",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Department of Reporter_DataCard1'.MaxLength"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Department of Reporter_DataCard1'.MaxLength",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 18,
+                  "charOffset": 17,
+                  "snippet": {
+                    "text": "'Form Submissions'"
+                  }
+                }
+              },
+              "properties": {
+                "member": "MaxLength",
+                "module": "Screen2",
+                "type": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Department of Reporter_DataCard1'"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Form Submissions"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Department of Reporter_DataCard1'.MaxLength"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Department of Reporter_DataCard1'.MaxLength",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 14,
+                  "charOffset": 0,
+                  "snippet": {
+                    "text": "DataSourceInfo"
+                  }
+                }
+              },
+              "properties": {
+                "member": "MaxLength",
+                "module": "Screen2",
+                "type": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Department of Reporter_DataCard1'"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "DataSourceInfo"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidArgs-Func",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Department of Reporter_DataCard1'.MaxLength"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Department of Reporter_DataCard1'.MaxLength",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 26,
+                  "charOffset": 64,
+                  "snippet": {
+                    "text": "cr065_departmentofreporter"
+                  }
+                }
+              },
+              "properties": {
+                "member": "MaxLength",
+                "module": "Screen2",
+                "type": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Department of Reporter_DataCard1'"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "cr065_departmentofreporter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Department of Reporter_DataCard1'.MaxLength"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Department of Reporter_DataCard1'.MaxLength",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 91,
+                  "charOffset": 0,
+                  "snippet": {
+                    "text": "DataSourceInfo([@'Form Submissions'], DataSourceInfo.MaxLength, cr065_departmentofreporter)"
+                  }
+                }
+              },
+              "properties": {
+                "member": "MaxLength",
+                "module": "Screen2",
+                "type": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Department of Reporter_DataCard1'"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "_Min"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrBadType-Type",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Filling out this form on behalf of someone_DataCard1'.DisplayName"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Filling out this form on behalf of someone_DataCard1'.DisplayName",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 18,
+                  "charOffset": 17,
+                  "snippet": {
+                    "text": "'Form Submissions'"
+                  }
+                }
+              },
+              "properties": {
+                "member": "DisplayName",
+                "module": "Screen2",
+                "type": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Filling out this form on behalf of someone_DataCard1'"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Form Submissions"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Filling out this form on behalf of someone_DataCard1'.DisplayName"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Filling out this form on behalf of someone_DataCard1'.DisplayName",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 14,
+                  "charOffset": 0,
+                  "snippet": {
+                    "text": "DataSourceInfo"
+                  }
+                }
+              },
+              "properties": {
+                "member": "DisplayName",
+                "module": "Screen2",
+                "type": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Filling out this form on behalf of someone_DataCard1'"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "DataSourceInfo"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidArgs-Func",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Filling out this form on behalf of someone_DataCard1'.DisplayName"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Filling out this form on behalf of someone_DataCard1'.DisplayName",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 41,
+                  "charOffset": 64,
+                  "snippet": {
+                    "text": "cr065_fillingoutthisformonbehalfofsomeone"
+                  }
+                }
+              },
+              "properties": {
+                "member": "DisplayName",
+                "module": "Screen2",
+                "type": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Filling out this form on behalf of someone_DataCard1'"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "cr065_fillingoutthisformonbehalfofsomeone"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Filling out this form on behalf of someone_DataCard1'.DisplayName"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Filling out this form on behalf of someone_DataCard1'.DisplayName",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 106,
+                  "charOffset": 0,
+                  "snippet": {
+                    "text": "DataSourceInfo([@'Form Submissions'],DataSourceInfo.DisplayName,cr065_fillingoutthisformonbehalfofsomeone)"
+                  }
+                }
+              },
+              "properties": {
+                "member": "DisplayName",
+                "module": "Screen2",
+                "type": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Filling out this form on behalf of someone_DataCard1'"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "_Min"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrBadType-Type",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Filling out this form on behalf of someone_DataCard1'.Default"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Filling out this form on behalf of someone_DataCard1'.Default",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 8,
+                  "charOffset": 0,
+                  "snippet": {
+                    "text": "ThisItem"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Default",
+                "module": "Screen2",
+                "type": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Filling out this form on behalf of someone_DataCard1'"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "ThisItem"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Filling out this form on behalf of someone_DataCard1'.Default"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Filling out this form on behalf of someone_DataCard1'.Default",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 45,
+                  "charOffset": 8,
+                  "snippet": {
+                    "text": ".'Filling out this form on behalf of someone'"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Default",
+                "module": "Screen2",
+                "type": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Filling out this form on behalf of someone_DataCard1'"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Error"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidDot",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Filling out this form on behalf of someone_DataCard1'.MaxLength"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Filling out this form on behalf of someone_DataCard1'.MaxLength",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 18,
+                  "charOffset": 17,
+                  "snippet": {
+                    "text": "'Form Submissions'"
+                  }
+                }
+              },
+              "properties": {
+                "member": "MaxLength",
+                "module": "Screen2",
+                "type": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Filling out this form on behalf of someone_DataCard1'"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Form Submissions"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Filling out this form on behalf of someone_DataCard1'.MaxLength"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Filling out this form on behalf of someone_DataCard1'.MaxLength",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 14,
+                  "charOffset": 0,
+                  "snippet": {
+                    "text": "DataSourceInfo"
+                  }
+                }
+              },
+              "properties": {
+                "member": "MaxLength",
+                "module": "Screen2",
+                "type": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Filling out this form on behalf of someone_DataCard1'"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "DataSourceInfo"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidArgs-Func",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Filling out this form on behalf of someone_DataCard1'.MaxLength"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Filling out this form on behalf of someone_DataCard1'.MaxLength",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 41,
+                  "charOffset": 64,
+                  "snippet": {
+                    "text": "cr065_fillingoutthisformonbehalfofsomeone"
+                  }
+                }
+              },
+              "properties": {
+                "member": "MaxLength",
+                "module": "Screen2",
+                "type": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Filling out this form on behalf of someone_DataCard1'"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "cr065_fillingoutthisformonbehalfofsomeone"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Filling out this form on behalf of someone_DataCard1'.MaxLength"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Filling out this form on behalf of someone_DataCard1'.MaxLength",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 106,
+                  "charOffset": 0,
+                  "snippet": {
+                    "text": "DataSourceInfo([@'Form Submissions'], DataSourceInfo.MaxLength, cr065_fillingoutthisformonbehalfofsomeone)"
+                  }
+                }
+              },
+              "properties": {
+                "member": "MaxLength",
+                "module": "Screen2",
+                "type": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Filling out this form on behalf of someone_DataCard1'"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "_Min"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrBadType-Type",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.Employee_DataCard1.DisplayName"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.Employee_DataCard1.DisplayName",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 18,
+                  "charOffset": 17,
+                  "snippet": {
+                    "text": "'Form Submissions'"
+                  }
+                }
+              },
+              "properties": {
+                "member": "DisplayName",
+                "module": "Screen2",
+                "type": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.Employee_DataCard1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Form Submissions"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.Employee_DataCard1.DisplayName"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.Employee_DataCard1.DisplayName",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 14,
+                  "charOffset": 0,
+                  "snippet": {
+                    "text": "DataSourceInfo"
+                  }
+                }
+              },
+              "properties": {
+                "member": "DisplayName",
+                "module": "Screen2",
+                "type": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.Employee_DataCard1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "DataSourceInfo"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidArgs-Func",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.Employee_DataCard1.DisplayName"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.Employee_DataCard1.DisplayName",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 15,
+                  "charOffset": 64,
+                  "snippet": {
+                    "text": "cr065_newcolumn"
+                  }
+                }
+              },
+              "properties": {
+                "member": "DisplayName",
+                "module": "Screen2",
+                "type": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.Employee_DataCard1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "cr065_newcolumn"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.Employee_DataCard1.DisplayName"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.Employee_DataCard1.DisplayName",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 80,
+                  "charOffset": 0,
+                  "snippet": {
+                    "text": "DataSourceInfo([@'Form Submissions'],DataSourceInfo.DisplayName,cr065_newcolumn)"
+                  }
+                }
+              },
+              "properties": {
+                "member": "DisplayName",
+                "module": "Screen2",
+                "type": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.Employee_DataCard1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "_Min"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrBadType-Type",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.Employee_DataCard1.Default"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.Employee_DataCard1.Default",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 8,
+                  "charOffset": 0,
+                  "snippet": {
+                    "text": "ThisItem"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Default",
+                "module": "Screen2",
+                "type": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.Employee_DataCard1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "ThisItem"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.Employee_DataCard1.Default"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.Employee_DataCard1.Default",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 9,
+                  "charOffset": 8,
+                  "snippet": {
+                    "text": ".Employee"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Default",
+                "module": "Screen2",
+                "type": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.Employee_DataCard1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Error"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidDot",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.Employee_DataCard1.MaxLength"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.Employee_DataCard1.MaxLength",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 18,
+                  "charOffset": 17,
+                  "snippet": {
+                    "text": "'Form Submissions'"
+                  }
+                }
+              },
+              "properties": {
+                "member": "MaxLength",
+                "module": "Screen2",
+                "type": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.Employee_DataCard1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Form Submissions"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.Employee_DataCard1.MaxLength"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.Employee_DataCard1.MaxLength",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 14,
+                  "charOffset": 0,
+                  "snippet": {
+                    "text": "DataSourceInfo"
+                  }
+                }
+              },
+              "properties": {
+                "member": "MaxLength",
+                "module": "Screen2",
+                "type": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.Employee_DataCard1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "DataSourceInfo"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidArgs-Func",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.Employee_DataCard1.MaxLength"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.Employee_DataCard1.MaxLength",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 15,
+                  "charOffset": 64,
+                  "snippet": {
+                    "text": "cr065_newcolumn"
+                  }
+                }
+              },
+              "properties": {
+                "member": "MaxLength",
+                "module": "Screen2",
+                "type": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.Employee_DataCard1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "cr065_newcolumn"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.Employee_DataCard1.MaxLength"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.Employee_DataCard1.MaxLength",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 80,
+                  "charOffset": 0,
+                  "snippet": {
+                    "text": "DataSourceInfo([@'Form Submissions'], DataSourceInfo.MaxLength, cr065_newcolumn)"
+                  }
+                }
+              },
+              "properties": {
+                "member": "MaxLength",
+                "module": "Screen2",
+                "type": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.Employee_DataCard1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "_Min"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrBadType-Type",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Report Last Name_DataCard1'.DisplayName"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Report Last Name_DataCard1'.DisplayName",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 18,
+                  "charOffset": 17,
+                  "snippet": {
+                    "text": "'Form Submissions'"
+                  }
+                }
+              },
+              "properties": {
+                "member": "DisplayName",
+                "module": "Screen2",
+                "type": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Report Last Name_DataCard1'"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Form Submissions"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Report Last Name_DataCard1'.DisplayName"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Report Last Name_DataCard1'.DisplayName",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 14,
+                  "charOffset": 0,
+                  "snippet": {
+                    "text": "DataSourceInfo"
+                  }
+                }
+              },
+              "properties": {
+                "member": "DisplayName",
+                "module": "Screen2",
+                "type": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Report Last Name_DataCard1'"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "DataSourceInfo"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidArgs-Func",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Report Last Name_DataCard1'.DisplayName"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Report Last Name_DataCard1'.DisplayName",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 20,
+                  "charOffset": 64,
+                  "snippet": {
+                    "text": "cr065_reportlastname"
+                  }
+                }
+              },
+              "properties": {
+                "member": "DisplayName",
+                "module": "Screen2",
+                "type": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Report Last Name_DataCard1'"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "cr065_reportlastname"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Report Last Name_DataCard1'.DisplayName"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Report Last Name_DataCard1'.DisplayName",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 85,
+                  "charOffset": 0,
+                  "snippet": {
+                    "text": "DataSourceInfo([@'Form Submissions'],DataSourceInfo.DisplayName,cr065_reportlastname)"
+                  }
+                }
+              },
+              "properties": {
+                "member": "DisplayName",
+                "module": "Screen2",
+                "type": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Report Last Name_DataCard1'"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "_Min"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrBadType-Type",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Report Last Name_DataCard1'.Default"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Report Last Name_DataCard1'.Default",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 8,
+                  "charOffset": 0,
+                  "snippet": {
+                    "text": "ThisItem"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Default",
+                "module": "Screen2",
+                "type": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Report Last Name_DataCard1'"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "ThisItem"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Report Last Name_DataCard1'.Default"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Report Last Name_DataCard1'.Default",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 19,
+                  "charOffset": 8,
+                  "snippet": {
+                    "text": ".'Report Last Name'"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Default",
+                "module": "Screen2",
+                "type": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Report Last Name_DataCard1'"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Error"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidDot",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Report Last Name_DataCard1'.MaxLength"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Report Last Name_DataCard1'.MaxLength",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 18,
+                  "charOffset": 17,
+                  "snippet": {
+                    "text": "'Form Submissions'"
+                  }
+                }
+              },
+              "properties": {
+                "member": "MaxLength",
+                "module": "Screen2",
+                "type": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Report Last Name_DataCard1'"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Form Submissions"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Report Last Name_DataCard1'.MaxLength"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Report Last Name_DataCard1'.MaxLength",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 14,
+                  "charOffset": 0,
+                  "snippet": {
+                    "text": "DataSourceInfo"
+                  }
+                }
+              },
+              "properties": {
+                "member": "MaxLength",
+                "module": "Screen2",
+                "type": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Report Last Name_DataCard1'"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "DataSourceInfo"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidArgs-Func",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Report Last Name_DataCard1'.MaxLength"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Report Last Name_DataCard1'.MaxLength",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 20,
+                  "charOffset": 64,
+                  "snippet": {
+                    "text": "cr065_reportlastname"
+                  }
+                }
+              },
+              "properties": {
+                "member": "MaxLength",
+                "module": "Screen2",
+                "type": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Report Last Name_DataCard1'"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "cr065_reportlastname"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Report Last Name_DataCard1'.MaxLength"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Report Last Name_DataCard1'.MaxLength",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 85,
+                  "charOffset": 0,
+                  "snippet": {
+                    "text": "DataSourceInfo([@'Form Submissions'], DataSourceInfo.MaxLength, cr065_reportlastname)"
+                  }
+                }
+              },
+              "properties": {
+                "member": "MaxLength",
+                "module": "Screen2",
+                "type": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Report Last Name_DataCard1'"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "_Min"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrBadType-Type",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.Attachments_DataCard1.DisplayName"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.Attachments_DataCard1.DisplayName",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 18,
+                  "charOffset": 17,
+                  "snippet": {
+                    "text": "'Form Submissions'"
+                  }
+                }
+              },
+              "properties": {
+                "member": "DisplayName",
+                "module": "Screen2",
+                "type": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.Attachments_DataCard1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Form Submissions"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.Attachments_DataCard1.DisplayName"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.Attachments_DataCard1.DisplayName",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 14,
+                  "charOffset": 0,
+                  "snippet": {
+                    "text": "DataSourceInfo"
+                  }
+                }
+              },
+              "properties": {
+                "member": "DisplayName",
+                "module": "Screen2",
+                "type": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.Attachments_DataCard1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "DataSourceInfo"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidArgs-Func",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.Attachments_DataCard1.DisplayName"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.Attachments_DataCard1.DisplayName",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 15,
+                  "charOffset": 64,
+                  "snippet": {
+                    "text": "'{Attachments}'"
+                  }
+                }
+              },
+              "properties": {
+                "member": "DisplayName",
+                "module": "Screen2",
+                "type": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.Attachments_DataCard1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "{Attachments}"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.Attachments_DataCard1.DisplayName"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.Attachments_DataCard1.DisplayName",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 80,
+                  "charOffset": 0,
+                  "snippet": {
+                    "text": "DataSourceInfo([@'Form Submissions'],DataSourceInfo.DisplayName,'{Attachments}')"
+                  }
+                }
+              },
+              "properties": {
+                "member": "DisplayName",
+                "module": "Screen2",
+                "type": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.Attachments_DataCard1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "_Min"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrBadType-Type",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.Attachments_DataCard1.Default"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.Attachments_DataCard1.Default",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 8,
+                  "charOffset": 0,
+                  "snippet": {
+                    "text": "ThisItem"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Default",
+                "module": "Screen2",
+                "type": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.Attachments_DataCard1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "ThisItem"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.Attachments_DataCard1.Default"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.Attachments_DataCard1.Default",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 12,
+                  "charOffset": 8,
+                  "snippet": {
+                    "text": ".Attachments"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Default",
+                "module": "Screen2",
+                "type": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.Attachments_DataCard1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Error"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidDot",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "Screen2"
                 }
               ],
@@ -36,26 +1916,26 @@
             "level": "Low"
           },
           "ruleId": "acc-ReadableScreenNameNeeded",
-          "ruleIndex": 0
+          "ruleIndex": 4
         },
         {
           "locations": [
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.Details_DataCard1.DataCardValue2.AccessibleLabel"
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Department of Reporter_DataCard1'.DataCardValue1.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.Details_DataCard1.DataCardValue2.AccessibleLabel",
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Department of Reporter_DataCard1'.DataCardValue1.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "Screen2",
-                "type": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.Details_DataCard1.DataCardValue2"
+                "type": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Department of Reporter_DataCard1'.DataCardValue1"
               }
             }
           ],
@@ -66,26 +1946,26 @@
             "level": "Medium"
           },
           "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
+          "ruleIndex": 5
         },
         {
           "locations": [
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Completion Time_DataCard1'.MinuteValue1.AccessibleLabel"
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Filling out this form on behalf of someone_DataCard1'.DataCardValue2.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Completion Time_DataCard1'.MinuteValue1.AccessibleLabel",
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Filling out this form on behalf of someone_DataCard1'.DataCardValue2.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "Screen2",
-                "type": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Completion Time_DataCard1'.MinuteValue1"
+                "type": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Filling out this form on behalf of someone_DataCard1'.DataCardValue2"
               }
             }
           ],
@@ -96,26 +1976,26 @@
             "level": "Medium"
           },
           "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
+          "ruleIndex": 5
         },
         {
           "locations": [
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Completion Time_DataCard1'.HourValue1.AccessibleLabel"
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.Employee_DataCard1.DataCardValue3.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Completion Time_DataCard1'.HourValue1.AccessibleLabel",
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.Employee_DataCard1.DataCardValue3.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "Screen2",
-                "type": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Completion Time_DataCard1'.HourValue1"
+                "type": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.Employee_DataCard1.DataCardValue3"
               }
             }
           ],
@@ -126,26 +2006,26 @@
             "level": "Medium"
           },
           "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
+          "ruleIndex": 5
         },
         {
           "locations": [
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Completion Time_DataCard1'.DateValue1.AccessibleLabel"
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Report Last Name_DataCard1'.DataCardValue4.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Completion Time_DataCard1'.DateValue1.AccessibleLabel",
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Report Last Name_DataCard1'.DataCardValue4.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "Screen2",
-                "type": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Completion Time_DataCard1'.DateValue1"
+                "type": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Report Last Name_DataCard1'.DataCardValue4"
               }
             }
           ],
@@ -156,26 +2036,26 @@
             "level": "Medium"
           },
           "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
+          "ruleIndex": 5
         },
         {
           "locations": [
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Category of Fraud_DataCard1'.DataCardValue1.AccessibleLabel"
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.Attachments_DataCard1.DataCardValue5.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Category of Fraud_DataCard1'.DataCardValue1.AccessibleLabel",
+                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.Attachments_DataCard1.DataCardValue5.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "Screen2",
-                "type": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Category of Fraud_DataCard1'.DataCardValue1"
+                "type": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.Attachments_DataCard1.DataCardValue5"
               }
             }
           ],
@@ -186,277 +2066,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Informant Email_DataCard1'.DataCardValue3.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Informant Email_DataCard1'.DataCardValue3.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Screen2",
-                "type": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Informant Email_DataCard1'.DataCardValue3"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Informant First Name_DataCard1'.DataCardValue4.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Informant First Name_DataCard1'.DataCardValue4.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Screen2",
-                "type": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Informant First Name_DataCard1'.DataCardValue4"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Informant Last Name_DataCard1'.DataCardValue5.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Informant Last Name_DataCard1'.DataCardValue5.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Screen2",
-                "type": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Informant Last Name_DataCard1'.DataCardValue5"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Informant Phone Number_DataCard1'.DataCardValue6.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Informant Phone Number_DataCard1'.DataCardValue6.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Screen2",
-                "type": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Informant Phone Number_DataCard1'.DataCardValue6"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Reporter Email_DataCard1'.DataCardValue7.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Reporter Email_DataCard1'.DataCardValue7.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Screen2",
-                "type": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Reporter Email_DataCard1'.DataCardValue7"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Reporter Name_DataCard1'.DataCardValue8.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Reporter Name_DataCard1'.DataCardValue8.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Screen2",
-                "type": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Reporter Name_DataCard1'.DataCardValue8"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Reporter Phone Number_DataCard1'.DataCardValue9.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Reporter Phone Number_DataCard1'.DataCardValue9.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Screen2",
-                "type": "Screen2.ScreenContainer1.BottomContainer1.MainContainer1.Form1.'Reporter Phone Number_DataCard1'.DataCardValue9"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.SidebarContainer1.Gallery1.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.SidebarContainer1.Gallery1.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Screen2",
-                "type": "Screen2.ScreenContainer1.BottomContainer1.SidebarContainer1.Gallery1"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.SidebarContainer1.Gallery1.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Screen2.ScreenContainer1.BottomContainer1.SidebarContainer1.Gallery1.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "Screen2",
-                "type": "Screen2.ScreenContainer1.BottomContainer1.SidebarContainer1.Gallery1"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 2
+          "ruleIndex": 5
         }
       ],
       "tool": {
@@ -464,6 +2074,65 @@
           "fullName": "PowerApps app checker",
           "name": "PowerApps app checker",
           "rules": [
+            {
+              "id": "app-ErrInvalidName",
+              "messageStrings": {
+                "issue": {
+                  "text": "Name isn't valid. '{0}' isn't recognized."
+                }
+              },
+              "properties": {
+                "componentType": "app",
+                "howToFix": [
+                  "Remove or correct the reference to the name that isn't valid."
+                ],
+                "level": "High",
+                "primaryCategory": "formula",
+                "whyFix": ""
+              }
+            },
+            {
+              "id": "app-ErrInvalidArgs-Func",
+              "messageStrings": {
+                "issue": {
+                  "text": "The function '{0}' has some invalid arguments."
+                }
+              },
+              "properties": {
+                "componentType": "app",
+                "level": "High",
+                "primaryCategory": "formula",
+                "whyFix": ""
+              }
+            },
+            {
+              "id": "app-ErrBadType-Type",
+              "messageStrings": {
+                "issue": {
+                  "text": "Invalid argument type. Cannot use {0} values in this context."
+                }
+              },
+              "properties": {
+                "componentType": "app",
+                "level": "High",
+                "primaryCategory": "formula",
+                "whyFix": ""
+              }
+            },
+            {
+              "id": "app-ErrInvalidDot",
+              "messageStrings": {
+                "issue": {
+                  "text": "The '.' operator cannot be used on {0} values."
+                }
+              },
+              "properties": {
+                "componentType": "app",
+                "level": "High",
+                "primaryCategory": "formula",
+                "whyFix": ""
+              }
+            },
             {
               "id": "acc-ReadableScreenNameNeeded",
               "messageStrings": {
@@ -496,23 +2165,6 @@
                 "level": "Medium",
                 "primaryCategory": "accessibility",
                 "whyFix": "If there's no accessible text, people who can’t see the screen won't understand what’s in images and controls."
-              }
-            },
-            {
-              "id": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-              "messageStrings": {
-                "issue": {
-                  "text": "Missing tab stop"
-                }
-              },
-              "properties": {
-                "componentType": "app",
-                "howToFix": [
-                  "Set TabIndex to 0 or greater to ensure that interactive elements have a tab stop."
-                ],
-                "level": "Medium",
-                "primaryCategory": "accessibility",
-                "whyFix": "People who use the keyboard with your app will not be able to access this element without a tab stop."
               }
             }
           ],
