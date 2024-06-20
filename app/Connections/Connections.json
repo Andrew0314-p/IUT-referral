@@ -1,1 +1,16 @@
-{}
+{
+  "8269cb78-be9d-4852-8539-784d77e6e97e": {
+    "connectionRef": {
+      "displayName": "Office 365 Users",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1686/1.0.1686.3706/office365users/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_office365users"
+    },
+    "datasets": {},
+    "dataSources": [
+      "Office365Users"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "8269cb78-be9d-4852-8539-784d77e6e97e"
+  }
+}
