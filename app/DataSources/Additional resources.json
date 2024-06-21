@@ -1,0 +1,96 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "cr065_additionalresourceses",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "cr065_additionalresources",
+    "Name": "Additional resources",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "cr065_additionalresources_AsyncOperations": "System Jobs",
+      "cr065_additionalresources_BulkDeleteFailures": "Bulk Delete Failures",
+      "cr065_additionalresources_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "cr065_additionalresources_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "cr065_additionalresources_ProcessSession": "Process Sessions",
+      "cr065_additionalresources_SyncErrors": "Sync Errors",
+      "cr065_additionalresourcesid": "Additional resources",
+      "cr065_nicbfraudindicators": "NICB fraud indicators",
+      "cr065_pcuhomepage": "PCU home page ",
+      "cr065_resources": "Resources",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Additional resources",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Additional resources (Views)",
+    "Name": "_cr065_additionalresources_views",
+    "RelatedEntityName": "Additional resources",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "0a8ecafe-8c33-457f-8e8b-71cfc993c1c0": "Additional resources Associated View",
+      "1d916ebe-6974-43ec-bf6f-a84d6c3a37b9": "Inactive Additional resources",
+      "39708279-1ab6-4be6-88aa-82c0988e0175": "Additional resources Lookup View",
+      "bb17df99-4aa3-4ed8-9925-9d70bd4be2e1": "Active Additional resources",
+      "fcf5a462-fefb-48c9-9b73-c50a1ba991b9": "Additional resources Advanced Find View"
+    }
+  },
+  {
+    "DisplayName": "Status (Additional resources)",
+    "Name": "cr065_additionalresources_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Additional resources"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Additional resources",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Additional resources)",
+    "Name": "cr065_additionalresources_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Additional resources"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Additional resources",
+    "Type": "OptionSetInfo"
+  }
+]
