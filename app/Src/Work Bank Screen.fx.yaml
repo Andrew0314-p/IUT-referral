@@ -123,7 +123,7 @@
                             Default: =""
                             FillPortions: =1
                             Font: =App.Theme.Font
-                            HintText: ="Search"
+                            HintText: ="Search Referrals"
                             HoverBorderColor: =Self.Fill
                             HoverFill: =RGBA(0, 0, 0, 0)
                             LayoutMinWidth: =0
@@ -153,7 +153,7 @@
                     DelayItemLoading: =true
                     Fill: =RGBA(214, 221, 224, 0.23)
                     Height: =SelectContainer.Height - 'Input Container'.Height - (Seperator_1.Height * 100)
-                    Items: =Search('Referral Intake Tool Submissions',SearchInput1.Text,'1st - Policyholder First Name','1st - Policyholder Last Name',ID)
+                    Items: =Search('Referral Intake Tool Submissions',SearchInput1.Text,'Policyholder First Name','Policyholder Last Name',ID)
                     Layout: =Layout.Vertical
                     LayoutMinHeight: =1
                     LayoutMinWidth: =320
@@ -198,7 +198,7 @@
                         PaddingRight: =0
                         PaddingTop: =0
                         Size: =12
-                        Text: =ThisItem.'1st - Policyholder First Name' & " " & ThisItem.'1st - Policyholder Last Name'
+                        Text: =ThisItem.'Policyholder First Name' & " " & ThisItem.'Policyholder Last Name'
                         VerticalAlign: =VerticalAlign.Top
                         Width: =Title2.Width
                         X: =Title2.X
@@ -383,6 +383,30 @@
                         RadiusTopRight: =4
                         ZIndex: =2
 
+                        SearchInput1_1 As text:
+                            BorderStyle: =BorderStyle.None
+                            Default: =""
+                            FillPortions: =1
+                            Font: =App.Theme.Font
+                            HintText: ="Search Employees"
+                            HoverBorderColor: =Self.Fill
+                            HoverFill: =RGBA(0, 0, 0, 0)
+                            LayoutMinWidth: =0
+                            ZIndex: =1
+
+                        SearchIcon_1 As icon.Search:
+                            BorderColor: =App.Theme.Colors.Darker40
+                            Color: =App.Theme.Colors.Primary
+                            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                            DisabledColor: =RGBA(244, 244, 244, 1)
+                            Height: =SearchInput1.Height
+                            Icon: =Icon.Search
+                            PaddingBottom: =10
+                            PaddingLeft: =10
+                            PaddingRight: =10
+                            PaddingTop: =10
+                            ZIndex: =2
+
                     Seperator As rectangle:
                         AlignInContainer: =AlignInContainer.Stretch
                         BorderColor: =App.Theme.Colors.Darker40
@@ -516,7 +540,7 @@
                             BorderColor: =App.Theme.Colors.Darker40
                             BorderStyle: =BorderStyle.Solid
                             DataField: ="cr065__1stpolicyholderfirstname"
-                            Default: =ThisItem.'1st - Policyholder First Name'
+                            Default: =ThisItem.'Policyholder First Name'
                             DisplayMode: =Parent.DisplayMode
                             DisplayName: =DataSourceInfo([@'Referral Intake Tool Submissions'],DataSourceInfo.DisplayName,cr065__1stpolicyholderfirstname)
                             Fill: =RGBA(0, 0, 0, 0)
@@ -579,7 +603,7 @@
                             BorderColor: =App.Theme.Colors.Darker40
                             BorderStyle: =BorderStyle.Solid
                             DataField: ="cr065__1stpolicyholderlastname"
-                            Default: =ThisItem.'1st - Policyholder Last Name'
+                            Default: =ThisItem.'Policyholder Last Name'
                             DisplayMode: =Parent.DisplayMode
                             DisplayName: =DataSourceInfo([@'Referral Intake Tool Submissions'],DataSourceInfo.DisplayName,cr065__1stpolicyholderlastname)
                             Fill: =RGBA(0, 0, 0, 0)
@@ -638,24 +662,23 @@
                                 Y: =DataCardKey12.Y
                                 ZIndex: =4
 
-                        "'1st - Policyholder Phone Number_DataCard1' As typedDataCard.fluentV9TextualEditCard":
+                        "'Completion Time_DataCard1' As typedDataCard.fluentV9DateTimeEditCard":
                             BorderColor: =App.Theme.Colors.Darker40
                             BorderStyle: =BorderStyle.Solid
-                            DataField: ="cr065__1stpolicyholderphonenumber"
-                            Default: =ThisItem.'1st - Policyholder Phone Number'
+                            DataField: ="cr065_completiontime"
+                            Default: =ThisItem.'Completion Time'
                             DisplayMode: =Parent.DisplayMode
-                            DisplayName: =DataSourceInfo([@'Referral Intake Tool Submissions'],DataSourceInfo.DisplayName,cr065__1stpolicyholderphonenumber)
+                            DisplayName: =DataSourceInfo([@'Referral Intake Tool Submissions'],DataSourceInfo.DisplayName,cr065_completiontime)
                             Fill: =RGBA(0, 0, 0, 0)
                             Height: =70
-                            MaxLength: =DataSourceInfo([@'Referral Intake Tool Submissions'], DataSourceInfo.MaxLength, cr065__1stpolicyholderphonenumber)
                             Required: =false
-                            Update: =DataCardValue12.Value
+                            Update: =If(Not IsBlank(DateValue1.SelectedDate), DateTime(Year(DateValue1.SelectedDate), Month(DateValue1.SelectedDate), Day(DateValue1.SelectedDate), Value(HourValue1.Selected.Value), Value(MinuteValue1.Selected.Value), Second(DateValue1.SelectedDate)))
                             Width: =327
                             X: =2
                             Y: =0
                             ZIndex: =1
 
-                            DataCardKey13 As Text:
+                            DataCardKey1 As Text:
                                 DisplayMode: =DisplayMode.Edit
                                 Height: =22
                                 Text: =Parent.DisplayName
@@ -666,636 +689,7 @@
                                 Y: =10
                                 ZIndex: =1
 
-                            "DataCardValue12 As 'Text input'":
-                                AccessibleLabel: =Parent.DisplayName
-                                DisplayMode: =Parent.DisplayMode
-                                Height: =32
-                                Mode: ="'TextInputCanvas.Mode'.TextInputModeSingleLine"
-                                Required: =Parent.Required
-                                ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
-                                Value: =Parent.Default
-                                Width: =Parent.Width - 48
-                                X: =24
-                                Y: =DataCardKey13.Y + DataCardKey13.Height + 4
-                                ZIndex: =2
-
-                            ErrorMessage13 As Text:
-                                DisplayMode: =DisplayMode.Edit
-                                Height: =30
-                                Text: =Parent.Error
-                                Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
-                                Width: =Parent.Width - 48
-                                Wrap: =true
-                                X: =24
-                                Y: =DataCardValue12.Y + DataCardValue12.Height
-                                ZIndex: =3
-
-                            StarVisible13 As Text:
-                                Align: ='TextCanvas.Align'.Center
-                                DisplayMode: =DisplayMode.Edit
-                                Height: =30
-                                Text: ="*"
-                                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
-                                Width: =30
-                                X: =0
-                                Y: =DataCardKey13.Y
-                                ZIndex: =4
-
-                        "'1st Auto - Business Name_DataCard1' As typedDataCard.fluentV9TextualEditCard":
-                            BorderColor: =App.Theme.Colors.Darker40
-                            BorderStyle: =BorderStyle.Solid
-                            DataField: ="cr065__1stautobusinessname"
-                            Default: =ThisItem.'1st Auto - Business Name'
-                            DisplayMode: =Parent.DisplayMode
-                            DisplayName: =DataSourceInfo([@'Referral Intake Tool Submissions'],DataSourceInfo.DisplayName,cr065__1stautobusinessname)
-                            Fill: =RGBA(0, 0, 0, 0)
-                            Height: =70
-                            MaxLength: =DataSourceInfo([@'Referral Intake Tool Submissions'], DataSourceInfo.MaxLength, cr065__1stautobusinessname)
-                            Required: =false
-                            Update: =DataCardValue13.Value
-                            Width: =327
-                            X: =0
-                            Y: =1
-                            ZIndex: =1
-
-                            DataCardKey14 As Text:
-                                DisplayMode: =DisplayMode.Edit
-                                Height: =22
-                                Text: =Parent.DisplayName
-                                Weight: ='TextCanvas.Weight'.Semibold
-                                Width: =Parent.Width - 48
-                                Wrap: =false
-                                X: =24
-                                Y: =10
-                                ZIndex: =1
-
-                            "DataCardValue13 As 'Text input'":
-                                AccessibleLabel: =Parent.DisplayName
-                                DisplayMode: =Parent.DisplayMode
-                                Height: =32
-                                Mode: ="'TextInputCanvas.Mode'.TextInputModeSingleLine"
-                                Required: =Parent.Required
-                                ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
-                                Value: =Parent.Default
-                                Width: =Parent.Width - 48
-                                X: =24
-                                Y: =DataCardKey14.Y + DataCardKey14.Height + 4
-                                ZIndex: =2
-
-                            ErrorMessage14 As Text:
-                                DisplayMode: =DisplayMode.Edit
-                                Height: =30
-                                Text: =Parent.Error
-                                Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
-                                Width: =Parent.Width - 48
-                                Wrap: =true
-                                X: =24
-                                Y: =DataCardValue13.Y + DataCardValue13.Height
-                                ZIndex: =3
-
-                            StarVisible14 As Text:
-                                Align: ='TextCanvas.Align'.Center
-                                DisplayMode: =DisplayMode.Edit
-                                Height: =30
-                                Text: ="*"
-                                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
-                                Width: =30
-                                X: =0
-                                Y: =DataCardKey14.Y
-                                ZIndex: =4
-
-                        "'1st Auto - Line of Business_DataCard1' As typedDataCard.fluentV9TextualEditCard":
-                            BorderColor: =App.Theme.Colors.Darker40
-                            BorderStyle: =BorderStyle.Solid
-                            DataField: ="cr065__1stautolineofbusiness"
-                            Default: =ThisItem.'1st Auto - Line of Business'
-                            DisplayMode: =Parent.DisplayMode
-                            DisplayName: =DataSourceInfo([@'Referral Intake Tool Submissions'],DataSourceInfo.DisplayName,cr065__1stautolineofbusiness)
-                            Fill: =RGBA(0, 0, 0, 0)
-                            Height: =70
-                            MaxLength: =DataSourceInfo([@'Referral Intake Tool Submissions'], DataSourceInfo.MaxLength, cr065__1stautolineofbusiness)
-                            Required: =false
-                            Update: =DataCardValue14.Value
-                            Width: =327
-                            X: =1
-                            Y: =1
-                            ZIndex: =1
-
-                            DataCardKey15 As Text:
-                                DisplayMode: =DisplayMode.Edit
-                                Height: =22
-                                Text: =Parent.DisplayName
-                                Weight: ='TextCanvas.Weight'.Semibold
-                                Width: =Parent.Width - 48
-                                Wrap: =false
-                                X: =24
-                                Y: =10
-                                ZIndex: =1
-
-                            "DataCardValue14 As 'Text input'":
-                                AccessibleLabel: =Parent.DisplayName
-                                DisplayMode: =Parent.DisplayMode
-                                Height: =32
-                                Mode: ="'TextInputCanvas.Mode'.TextInputModeSingleLine"
-                                Required: =Parent.Required
-                                ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
-                                Value: =Parent.Default
-                                Width: =Parent.Width - 48
-                                X: =24
-                                Y: =DataCardKey15.Y + DataCardKey15.Height + 4
-                                ZIndex: =2
-
-                            ErrorMessage15 As Text:
-                                DisplayMode: =DisplayMode.Edit
-                                Height: =30
-                                Text: =Parent.Error
-                                Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
-                                Width: =Parent.Width - 48
-                                Wrap: =true
-                                X: =24
-                                Y: =DataCardValue14.Y + DataCardValue14.Height
-                                ZIndex: =3
-
-                            StarVisible15 As Text:
-                                Align: ='TextCanvas.Align'.Center
-                                DisplayMode: =DisplayMode.Edit
-                                Height: =30
-                                Text: ="*"
-                                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
-                                Width: =30
-                                X: =0
-                                Y: =DataCardKey15.Y
-                                ZIndex: =4
-
-                        "'1st Auto -  License Plate_DataCard1' As typedDataCard.fluentV9TextualEditCard":
-                            BorderColor: =App.Theme.Colors.Darker40
-                            BorderStyle: =BorderStyle.Solid
-                            DataField: ="cr065__1stautolicenseplate"
-                            Default: =ThisItem.'1st Auto -  License Plate'
-                            DisplayMode: =Parent.DisplayMode
-                            DisplayName: =DataSourceInfo([@'Referral Intake Tool Submissions'],DataSourceInfo.DisplayName,cr065__1stautolicenseplate)
-                            Fill: =RGBA(0, 0, 0, 0)
-                            Height: =70
-                            MaxLength: =DataSourceInfo([@'Referral Intake Tool Submissions'], DataSourceInfo.MaxLength, cr065__1stautolicenseplate)
-                            Required: =false
-                            Update: =DataCardValue15.Value
-                            Width: =327
-                            X: =2
-                            Y: =1
-                            ZIndex: =1
-
-                            DataCardKey16 As Text:
-                                DisplayMode: =DisplayMode.Edit
-                                Height: =22
-                                Text: =Parent.DisplayName
-                                Weight: ='TextCanvas.Weight'.Semibold
-                                Width: =Parent.Width - 48
-                                Wrap: =false
-                                X: =24
-                                Y: =10
-                                ZIndex: =1
-
-                            "DataCardValue15 As 'Text input'":
-                                AccessibleLabel: =Parent.DisplayName
-                                DisplayMode: =Parent.DisplayMode
-                                Height: =32
-                                Mode: ="'TextInputCanvas.Mode'.TextInputModeSingleLine"
-                                Required: =Parent.Required
-                                ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
-                                Value: =Parent.Default
-                                Width: =Parent.Width - 48
-                                X: =24
-                                Y: =DataCardKey16.Y + DataCardKey16.Height + 4
-                                ZIndex: =2
-
-                            ErrorMessage16 As Text:
-                                DisplayMode: =DisplayMode.Edit
-                                Height: =30
-                                Text: =Parent.Error
-                                Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
-                                Width: =Parent.Width - 48
-                                Wrap: =true
-                                X: =24
-                                Y: =DataCardValue15.Y + DataCardValue15.Height
-                                ZIndex: =3
-
-                            StarVisible16 As Text:
-                                Align: ='TextCanvas.Align'.Center
-                                DisplayMode: =DisplayMode.Edit
-                                Height: =30
-                                Text: ="*"
-                                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
-                                Width: =30
-                                X: =0
-                                Y: =DataCardKey16.Y
-                                ZIndex: =4
-
-                        "'1st Auto -  Make_DataCard1' As typedDataCard.fluentV9TextualEditCard":
-                            BorderColor: =App.Theme.Colors.Darker40
-                            BorderStyle: =BorderStyle.Solid
-                            DataField: ="cr065__1stautomake"
-                            Default: =ThisItem.'1st Auto -  Make'
-                            DisplayMode: =Parent.DisplayMode
-                            DisplayName: =DataSourceInfo([@'Referral Intake Tool Submissions'],DataSourceInfo.DisplayName,cr065__1stautomake)
-                            Fill: =RGBA(0, 0, 0, 0)
-                            Height: =70
-                            MaxLength: =DataSourceInfo([@'Referral Intake Tool Submissions'], DataSourceInfo.MaxLength, cr065__1stautomake)
-                            Required: =false
-                            Update: =DataCardValue16.Value
-                            Width: =327
-                            X: =0
-                            Y: =2
-                            ZIndex: =1
-
-                            DataCardKey17 As Text:
-                                DisplayMode: =DisplayMode.Edit
-                                Height: =22
-                                Text: =Parent.DisplayName
-                                Weight: ='TextCanvas.Weight'.Semibold
-                                Width: =Parent.Width - 48
-                                Wrap: =false
-                                X: =24
-                                Y: =10
-                                ZIndex: =1
-
-                            "DataCardValue16 As 'Text input'":
-                                AccessibleLabel: =Parent.DisplayName
-                                DisplayMode: =Parent.DisplayMode
-                                Height: =32
-                                Mode: ="'TextInputCanvas.Mode'.TextInputModeSingleLine"
-                                Required: =Parent.Required
-                                ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
-                                Value: =Parent.Default
-                                Width: =Parent.Width - 48
-                                X: =24
-                                Y: =DataCardKey17.Y + DataCardKey17.Height + 4
-                                ZIndex: =2
-
-                            ErrorMessage17 As Text:
-                                DisplayMode: =DisplayMode.Edit
-                                Height: =30
-                                Text: =Parent.Error
-                                Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
-                                Width: =Parent.Width - 48
-                                Wrap: =true
-                                X: =24
-                                Y: =DataCardValue16.Y + DataCardValue16.Height
-                                ZIndex: =3
-
-                            StarVisible17 As Text:
-                                Align: ='TextCanvas.Align'.Center
-                                DisplayMode: =DisplayMode.Edit
-                                Height: =30
-                                Text: ="*"
-                                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
-                                Width: =30
-                                X: =0
-                                Y: =DataCardKey17.Y
-                                ZIndex: =4
-
-                        "'1st Auto -  Model_DataCard1' As typedDataCard.fluentV9TextualEditCard":
-                            BorderColor: =App.Theme.Colors.Darker40
-                            BorderStyle: =BorderStyle.Solid
-                            DataField: ="cr065__1stautomodel"
-                            Default: =ThisItem.'1st Auto -  Model'
-                            DisplayMode: =Parent.DisplayMode
-                            DisplayName: =DataSourceInfo([@'Referral Intake Tool Submissions'],DataSourceInfo.DisplayName,cr065__1stautomodel)
-                            Fill: =RGBA(0, 0, 0, 0)
-                            Height: =70
-                            MaxLength: =DataSourceInfo([@'Referral Intake Tool Submissions'], DataSourceInfo.MaxLength, cr065__1stautomodel)
-                            Required: =false
-                            Update: =DataCardValue17.Value
-                            Width: =327
-                            X: =1
-                            Y: =2
-                            ZIndex: =1
-
-                            DataCardKey18 As Text:
-                                DisplayMode: =DisplayMode.Edit
-                                Height: =22
-                                Text: =Parent.DisplayName
-                                Weight: ='TextCanvas.Weight'.Semibold
-                                Width: =Parent.Width - 48
-                                Wrap: =false
-                                X: =24
-                                Y: =10
-                                ZIndex: =1
-
-                            "DataCardValue17 As 'Text input'":
-                                AccessibleLabel: =Parent.DisplayName
-                                DisplayMode: =Parent.DisplayMode
-                                Height: =32
-                                Mode: ="'TextInputCanvas.Mode'.TextInputModeSingleLine"
-                                Required: =Parent.Required
-                                ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
-                                Value: =Parent.Default
-                                Width: =Parent.Width - 48
-                                X: =24
-                                Y: =DataCardKey18.Y + DataCardKey18.Height + 4
-                                ZIndex: =2
-
-                            ErrorMessage18 As Text:
-                                DisplayMode: =DisplayMode.Edit
-                                Height: =30
-                                Text: =Parent.Error
-                                Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
-                                Width: =Parent.Width - 48
-                                Wrap: =true
-                                X: =24
-                                Y: =DataCardValue17.Y + DataCardValue17.Height
-                                ZIndex: =3
-
-                            StarVisible18 As Text:
-                                Align: ='TextCanvas.Align'.Center
-                                DisplayMode: =DisplayMode.Edit
-                                Height: =30
-                                Text: ="*"
-                                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
-                                Width: =30
-                                X: =0
-                                Y: =DataCardKey18.Y
-                                ZIndex: =4
-
-                        "'1st Auto -  VIN_DataCard1' As typedDataCard.fluentV9TextualEditCard":
-                            BorderColor: =App.Theme.Colors.Darker40
-                            BorderStyle: =BorderStyle.Solid
-                            DataField: ="cr065__1stautovin"
-                            Default: =ThisItem.'1st Auto -  VIN'
-                            DisplayMode: =Parent.DisplayMode
-                            DisplayName: =DataSourceInfo([@'Referral Intake Tool Submissions'],DataSourceInfo.DisplayName,cr065__1stautovin)
-                            Fill: =RGBA(0, 0, 0, 0)
-                            Height: =70
-                            MaxLength: =DataSourceInfo([@'Referral Intake Tool Submissions'], DataSourceInfo.MaxLength, cr065__1stautovin)
-                            Required: =false
-                            Update: =DataCardValue18.Value
-                            Width: =327
-                            X: =2
-                            Y: =2
-                            ZIndex: =1
-
-                            DataCardKey19 As Text:
-                                DisplayMode: =DisplayMode.Edit
-                                Height: =22
-                                Text: =Parent.DisplayName
-                                Weight: ='TextCanvas.Weight'.Semibold
-                                Width: =Parent.Width - 48
-                                Wrap: =false
-                                X: =24
-                                Y: =10
-                                ZIndex: =1
-
-                            "DataCardValue18 As 'Text input'":
-                                AccessibleLabel: =Parent.DisplayName
-                                DisplayMode: =Parent.DisplayMode
-                                Height: =32
-                                Mode: ="'TextInputCanvas.Mode'.TextInputModeSingleLine"
-                                Required: =Parent.Required
-                                ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
-                                Value: =Parent.Default
-                                Width: =Parent.Width - 48
-                                X: =24
-                                Y: =DataCardKey19.Y + DataCardKey19.Height + 4
-                                ZIndex: =2
-
-                            ErrorMessage19 As Text:
-                                DisplayMode: =DisplayMode.Edit
-                                Height: =30
-                                Text: =Parent.Error
-                                Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
-                                Width: =Parent.Width - 48
-                                Wrap: =true
-                                X: =24
-                                Y: =DataCardValue18.Y + DataCardValue18.Height
-                                ZIndex: =3
-
-                            StarVisible19 As Text:
-                                Align: ='TextCanvas.Align'.Center
-                                DisplayMode: =DisplayMode.Edit
-                                Height: =30
-                                Text: ="*"
-                                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
-                                Width: =30
-                                X: =0
-                                Y: =DataCardKey19.Y
-                                ZIndex: =4
-
-                        "'1st Auto Business - State Code_DataCard1' As typedDataCard.fluentV9TextualEditCard":
-                            BorderColor: =App.Theme.Colors.Darker40
-                            BorderStyle: =BorderStyle.Solid
-                            DataField: ="cr065__1stautobusinessstatecode"
-                            Default: =ThisItem.'1st Auto Business - State Code'
-                            DisplayMode: =Parent.DisplayMode
-                            DisplayName: =DataSourceInfo([@'Referral Intake Tool Submissions'],DataSourceInfo.DisplayName,cr065__1stautobusinessstatecode)
-                            Fill: =RGBA(0, 0, 0, 0)
-                            Height: =70
-                            MaxLength: =DataSourceInfo([@'Referral Intake Tool Submissions'], DataSourceInfo.MaxLength, cr065__1stautobusinessstatecode)
-                            Required: =false
-                            Update: =DataCardValue19.Value
-                            Width: =327
-                            X: =0
-                            Y: =3
-                            ZIndex: =1
-
-                            DataCardKey20 As Text:
-                                DisplayMode: =DisplayMode.Edit
-                                Height: =22
-                                Text: =Parent.DisplayName
-                                Weight: ='TextCanvas.Weight'.Semibold
-                                Width: =Parent.Width - 48
-                                Wrap: =false
-                                X: =24
-                                Y: =10
-                                ZIndex: =1
-
-                            "DataCardValue19 As 'Text input'":
-                                AccessibleLabel: =Parent.DisplayName
-                                DisplayMode: =Parent.DisplayMode
-                                Height: =32
-                                Mode: ="'TextInputCanvas.Mode'.TextInputModeSingleLine"
-                                Required: =Parent.Required
-                                ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
-                                Value: =Parent.Default
-                                Width: =Parent.Width - 48
-                                X: =24
-                                Y: =DataCardKey20.Y + DataCardKey20.Height + 4
-                                ZIndex: =2
-
-                            ErrorMessage20 As Text:
-                                DisplayMode: =DisplayMode.Edit
-                                Height: =30
-                                Text: =Parent.Error
-                                Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
-                                Width: =Parent.Width - 48
-                                Wrap: =true
-                                X: =24
-                                Y: =DataCardValue19.Y + DataCardValue19.Height
-                                ZIndex: =3
-
-                            StarVisible20 As Text:
-                                Align: ='TextCanvas.Align'.Center
-                                DisplayMode: =DisplayMode.Edit
-                                Height: =30
-                                Text: ="*"
-                                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
-                                Width: =30
-                                X: =0
-                                Y: =DataCardKey20.Y
-                                ZIndex: =4
-
-                        "'1st Auto Personal - State Code_DataCard1' As typedDataCard.fluentV9TextualEditCard":
-                            BorderColor: =App.Theme.Colors.Darker40
-                            BorderStyle: =BorderStyle.Solid
-                            DataField: ="cr065__1stautopersonalstatecode"
-                            Default: =ThisItem.'1st Auto Personal - State Code'
-                            DisplayMode: =Parent.DisplayMode
-                            DisplayName: =DataSourceInfo([@'Referral Intake Tool Submissions'],DataSourceInfo.DisplayName,cr065__1stautopersonalstatecode)
-                            Fill: =RGBA(0, 0, 0, 0)
-                            Height: =70
-                            MaxLength: =DataSourceInfo([@'Referral Intake Tool Submissions'], DataSourceInfo.MaxLength, cr065__1stautopersonalstatecode)
-                            Required: =false
-                            Update: =DataCardValue20.Value
-                            Width: =327
-                            X: =1
-                            Y: =3
-                            ZIndex: =1
-
-                            DataCardKey21 As Text:
-                                DisplayMode: =DisplayMode.Edit
-                                Height: =22
-                                Text: =Parent.DisplayName
-                                Weight: ='TextCanvas.Weight'.Semibold
-                                Width: =Parent.Width - 48
-                                Wrap: =false
-                                X: =24
-                                Y: =10
-                                ZIndex: =1
-
-                            "DataCardValue20 As 'Text input'":
-                                AccessibleLabel: =Parent.DisplayName
-                                DisplayMode: =Parent.DisplayMode
-                                Height: =32
-                                Mode: ="'TextInputCanvas.Mode'.TextInputModeSingleLine"
-                                Required: =Parent.Required
-                                ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
-                                Value: =Parent.Default
-                                Width: =Parent.Width - 48
-                                X: =24
-                                Y: =DataCardKey21.Y + DataCardKey21.Height + 4
-                                ZIndex: =2
-
-                            ErrorMessage21 As Text:
-                                DisplayMode: =DisplayMode.Edit
-                                Height: =30
-                                Text: =Parent.Error
-                                Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
-                                Width: =Parent.Width - 48
-                                Wrap: =true
-                                X: =24
-                                Y: =DataCardValue20.Y + DataCardValue20.Height
-                                ZIndex: =3
-
-                            StarVisible21 As Text:
-                                Align: ='TextCanvas.Align'.Center
-                                DisplayMode: =DisplayMode.Edit
-                                Height: =30
-                                Text: ="*"
-                                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
-                                Width: =30
-                                X: =0
-                                Y: =DataCardKey21.Y
-                                ZIndex: =4
-
-                        "'1st Claim Number_DataCard1' As typedDataCard.fluentV9TextualEditCard":
-                            BorderColor: =App.Theme.Colors.Darker40
-                            BorderStyle: =BorderStyle.Solid
-                            DataField: ="cr065__1stclaimnumber"
-                            Default: =ThisItem.'1st Claim Number'
-                            DisplayMode: =Parent.DisplayMode
-                            DisplayName: =DataSourceInfo([@'Referral Intake Tool Submissions'],DataSourceInfo.DisplayName,cr065__1stclaimnumber)
-                            Fill: =RGBA(0, 0, 0, 0)
-                            Height: =70
-                            MaxLength: =DataSourceInfo([@'Referral Intake Tool Submissions'], DataSourceInfo.MaxLength, cr065__1stclaimnumber)
-                            Required: =false
-                            Update: =DataCardValue21.Value
-                            Width: =327
-                            X: =2
-                            Y: =3
-                            ZIndex: =1
-
-                            DataCardKey22 As Text:
-                                DisplayMode: =DisplayMode.Edit
-                                Height: =22
-                                Text: =Parent.DisplayName
-                                Weight: ='TextCanvas.Weight'.Semibold
-                                Width: =Parent.Width - 48
-                                Wrap: =false
-                                X: =24
-                                Y: =10
-                                ZIndex: =1
-
-                            "DataCardValue21 As 'Text input'":
-                                AccessibleLabel: =Parent.DisplayName
-                                DisplayMode: =Parent.DisplayMode
-                                Height: =32
-                                Mode: ="'TextInputCanvas.Mode'.TextInputModeSingleLine"
-                                Required: =Parent.Required
-                                ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
-                                Value: =Parent.Default
-                                Width: =Parent.Width - 48
-                                X: =24
-                                Y: =DataCardKey22.Y + DataCardKey22.Height + 4
-                                ZIndex: =2
-
-                            ErrorMessage22 As Text:
-                                DisplayMode: =DisplayMode.Edit
-                                Height: =30
-                                Text: =Parent.Error
-                                Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
-                                Width: =Parent.Width - 48
-                                Wrap: =true
-                                X: =24
-                                Y: =DataCardValue21.Y + DataCardValue21.Height
-                                ZIndex: =3
-
-                            StarVisible22 As Text:
-                                Align: ='TextCanvas.Align'.Center
-                                DisplayMode: =DisplayMode.Edit
-                                Height: =30
-                                Text: ="*"
-                                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
-                                Width: =30
-                                X: =0
-                                Y: =DataCardKey22.Y
-                                ZIndex: =4
-
-                        "'1st Date of Loss_DataCard1' As typedDataCard.fluentV9DateTimeEditCard":
-                            BorderColor: =App.Theme.Colors.Darker40
-                            BorderStyle: =BorderStyle.Solid
-                            DataField: ="cr065__1stdateofloss"
-                            Default: =ThisItem.'1st Date of Loss'
-                            DisplayMode: =Parent.DisplayMode
-                            DisplayName: =DataSourceInfo([@'Referral Intake Tool Submissions'],DataSourceInfo.DisplayName,cr065__1stdateofloss)
-                            Fill: =RGBA(0, 0, 0, 0)
-                            Height: =70
-                            Required: =false
-                            Update: =If(Not IsBlank(DateValue2.SelectedDate), DateTime(Year(DateValue2.SelectedDate), Month(DateValue2.SelectedDate), Day(DateValue2.SelectedDate), Value(HourValue2.Selected.Value), Value(MinuteValue2.Selected.Value), Second(DateValue2.SelectedDate)))
-                            Width: =327
-                            X: =0
-                            Y: =4
-                            ZIndex: =1
-
-                            DataCardKey23 As Text:
-                                DisplayMode: =DisplayMode.Edit
-                                Height: =22
-                                Text: =Parent.DisplayName
-                                Weight: ='TextCanvas.Weight'.Semibold
-                                Width: =Parent.Width - 48
-                                Wrap: =false
-                                X: =24
-                                Y: =10
-                                ZIndex: =1
-
-                            "DateValue2 As 'Date picker'":
+                            "DateValue1 As 'Date picker'":
                                 AccessibleLabel: =If(Parent.Required, Substitute("{0}. Required.", "{0}", Parent.DisplayName), Parent.DisplayName)
                                 DisplayMode: =Parent.DisplayMode
                                 Height: =32
@@ -1303,41 +697,41 @@
                                 ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
                                 Width: =(Parent.Width - 48) / 2
                                 X: =24
-                                Y: =DataCardKey23.Y + DataCardKey23.Height + 4
+                                Y: =DataCardKey1.Y + DataCardKey1.Height + 4
                                 ZIndex: =2
 
-                            HourValue2 As Dropdown.pcfdataset:
+                            HourValue1 As Dropdown.pcfdataset:
                                 DefaultSelectedItems: =[Text(Hour(Parent.Default),"00")]
                                 DisplayMode: =Parent.DisplayMode
                                 Height: =28
                                 Items: =["00","01","02","03","04","05","06","07","08","09","10","11","12","13","14","15","16","17","18","19","20","21","22","23"]
-                                Width: =DateValue2.Width / 2 - 10
-                                X: =DateValue2.X + DateValue2.Width + 10
-                                Y: =DateValue2.Y + 1
+                                Width: =DateValue1.Width / 2 - 10
+                                X: =DateValue1.X + DateValue1.Width + 10
+                                Y: =DateValue1.Y + 1
                                 ZIndex: =3
 
-                            Separator3 As Text:
+                            Separator1 As Text:
                                 Align: ='TextCanvas.Align'.Center
                                 DisplayMode: =DisplayMode.Edit
-                                Height: =HourValue2.Height
+                                Height: =HourValue1.Height
                                 Text: |-
                                     =":"
                                 Width: =10
-                                X: =HourValue2.X + HourValue2.Width
-                                Y: =HourValue2.Y
+                                X: =HourValue1.X + HourValue1.Width
+                                Y: =HourValue1.Y
                                 ZIndex: =4
 
-                            MinuteValue2 As Dropdown.pcfdataset:
+                            MinuteValue1 As Dropdown.pcfdataset:
                                 DefaultSelectedItems: =[Text(Minute(Parent.Default),"00")]
                                 DisplayMode: =Parent.DisplayMode
                                 Height: =28
                                 Items: =["00","01","02","03","04","05","06","07","08","09","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51","52","53","54","55","56","57","58","59"]
-                                Width: =HourValue2.Width
-                                X: =HourValue2.X + HourValue2.Width + Separator3.Width
-                                Y: =HourValue2.Y + 1
+                                Width: =HourValue1.Width
+                                X: =HourValue1.X + HourValue1.Width + Separator1.Width
+                                Y: =HourValue1.Y + 1
                                 ZIndex: =5
 
-                            ErrorMessage23 As Text:
+                            ErrorMessage1 As Text:
                                 DisplayMode: =DisplayMode.Edit
                                 Height: =30
                                 Text: =Parent.Error
@@ -1345,10 +739,10 @@
                                 Width: =Parent.Width - 48
                                 Wrap: =true
                                 X: =24
-                                Y: =DateValue2.Y + DateValue2.Height
+                                Y: =DateValue1.Y + DateValue1.Height
                                 ZIndex: =6
 
-                            StarVisible23 As Text:
+                            StarVisible1 As Text:
                                 Align: ='TextCanvas.Align'.Center
                                 DisplayMode: =DisplayMode.Edit
                                 Height: =20
@@ -1356,6 +750,78 @@
                                 Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
                                 Width: =30
                                 X: =0
-                                Y: =DataCardKey23.Y
+                                Y: =DataCardKey1.Y
                                 ZIndex: =7
+
+                        Status_DataCard1 As typedDataCard.fluentV9ComboBoxOptionSetSingleEditCard:
+                            BorderColor: =App.Theme.Colors.Darker40
+                            BorderStyle: =BorderStyle.Solid
+                            DataField: ="statecode"
+                            Default: =ThisItem.Status
+                            DisplayMode: =Parent.DisplayMode
+                            DisplayName: =DataSourceInfo([@'Referral Intake Tool Submissions'],DataSourceInfo.DisplayName,statecode)
+                            Fill: =RGBA(0, 0, 0, 0)
+                            Height: =70
+                            Required: =false
+                            Update: =DataCardValue1.Selected.Value
+                            Width: =327
+                            X: =0
+                            Y: =1
+                            ZIndex: =1
+
+                            DataCardKey2 As Text:
+                                DisplayMode: =DisplayMode.Edit
+                                Height: =22
+                                Text: =Parent.DisplayName
+                                Weight: ='TextCanvas.Weight'.Semibold
+                                Width: =Parent.Width - 48
+                                Wrap: =false
+                                X: =24
+                                Y: =10
+                                ZIndex: =1
+
+                            DataCardValue1 As Combobox.pcfdataset:
+                                AccessibleLabel: =If(Parent.Required, Substitute("{0}. Required.", "{0}", Parent.DisplayName), Parent.DisplayName)
+                                DefaultSelectedItems: =[Parent.Default]
+                                DisplayMode: =Parent.DisplayMode
+                                Height: =32
+                                Items: =Choices('Status (Referral Intake Tool Submissions)')
+                                ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
+                                Width: =Parent.Width - 48
+                                X: =24
+                                Y: =DataCardKey2.Y + DataCardKey2.Height + 4
+                                ZIndex: =2
+
+                            ErrorMessage2 As Text:
+                                DisplayMode: =DisplayMode.Edit
+                                Height: =30
+                                Text: =Parent.Error
+                                Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                                Width: =Parent.Width - 48
+                                Wrap: =true
+                                X: =24
+                                Y: =DataCardValue1.Y + DataCardValue1.Height
+                                ZIndex: =3
+
+                            StarVisible2 As Text:
+                                Align: ='TextCanvas.Align'.Center
+                                DisplayMode: =DisplayMode.Edit
+                                Height: =20
+                                Text: ="*"
+                                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                Width: =30
+                                X: =0
+                                Y: =DataCardKey2.Y
+                                ZIndex: =4
+
+                    Gallery1 As gallery.galleryHorizontal:
+                        BorderColor: =App.Theme.Colors.Darker40
+                        DelayItemLoading: =true
+                        Items: |-
+                            =If(!IsBlank(Trim(SearchInput1_1.Text)),Office365Users.SearchUser({searchTerm:Trim(SearchInput1_1.Text)}))
+                        LayoutMinHeight: =287
+                        LayoutMinWidth: =320
+                        LoadingSpinner: =LoadingSpinner.Data
+                        TemplateSize: =If(Self.Layout = Layout.Horizontal, Min(320, Self.Width - 60), Min(320, Self.Height - 60))
+                        ZIndex: =5
 
