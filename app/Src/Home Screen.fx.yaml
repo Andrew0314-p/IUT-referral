@@ -592,6 +592,7 @@
                         Height: =32
                         LayoutMinHeight: =32
                         LayoutMinWidth: =Parent.Width
+                        OnSelect: =Navigate('Additional Information Screen')
                         Text: ="Additional Information"
                         Width: =Parent.Width
                         X: =0
