@@ -402,125 +402,17 @@
                         Y: =0
                         ZIndex: =3
 
-                        "'Category of Fraud1' As PowerAppsOneGridTemplate_dataField.textualColumn":
-                            FieldDisplayName: ="Category of Fraud"
-                            FieldName: ="cr065_categoryoffraud"
-                            FieldType: ="s"
-                            FieldVariantName: ="textualColumn"
-                            Height: =100
-                            Order: =3
-                            Width: =0
-                            X: =0
-                            Y: =0
-                            ZIndex: =6
-
                         "'Completion Time1' As PowerAppsOneGridTemplate_dataField.textualColumn":
                             FieldDisplayName: ="Completion Time"
                             FieldName: ="cr065_completiontime"
                             FieldType: ="d"
                             FieldVariantName: ="textualColumn"
                             Height: =100
-                            Order: =4
-                            Width: =0
-                            X: =0
-                            Y: =0
-                            ZIndex: =7
-
-                        Details1 As PowerAppsOneGridTemplate_dataField.textualColumn:
-                            FieldDisplayName: ="Details"
-                            FieldName: ="cr065_details"
-                            FieldType: ="s"
-                            FieldVariantName: ="textualColumn"
-                            Height: =100
-                            Order: =5
-                            Width: =0
-                            X: =0
-                            Y: =0
-                            ZIndex: =8
-
-                        "'Informant Email1' As PowerAppsOneGridTemplate_dataField.textualColumn":
-                            FieldDisplayName: ="Informant Email"
-                            FieldName: ="cr065_informantemail"
-                            FieldType: ="s"
-                            FieldVariantName: ="textualColumn"
-                            Height: =100
                             Order: =6
                             Width: =0
                             X: =0
                             Y: =0
-                            ZIndex: =9
-
-                        "'Informant First Name1' As PowerAppsOneGridTemplate_dataField.textualColumn":
-                            FieldDisplayName: ="Informant First Name"
-                            FieldName: ="cr065_informantfirstname"
-                            FieldType: ="s"
-                            FieldVariantName: ="textualColumn"
-                            Height: =100
-                            Order: =7
-                            Width: =0
-                            X: =0
-                            Y: =0
-                            ZIndex: =10
-
-                        "'Last modified time1' As PowerAppsOneGridTemplate_dataField.textualColumn":
-                            FieldDisplayName: ="Last modified time"
-                            FieldName: ="cr065_lastmodifiedtime"
-                            FieldType: ="d"
-                            FieldVariantName: ="textualColumn"
-                            Height: =100
-                            Order: =8
-                            Width: =0
-                            X: =0
-                            Y: =0
-                            ZIndex: =11
-
-                        "'Reporter Name1' As PowerAppsOneGridTemplate_dataField.textualColumn":
-                            FieldDisplayName: ="Reporter Name"
-                            FieldName: ="cr065_reportername"
-                            FieldType: ="s"
-                            FieldVariantName: ="textualColumn"
-                            Height: =100
-                            Order: =9
-                            Width: =0
-                            X: =0
-                            Y: =0
-                            ZIndex: =12
-
-                        "'Reporter Role1' As PowerAppsOneGridTemplate_dataField.textualColumn":
-                            FieldDisplayName: ="Reporter Role"
-                            FieldName: ="cr065_reporterrole"
-                            FieldType: ="s"
-                            FieldVariantName: ="textualColumn"
-                            Height: =100
-                            Order: =10
-                            Width: =0
-                            X: =0
-                            Y: =0
-                            ZIndex: =13
-
-                        "'Start Time1' As PowerAppsOneGridTemplate_dataField.textualColumn":
-                            FieldDisplayName: ="Start Time"
-                            FieldName: ="cr065_starttime"
-                            FieldType: ="d"
-                            FieldVariantName: ="textualColumn"
-                            Height: =100
-                            Order: =11
-                            Width: =0
-                            X: =0
-                            Y: =0
-                            ZIndex: =14
-
-                        Status1 As PowerAppsOneGridTemplate_dataField.textualColumn:
-                            FieldDisplayName: ="Status"
-                            FieldName: ="statecode"
-                            FieldType: ="l"
-                            FieldVariantName: ="textualColumn"
-                            Height: =100
-                            Order: =12
-                            Width: =0
-                            X: =0
-                            Y: =0
-                            ZIndex: =15
+                            ZIndex: =7
 
                         "'1st - Policyholder First Name1' As PowerAppsOneGridTemplate_dataField.textualColumn":
                             FieldDisplayName: ="1st - Policyholder First Name"
@@ -545,4 +437,40 @@
                             X: =0
                             Y: =0
                             ZIndex: =17
+
+                        "'1st Date of Loss1' As PowerAppsOneGridTemplate_dataField.textualColumn":
+                            FieldDisplayName: ="1st Date of Loss"
+                            FieldName: ="cr065__1stdateofloss"
+                            FieldType: ="d"
+                            FieldVariantName: ="textualColumn"
+                            Height: =100
+                            Order: =3
+                            Width: =0
+                            X: =0
+                            Y: =0
+                            ZIndex: =18
+
+                        "'2nd Date of Loss1' As PowerAppsOneGridTemplate_dataField.textualColumn":
+                            FieldDisplayName: ="2nd Date of Loss"
+                            FieldName: ="cr065__2nddateofloss"
+                            FieldType: ="d"
+                            FieldVariantName: ="textualColumn"
+                            Height: =100
+                            Order: =5
+                            Width: =0
+                            X: =0
+                            Y: =0
+                            ZIndex: =19
+
+                        "'3rd Date of Loss1' As PowerAppsOneGridTemplate_dataField.textualColumn":
+                            FieldDisplayName: ="3rd Date of Loss"
+                            FieldName: ="cr065__3rddateofloss"
+                            FieldType: ="d"
+                            FieldVariantName: ="textualColumn"
+                            Height: =100
+                            Order: =5
+                            Width: =0
+                            X: =0
+                            Y: =0
+                            ZIndex: =20
 
