@@ -31,6 +31,13 @@
       "Values": {
         "Information": "ce0ba7aa-2c62-4322-986f-88c36abe4e7c"
       }
+    },
+    {
+      "Kind": "default.cds_cr065_additionalresources_forms",
+      "Namespace": "Additional resources (Forms)",
+      "Values": {
+        "Information": "0bc8df13-3f1c-4130-bac8-e739ea4a35de"
+      }
     }
   ]
 }
