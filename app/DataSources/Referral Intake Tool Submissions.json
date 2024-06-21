@@ -29,9 +29,9 @@
       "cr065__1stfirepersonalpolicytype": "1st Fire - Personal Policy Type",
       "cr065__1stfirestate": "1st Fire - State",
       "cr065__1stfirestreet": "1st Fire - Street",
-      "cr065__1stpolicyholderfirstname": "1st - Policyholder First Name",
-      "cr065__1stpolicyholderlastname": "1st - Policyholder Last Name",
-      "cr065__1stpolicyholderphonenumber": "1st - Policyholder Phone Number",
+      "cr065__1stpolicyholderfirstname": "Policyholder First Name",
+      "cr065__1stpolicyholderlastname": "Policyholder Last Name",
+      "cr065__1stpolicyholderphonenumber": "Policyholder Phone Number",
       "cr065__1stpolicynumber": "1st Policy Number",
       "cr065__1stpolicytype": "1st Policy Type",
       "cr065__2ndautobusinessname": "2nd Auto - Business Name",
@@ -77,6 +77,7 @@
       "cr065_categoryoffraud": "Category of Fraud",
       "cr065_completiontime": "Completion Time",
       "cr065_contactforadditionalinformation": "Can we contact you for additional information",
+      "cr065_decisionreasons": "Decision Reasons",
       "cr065_details": "Details",
       "cr065_fillingforsomeoneelse": "Are you filling this form out for someone else who you got a tip from?",
       "cr065_fraudreportform_AsyncOperations": "System Jobs",
@@ -140,6 +141,35 @@
       "6d41cfdc-1864-49be-9669-a8b463d56003": "Active Fraud Report Form",
       "a5ea9392-6e9e-4327-85cc-b8437c6336ba": "Fraud Report Form Associated View"
     }
+  },
+  {
+    "DisplayName": "Decision Reasons (Referral Intake Tool Submissions)",
+    "Name": "cr065_fraudreportform_cr065_decisionreasons",
+    "OptionSetInfoNameMapping": {
+      "827680000": "Adverse Action Already Taken",
+      "827680001": "File Development",
+      "827680002": "No Action",
+      "827680003": "Non-renewal",
+      "827680004": "Premium Change",
+      "827680005": "Initial Cancel",
+      "827680006": "Midterm Cancel",
+      "827680007": "No Action - Inconclusive",
+      "827680008": "No Action - PH Cancel",
+      "827680009": "WOTR",
+      "827680010": "Void"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr065_decisionreasons",
+        "OptionSetReferenceEntityName": "Referral Intake Tool Submissions"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr065_decisionreasons",
+    "RelatedEntityName": "Referral Intake Tool Submissions",
+    "Type": "OptionSetInfo"
   },
   {
     "DisplayName": "Status (Referral Intake Tool Submissions)",
