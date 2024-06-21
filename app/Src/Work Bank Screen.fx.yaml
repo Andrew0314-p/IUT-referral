@@ -117,7 +117,7 @@
                     Icon2 As icon.Search:
                         AlignInContainer: =AlignInContainer.Stretch
                         BorderColor: =App.Theme.Colors.Darker40
-                        Color: =App.Theme.Colors.Darker30
+                        Color: =App.Theme.Colors.Primary
                         DisabledBorderColor: =RGBA(166, 166, 166, 1)
                         DisabledColor: =RGBA(244, 244, 244, 1)
                         Icon: =Icon.Search
@@ -487,7 +487,7 @@
                             Y: =0
                             ZIndex: =20
 
-                    Form1 As form.PowerApps_CoreControls_Form:
+                    "'Submission Info Form' As form.PowerApps_CoreControls_Form":
                         BorderColor: =App.Theme.Colors.Darker40
                         DataSource: ='Referral Intake Tool Submissions'
                         Item: =Gallery1.Selected
@@ -496,6 +496,7 @@
                         OnSuccess: |-
                             =UpdateContext({ CurrentItem: Self.LastSubmit })
                         UseFluentV9Cards: =true
+                        Visible: =If(myInTrayMode = true, true, false)
                         ZIndex: =4
 
                         "'1st - Policyholder First Name_DataCard1' As typedDataCard.fluentV9TextualEditCard":
