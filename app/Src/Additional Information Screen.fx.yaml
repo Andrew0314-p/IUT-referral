@@ -45,7 +45,7 @@
                 Logo: =SF_Ovals_Rev_Standard_RGB_Microsoft
                 LogoTooltip: =
                 OnSelectLogo: =Navigate('Home Screen')
-                Title: ="State Farm"
+                Title: ="Additional Resources"
                 UserEmail: =User().Email
                 UserImage: =User().Image
                 UserName: =User().FullName
@@ -73,19 +73,19 @@
                 RadiusTopLeft: =4
                 RadiusTopRight: =4
                 Width: =387
-                X: =54
+                X: =39
                 Y: =54
                 ZIndex: =1
 
                 TextCanvas2 As Text:
-                    Align: ='TextCanvas.Align'.Center
+                    Align: ='TextCanvas.Align'.Start
                     DisplayMode: =DisplayMode.Edit
-                    Height: =28
+                    Height: =40
                     Size: =18
                     Text: ="IUT Additional resources/JobAids"
                     Weight: ='TextCanvas.Weight'.Bold
-                    Width: =303
-                    X: =52
+                    Width: =328
+                    X: =27
                     Y: =28
                     ZIndex: =1
 
@@ -139,8 +139,8 @@
                 DisabledColor: =RGBA(244, 244, 244, 1)
                 Height: =50
                 Icon: =Icon.Tools
-                X: =405
-                Y: =54
+                X: =362
+                Y: =72
                 ZIndex: =2
 
             Container10_1 As groupContainer.manualLayoutContainer:
@@ -151,8 +151,8 @@
                 RadiusBottomRight: =4
                 RadiusTopLeft: =4
                 RadiusTopRight: =4
-                Width: =407
-                X: =496
+                Width: =389
+                X: =478
                 Y: =54
                 ZIndex: =3
 
@@ -221,4 +221,91 @@
                     X: =331
                     Y: =16
                     ZIndex: =5
+
+            Container10_2 As groupContainer.manualLayoutContainer:
+                DropShadow: =DropShadow.Light
+                Fill: =RGBA(214, 221, 224, 1)
+                Height: =457
+                RadiusBottomLeft: =4
+                RadiusBottomRight: =4
+                RadiusTopLeft: =4
+                RadiusTopRight: =4
+                Width: =364
+                X: =927
+                Y: =54
+                ZIndex: =4
+
+                TextCanvas2_2 As Text:
+                    Align: ='TextCanvas.Align'.Center
+                    DisplayMode: =DisplayMode.Edit
+                    Height: =28
+                    Size: =18
+                    Text: ="Additional links"
+                    Weight: ='TextCanvas.Weight'.Bold
+                    Width: =303
+                    X: =40
+                    Y: =40
+                    ZIndex: =1
+
+                LinkCanvas1_2 As Link:
+                    Align: ='LinkCanvas.Align'.Center
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =Font.Arial
+                    FontWeight: =FontWeight.Semibold
+                    Height: =92
+                    Text: ="TBD"
+                    URL: |-
+                        ="https://intranet.opr.statefarm.org/afclaimssiu/jobtools/nicb/nicb2.htm"
+                    Width: =392
+                    X: =0
+                    Y: =113
+                    ZIndex: =2
+
+                LinkCanvas2_2 As Link:
+                    Align: ='LinkCanvas.Align'.Center
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =Font.Arial
+                    FontWeight: =FontWeight.Semibold
+                    Height: =58
+                    Text: ="State Farm Homepage"
+                    URL: |-
+                        ="https://statefarm.sharepoint.com/sites/Homepage"
+                    Width: =392
+                    X: =0
+                    Y: =88
+                    ZIndex: =3
+
+                LinkCanvas3_2 As Link:
+                    Align: ='LinkCanvas.Align'.Center
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =Font.Arial
+                    FontWeight: =FontWeight.Semibold
+                    Height: =84
+                    Text: ="TBD"
+                    URL: =
+                    VerticalAlign: ='LinkCanvas.VerticalAlign'.Middle
+                    Width: =392
+                    X: =0
+                    Y: =171
+                    ZIndex: =4
+
+                Icon2 As icon.Link:
+                    BorderColor: =App.Theme.Colors.Darker40
+                    Color: =App.Theme.Colors.Darker30
+                    DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                    DisabledColor: =RGBA(244, 244, 244, 1)
+                    Icon: =Icon.Link
+                    X: =279
+                    Y: =4
+                    ZIndex: =6
+
+            ButtonCanvas3 As Button:
+                DisplayMode: =DisplayMode.Edit
+                Height: =32
+                OnSelect: =Navigate('Home Screen',ScreenTransition.None)
+                Text: ="Back"
+                Width: =96
+                X: =39
+                Y: =575
+                ZIndex: =5
 
