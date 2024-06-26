@@ -966,9 +966,9 @@
                         LayoutMinWidth: =96
                         OnSelect: =Reset(EmployeeSearch)
                         Text: |-
-                            ="Assign To:"
+                            =If(sharedWorkBankMode = true, "Assign To: ", "Reassign To: ")
                         Visible: =If(sharedWorkBankMode = true Or myInTrayMode = true, true, false)
-                        Width: =96
+                        Width: =110
                         X: =0
                         Y: =0
                         ZIndex: =2
