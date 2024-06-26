@@ -6,7 +6,6 @@
     "IsSampleData": false,
     "IsWritable": true,
     "LogicalName": "cr065_siuiutintaketool",
-    "MaxGetRowsCount": 500,
     "Name": "SIU / IUT Intake Tools",
     "NativeCDSDataSourceInfoNameMapping": {
       "_ownerid_value": "Owner",

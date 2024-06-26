@@ -1,4 +1,4 @@
-"Screen1 As screen.'autoLayout_SplitScreen_ver1.0'":
+"Screen1 As screen.'tabletLayout_PeoplePicker_ver3.0'":
     Fill: =Color.White
     LoadingSpinnerColor: =App.Theme.Colors.Primary
 
@@ -80,24 +80,6 @@
                     Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
                     ZIndex: =1
 
-                Title1 As label:
-                    Color: =RGBA(50, 49, 48, 1)
-                    DisabledColor: =RGBA(166, 166, 166, 1)
-                    Font: =App.Theme.Font
-                    FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
-                    Height: =Self.Size * 1.8
-                    OnSelect: =Select(Parent)
-                    PaddingBottom: =0
-                    PaddingLeft: =0
-                    PaddingRight: =0
-                    PaddingTop: =0
-                    Text: =ThisItem.SampleHeading
-                    VerticalAlign: =VerticalAlign.Top
-                    Width: =Parent.TemplateWidth - 173
-                    X: =103
-                    Y: =(Parent.TemplateHeight - (Self.Size * 1.8 + Subtitle3.Size * 1.8)) / 2
-                    ZIndex: =2
-
                 Subtitle3 As label:
                     Color: =RGBA(0, 0, 0, 1)
                     DisabledColor: =RGBA(166, 166, 166, 1)
@@ -141,15 +123,6 @@
                     Width: =Parent.TemplateWidth
                     Y: =Parent.TemplateHeight - Self.Height
                     ZIndex: =5
-
-                Rectangle1 As rectangle:
-                    BorderColor: =App.Theme.Colors.Darker40
-                    Fill: =App.Theme.Colors.Darker30
-                    Height: =Parent.TemplateHeight - Separator4.Height
-                    OnSelect: =Select(Parent)
-                    Visible: =ThisItem.IsSelected
-                    Width: =4
-                    ZIndex: =6
 
         RightContainer1 As groupContainer.verticalAutoLayoutContainer:
             DropShadow: =DropShadow.Light
