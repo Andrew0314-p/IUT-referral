@@ -38,13 +38,6 @@
       "Values": {
         "Information": "ce0ba7aa-2c62-4322-986f-88c36abe4e7c"
       }
-    },
-    {
-      "Kind": "default.cds_cr065_siuiutintaketool_forms",
-      "Namespace": "SIU / IUT Intake Tools (Forms)",
-      "Values": {
-        "Information": "72df932e-b5bd-471e-bf0a-9970d445ae95"
-      }
     }
   ]
 }

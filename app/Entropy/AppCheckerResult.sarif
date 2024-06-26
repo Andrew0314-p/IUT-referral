@@ -14,36 +14,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "WorkBankDisclaimer.ScreenContainer3.FooterContainer1.WorkBankContinue.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "WorkBankDisclaimer.ScreenContainer3.FooterContainer1.WorkBankContinue.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "WorkBankDisclaimer",
-                "type": "WorkBankDisclaimer.ScreenContainer3.FooterContainer1.WorkBankContinue"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "NewReferralDisclaimer.ScreenContainer3_1.FooterContainer1_1.WorkBankContinue_1.AccessibleLabel"
                 }
               ],
@@ -488,6 +458,36 @@
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
           "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "WorkBankDisclaimer.ScreenContainer3.FooterContainer1.WorkBankContinue.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "WorkBankDisclaimer.ScreenContainer3.FooterContainer1.WorkBankContinue.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "WorkBankDisclaimer",
+                "type": "WorkBankDisclaimer.ScreenContainer3.FooterContainer1.WorkBankContinue"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 0
         },
         {
           "locations": [
