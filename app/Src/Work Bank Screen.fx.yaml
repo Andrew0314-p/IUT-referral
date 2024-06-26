@@ -475,7 +475,7 @@
                             FieldType: ="d"
                             FieldVariantName: ="textualColumn"
                             Height: =100
-                            Order: =6
+                            Order: =7
                             Width: =0
                             X: =0
                             Y: =0
@@ -511,7 +511,7 @@
                             FieldType: ="d"
                             FieldVariantName: ="textualColumn"
                             Height: =100
-                            Order: =3
+                            Order: =5
                             Width: =0
                             X: =0
                             Y: =0
@@ -535,11 +535,23 @@
                             FieldType: ="d"
                             FieldVariantName: ="textualColumn"
                             Height: =100
-                            Order: =5
+                            Order: =6
                             Width: =0
                             X: =0
                             Y: =0
                             ZIndex: =20
+
+                        "'Policyholder Last Name1' As PowerAppsOneGridTemplate_dataField.textualColumn":
+                            FieldDisplayName: ="Policyholder Last Name"
+                            FieldName: ="cr065__1stpolicyholderlastname"
+                            FieldType: ="s"
+                            FieldVariantName: ="textualColumn"
+                            Height: =100
+                            Order: =3
+                            Width: =0
+                            X: =0
+                            Y: =0
+                            ZIndex: =21
 
                     "'Submission Info Form' As form.PowerApps_CoreControls_Form":
                         BorderColor: =App.Theme.Colors.Darker40
@@ -842,6 +854,10 @@
                         Layout: =Layout.Vertical
                         LayoutMinHeight: =27
                         LayoutMinWidth: =72
+                        OnSelect: |-
+                            =Set(_selectedApprover, ThisItem);
+                            Set(_selectedApproverPhoto, Office365Users.UserPhoto(ThisItem.Id));
+                            Back();
                         ShowScrollbar: =false
                         TemplatePadding: =0
                         TemplateSize: =87
@@ -864,10 +880,10 @@
 
                         iconUser1 As icon.Person:
                             BorderColor: =App.Theme.Colors.Darker40
-                            Color: =RGBA(255, 255, 255, 1)
+                            Color: =RGBA(189, 49, 51, 1)
                             DisabledBorderColor: =RGBA(166, 166, 166, 1)
                             DisabledColor: =RGBA(244, 244, 244, 1)
-                            Fill: =
+                            Fill: =RGBA(255, 255, 255, 1)
                             Height: =ProfileImage1.Height
                             Icon: =Icon.Person
                             OnSelect: =Select(Title3)
@@ -877,6 +893,7 @@
                             PaddingTop: =12
                             PressedFill: =RGBA(255, 255, 255, 0.3)
                             Width: =ProfileImage1.Width
+                            X: =ProfileImage1.X
                             Y: =ProfileImage1.Y
                             ZIndex: =2
 
@@ -888,6 +905,7 @@
                             Image: =If(!IsBlank(ThisItem.Id), Office365Users.UserPhotoV2(ThisItem.Id))
                             OnSelect: =Select(Title3)
                             Width: =UserBrowseGallery1.TemplateHeight - 30
+                            X: =SharedWorkBank.Width * 1/15
                             Y: =(UserBrowseGallery1.TemplateHeight / 2) - (Self.Height/2)
                             ZIndex: =3
 
@@ -905,6 +923,7 @@
                                 Set(_selectedUser, ThisItem),
                                 Reset(EmployeeSearch),
                                 If(Not(ThisItem.UserPrincipalName in MyPeople.UserPrincipalName), Collect(MyPeople, ThisItem)))
+                            PaddingLeft: =ProfileImage1.Width * 1.5
                             Size: =12
                             TabIndex: =0
                             Text: =ThisItem.DisplayName
@@ -921,6 +940,7 @@
                             Font: =App.Theme.Font
                             Height: =Self.Size * 1.8
                             OnSelect: =Select(Title3)
+                            PaddingLeft: =Title3.PaddingLeft
                             Size: =12
                             Text: =ThisItem.UserPrincipalName
                             Width: =Title3.Width
@@ -937,4 +957,51 @@
                             Width: =Parent.TemplateWidth
                             Y: =Parent.TemplateHeight - 1
                             ZIndex: =6
+
+                AssignedContainer As groupContainer.horizontalAutoLayoutContainer:
+                    DropShadow: =DropShadow.Light
+                    FillPortions: =0
+                    Height: =ControlContainer.Height / 2
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =250
+                    LayoutMode: =LayoutMode.Auto
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    X: =40
+                    Y: =40
+                    ZIndex: =3
+
+                    TextCanvas3 As Text:
+                        AlignInContainer: =AlignInContainer.Stretch
+                        DisplayMode: =DisplayMode.Edit
+                        Height: =32
+                        LayoutMinHeight: =32
+                        LayoutMinWidth: =96
+                        PaddingLeft: =5
+                        Text: |-
+                            ="Assigned to: "
+                        Width: =96
+                        X: =0
+                        Y: =0
+                        ZIndex: =1
+
+                    Image3 As image:
+                        AlignInContainer: =AlignInContainer.Start
+                        BorderColor: =App.Theme.Colors.Darker40
+                        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                        DisabledFill: =RGBA(244, 244, 244, 1)
+                        Height: =AssignedContainer.Height
+                        ZIndex: =2
+
+                    Label1 As label:
+                        AlignInContainer: =AlignInContainer.Stretch
+                        BorderColor: =App.Theme.Colors.Darker40
+                        Color: =RGBA(0, 0, 0, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        Font: =App.Theme.Font
+                        Size: =13
+                        Text: ="Text"
+                        ZIndex: =3
 
