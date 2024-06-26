@@ -494,19 +494,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.ViewContainer.DataContainer.UserBrowseGallery1.TabIndex"
+                  "fullyQualifiedName": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.ViewContainer.DataContainer.EmployeeBrowseGallery.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.ViewContainer.DataContainer.UserBrowseGallery1.TabIndex",
+                  "fullyQualifiedName": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.ViewContainer.DataContainer.EmployeeBrowseGallery.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
                 "module": "Work Bank Screen",
-                "type": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.ViewContainer.DataContainer.UserBrowseGallery1"
+                "type": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.ViewContainer.DataContainer.EmployeeBrowseGallery"
               }
             }
           ],
@@ -524,19 +524,49 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.ViewContainer.DataContainer.UserBrowseGallery1.Rectangle2.AccessibleLabel"
+                  "fullyQualifiedName": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.ViewContainer.DataContainer.EmployeeBrowseGallery.Rectangle2.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.ViewContainer.DataContainer.UserBrowseGallery1.Rectangle2.AccessibleLabel",
+                  "fullyQualifiedName": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.ViewContainer.DataContainer.EmployeeBrowseGallery.Rectangle2.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Work Bank Screen",
+                "type": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.ViewContainer.DataContainer.EmployeeBrowseGallery.Rectangle2"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.ViewContainer.DataContainer.EmployeeBrowseGallery.Rectangle2.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.ViewContainer.DataContainer.EmployeeBrowseGallery.Rectangle2.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "Work Bank Screen",
-                "type": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.ViewContainer.DataContainer.UserBrowseGallery1.Rectangle2"
+                "type": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.ViewContainer.DataContainer.EmployeeBrowseGallery.Rectangle2"
               }
             }
           ],
@@ -554,19 +584,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.ViewContainer.DataContainer.UserBrowseGallery1.Rectangle2.TabIndex"
+                  "fullyQualifiedName": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.ViewContainer.DataContainer.EmployeeBrowseGallery.iconUser1.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.ViewContainer.DataContainer.UserBrowseGallery1.Rectangle2.TabIndex",
+                  "fullyQualifiedName": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.ViewContainer.DataContainer.EmployeeBrowseGallery.iconUser1.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
                 "module": "Work Bank Screen",
-                "type": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.ViewContainer.DataContainer.UserBrowseGallery1.Rectangle2"
+                "type": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.ViewContainer.DataContainer.EmployeeBrowseGallery.iconUser1"
               }
             }
           ],
@@ -584,19 +614,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.ViewContainer.DataContainer.UserBrowseGallery1.iconUser1.AccessibleLabel"
+                  "fullyQualifiedName": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.ViewContainer.DataContainer.EmployeeBrowseGallery.iconUser1.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.ViewContainer.DataContainer.UserBrowseGallery1.iconUser1.AccessibleLabel",
+                  "fullyQualifiedName": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.ViewContainer.DataContainer.EmployeeBrowseGallery.iconUser1.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "Work Bank Screen",
-                "type": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.ViewContainer.DataContainer.UserBrowseGallery1.iconUser1"
+                "type": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.ViewContainer.DataContainer.EmployeeBrowseGallery.iconUser1"
               }
             }
           ],
@@ -614,19 +644,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.ViewContainer.DataContainer.UserBrowseGallery1.iconUser1.TabIndex"
+                  "fullyQualifiedName": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.ViewContainer.DataContainer.EmployeeBrowseGallery.ProfileImage1.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.ViewContainer.DataContainer.UserBrowseGallery1.iconUser1.TabIndex",
+                  "fullyQualifiedName": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.ViewContainer.DataContainer.EmployeeBrowseGallery.ProfileImage1.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
                 "module": "Work Bank Screen",
-                "type": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.ViewContainer.DataContainer.UserBrowseGallery1.iconUser1"
+                "type": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.ViewContainer.DataContainer.EmployeeBrowseGallery.ProfileImage1"
               }
             }
           ],
@@ -644,19 +674,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.ViewContainer.DataContainer.UserBrowseGallery1.ProfileImage1.AccessibleLabel"
+                  "fullyQualifiedName": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.ViewContainer.DataContainer.EmployeeBrowseGallery.ProfileImage1.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.ViewContainer.DataContainer.UserBrowseGallery1.ProfileImage1.AccessibleLabel",
+                  "fullyQualifiedName": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.ViewContainer.DataContainer.EmployeeBrowseGallery.ProfileImage1.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "Work Bank Screen",
-                "type": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.ViewContainer.DataContainer.UserBrowseGallery1.ProfileImage1"
+                "type": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.ViewContainer.DataContainer.EmployeeBrowseGallery.ProfileImage1"
               }
             }
           ],
@@ -674,19 +704,18 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.ViewContainer.DataContainer.UserBrowseGallery1.ProfileImage1.TabIndex"
+                  "fullyQualifiedName": "Screen4"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.ViewContainer.DataContainer.UserBrowseGallery1.ProfileImage1.TabIndex",
+                  "fullyQualifiedName": "Screen4",
                   "relativeAddress": 0
                 }
               },
               "properties": {
-                "member": "TabIndex",
-                "module": "Work Bank Screen",
-                "type": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.ViewContainer.DataContainer.UserBrowseGallery1.ProfileImage1"
+                "module": "Screen4",
+                "type": "Screen4"
               }
             }
           ],
@@ -694,10 +723,10 @@
             "id": "issue"
           },
           "properties": {
-            "level": "Medium"
+            "level": "Low"
           },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 1
+          "ruleId": "acc-ReadableScreenNameNeeded",
+          "ruleIndex": 2
         },
         {
           "locations": [
@@ -727,7 +756,7 @@
             "level": "Medium"
           },
           "ruleId": "app-UnusedVariables",
-          "ruleIndex": 2
+          "ruleIndex": 3
         },
         {
           "locations": [
@@ -757,7 +786,7 @@
             "level": "Medium"
           },
           "ruleId": "app-UnusedVariables",
-          "ruleIndex": 2
+          "ruleIndex": 3
         }
       ],
       "tool": {
@@ -797,6 +826,23 @@
                 "level": "Medium",
                 "primaryCategory": "accessibility",
                 "whyFix": "People who use the keyboard with your app will not be able to access this element without a tab stop."
+              }
+            },
+            {
+              "id": "acc-ReadableScreenNameNeeded",
+              "messageStrings": {
+                "issue": {
+                  "text": "Revise screen name"
+                }
+              },
+              "properties": {
+                "componentType": "app",
+                "howToFix": [
+                  "Give the screen  a title that describes what's on the screen or what it's used for."
+                ],
+                "level": "Low",
+                "primaryCategory": "accessibility",
+                "whyFix": "People who are blind, have low vision, or a reading disability rely on screen titles to navigate using the screen reader. "
               }
             },
             {

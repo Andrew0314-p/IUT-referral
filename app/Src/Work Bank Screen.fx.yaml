@@ -420,8 +420,6 @@
 
                 DataContainer As groupContainer.horizontalAutoLayoutContainer:
                     DropShadow: =DropShadow.Light
-                    LayoutMinHeight: =100
-                    LayoutMinWidth: =250
                     LayoutMode: =LayoutMode.Auto
                     RadiusBottomLeft: =4
                     RadiusBottomRight: =4
@@ -430,9 +428,7 @@
                     ZIndex: =2
 
                     PowerBI1 As powerbi:
-                        AlignInContainer: =AlignInContainer.Stretch
                         BorderColor: =App.Theme.Colors.Darker40
-                        FillPortions: =1
                         Visible: =If(reportsMode = true, true, false)
                         ZIndex: =2
 
@@ -442,15 +438,13 @@
                         FillPortions: =1
                         Height: =If(Self.Y + 500 > Parent.Height, Parent.Height - Self.Y, 500)
                         Items: ='Referral Intake Tool Submissions'
-                        LayoutMinHeight: =If(Self.Y + 500 > Parent.Height, Parent.Height - Self.Y, 500)
-                        LayoutMinWidth: =If(Self.X + 800 > Parent.Width, Parent.Width - Self.X, 800)
                         onCellValueChange: =false
                         onFilter: =false
                         onNavigate: =false
                         onRowSelect: =false
                         onSave: =false
                         OnSelect: =false
-                        Visible: =If(sharedWorkBankMode = true, true, false) And If(UserBrowseGallery1.Visible = true, false, true)
+                        Visible: =If(sharedWorkBankMode = true, true, false) And If(EmployeeBrowseGallery.Visible = true, false, true)
                         Width: =If(Self.X + 800 > Parent.Width, Parent.Width - Self.X, 800)
                         X: =0
                         Y: =0
@@ -544,12 +538,10 @@
                         BorderColor: =App.Theme.Colors.Darker40
                         DataSource: ='Referral Intake Tool Submissions'
                         Item: ='Queue Gallery'.Selected
-                        LayoutMinHeight: =250
-                        LayoutMinWidth: =400
                         OnSuccess: |-
                             =UpdateContext({ CurrentItem: Self.LastSubmit })
                         UseFluentV9Cards: =true
-                        Visible: =If(myInTrayMode = true, true, false)
+                        Visible: =If(myInTrayMode = true, true, false) And If(EmployeeBrowseGallery.Visible = true, false, true) 
                         ZIndex: =4
 
                         "'1st - Policyholder First Name_DataCard1' As typedDataCard.fluentV9TextualEditCard":
@@ -831,7 +823,7 @@
                                 Y: =DataCardKey2.Y
                                 ZIndex: =4
 
-                    UserBrowseGallery1 As gallery.PeoplePickerTabletGallery:
+                    EmployeeBrowseGallery As gallery.PeoplePickerTabletGallery:
                         AccessibleLabel: ="User look up search results"
                         BorderColor: =App.Theme.Colors.Darker40
                         Fill: =Parent.Fill
@@ -839,8 +831,6 @@
                         Items: |-
                             =If(!IsBlank(Trim(EmployeeSearch.Text)), Office365Users.SearchUser({searchTerm: Trim(EmployeeSearch.Text), top: 15}))
                         Layout: =Layout.Vertical
-                        LayoutMinHeight: =27
-                        LayoutMinWidth: =72
                         OnSelect: |-
                             =Set(_selectedApprover, ThisItem);
                             Set(_selectedApproverPhoto, Office365Users.UserPhoto(ThisItem.Id));
@@ -848,7 +838,7 @@
                         ShowScrollbar: =false
                         TemplatePadding: =0
                         TemplateSize: =87
-                        Visible: =!IsBlank(Trim(EmployeeSearch.Text)) And sharedWorkBankMode = true
+                        Visible: =!IsBlank(Trim(EmployeeSearch.Text)) And (sharedWorkBankMode = true Or myInTrayMode = true)
                         Width: =Parent.Width
                         Y: =EmployeeSearch.Y + EmployeeSearch.Height
                         ZIndex: =6
@@ -892,9 +882,9 @@
                             Height: =Self.Width
                             Image: =If(!IsBlank(ThisItem.Id), Office365Users.UserPhotoV2(ThisItem.Id))
                             OnSelect: =Select(Title3)
-                            Width: =UserBrowseGallery1.TemplateHeight - 30
+                            Width: =EmployeeBrowseGallery.TemplateHeight - 30
                             X: =SharedWorkBank.Width * 1/15
-                            Y: =(UserBrowseGallery1.TemplateHeight / 2) - (Self.Height/2)
+                            Y: =(EmployeeBrowseGallery.TemplateHeight / 2) - (Self.Height/2)
                             ZIndex: =3
 
                         Title3 As label:
@@ -910,7 +900,7 @@
                             Size: =12
                             TabIndex: =0
                             Text: =ThisItem.DisplayName
-                            Width: =UserBrowseGallery1.TemplateWidth - 232 + ProfileImage1.Width
+                            Width: =EmployeeBrowseGallery.TemplateWidth - 232 + ProfileImage1.Width
                             Wrap: =false
                             X: =1
                             Y: =16
@@ -929,7 +919,7 @@
                             Width: =Title3.Width
                             Wrap: =false
                             X: =Title3.X
-                            Y: =UserBrowseGallery1.TemplateHeight - Self.Height - 20
+                            Y: =EmployeeBrowseGallery.TemplateHeight - Self.Height - 20
                             ZIndex: =5
 
                         Separator3 As rectangle:
@@ -983,7 +973,7 @@
                         DisabledColor: =RGBA(166, 166, 166, 1)
                         Font: =App.Theme.Font
                         Size: =13
-                        Text: =If(!IsBlank(_selectedApprover.DisplayName),_selectedApprover.DisplayName & " (" &_selectedApprover.MailNickname & ")","Select an approver by clicking ""Change""")
+                        Text: =If(!IsBlank(_selectedApprover.DisplayName),_selectedApprover.DisplayName & " (" &_selectedApprover.MailNickname & ")","No Employee Entered")
                         Visible: =If(sharedWorkBankMode = true Or myInTrayMode = true, true, false)
                         Width: =AssignButton.Width * 4
                         ZIndex: =3
