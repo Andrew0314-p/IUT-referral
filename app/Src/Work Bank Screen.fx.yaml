@@ -381,7 +381,6 @@
                         RadiusBottomRight: =4
                         RadiusTopLeft: =4
                         RadiusTopRight: =4
-                        Visible: =If(sharedWorkBankMode = true, true, false)
                         ZIndex: =2
 
                         EmployeeSearch As text:
@@ -393,6 +392,7 @@
                             HoverBorderColor: =Self.Fill
                             HoverFill: =RGBA(0, 0, 0, 0)
                             LayoutMinWidth: =0
+                            Visible: =If(sharedWorkBankMode = true Or myInTrayMode = true, true, false)
                             ZIndex: =1
 
                         SearchIcon_1 As icon.Search:
@@ -402,12 +402,12 @@
                             DisabledColor: =RGBA(244, 244, 244, 1)
                             Height: =SearchInput1.Height
                             Icon: =Icon.Search
-                            OnSelect: |-
-                                =UpdateContext({assignMode: false})
+                            OnSelect: =
                             PaddingBottom: =10
                             PaddingLeft: =10
                             PaddingRight: =10
                             PaddingTop: =10
+                            Visible: =If(sharedWorkBankMode = true Or myInTrayMode = true, true, false)
                             ZIndex: =2
 
                         AssignButton As Button:
@@ -416,10 +416,9 @@
                             Height: =32
                             LayoutMinHeight: =32
                             LayoutMinWidth: =96
-                            OnSelect: |-
-                                =UpdateContext({assignMode: true}); Reset(EmployeeSearch)
+                            OnSelect: =Reset(EmployeeSearch)
                             Text: ="Assign"
-                            Visible: =true
+                            Visible: =If(sharedWorkBankMode = true Or myInTrayMode = true, true, false)
                             Width: =96
                             X: =0
                             Y: =0
@@ -846,7 +845,7 @@
                         ShowScrollbar: =false
                         TemplatePadding: =0
                         TemplateSize: =87
-                        Visible: =!IsBlank(Trim(EmployeeSearch.Text)) And assignMode = true And sharedWorkBankMode = true
+                        Visible: =!IsBlank(Trim(EmployeeSearch.Text)) And sharedWorkBankMode = true
                         Width: =Parent.Width
                         Y: =EmployeeSearch.Y + EmployeeSearch.Height
                         ZIndex: =6
