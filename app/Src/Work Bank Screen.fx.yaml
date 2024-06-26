@@ -383,7 +383,7 @@
                         RadiusTopRight: =4
                         ZIndex: =2
 
-                        SearchInput1_1 As text:
+                        EmployeeSearch As text:
                             BorderStyle: =BorderStyle.None
                             Default: =""
                             FillPortions: =1
@@ -392,6 +392,7 @@
                             HoverBorderColor: =Self.Fill
                             HoverFill: =RGBA(0, 0, 0, 0)
                             LayoutMinWidth: =0
+                            Visible: =If(assignMode = false, false, true)
                             ZIndex: =1
 
                         SearchIcon_1 As icon.Search:
@@ -401,11 +402,29 @@
                             DisabledColor: =RGBA(244, 244, 244, 1)
                             Height: =SearchInput1.Height
                             Icon: =Icon.Search
+                            OnSelect: |-
+                                =UpdateContext({assignMode: false})
                             PaddingBottom: =10
                             PaddingLeft: =10
                             PaddingRight: =10
                             PaddingTop: =10
+                            Visible: =If(assignMode = false, false, true)
                             ZIndex: =2
+
+                        ButtonCanvas2 As Button:
+                            AlignInContainer: =AlignInContainer.Stretch
+                            DisplayMode: =DisplayMode.Edit
+                            Height: =32
+                            LayoutMinHeight: =32
+                            LayoutMinWidth: =96
+                            OnSelect: |-
+                                =UpdateContext({assignMode: true})
+                            Text: ="Assign"
+                            Visible: =If(assignMode = true, false, true)
+                            Width: =96
+                            X: =0
+                            Y: =0
+                            ZIndex: =3
 
                     Seperator As rectangle:
                         AlignInContainer: =AlignInContainer.Stretch
@@ -814,14 +833,109 @@
                                 Y: =DataCardKey2.Y
                                 ZIndex: =4
 
-                    Gallery1 As gallery.galleryHorizontal:
+                    UserBrowseGallery1 As gallery.PeoplePickerTabletGallery:
+                        AccessibleLabel: ="User look up search results"
                         BorderColor: =App.Theme.Colors.Darker40
-                        DelayItemLoading: =true
+                        Fill: =Parent.Fill
+                        Height: =Parent.Height - Self.Y
                         Items: |-
-                            =If(!IsBlank(Trim(SearchInput1_1.Text)),Office365Users.SearchUser({searchTerm:Trim(SearchInput1_1.Text)}))
-                        LayoutMinHeight: =287
-                        LayoutMinWidth: =320
-                        LoadingSpinner: =LoadingSpinner.Data
-                        TemplateSize: =If(Self.Layout = Layout.Horizontal, Min(320, Self.Width - 60), Min(320, Self.Height - 60))
-                        ZIndex: =5
+                            =If(!IsBlank(Trim(EmployeeSearch.Text)), Office365Users.SearchUser({searchTerm: Trim(EmployeeSearch.Text), top: 15}))
+                        Layout: =Layout.Vertical
+                        LayoutMinHeight: =27
+                        LayoutMinWidth: =72
+                        ShowScrollbar: =false
+                        TemplatePadding: =0
+                        TemplateSize: =87
+                        Visible: =!IsBlank(Trim(EmployeeSearch.Text))
+                        Width: =Parent.Width
+                        Y: =TextSearchBox1.Y + TextSearchBox1.Height
+                        ZIndex: =6
+
+                        Rectangle2 As rectangle:
+                            BorderColor: =Title3.Color
+                            BorderThickness: =If(ThisItem.UserPrincipalName in MyPeople.UserPrincipalName, 2, 0)
+                            Fill: =RGBA(0,0,0,0)
+                            Height: =Parent.TemplateHeight - 2*Self.Y
+                            HoverFill: =RGBA(0,0,0,0)
+                            OnSelect: =Select(Title3)
+                            Width: =Parent.TemplateWidth - 2*Self.X
+                            X: =1
+                            Y: =1
+                            ZIndex: =1
+
+                        iconUser1 As icon.Person:
+                            BorderColor: =App.Theme.Colors.Darker40
+                            Color: =RGBA(255, 255, 255, 1)
+                            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                            DisabledColor: =RGBA(244, 244, 244, 1)
+                            Fill: =RectQuickActionBar1.Fill
+                            Height: =ProfileImage1.Height
+                            Icon: =Icon.Person
+                            OnSelect: =Select(Title3)
+                            PaddingBottom: =12
+                            PaddingLeft: =12
+                            PaddingRight: =12
+                            PaddingTop: =12
+                            PressedFill: =RGBA(255, 255, 255, 0.3)
+                            Width: =ProfileImage1.Width
+                            Y: =ProfileImage1.Y
+                            ZIndex: =2
+
+                        ProfileImage1 As image:
+                            BorderColor: =App.Theme.Colors.Darker40
+                            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                            DisabledFill: =RGBA(244, 244, 244, 1)
+                            Height: =Self.Width
+                            Image: =If(!IsBlank(ThisItem.Id), Office365Users.UserPhotoV2(ThisItem.Id))
+                            OnSelect: =Select(Title3)
+                            Width: =UserBrowseGallery1.TemplateHeight - 30
+                            Y: =(UserBrowseGallery1.TemplateHeight / 2) - (Self.Height/2)
+                            ZIndex: =3
+
+                        Title3 As label:
+                            BorderColor: =Self.Color
+                            Color: =RGBA(0, 0, 0, 1)
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            FocusedBorderThickness: =2
+                            Font: =App.Theme.Font
+                            FontWeight: =FontWeight.Semibold
+                            Height: =Self.Size * 1.8
+                            OnSelect: |-
+                                =/*Select user, clear search contents and if this user hasn't been added to MyPeople collection, add them*/
+                                Concurrent(
+                                Set(_selectedUser, ThisItem),
+                                Reset(TextSearchBox1),
+                                If(Not(ThisItem.UserPrincipalName in MyPeople.UserPrincipalName), Collect(MyPeople, ThisItem)))
+                            Size: =12
+                            TabIndex: =0
+                            Text: =ThisItem.DisplayName
+                            Width: =UserBrowseGallery1.TemplateWidth - 232
+                            Wrap: =false
+                            X: =1
+                            Y: =16
+                            ZIndex: =4
+
+                        Subtitle1 As label:
+                            Color: =RGBA(0, 0, 0, 1)
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            FocusedBorderThickness: =2
+                            Font: =App.Theme.Font
+                            Height: =Self.Size * 1.8
+                            OnSelect: =Select(Title3)
+                            Size: =12
+                            Text: =ThisItem.UserPrincipalName
+                            Width: =Title3.Width
+                            Wrap: =false
+                            X: =Title3.X
+                            Y: =UserBrowseGallery1.TemplateHeight - Self.Height - 20
+                            ZIndex: =5
+
+                        Separator3 As rectangle:
+                            BorderColor: =App.Theme.Colors.Darker40
+                            Fill: =App.Theme.Colors.Darker30
+                            Height: =1
+                            OnSelect: =Select(Parent)
+                            Width: =Parent.TemplateWidth
+                            Y: =Parent.TemplateHeight - 1
+                            ZIndex: =6
 

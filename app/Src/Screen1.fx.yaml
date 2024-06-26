@@ -1,0 +1,156 @@
+"Screen1 As screen.'tabletLayout_PeoplePicker_ver3.0'":
+    Fill: =Color.White
+    LoadingSpinnerColor: =App.Theme.Colors.Primary
+
+    RectQuickActionBar1 As rectangle:
+        BorderColor: =App.Theme.Colors.Darker40
+        Fill: =App.Theme.Colors.Primary
+        Height: =64
+        Width: =Parent.Width
+        ZIndex: =1
+
+    LblAppName1 As label:
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Font: =App.Theme.Font
+        Height: =64
+        Size: =18
+        Text: ="People"
+        Width: =Parent.Width - Self.X * 2
+        Wrap: =false
+        X: =32
+        ZIndex: =2
+
+    TextSearchBox1 As text:
+        BorderColor: =App.Theme.Colors.Darker40
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        Color: =RGBA(0, 0, 0, 1)
+        Default: =""
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        FocusedBorderThickness: =4
+        Font: =App.Theme.Font
+        HintText: ="Search"
+        HoverBorderColor: =App.Theme.Colors.Darker40
+        HoverColor: =RGBA(0, 0, 0, 1)
+        HoverFill: =App.Theme.Colors.Lighter70
+        PaddingLeft: =70
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =13
+        Width: =Parent.Width
+        Y: =RectQuickActionBar1.Height
+        ZIndex: =3
+
+    SearchIcon1 As icon.Search:
+        BorderColor: =App.Theme.Colors.Darker40
+        Color: =App.Theme.Colors.Darker30
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(244, 244, 244, 1)
+        Height: =Self.Width
+        Icon: =Icon.Search
+        PaddingBottom: =8
+        PaddingLeft: =8
+        PaddingRight: =8
+        PaddingTop: =8
+        Tooltip: ="Search"
+        Width: =TextSearchBox1.Height
+        X: =24
+        Y: =TextSearchBox1.Y
+        ZIndex: =4
+
+    RectSeparator1 As rectangle:
+        BorderColor: =App.Theme.Colors.Darker40
+        Fill: =App.Theme.Colors.Darker30
+        Height: =1
+        Width: =Parent.Width
+        Y: =TextSearchBox1.Y + TextSearchBox1.Height
+        ZIndex: =5
+
+    PeopleAddedGallery1 As gallery.SelectedUsersTabletGallery:
+        AccessibleLabel: ="User selected people"
+        BorderColor: =App.Theme.Colors.Darker40
+        Height: =Parent.Height - Self.Y
+        Items: =MyPeople
+        Layout: =Layout.Vertical
+        TemplateSize: =47
+        Width: =Parent.Width
+        WrapCount: =4
+        Y: =TextSearchBox1.Y + TextSearchBox1.Height + 8
+        ZIndex: =6
+
+        Rectangle1 As rectangle:
+            BorderColor: =App.Theme.Colors.Darker40
+            Fill: =App.Theme.Colors.Primary
+            Height: =Parent.TemplateHeight
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            ZIndex: =1
+
+        Title1 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =2
+            Font: =App.Theme.Font
+            Height: =PeopleAddedGallery1.TemplateHeight
+            OnSelect: =Set(_selectedUser, ThisItem)
+            PaddingLeft: =10
+            Size: =13
+            TabIndex: =If(UserBrowseGallery1.Visible, -1, 0)
+            Text: =ThisItem.DisplayName
+            Width: =PeopleAddedGallery1.TemplateWidth - iconRemove1.Width + 10
+            Wrap: =false
+            ZIndex: =2
+
+        iconRemove1 As icon.Cancel:
+            AccessibleLabel: =iconRemove1.Tooltip
+            BorderColor: =App.Theme.Colors.Darker40
+            Color: =Title1.Color
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(244, 244, 244, 1)
+            Height: =PeopleAddedGallery1.TemplateHeight
+            Icon: =Icon.Cancel
+            OnSelect: =Remove(MyPeople, LookUp(MyPeople, UserPrincipalName = ThisItem.UserPrincipalName))
+            PaddingBottom: =9
+            PaddingLeft: =9
+            PaddingRight: =9
+            PaddingTop: =9
+            TabIndex: =If(UserBrowseGallery1.Visible, -1, 0)
+            Tooltip: ="Select to remove user from collection"
+            Width: =Self.Height
+            X: =PeopleAddedGallery1.TemplateWidth - Self.Width
+            ZIndex: =3
+
+    iconEmptyState1 As icon.Person:
+        BorderColor: =App.Theme.Colors.Darker40
+        Color: =App.Theme.Colors.Darker30
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(244, 244, 244, 1)
+        DisplayMode: =DisplayMode.View
+        Height: =55
+        Icon: =Icon.Person
+        Visible: =IsEmpty(MyPeople)
+        Width: =55
+        X: =Parent.Width / 2 - Self.Width/2
+        Y: =Parent.Height / 2 - Self.Height / 2 - 100
+        ZIndex: =7
+
+    LblEmptyState1 As label:
+        Align: =Align.Center
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Font: =App.Theme.Font
+        Height: =50
+        Size: =19
+        Text: ="Find users in your organization"
+        Visible: =IsEmpty(MyPeople)
+        Width: =535
+        Wrap: =false
+        X: =Parent.Width / 2 - Self.Width/2
+        Y: =iconEmptyState1.Y + iconEmptyState1.Height + 20
+        ZIndex: =8
+

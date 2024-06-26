@@ -548,36 +548,6 @@
           },
           "ruleId": "app-UnusedVariables",
           "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "WorkBankDisclaimer.sharedWorkBankMode"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "WorkBankDisclaimer.sharedWorkBankMode",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "sharedWorkBankMode",
-                "module": "WorkBankDisclaimer",
-                "type": "WorkBankDisclaimer"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-UnusedVariables",
-          "ruleIndex": 2
         }
       ],
       "tool": {
