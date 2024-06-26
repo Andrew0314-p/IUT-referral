@@ -82,7 +82,7 @@
                 RadiusBottomRight: =8
                 RadiusTopLeft: =8
                 RadiusTopRight: =8
-                Visible: =If(myTeamMode = true Or reportsMode = true, false, true)
+                Visible: =If(myInTrayMode = true, true, false)
                 Width: =WorkBankHeader.Width * (1/4)
                 ZIndex: =1
 
@@ -381,6 +381,7 @@
                         RadiusBottomRight: =4
                         RadiusTopLeft: =4
                         RadiusTopRight: =4
+                        Visible: =If(sharedWorkBankMode = true, true, false)
                         ZIndex: =2
 
                         EmployeeSearch As text:
@@ -392,7 +393,6 @@
                             HoverBorderColor: =Self.Fill
                             HoverFill: =RGBA(0, 0, 0, 0)
                             LayoutMinWidth: =0
-                            Visible: =If(assignMode = false, false, true)
                             ZIndex: =1
 
                         SearchIcon_1 As icon.Search:
@@ -408,19 +408,18 @@
                             PaddingLeft: =10
                             PaddingRight: =10
                             PaddingTop: =10
-                            Visible: =If(assignMode = false, false, true)
                             ZIndex: =2
 
-                        ButtonCanvas2 As Button:
+                        AssignButton As Button:
                             AlignInContainer: =AlignInContainer.Stretch
                             DisplayMode: =DisplayMode.Edit
                             Height: =32
                             LayoutMinHeight: =32
                             LayoutMinWidth: =96
                             OnSelect: |-
-                                =UpdateContext({assignMode: true})
+                                =UpdateContext({assignMode: true}); Reset(EmployeeSearch)
                             Text: ="Assign"
-                            Visible: =If(assignMode = true, false, true)
+                            Visible: =true
                             Width: =96
                             X: =0
                             Y: =0
@@ -465,7 +464,7 @@
                         onRowSelect: =false
                         onSave: =false
                         OnSelect: =false
-                        Visible: =If(sharedWorkBankMode = true, true, false)
+                        Visible: =If(sharedWorkBankMode = true, true, false) And If(UserBrowseGallery1.Visible = true, false, true)
                         Width: =If(Self.X + 800 > Parent.Width, Parent.Width - Self.X, 800)
                         X: =0
                         Y: =0
@@ -560,7 +559,7 @@
                             BorderStyle: =BorderStyle.Solid
                             DataField: ="cr065__1stpolicyholderfirstname"
                             Default: =ThisItem.'Policyholder First Name'
-                            DisplayMode: =Parent.DisplayMode
+                            DisplayMode: =DisplayMode.View
                             DisplayName: =DataSourceInfo([@'Referral Intake Tool Submissions'],DataSourceInfo.DisplayName,cr065__1stpolicyholderfirstname)
                             Fill: =RGBA(0, 0, 0, 0)
                             Height: =70
@@ -630,6 +629,7 @@
                             MaxLength: =DataSourceInfo([@'Referral Intake Tool Submissions'], DataSourceInfo.MaxLength, cr065__1stpolicyholderlastname)
                             Required: =false
                             Update: =DataCardValue11.Value
+                            Visible: =true
                             Width: =327
                             X: =1
                             Y: =0
@@ -846,9 +846,9 @@
                         ShowScrollbar: =false
                         TemplatePadding: =0
                         TemplateSize: =87
-                        Visible: =!IsBlank(Trim(EmployeeSearch.Text))
+                        Visible: =!IsBlank(Trim(EmployeeSearch.Text)) And assignMode = true And sharedWorkBankMode = true
                         Width: =Parent.Width
-                        Y: =TextSearchBox1.Y + TextSearchBox1.Height
+                        Y: =EmployeeSearch.Y + EmployeeSearch.Height
                         ZIndex: =6
 
                         Rectangle2 As rectangle:
@@ -868,7 +868,7 @@
                             Color: =RGBA(255, 255, 255, 1)
                             DisabledBorderColor: =RGBA(166, 166, 166, 1)
                             DisabledColor: =RGBA(244, 244, 244, 1)
-                            Fill: =RectQuickActionBar1.Fill
+                            Fill: =
                             Height: =ProfileImage1.Height
                             Icon: =Icon.Person
                             OnSelect: =Select(Title3)
@@ -904,12 +904,12 @@
                                 =/*Select user, clear search contents and if this user hasn't been added to MyPeople collection, add them*/
                                 Concurrent(
                                 Set(_selectedUser, ThisItem),
-                                Reset(TextSearchBox1),
+                                Reset(EmployeeSearch),
                                 If(Not(ThisItem.UserPrincipalName in MyPeople.UserPrincipalName), Collect(MyPeople, ThisItem)))
                             Size: =12
                             TabIndex: =0
                             Text: =ThisItem.DisplayName
-                            Width: =UserBrowseGallery1.TemplateWidth - 232
+                            Width: =UserBrowseGallery1.TemplateWidth - 232 + ProfileImage1.Width
                             Wrap: =false
                             X: =1
                             Y: =16
