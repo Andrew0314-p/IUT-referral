@@ -108,7 +108,8 @@
                 Height: =WBDHeader.Height / 2
                 LayoutMinHeight: =32
                 LayoutMinWidth: =96
-                OnSelect: =Navigate('Work Bank Screen')
+                OnSelect: |-
+                    =Navigate('Work Bank Screen'); UpdateContext({sharedWorkBankMode: true})
                 Text: ="Continue"
                 Width: =96
                 X: =0
