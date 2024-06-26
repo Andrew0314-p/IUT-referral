@@ -100,7 +100,7 @@
       "zeroalltabindexes": true
     },
     "Author": "",
-    "BindingErrorCount": 14,
+    "BindingErrorCount": 0,
     "ContainsThirdPartyPcfControls": false,
     "DefaultConnectedDataSourceMaxGetRowsCount": 500,
     "DocumentAppType": "DesktopOrTablet",
@@ -137,7 +137,6 @@
     "WorkBankDisclaimer",
     "NewReferralDisclaimer",
     "Work Bank Screen",
-    "Additional Information Screen",
-    "Screen1"
+    "Additional Information Screen"
   ]
 }

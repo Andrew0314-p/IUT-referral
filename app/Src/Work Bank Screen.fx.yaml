@@ -872,7 +872,10 @@
                             Fill: =RGBA(0,0,0,0)
                             Height: =Parent.TemplateHeight - 2*Self.Y
                             HoverFill: =RGBA(0,0,0,0)
-                            OnSelect: =Select(Title3)
+                            OnSelect: |-
+                                =Set(_selectedApprover, ThisItem);
+                                Set(_selectedApproverPhoto, Office365Users.UserPhoto(ThisItem.Id));
+                                Back();
                             Width: =Parent.TemplateWidth - 2*Self.X
                             X: =1
                             Y: =1
@@ -987,21 +990,23 @@
                         Y: =0
                         ZIndex: =1
 
+                    Label1 As label:
+                        AlignInContainer: =AlignInContainer.Stretch
+                        BorderColor: =App.Theme.Colors.Darker40
+                        Color: =RGBA(0, 0, 0, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        FillPortions: =1
+                        Font: =App.Theme.Font
+                        Size: =13
+                        Text: =If(!IsBlank(_selectedApprover.DisplayName),_selectedApprover.DisplayName & " (" &_selectedApprover.MailNickname & ")","Select an approver by clicking ""Change""")
+                        ZIndex: =2
+
                     Image3 As image:
                         AlignInContainer: =AlignInContainer.Start
                         BorderColor: =App.Theme.Colors.Darker40
                         DisabledBorderColor: =RGBA(166, 166, 166, 1)
                         DisabledFill: =RGBA(244, 244, 244, 1)
                         Height: =AssignedContainer.Height
-                        ZIndex: =2
-
-                    Label1 As label:
-                        AlignInContainer: =AlignInContainer.Stretch
-                        BorderColor: =App.Theme.Colors.Darker40
-                        Color: =RGBA(0, 0, 0, 1)
-                        DisabledColor: =RGBA(166, 166, 166, 1)
-                        Font: =App.Theme.Font
-                        Size: =13
-                        Text: ="Text"
+                        Image: =If(!IsBlank(_selectedApproverPhoto),_selectedApproverPhoto)
                         ZIndex: =3
 
