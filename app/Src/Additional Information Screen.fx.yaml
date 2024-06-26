@@ -90,35 +90,45 @@
                     ZIndex: =1
 
                 LinkCanvas1 As Link:
+                    Align: ='LinkCanvas.Align'.Center
                     DisplayMode: =DisplayMode.Edit
-                    Height: =54
+                    Font: =Font.Arial
+                    FontWeight: =FontWeight.Semibold
+                    Height: =92
+                    Text: ="IUT Guide"
+                    URL: |-
+                        ="https://intranet.opr.statefarm.org/departments/pcunderwriting/assets/docs/Investigative_Underwriting_Team.pdf"
                     Width: =398
-                    X: =4
-                    Y: =106
+                    X: =0
+                    Y: =51
                     ZIndex: =2
 
                 LinkCanvas2 As Link:
                     Align: ='LinkCanvas.Align'.Center
                     DisplayMode: =DisplayMode.Edit
+                    Font: =Font.Arial
+                    FontWeight: =FontWeight.Semibold
                     Height: =58
-                    Text: ="Indicators of application fraud (2 of 2)"
+                    Text: ="NICB Indicators of application fraud (2 of 2)"
                     URL: |-
                         ="https://intranet.opr.statefarm.org/afclaimssiu/jobtools/indicators/application_fraud2.pdf"
                     Width: =396
-                    X: =4
-                    Y: =244
+                    X: =6
+                    Y: =183
                     ZIndex: =3
 
                 LinkCanvas3 As Link:
                     Align: ='LinkCanvas.Align'.Center
                     DisplayMode: =DisplayMode.Edit
+                    Font: =Font.Arial
+                    FontWeight: =FontWeight.Semibold
                     Height: =84
-                    Text: ="Indicators of application fraud (1 of 2)"
+                    Text: ="NICB Indicators of application fraud (1 of 2)"
                     URL: |-
                         ="https://intranet.opr.statefarm.org/afclaimssiu/jobtools/indicators/application_fraud1.pdf"
                     VerticalAlign: ='LinkCanvas.VerticalAlign'.Middle
                     Width: =398
                     X: =4
-                    Y: =160
+                    Y: =114
                     ZIndex: =4
 
