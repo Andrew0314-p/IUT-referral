@@ -1170,7 +1170,7 @@
       "MetaDataIDKey": "",
       "Name": "ButtonCanvas2",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 1,
+      "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -3974,7 +3974,7 @@
       "StyleName": "",
       "Type": "ControlInfo"
     },
-    "galleryTemplate2": {
+    "galleryTemplate4": {
       "AllowAccessToGlobals": true,
       "ControlPropertyState": [
         "ItemAccessibleLabel",
@@ -3990,7 +3990,7 @@
       "IsLocked": false,
       "LayoutName": "",
       "MetaDataIDKey": "",
-      "Name": "galleryTemplate2",
+      "Name": "galleryTemplate4",
       "OptimizeForDevices": "Off",
       "ParentIndex": 0,
       "PersistMetaDataIDKey": false,
@@ -7252,7 +7252,9 @@
           "InvariantPropertyName": "PaddingTop",
           "IsLockable": false,
           "NameMapSourceSchema": "?"
-        }
+        },
+        "OnSelect",
+        "Visible"
       ],
       "DynamicProperties": [
         {
@@ -7320,6 +7322,11 @@
       "ParentIndex": 1,
       "PersistMetaDataIDKey": false,
       "Properties": [
+        {
+          "Category": "Design",
+          "PropertyName": "Visible",
+          "RuleProviderType": "Unknown"
+        },
         {
           "Category": "Design",
           "PropertyName": "Y",
@@ -7453,6 +7460,11 @@
         {
           "Category": "Design",
           "PropertyName": "PressedColor",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Behavior",
+          "PropertyName": "OnSelect",
           "RuleProviderType": "Unknown"
         }
       ],
