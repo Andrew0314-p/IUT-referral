@@ -998,3 +998,12 @@
                         Visible: =If(sharedWorkBankMode = true Or myInTrayMode = true, true, false)
                         ZIndex: =4
 
+                    Label1 As label:
+                        BorderColor: =App.Theme.Colors.Darker40
+                        Color: =RGBA(0, 0, 0, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        Font: =App.Theme.Font
+                        Size: =13
+                        Text: =SubmissionTable.Selected.ID
+                        ZIndex: =5
+
