@@ -415,6 +415,7 @@
                         BorderColor: =App.Theme.Colors.Darker40
                         Fill: =App.Theme.Colors.Primary
                         Height: =Seperator_1.Height
+                        Visible: =false
                         ZIndex: =3
 
                 DataContainer As groupContainer.horizontalAutoLayoutContainer:
@@ -853,8 +854,7 @@
                         ZIndex: =6
 
                         Rectangle2 As rectangle:
-                            BorderColor: =Title3.Color
-                            BorderThickness: =If(ThisItem.UserPrincipalName in MyPeople.UserPrincipalName, 2, 0)
+                            BorderColor: =
                             Fill: =RGBA(0,0,0,0)
                             Height: =Parent.TemplateHeight - 2*Self.Y
                             HoverFill: =RGBA(0,0,0,0)
@@ -905,12 +905,7 @@
                             Font: =App.Theme.Font
                             FontWeight: =FontWeight.Semibold
                             Height: =Self.Size * 1.8
-                            OnSelect: |-
-                                =/*Select user, clear search contents and if this user hasn't been added to MyPeople collection, add them*/
-                                Concurrent(
-                                Set(_selectedUser, ThisItem),
-                                Reset(EmployeeSearch),
-                                If(Not(ThisItem.UserPrincipalName in MyPeople.UserPrincipalName), Collect(MyPeople, ThisItem)))
+                            OnSelect: =Select(Parent)
                             PaddingLeft: =ProfileImage1.Width * 1.5
                             Size: =12
                             TabIndex: =0
@@ -927,7 +922,7 @@
                             FocusedBorderThickness: =2
                             Font: =App.Theme.Font
                             Height: =Self.Size * 1.8
-                            OnSelect: =Select(Title3)
+                            OnSelect: =Select(Parent)
                             PaddingLeft: =Title3.PaddingLeft
                             Size: =12
                             Text: =ThisItem.UserPrincipalName
@@ -938,7 +933,8 @@
                             ZIndex: =5
 
                         Separator3 As rectangle:
-                            BorderColor: =App.Theme.Colors.Darker40
+                            BorderColor: =App.Theme.Colors.Primary
+                            BorderThickness: =1
                             Fill: =App.Theme.Colors.Darker30
                             Height: =1
                             OnSelect: =Select(Parent)
