@@ -72,9 +72,9 @@
                 RadiusBottomRight: =4
                 RadiusTopLeft: =4
                 RadiusTopRight: =4
-                Width: =403
-                X: =40
-                Y: =40
+                Width: =387
+                X: =54
+                Y: =54
                 ZIndex: =1
 
                 TextCanvas2 As Text:
@@ -85,8 +85,8 @@
                     Text: ="IUT Additional resources/JobAids"
                     Weight: ='TextCanvas.Weight'.Bold
                     Width: =303
-                    X: =40
-                    Y: =40
+                    X: =52
+                    Y: =28
                     ZIndex: =1
 
                 LinkCanvas1 As Link:
@@ -113,8 +113,8 @@
                     URL: |-
                         ="https://intranet.opr.statefarm.org/afclaimssiu/jobtools/indicators/application_fraud2.pdf"
                     Width: =396
-                    X: =7
-                    Y: =173
+                    X: =6
+                    Y: =185
                     ZIndex: =3
 
                 LinkCanvas3 As Link:
@@ -127,10 +127,21 @@
                     URL: |-
                         ="https://intranet.opr.statefarm.org/afclaimssiu/jobtools/indicators/application_fraud1.pdf"
                     VerticalAlign: ='LinkCanvas.VerticalAlign'.Middle
-                    Width: =398
-                    X: =5
-                    Y: =112
+                    Width: =399
+                    X: =4
+                    Y: =124
                     ZIndex: =4
+
+            Icon1 As icon.Tools:
+                BorderColor: =App.Theme.Colors.Darker40
+                Color: =App.Theme.Colors.Darker30
+                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                DisabledColor: =RGBA(244, 244, 244, 1)
+                Height: =50
+                Icon: =Icon.Tools
+                X: =405
+                Y: =54
+                ZIndex: =2
 
             Container10_1 As groupContainer.manualLayoutContainer:
                 DropShadow: =DropShadow.Light
@@ -140,10 +151,10 @@
                 RadiusBottomRight: =4
                 RadiusTopLeft: =4
                 RadiusTopRight: =4
-                Width: =395
-                X: =492
-                Y: =40
-                ZIndex: =2
+                Width: =407
+                X: =496
+                Y: =54
+                ZIndex: =3
 
                 TextCanvas2_1 As Text:
                     Align: ='TextCanvas.Align'.Center
@@ -199,4 +210,15 @@
                     X: =0
                     Y: =171
                     ZIndex: =4
+
+                Icon1_1 As icon.Tools:
+                    BorderColor: =App.Theme.Colors.Darker40
+                    Color: =App.Theme.Colors.Darker30
+                    DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                    DisabledColor: =RGBA(244, 244, 244, 1)
+                    Height: =52
+                    Icon: =Icon.Tools
+                    X: =331
+                    Y: =16
+                    ZIndex: =5
 
