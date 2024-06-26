@@ -967,6 +967,7 @@
                         OnSelect: |-
                             =Reset(EmployeeSearch);
                             Set(_submittingRequest, true);
+                            Collect(WorkBankCollection, LastN('Referral Intake Tool Submissions', 1))
                         Text: |-
                             =If(sharedWorkBankMode = true, "Assign To: ", "Reassign To: ")
                         Visible: =If(sharedWorkBankMode = true Or myInTrayMode = true, true, false)
