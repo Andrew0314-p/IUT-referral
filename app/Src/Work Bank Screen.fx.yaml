@@ -159,7 +159,7 @@
                     LayoutMinWidth: =320
                     LoadingSpinner: =LoadingSpinner.Data
                     OnSelect: |-
-                        =UpdateContext({ itemSelected: true, CurrentItem: ThisItem })
+                        =UpdateContext({CurrentItem: ThisItem})
                     TemplateFill: =If(ThisItem.IsSelected, RGBA(230, 230, 230, 1), RGBA(0, 0, 0, 0))
                     TemplatePadding: =0
                     TemplateSize: =75
@@ -964,7 +964,9 @@
                         Height: =32
                         LayoutMinHeight: =32
                         LayoutMinWidth: =96
-                        OnSelect: =Reset(EmployeeSearch)
+                        OnSelect: |-
+                            =Reset(EmployeeSearch);
+                            Set(_submittingRequest, true);
                         Text: |-
                             =If(sharedWorkBankMode = true, "Assign To: ", "Reassign To: ")
                         Visible: =If(sharedWorkBankMode = true Or myInTrayMode = true, true, false)

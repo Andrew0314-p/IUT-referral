@@ -704,19 +704,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "'Work Bank Screen'.CurrentItem"
+                  "fullyQualifiedName": "App._submittingRequest"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "'Work Bank Screen'.CurrentItem",
+                  "fullyQualifiedName": "App._submittingRequest",
                   "relativeAddress": 0
                 }
               },
               "properties": {
-                "member": "CurrentItem",
-                "module": "Work Bank Screen",
-                "type": "'Work Bank Screen'"
+                "member": "_submittingRequest",
+                "module": "App",
+                "type": "App"
               }
             }
           ],
@@ -734,17 +734,17 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "'Work Bank Screen'.itemSelected"
+                  "fullyQualifiedName": "'Work Bank Screen'.CurrentItem"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "'Work Bank Screen'.itemSelected",
+                  "fullyQualifiedName": "'Work Bank Screen'.CurrentItem",
                   "relativeAddress": 0
                 }
               },
               "properties": {
-                "member": "itemSelected",
+                "member": "CurrentItem",
                 "module": "Work Bank Screen",
                 "type": "'Work Bank Screen'"
               }
