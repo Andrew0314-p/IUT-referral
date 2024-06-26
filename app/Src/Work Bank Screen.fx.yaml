@@ -957,41 +957,6 @@
                     Y: =40
                     ZIndex: =3
 
-                    TextCanvas3 As Text:
-                        AlignInContainer: =AlignInContainer.Stretch
-                        DisplayMode: =DisplayMode.Edit
-                        Height: =32
-                        LayoutMinHeight: =32
-                        LayoutMinWidth: =96
-                        PaddingLeft: =5
-                        Text: |-
-                            ="Assigned to: "
-                        Width: =96
-                        X: =0
-                        Y: =0
-                        ZIndex: =1
-
-                    Label1 As label:
-                        AlignInContainer: =AlignInContainer.Stretch
-                        BorderColor: =App.Theme.Colors.Darker40
-                        Color: =RGBA(0, 0, 0, 1)
-                        DisabledColor: =RGBA(166, 166, 166, 1)
-                        Font: =App.Theme.Font
-                        Size: =13
-                        Text: =If(!IsBlank(_selectedApprover.DisplayName),_selectedApprover.DisplayName & " (" &_selectedApprover.MailNickname & ")","Select an approver by clicking ""Change""")
-                        Width: =AssignButton.Width * 4
-                        ZIndex: =2
-
-                    Image3 As image:
-                        AlignInContainer: =AlignInContainer.Center
-                        BorderColor: =App.Theme.Colors.Darker40
-                        DisabledBorderColor: =RGBA(166, 166, 166, 1)
-                        DisabledFill: =RGBA(244, 244, 244, 1)
-                        DisplayMode: =DisplayMode.View
-                        Height: =AssignedContainer.Height
-                        Image: =If(!IsBlank(_selectedApproverPhoto),_selectedApproverPhoto)
-                        ZIndex: =3
-
                     AssignButton As Button:
                         AlignInContainer: =AlignInContainer.Stretch
                         DisplayMode: =DisplayMode.Edit
@@ -1000,10 +965,34 @@
                         LayoutMinHeight: =32
                         LayoutMinWidth: =96
                         OnSelect: =Reset(EmployeeSearch)
-                        Text: ="Assign"
+                        Text: |-
+                            ="Assign To:"
                         Visible: =If(sharedWorkBankMode = true Or myInTrayMode = true, true, false)
                         Width: =96
                         X: =0
                         Y: =0
+                        ZIndex: =2
+
+                    AssignLabel As label:
+                        AlignInContainer: =AlignInContainer.Stretch
+                        BorderColor: =App.Theme.Colors.Darker40
+                        Color: =RGBA(0, 0, 0, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        Font: =App.Theme.Font
+                        Size: =13
+                        Text: =If(!IsBlank(_selectedApprover.DisplayName),_selectedApprover.DisplayName & " (" &_selectedApprover.MailNickname & ")","Select an approver by clicking ""Change""")
+                        Visible: =If(sharedWorkBankMode = true Or myInTrayMode = true, true, false)
+                        Width: =AssignButton.Width * 4
+                        ZIndex: =3
+
+                    AssignProfilePicture As image:
+                        AlignInContainer: =AlignInContainer.Center
+                        BorderColor: =App.Theme.Colors.Darker40
+                        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                        DisabledFill: =RGBA(244, 244, 244, 1)
+                        DisplayMode: =DisplayMode.View
+                        Height: =AssignedContainer.Height
+                        Image: =If(!IsBlank(_selectedApproverPhoto),_selectedApproverPhoto)
+                        Visible: =If(sharedWorkBankMode = true Or myInTrayMode = true, true, false)
                         ZIndex: =4
 
