@@ -275,29 +275,16 @@
                     Y: =88
                     ZIndex: =3
 
-                LinkCanvas3_2 As Link:
-                    Align: ='LinkCanvas.Align'.Center
-                    DisplayMode: =DisplayMode.Edit
-                    Font: =Font.Arial
-                    FontWeight: =FontWeight.Semibold
-                    Height: =84
-                    Text: ="TBD"
-                    URL: =
-                    VerticalAlign: ='LinkCanvas.VerticalAlign'.Middle
-                    Width: =392
-                    X: =0
-                    Y: =171
-                    ZIndex: =4
-
-                Icon2 As icon.Link:
+                Image51_1 As image:
                     BorderColor: =App.Theme.Colors.Darker40
-                    Color: =App.Theme.Colors.Darker30
                     DisabledBorderColor: =RGBA(166, 166, 166, 1)
-                    DisabledColor: =RGBA(244, 244, 244, 1)
-                    Icon: =Icon.Link
-                    X: =279
-                    Y: =4
-                    ZIndex: =6
+                    DisabledFill: =RGBA(244, 244, 244, 1)
+                    Height: =80
+                    Image: =Pictogram_Helpful_Links_rgb
+                    ImagePosition: =ImagePosition.Fill
+                    Width: =79
+                    X: =281
+                    ZIndex: =4
 
             ButtonCanvas3 As Button:
                 DisplayMode: =DisplayMode.Edit
