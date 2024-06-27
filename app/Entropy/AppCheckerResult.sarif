@@ -763,6 +763,36 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.ViewContainer.AssignedContainer.ButtonCanvas2.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.ViewContainer.AssignedContainer.ButtonCanvas2.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Work Bank Screen",
+                "type": "'Work Bank Screen'.ScreenContainer1.BottomContainer1.ViewContainer.AssignedContainer.ButtonCanvas2"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "App._submittingRequest"
                 }
               ],

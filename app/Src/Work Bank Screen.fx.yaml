@@ -1567,11 +1567,13 @@
                         Height: =32
                         LayoutMinHeight: =32
                         LayoutMinWidth: =96
-                        OnSelect: |
-                            =Reset(EmployeeSearch);
+                        OnSelect: |-
+                            =Refresh('Referral Intake Tool Submissions');
+                            Reset(EmployeeSearch);
                             Set(_submittingRequest, true);
                             Collect( WorkBankCollection, LastN( Sort('Referral Intake Tool Submissions', 'Created On' ), 1 ) );
                             Patch( First( Sort( 'Referral Intake Tool Submissions', 'Created On' ) ), { 'Assigned To': _selectedApprover.MailNickname } );
+                            Patch('Referral Intake Tool Submissions', LookUp(Sort('Referral Intake Tool Submissions', 'Created On'), ID = 'Queue Gallery'.Selected.ID), { 'Assigned To': _selectedApprover.MailNickname });
                         Text: |-
                             =If(sharedWorkBankMode = true, "Assign To: ", "Reassign To: ")
                         Visible: =If(sharedWorkBankMode = true Or myInTrayMode = true, true, false)
@@ -1611,4 +1613,17 @@
                         Size: =13
                         Text: =SubmissionTable.Selected.ID
                         ZIndex: =5
+
+                    ButtonCanvas2 As Button:
+                        DisplayMode: =DisplayMode.Edit
+                        Height: =32
+                        LayoutMinHeight: =32
+                        LayoutMinWidth: =96
+                        OnSelect: |-
+                            =Patch('Referral Intake Tool Submissions', LookUp(Sort('Referral Intake Tool Submissions', 'Created On'), ID = 'Queue Gallery'.Selected.ID), { 'Assigned To': _selectedApprover.MailNickname });
+                            Refresh('Referral Intake Tool Submissions');
+                        Width: =96
+                        X: =0
+                        Y: =0
+                        ZIndex: =6
 
