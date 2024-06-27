@@ -84,7 +84,7 @@
                 RadiusBottomRight: =8
                 RadiusTopLeft: =8
                 RadiusTopRight: =8
-                Visible: =If(myInTrayMode = true Or sharedWorkBankMode, true, false)
+                Visible: =If(myInTrayMode = true, true, false)
                 Width: =WorkBankHeader.Width * (1/4)
                 ZIndex: =1
 
@@ -572,6 +572,7 @@
                             OnSelect: |-
                                 =Set(_selectedApprover, ThisItem);
                                 Set(_selectedApproverPhoto, Office365Users.UserPhoto(ThisItem.Id));
+                                Reset(EmployeeSearch);
                             Width: =Parent.TemplateWidth - 2*Self.X
                             X: =1
                             Y: =1
