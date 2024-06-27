@@ -253,9 +253,9 @@
                     Font: =Font.Arial
                     FontWeight: =FontWeight.Semibold
                     Height: =92
-                    Text: ="TBD"
+                    Text: ="P&C Underwriting Homepage"
                     URL: |-
-                        ="https://intranet.opr.statefarm.org/afclaimssiu/jobtools/nicb/nicb2.htm"
+                        ="https://intranet.opr.statefarm.org/departments/pcunderwriting/"
                     Width: =392
                     X: =0
                     Y: =113

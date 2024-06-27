@@ -421,6 +421,8 @@
 
                 DataContainer As groupContainer.horizontalAutoLayoutContainer:
                     DropShadow: =DropShadow.Light
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =250
                     LayoutMode: =LayoutMode.Auto
                     RadiusBottomLeft: =4
                     RadiusBottomRight: =4
@@ -441,6 +443,8 @@
                         FillPortions: =1
                         Height: =If(Self.Y + 500 > Parent.Height, Parent.Height - Self.Y, 500)
                         Items: ='Referral Intake Tool Submissions'
+                        LayoutMinHeight: =If(Self.Y + 500 > Parent.Height, Parent.Height - Self.Y, 500)
+                        LayoutMinWidth: =If(Self.X + 800 > Parent.Width, Parent.Width - Self.X, 800)
                         onCellValueChange: =false
                         onFilter: =false
                         onNavigate: =false
@@ -545,6 +549,8 @@
                         Items: |-
                             =If(!IsBlank(Trim(EmployeeSearch.Text)), Office365Users.SearchUser({searchTerm: Trim(EmployeeSearch.Text), top: 15}))
                         Layout: =Layout.Vertical
+                        LayoutMinHeight: =27
+                        LayoutMinWidth: =72
                         OnSelect: |-
                             =Set(_selectedApprover, ThisItem);
                             Set(_selectedApproverPhoto, Office365Users.UserPhoto(ThisItem.Id));
