@@ -166,7 +166,7 @@
                     TemplatePadding: =0
                     TemplateSize: =75
                     Transition: =Transition.Pop
-                    Visible: =If(myInTrayMode = true, true, false)
+                    Visible: =If(myInTrayMode = true, true, false) Or If(CountRows(WorkBankCollection) > 0, true, false)
                     Width: =Parent.Width * (10/11)
                     ZIndex: =3
 
@@ -1571,9 +1571,8 @@
                             =Refresh('Referral Intake Tool Submissions');
                             Reset(EmployeeSearch);
                             Set(_submittingRequest, true);
-                            Collect( WorkBankCollection, LastN( Sort('Referral Intake Tool Submissions', 'Created On' ), 1 ) );
-                            Patch( First( Sort( 'Referral Intake Tool Submissions', 'Created On' ) ), { 'Assigned To': _selectedApprover.MailNickname } );
                             Patch('Referral Intake Tool Submissions', LookUp(Sort('Referral Intake Tool Submissions', 'Created On'), ID = 'Queue Gallery'.Selected.ID), { 'Assigned To': _selectedApprover.MailNickname });
+                            Collect( WorkBankCollection, LastN( Sort('Referral Intake Tool Submissions', 'Created On' ), 1 ) );
                         Text: |-
                             =If(sharedWorkBankMode = true, "Assign To: ", "Reassign To: ")
                         Visible: =If(sharedWorkBankMode = true Or myInTrayMode = true, true, false)
