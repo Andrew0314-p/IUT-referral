@@ -1578,12 +1578,11 @@
                                 LookUp('Referral Intake Tool Submissions', ID = 'Queue Gallery'.Selected.ID),
                                 {
                                     'Assigned To': If(
-                                        IsBlank,
+                                        IsBlank(LookUp('Referral Intake Tool Submissions', ID = 'Queue Gallery'.Selected.ID).'Assigned To'),
                                         _selectedApprover.MailNickname,
-                                        
+                                        LookUp('Referral Intake Tool Submissions', ID = 'Queue Gallery'.Selected.ID).'Assigned To'
                                     )
-                                }
-                            );
+                                
                             
                             ClearCollect(
                                 WorkBankCollection,
