@@ -1,6 +1,8 @@
 "'Work Bank Screen' As screen.'autoLayout_Sidebar_ver1.0'":
     Fill: =Color.White
     LoadingSpinnerColor: =App.Theme.Colors.Primary
+    OnVisible: |-
+        =UpdateContext({sharedWorkBankMode: true, myInTrayMode: false, myTeamMode: false, reportsMode: false})
 
     ScreenContainer1 As groupContainer.verticalAutoLayoutContainer:
         DropShadow: =DropShadow.Light
@@ -153,7 +155,7 @@
                     DelayItemLoading: =true
                     Fill: =RGBA(214, 221, 224, 0.23)
                     Height: =SelectContainer.Height - 'Input Container'.Height - (Seperator_1.Height * 100)
-                    Items: =Filter(WorkBankCollection, 'Referral Search'.Text)
+                    Items: =WorkBankCollection
                     Layout: =Layout.Vertical
                     LayoutMinHeight: =1
                     LayoutMinWidth: =320
@@ -164,7 +166,7 @@
                     TemplatePadding: =0
                     TemplateSize: =75
                     Transition: =Transition.Pop
-                    Visible: =If(myInTrayMode = true, true, false)
+                    Visible: =If(myInTrayMode = true, true, false) Or If(CountRows(WorkBankCollection) > 0, true, false)
                     Width: =Parent.Width * (10/11)
                     ZIndex: =3
 
@@ -1565,11 +1567,22 @@
                         Height: =32
                         LayoutMinHeight: =32
                         LayoutMinWidth: =96
-                        OnSelect: |
-                            =Reset(EmployeeSearch);
+                        OnSelect: |-
+                            =Refresh('Referral Intake Tool Submissions');
+                            Reset(EmployeeSearch);
                             Set(_submittingRequest, true);
-                            Collect( WorkBankCollection, LastN( Sort('Referral Intake Tool Submissions', 'Created On' ), 1 ) );
-                            Patch( First( Sort( 'Referral Intake Tool Submissions', 'Created On' ) ), { 'Assigned To': _selectedApprover.MailNickname } );
+                            Patch('Referral Intake Tool Submissions', 
+                                LookUp(Sort(Filter('Referral Intake Tool Submissions', IsBlank('Assigned To')), 'Created On'), 
+                                    ID = 'Queue Gallery'.Selected.ID), 
+                                { 'Assigned To': _selectedApprover.MailNickname }
+                            );
+                            Collect(WorkBankCollection, 
+                                If(
+                                    IsBlank(First(Sort(Filter('Referral Intake Tool Submissions', IsBlank('Assigned To')), 'Created On'))),
+                                    LastN(Sort(Filter('Referral Intake Tool Submissions', IsBlank('Assigned To')), 'Created On'), 2),
+                                    LastN(Sort(Filter('Referral Intake Tool Submissions', IsBlank('Assigned To')), 'Created On'), 1)
+                                )
+                            );
                         Text: |-
                             =If(sharedWorkBankMode = true, "Assign To: ", "Reassign To: ")
                         Visible: =If(sharedWorkBankMode = true Or myInTrayMode = true, true, false)
@@ -1609,4 +1622,19 @@
                         Size: =13
                         Text: =SubmissionTable.Selected.ID
                         ZIndex: =5
+
+                    ButtonCanvas2 As Button:
+                        AlignInContainer: =AlignInContainer.Stretch
+                        DisplayMode: =DisplayMode.Edit
+                        FillPortions: =1
+                        Height: =32
+                        LayoutMinHeight: =32
+                        LayoutMinWidth: =96
+                        OnSelect: |
+                            =ClearCollect(WorkBankCollection, {})
+                        Text: ="Clear Collection"
+                        Width: =96
+                        X: =0
+                        Y: =0
+                        ZIndex: =6
 
