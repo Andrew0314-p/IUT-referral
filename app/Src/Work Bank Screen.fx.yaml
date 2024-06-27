@@ -1573,7 +1573,7 @@
                             Reset(EmployeeSearch);
                             Set(_submittingRequest, true);
                             
-                            Patch(
+                            /*/Patch(
                                 'Referral Intake Tool Submissions',
                                 LookUp('Referral Intake Tool Submissions', ID = 'Queue Gallery'.Selected.ID),
                                 {
@@ -1592,7 +1592,7 @@
                                 )
                             );
                             
-                            /*/Patch(
+                            Patch(
                                 'Referral Intake Tool Submissions',
                                 LookUp(
                                     Sort(Filter('Referral Intake Tool Submissions', IsBlank('Assigned To')), 'Created On'),
