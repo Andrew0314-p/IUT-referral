@@ -1572,18 +1572,47 @@
                             =Refresh('Referral Intake Tool Submissions');
                             Reset(EmployeeSearch);
                             Set(_submittingRequest, true);
-                            Patch('Referral Intake Tool Submissions', 
-                                LookUp(Sort(Filter('Referral Intake Tool Submissions', IsBlank('Assigned To')), 'Created On'), 
-                                    ID = 'Queue Gallery'.Selected.ID), 
-                                { 'Assigned To': _selectedApprover.MailNickname }
+                            
+                            Patch(
+                                'Referral Intake Tool Submissions',
+                                LookUp('Referral Intake Tool Submissions', ID = 'Queue Gallery'.Selected.ID),
+                                {
+                                    'Assigned To': If(
+                                        IsBlank,
+                                        _selectedApprover.MailNickname,
+                                        
+                                    )
+                                }
                             );
-                            Collect(WorkBankCollection, 
-                                If(
-                                    IsBlank(First(Sort(Filter('Referral Intake Tool Submissions', IsBlank('Assigned To')), 'Created On'))),
-                                    LastN(Sort(Filter('Referral Intake Tool Submissions', IsBlank('Assigned To')), 'Created On'), 2),
-                                    LastN(Sort(Filter('Referral Intake Tool Submissions', IsBlank('Assigned To')), 'Created On'), 1)
+                            
+                            ClearCollect(
+                                WorkBankCollection,
+                                Filter(
+                                    'Referral Intake Tool Submissions',
+                                    IsBlank('Assigned To') || 'Assigned To' = _selectedApprover.MailNickname
                                 )
                             );
+                            
+                            /*/Patch(
+                                'Referral Intake Tool Submissions',
+                                LookUp(
+                                    Sort(Filter('Referral Intake Tool Submissions', IsBlank('Assigned To')), 'Created On'),
+                                    ID = 'Queue Gallery'.Selected.ID
+                                ),
+                                { 'Assigned To': _selectedApprover.MailNickname }
+                            );
+                            
+                            ClearCollect(
+                                WorkBankCollection,
+                                ForAll(
+                                    Sort(Filter('Referral Intake Tool Submissions', IsBlank('Assigned To')), 'Created On'),
+                                    If(
+                                        IsBlank('Assigned To'),
+                                        ThisRecord,
+                                        First(Sort(Filter('Referral Intake Tool Submissions', IsBlank('Assigned To')), 'Created On'))
+                                    )
+                                )
+                            );/*/
                         Text: |-
                             =If(sharedWorkBankMode = true, "Assign To: ", "Reassign To: ")
                         Visible: =If(sharedWorkBankMode = true Or myInTrayMode = true, true, false)
@@ -1621,7 +1650,7 @@
                         DisabledColor: =RGBA(166, 166, 166, 1)
                         Font: =App.Theme.Font
                         Size: =13
-                        Text: =SubmissionTable.Selected.ID
+                        Text: ='Queue Gallery'.Selected.'Assigned To'
                         ZIndex: =5
 
                     ButtonCanvas2 As Button:
