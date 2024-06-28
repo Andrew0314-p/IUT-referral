@@ -465,7 +465,7 @@
                             FieldType: ="d"
                             FieldVariantName: ="textualColumn"
                             Height: =100
-                            Order: =7
+                            Order: =8
                             Width: =0
                             X: =0
                             Y: =0
@@ -513,7 +513,7 @@
                             FieldType: ="d"
                             FieldVariantName: ="textualColumn"
                             Height: =100
-                            Order: =5
+                            Order: =6
                             Width: =0
                             X: =0
                             Y: =0
@@ -525,7 +525,7 @@
                             FieldType: ="d"
                             FieldVariantName: ="textualColumn"
                             Height: =100
-                            Order: =6
+                            Order: =7
                             Width: =0
                             X: =0
                             Y: =0
@@ -542,6 +542,18 @@
                             X: =0
                             Y: =0
                             ZIndex: =21
+
+                        "'Assigned To1' As PowerAppsOneGridTemplate_dataField.textualColumn":
+                            FieldDisplayName: ="Assigned To"
+                            FieldName: ="cr065_assignedto"
+                            FieldType: ="s"
+                            FieldVariantName: ="textualColumn"
+                            Height: =100
+                            Order: =5
+                            Width: =0
+                            X: =0
+                            Y: =0
+                            ZIndex: =22
 
                     EmployeeBrowseGallery As gallery.PeoplePickerTabletGallery:
                         AccessibleLabel: ="User look up search results"
@@ -1575,8 +1587,8 @@
                             Set(_submittingRequest, true);
                             
                             UpdateContext({ 
-                                oldestRecord: First(Sort(Filter('Referral Intake Tool Submissions', IsBlank('Assigned To')), 'Created On'))
-                                //clickedCount: 0
+                                oldestRecord: First(Sort(Filter('Referral Intake Tool Submissions', IsBlank('Assigned To')), 'Created On')),
+                                clickedCount: CountRows(WorkBankCollection)
                             });
                             
                             If(
@@ -1591,18 +1603,12 @@
                                 UpdateContext({ clickedCount: clickedCount + 1 });
                                 Collect(
                                     WorkBankCollection,
-                                    FirstN(
-                                        Filter(
-                                            'Referral Intake Tool Submissions',
-                                            'Assigned To' = _selectedApprover.MailNickname
-                                        ),
-                                        clickedCount + 1
+                                    Filter(
+                                        'Referral Intake Tool Submissions',
+                                        'Assigned To' = _selectedApprover.MailNickname && 'Completion Time' > Last(WorkBankCollection).'Completion Time'
                                     )
                                 )
-                            );
-                            
-                            Refresh('Referral Intake Tool Submissions')
-                            
+                            )
                             /*/Patch(
                                 'Referral Intake Tool Submissions',
                                 LookUp(
