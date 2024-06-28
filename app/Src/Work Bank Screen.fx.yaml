@@ -1599,7 +1599,9 @@
                                         clickedCount + 1
                                     )
                                 )
-                            )
+                            );
+                            
+                            Refresh('Referral Intake Tool Submissions')
                             
                             /*/Patch(
                                 'Referral Intake Tool Submissions',
@@ -1668,8 +1670,7 @@
                         Height: =32
                         LayoutMinHeight: =32
                         LayoutMinWidth: =96
-                        OnSelect: |
-                            =ClearCollect(WorkBankCollection, {})
+                        OnSelect: =ClearCollect(WorkBankCollection, {});
                         Text: ="Clear Collection"
                         Width: =96
                         X: =0
