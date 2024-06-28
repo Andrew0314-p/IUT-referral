@@ -574,7 +574,6 @@
                                 Set(_selectedApproverPhoto, Office365Users.UserPhoto(ThisItem.Id));
                                 Reset(EmployeeSearch);
                             Width: =Parent.TemplateWidth - 2*Self.X
-                            X: =1
                             Y: =1
                             ZIndex: =1
 
@@ -610,22 +609,24 @@
                             ZIndex: =3
 
                         Title3 As label:
-                            BorderColor: =Self.Color
+                            BorderColor: =
                             Color: =RGBA(0, 0, 0, 1)
                             DisabledColor: =RGBA(166, 166, 166, 1)
                             FocusedBorderThickness: =2
                             Font: =App.Theme.Font
                             FontWeight: =FontWeight.Semibold
                             Height: =Self.Size * 1.8
-                            OnSelect: =Select(Parent)
-                            PaddingLeft: =ProfileImage1.Width * 1.5
+                            HoverColor: =
+                            OnSelect: =
+                            PaddingLeft: |
+                                =5
                             Size: =12
                             TabIndex: =0
                             Text: =ThisItem.DisplayName
                             Width: =EmployeeBrowseGallery.TemplateWidth - 232 + ProfileImage1.Width
                             Wrap: =false
-                            X: =1
-                            Y: =16
+                            X: =71
+                            Y: =15
                             ZIndex: =4
 
                         Subtitle1 As label:
@@ -1573,7 +1574,10 @@
                             Reset(EmployeeSearch);
                             Set(_submittingRequest, true);
                             
-                            UpdateContext({ oldestRecord: First(Sort(Filter('Referral Intake Tool Submissions', IsBlank('Assigned To')), 'Created On')) });
+                            UpdateContext({ 
+                                oldestRecord: First(Sort(Filter('Referral Intake Tool Submissions', IsBlank('Assigned To')), 'Created On')),
+                                clickedCount: 0
+                            });
                             
                             If(
                                 IsBlank(oldestRecord),
@@ -1584,13 +1588,15 @@
                                     { 'Assigned To': _selectedApprover.MailNickname }
                                 );
                             
+                                UpdateContext({ clickedCount: clickedCount + 1 });
                                 Collect(
                                     WorkBankCollection,
-                                    First(
+                                    FirstN(
                                         Filter(
                                             'Referral Intake Tool Submissions',
-                                            'Assigned To' = _selectedApprover.MailNickname && CreatedOn = oldestRecord.'CreatedOn'
-                                        )
+                                            'Assigned To' = _selectedApprover.MailNickname
+                                        ),
+                                        clickedCount + 1
                                     )
                                 )
                             )
