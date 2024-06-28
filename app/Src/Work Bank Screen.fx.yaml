@@ -1573,26 +1573,29 @@
                             Reset(EmployeeSearch);
                             Set(_submittingRequest, true);
                             
-                            /*/Patch(
-                                'Referral Intake Tool Submissions',
-                                LookUp('Referral Intake Tool Submissions', ID = 'Queue Gallery'.Selected.ID),
-                                {
-                                    'Assigned To': If(
-                                        IsBlank(LookUp('Referral Intake Tool Submissions', ID = 'Queue Gallery'.Selected.ID).'Assigned To'),
-                                        _selectedApprover.MailNickname,
-                                        LookUp('Referral Intake Tool Submissions', ID = 'Queue Gallery'.Selected.ID).'Assigned To'
-                                    )
-                                
+                            UpdateContext({ oldestRecord: First(Sort(Filter('Referral Intake Tool Submissions', IsBlank('Assigned To')), 'Created On')) });
                             
-                            ClearCollect(
-                                WorkBankCollection,
-                                Filter(
+                            If(
+                                IsBlank(oldestRecord),
+                                Notify("No record found without a value in 'Assigned To' field.", NotificationType.Error),
+                                Patch(
                                     'Referral Intake Tool Submissions',
-                                    IsBlank('Assigned To') || 'Assigned To' = _selectedApprover.MailNickname
-                                )
-                            );
+                                    oldestRecord,
+                                    { 'Assigned To': _selectedApprover.MailNickname }
+                                );
                             
-                            Patch(
+                                Collect(
+                                    WorkBankCollection,
+                                    First(
+                                        Filter(
+                                            'Referral Intake Tool Submissions',
+                                            'Assigned To' = _selectedApprover.MailNickname && CreatedOn = oldestRecord.'CreatedOn'
+                                        )
+                                    )
+                                )
+                            )
+                            
+                            /*/Patch(
                                 'Referral Intake Tool Submissions',
                                 LookUp(
                                     Sort(Filter('Referral Intake Tool Submissions', IsBlank('Assigned To')), 'Created On'),
