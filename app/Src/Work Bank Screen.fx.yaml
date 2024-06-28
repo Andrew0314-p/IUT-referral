@@ -2,7 +2,7 @@
     Fill: =Color.White
     LoadingSpinnerColor: =App.Theme.Colors.Primary
     OnVisible: |-
-        =UpdateContext({sharedWorkBankMode: true, myInTrayMode: false, myTeamMode: false, reportsMode: false})
+        =UpdateContext({sharedWorkBankMode: true, myInTrayMode: false, myTeamMode: false, reportsMode: false,clickedCount: 0})
 
     ScreenContainer1 As groupContainer.verticalAutoLayoutContainer:
         DropShadow: =DropShadow.Light
@@ -896,7 +896,7 @@
                             BorderStyle: =BorderStyle.Solid
                             DataField: ="cr065__1stpolicyholderphonenumber"
                             Default: =ThisItem.'Policyholder Phone Number'
-                            DisplayMode: =Parent.DisplayMode
+                            DisplayMode: =DisplayMode.View
                             DisplayName: =DataSourceInfo([@'Referral Intake Tool Submissions'],DataSourceInfo.DisplayName,cr065__1stpolicyholderphonenumber)
                             Fill: =RGBA(0, 0, 0, 0)
                             Height: =70
@@ -1575,8 +1575,8 @@
                             Set(_submittingRequest, true);
                             
                             UpdateContext({ 
-                                oldestRecord: First(Sort(Filter('Referral Intake Tool Submissions', IsBlank('Assigned To')), 'Created On')),
-                                clickedCount: 0
+                                oldestRecord: First(Sort(Filter('Referral Intake Tool Submissions', IsBlank('Assigned To')), 'Created On'))
+                                //clickedCount: 0
                             });
                             
                             If(
