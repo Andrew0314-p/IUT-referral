@@ -463,6 +463,7 @@
                             ZIndex: =4
 
                         ButtonCanvas1 As Button:
+                            AccessibleLabel: =
                             Align: =Align.Justify
                             AlignInContainer: =AlignInContainer.Stretch
                             Appearance: ='ButtonCanvas.Appearance'.Secondary
@@ -800,7 +801,7 @@
                         LoadingSpinner: =LoadingSpinner.Data
                         TemplatePadding: =0
                         TemplateSize: =Min(440, Self.Height - 60)
-                        Visible: =If(myInTrayMode = true, true, false)
+                        Visible: =If(myInTrayMode = true, true, false) And If(EmployeeBrowseGallery.Visible = true, false, true)
                         ZIndex: =7
 
                         Title11 As label:
@@ -1062,7 +1063,9 @@
                         Height: =32
                         LayoutMinHeight: =32
                         LayoutMinWidth: =96
-                        OnSelect: =ClearCollect(WorkBankCollection, {});
+                        OnSelect: |-
+                            =ClearCollect(WorkBankCollection, {});
+                            ClearCollect(ItemValues, {});
                         Text: ="Clear Collection"
                         Width: =96
                         X: =0
