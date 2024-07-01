@@ -109,7 +109,8 @@
                 LayoutMinHeight: =32
                 LayoutMinWidth: =96
                 OnSelect: |-
-                    =Launch("https://forms.office.com/Pages/ResponsePage.aspx?id=Lpgj-kZmM0qlxBqEjQL8xAuQ8IZrKVlEhWxplrcGWV5UQUFXVllVN1dKTTlVQ1lRSEdXSjU0TkZJNy4u")
+                    =Launch("https://forms.office.com/Pages/ResponsePage.aspx?id=Lpgj-kZmM0qlxBqEjQL8xAuQ8IZrKVlEhWxplrcGWV5UQUFXVllVN1dKTTlVQ1lRSEdXSjU0TkZJNy4u");
+                    Navigate('Home Screen');
                 Text: ="Continue"
                 Width: =96
                 X: =0

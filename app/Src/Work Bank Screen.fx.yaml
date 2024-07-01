@@ -903,6 +903,70 @@
                                 Y: =DataCardKey14.Y
                                 ZIndex: =4
 
+                        "'Reporter Role_DataCard1' As typedDataCard.fluentV9TextualEditCard":
+                            BorderColor: =App.Theme.Colors.Darker40
+                            BorderStyle: =BorderStyle.Solid
+                            DataField: ="cr065_reporterrole"
+                            Default: =ThisItem.'Reporter Role'
+                            DisplayMode: =Parent.DisplayMode
+                            DisplayName: =DataSourceInfo([@'Referral Intake Tool Submissions'],DataSourceInfo.DisplayName,cr065_reporterrole)
+                            Fill: =RGBA(0, 0, 0, 0)
+                            Height: =70
+                            MaxLength: =DataSourceInfo([@'Referral Intake Tool Submissions'], DataSourceInfo.MaxLength, cr065_reporterrole)
+                            Required: =false
+                            Update: =DataCardValue14.Value
+                            Visible: =true
+                            Width: =327
+                            X: =2
+                            Y: =4
+                            ZIndex: =1
+
+                            DataCardKey15 As Text:
+                                DisplayMode: =DisplayMode.Edit
+                                Height: =22
+                                Text: =Parent.DisplayName
+                                Weight: ='TextCanvas.Weight'.Semibold
+                                Width: =Parent.Width - 48
+                                Wrap: =false
+                                X: =24
+                                Y: =10
+                                ZIndex: =1
+
+                            "DataCardValue14 As 'Text input'":
+                                AccessibleLabel: =Parent.DisplayName
+                                DisplayMode: =DisplayMode.View
+                                Height: =32
+                                Mode: ="'TextInputCanvas.Mode'.TextInputModeSingleLine"
+                                Required: =Parent.Required
+                                ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
+                                Value: =Parent.Default
+                                Width: =Parent.Width - 48
+                                X: =24
+                                Y: =DataCardKey15.Y + DataCardKey15.Height + 4
+                                ZIndex: =2
+
+                            ErrorMessage14 As Text:
+                                DisplayMode: =DisplayMode.Edit
+                                Height: =30
+                                Text: =Parent.Error
+                                Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                                Width: =Parent.Width - 48
+                                Wrap: =true
+                                X: =24
+                                Y: =DataCardValue14.Y + DataCardValue14.Height
+                                ZIndex: =3
+
+                            StarVisible14 As Text:
+                                Align: ='TextCanvas.Align'.Center
+                                DisplayMode: =DisplayMode.Edit
+                                Height: =30
+                                Text: ="*"
+                                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                Width: =30
+                                X: =0
+                                Y: =DataCardKey15.Y
+                                ZIndex: =4
+
                         "'Policyholder Phone Number_DataCard1' As typedDataCard.fluentV9TextualEditCard":
                             BorderColor: =App.Theme.Colors.Darker40
                             BorderStyle: =BorderStyle.Solid
