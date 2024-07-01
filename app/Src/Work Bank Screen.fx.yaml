@@ -1666,12 +1666,17 @@
                             
                                 UpdateContext({ clickedCount: clickedCount + 1 });
                                 Collect(
-                                    WorkBankCollection,
-                                    Filter(
-                                        'Referral Intake Tool Submissions',
-                                        'Assigned To' = _selectedApprover.MailNickname && 'Completion Time' > Last(WorkBankCollection).'Completion Time'
+                                WorkBankCollection,
+                                First(
+                                    Sort(
+                                        Filter(
+                                            'Referral Intake Tool Submissions',
+                                            'Assigned To' <> Blank() && 'Created On' > Last(WorkBankCollection).'Created On'
+                                        ),
+                                        'Created On'
                                     )
                                 )
+                            );
                             );
                             
                             /*/Patch(
