@@ -1741,6 +1741,26 @@
                         Height: =32
                         LayoutMinHeight: =32
                         LayoutMinWidth: =96
+                        OnSelect: |-
+                            =Refresh('Referral Intake Tool Submissions');
+                            
+                            UpdateContext({ 
+                                oldestRecord: First(Sort(Filter('Referral Intake Tool Submissions', !IsBlank('Assigned To')), 'Created On')),
+                                clickedCount: CountRows(WorkBankCollection)
+                            });
+                            
+                            If(
+                                IsBlank(oldestRecord),
+                                Notify("No cases have been assigned.", NotificationType.Error),
+                                Patch(
+                                    'Referral Intake Tool Submissions',
+                                    oldestRecord,
+                                    { 'Assigned To': Blank() }
+                                );
+                            
+                                UpdateContext({ clickedCount: clickedCount + 1 })
+                            )
+                        Text: ="Remove Assigned"
                         Width: =96
                         X: =0
                         Y: =0
