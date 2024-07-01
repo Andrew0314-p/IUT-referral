@@ -800,6 +800,7 @@
                         LoadingSpinner: =LoadingSpinner.Data
                         TemplatePadding: =0
                         TemplateSize: =Min(440, Self.Height - 60)
+                        Visible: =If(myInTrayMode = true, true, false)
                         ZIndex: =7
 
                         Title11 As label:
