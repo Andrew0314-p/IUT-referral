@@ -444,7 +444,7 @@
                         DisplayMode: =DisplayMode.Edit
                         FillPortions: =1
                         Height: =If(Self.Y + 500 > Parent.Height, Parent.Height - Self.Y, 500)
-                        Items: ='Referral Intake Tool Submissions'
+                        Items: =Sort('Referral Intake Tool Submissions', ID, If(SortOrder = SortOrder.Ascending, SortOrder.Descending, SortOrder.Ascending))
                         LayoutMinHeight: =If(Self.Y + 500 > Parent.Height, Parent.Height - Self.Y, 500)
                         LayoutMinWidth: =If(Self.X + 800 > Parent.Width, Parent.Width - Self.X, 800)
                         onCellValueChange: =false
@@ -1672,7 +1672,8 @@
                                         'Assigned To' = _selectedApprover.MailNickname && 'Completion Time' > Last(WorkBankCollection).'Completion Time'
                                     )
                                 )
-                            )
+                            );
+                            
                             /*/Patch(
                                 'Referral Intake Tool Submissions',
                                 LookUp(
@@ -1699,7 +1700,7 @@
                         Width: =110
                         X: =0
                         Y: =0
-                        ZIndex: =2
+                        ZIndex: =1
 
                     AssignLabel As label:
                         AlignInContainer: =AlignInContainer.Stretch
@@ -1711,7 +1712,7 @@
                         Text: =If(!IsBlank(_selectedApprover.DisplayName),_selectedApprover.DisplayName & " (" &_selectedApprover.MailNickname & ")","No Employee Entered")
                         Visible: =If(sharedWorkBankMode = true Or myInTrayMode = true, true, false)
                         Width: =AssignButton.Width * 4
-                        ZIndex: =3
+                        ZIndex: =2
 
                     AssignProfilePicture As image:
                         AlignInContainer: =AlignInContainer.Center
@@ -1722,7 +1723,7 @@
                         Height: =AssignedContainer.Height
                         Image: =If(!IsBlank(_selectedApproverPhoto),_selectedApproverPhoto)
                         Visible: =If(sharedWorkBankMode = true Or myInTrayMode = true, true, false)
-                        ZIndex: =4
+                        ZIndex: =3
 
                     Label1 As label:
                         BorderColor: =App.Theme.Colors.Darker40
@@ -1731,6 +1732,18 @@
                         Font: =App.Theme.Font
                         Size: =13
                         Text: ='Queue Gallery'.Selected.'Assigned To'
+                        ZIndex: =4
+
+                    ButtonCanvas4 As Button:
+                        AlignInContainer: =AlignInContainer.Stretch
+                        DisplayMode: =DisplayMode.Edit
+                        FillPortions: =1
+                        Height: =32
+                        LayoutMinHeight: =32
+                        LayoutMinWidth: =96
+                        Width: =96
+                        X: =0
+                        Y: =0
                         ZIndex: =5
 
                     ButtonCanvas2 As Button:
