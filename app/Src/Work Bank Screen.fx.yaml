@@ -747,7 +747,7 @@
                         RadiusBottomRight: =4
                         RadiusTopLeft: =4
                         RadiusTopRight: =4
-                        Visible: =If(myInTrayMode = true, true, false)
+                        Visible: =If(myInTrayMode = true, true, false)  And If(EmployeeBrowseGallery.Visible = true, false, true)
                         ZIndex: =7
 
                         "Gallery1 As gallery.'BrowseLayout_Vertical_OneTextVariant_ver5.0'":
@@ -1011,8 +1011,10 @@
                                 Width: =4
                                 ZIndex: =4
 
-                Container1 As groupContainer.verticalAutoLayoutContainer:
+                AssignContainer As groupContainer.verticalAutoLayoutContainer:
                     DropShadow: =DropShadow.Light
+                    FillPortions: =0
+                    Height: =AssignedInfoContainer.Height
                     LayoutDirection: =LayoutDirection.Vertical
                     LayoutMinHeight: =100
                     LayoutMinWidth: =250
@@ -1079,6 +1081,7 @@
                         ZIndex: =2
 
                         AssignButton As Button:
+                            AlignInContainer: =AlignInContainer.Stretch
                             DisplayMode: =DisplayMode.Edit
                             Height: =32
                             LayoutMinHeight: =32
@@ -1207,6 +1210,7 @@
                             ZIndex: =3
 
                         ChangeEmployee As Button:
+                            AlignInContainer: =AlignInContainer.Stretch
                             Appearance: ='ButtonCanvas.Appearance'.Secondary
                             BorderStyle: =BorderStyle.None
                             BorderThickness: =
@@ -1226,6 +1230,7 @@
                             ZIndex: =4
 
                         RemoveAssigned As Button:
+                            AlignInContainer: =AlignInContainer.Stretch
                             Appearance: ='ButtonCanvas.Appearance'.Secondary
                             BorderStyle: =BorderStyle.None
                             DisplayMode: =DisplayMode.Edit
@@ -1256,6 +1261,7 @@
                             ZIndex: =5
 
                         ClearCollection As Button:
+                            AlignInContainer: =AlignInContainer.Stretch
                             Appearance: ='ButtonCanvas.Appearance'.Secondary
                             BorderStyle: =BorderStyle.None
                             DisplayMode: =DisplayMode.Edit
