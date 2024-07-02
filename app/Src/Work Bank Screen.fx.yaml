@@ -158,6 +158,7 @@
                     Items: =WorkBankCollection
                     Layout: =Layout.Vertical
                     LayoutMinHeight: =1
+                    LayoutMinWidth: =320
                     LoadingSpinner: =LoadingSpinner.Data
                     OnSelect: |
                         =UpdateContext({CurrentItem: ThisItem});
@@ -166,7 +167,7 @@
                         ClearCollect(
                             ItemValues,
                             {
-                                'ID':ThisItem.ID,
+                                ID:ThisItem.ID,
                                 'Assigned To':ThisItem.'Assigned To',
                                 '1stPolicyholderFirstName': ThisItem.'1st - Policyholder First Name',
                                 '1stPolicyholderLastName': ThisItem.'1st - Policyholder Last Name',
@@ -192,11 +193,11 @@
                                 '1stAutoBusinessStateCode': ThisItem.'1st Auto Business - State Code',
                                 '1stAutoBusinessName': ThisItem.'1st Auto - Business Name',
                                 '1stAutoPersonalStateCode': ThisItem.'1st Auto Personal - State Code',
-                                'IsThereASecondPolicy': ThisItem.'Is there a second Policy?',
+                                IsThereASecondPolicy: ThisItem.'Is there a second Policy?',
                                 '2ndPolicyNumber': ThisItem.'2nd Policy Number',
                                 '2ndClaimNumber': ThisItem.'2nd Claim Number',
                                 '2ndDateOfLoss': ThisItem.'2nd Date of Loss',
-                                'MultiplePolicy2ndPolicyType': ThisItem.'Multiple Policy - 2nd Policy Type',
+                                MultiplePolicy2ndPolicyType: ThisItem.'Multiple Policy - 2nd Policy Type',
                                 '2ndFireStreet': ThisItem.'2nd Fire - Street',
                                 '2ndFireCity': ThisItem.'2nd Fire - City',
                                 '2ndFireState': ThisItem.'2nd Fire - State',
@@ -214,11 +215,11 @@
                                 '2ndAutoBusinessStateCode': ThisItem.'2nd Auto Business - State Code',
                                 '2ndAutoBusinessName': ThisItem.'2nd Auto - Business Name',
                                 '2ndAutoPersonalStateCode': ThisItem.'2nd Auto Personal - State Code',
-                                'IsThereAThirdPolicy': ThisItem.'Is there a 3rd Policy?',
+                                IsThereAThirdPolicy: ThisItem.'Is there a 3rd Policy?',
                                 '3rdPolicyNumber': ThisItem.'3rd - Policy Number',
                                 '3rdClaimNumber': ThisItem.'3rd - Claim Number',
                                 '3rdDateOfLoss': ThisItem.'3rd Date of Loss',
-                                'MultiplePolicy3rdPolicyType': ThisItem.'Multiple Policy - 3rd Policy Type',
+                                MultiplePolicy3rdPolicyType: ThisItem.'Multiple Policy - 3rd Policy Type',
                                 '3rdFireStreet': ThisItem.'3rd Fire - Street',
                                 '3rdFireCity': ThisItem.'3rd Fire - City',
                                 '3rdFireState': ThisItem.'3rd Fire - State',
@@ -236,8 +237,8 @@
                                 '3rdAutoBusinessStateCode': ThisItem.'3rd Auto Business - State Code',
                                 '3rdAutoBusinessName': ThisItem.'3rd Auto - Business Name',
                                 '3rdAutoPersonalStateCode': ThisItem.'3rd Auto Personal - State Code',
-                                'Details': ThisItem.'Details',
-                                'OthersInvolved': ThisItem.'Others Involved'
+                                Details: ThisItem.Details,
+                                OthersInvolved: ThisItem.'Others Involved'
                             }
                         )
                     TemplateFill: =If(ThisItem.IsSelected, RGBA(230, 230, 230, 1), RGBA(0, 0, 0, 0))
@@ -395,6 +396,7 @@
                             AlignInContainer: =AlignInContainer.Stretch
                             Appearance: =If(sharedWorkBankMode = true, 'ButtonCanvas.Appearance'.Primary, 'ButtonCanvas.Appearance'.Secondary)
                             BasePaletteColor: =
+                            BorderStyle: =""
                             DisplayMode: =DisplayMode.Edit
                             FillPortions: =1
                             FontColor: |
@@ -414,6 +416,7 @@
                         MyInTray As Button:
                             AlignInContainer: =AlignInContainer.Stretch
                             Appearance: =If(myInTrayMode = true, 'ButtonCanvas.Appearance'.Primary, 'ButtonCanvas.Appearance'.Secondary)
+                            BorderStyle: =""
                             DisplayMode: =DisplayMode.Edit
                             FillPortions: =1
                             FontColor: =If(myInTrayMode = false,RGBA(189, 49, 51, 1), RGBA(255, 255, 255, 1))
@@ -431,6 +434,7 @@
                         MyTeam As Button:
                             AlignInContainer: =AlignInContainer.Stretch
                             Appearance: =If(myTeamMode = true, 'ButtonCanvas.Appearance'.Primary, 'ButtonCanvas.Appearance'.Secondary)
+                            BorderStyle: =""
                             DisplayMode: =DisplayMode.Edit
                             FillPortions: =1
                             FontColor: =If(myTeamMode = false,RGBA(189, 49, 51, 1), RGBA(255, 255, 255, 1))
@@ -448,6 +452,7 @@
                         Reports As Button:
                             AlignInContainer: =AlignInContainer.Stretch
                             Appearance: =If(reportsMode = true, 'ButtonCanvas.Appearance'.Primary, 'ButtonCanvas.Appearance'.Secondary)
+                            BorderStyle: =""
                             DisplayMode: =DisplayMode.Edit
                             FillPortions: =1
                             FontColor: =If(reportsMode = false,RGBA(189, 49, 51, 1), RGBA(255, 255, 255, 1))
@@ -467,6 +472,7 @@
                             Align: =Align.Justify
                             AlignInContainer: =AlignInContainer.Stretch
                             Appearance: ='ButtonCanvas.Appearance'.Secondary
+                            BorderStyle: =""
                             DisplayMode: =DisplayMode.Edit
                             FontColor: =RGBA(189, 49, 51, 1)
                             Height: =32
@@ -859,6 +865,7 @@
 
                     AssignButton As Button:
                         AlignInContainer: =AlignInContainer.Stretch
+                        BorderStyle: =""
                         DisplayMode: =DisplayMode.Edit
                         FillPortions: =
                         Height: =32
@@ -958,7 +965,7 @@
                                     '3rd Auto Business - State Code': oldestRecord.'3rd Auto Business - State Code',
                                     '3rd Auto - Business Name': oldestRecord.'3rd Auto - Business Name',
                                     '3rd Auto Personal - State Code': oldestRecord.'3rd Auto Personal - State Code',
-                                    'Details': oldestRecord.'Details',
+                                    Details: oldestRecord.Details,
                                     'Others Involved': oldestRecord.'Others Involved'
                                 }
                             )
@@ -1026,6 +1033,7 @@
 
                     ButtonCanvas4 As Button:
                         AlignInContainer: =AlignInContainer.Stretch
+                        BorderStyle: =""
                         DisplayMode: =DisplayMode.Edit
                         FillPortions: =1
                         Height: =32
@@ -1058,6 +1066,7 @@
 
                     ButtonCanvas2 As Button:
                         AlignInContainer: =AlignInContainer.Stretch
+                        BorderStyle: =""
                         DisplayMode: =DisplayMode.Edit
                         FillPortions: =1
                         Height: =32

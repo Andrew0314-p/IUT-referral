@@ -79,6 +79,7 @@
 
                 TextCanvas2 As Text:
                     Align: ='TextCanvas.Align'.Start
+                    BorderStyle: =""
                     DisplayMode: =DisplayMode.Edit
                     Height: =40
                     Size: =18
@@ -91,6 +92,7 @@
 
                 LinkCanvas1 As Link:
                     Align: ='LinkCanvas.Align'.Center
+                    BorderStyle: =""
                     DisplayMode: =DisplayMode.Edit
                     Font: =Font.Arial
                     FontWeight: =FontWeight.Semibold
@@ -105,6 +107,7 @@
 
                 LinkCanvas2 As Link:
                     Align: ='LinkCanvas.Align'.Center
+                    BorderStyle: =""
                     DisplayMode: =DisplayMode.Edit
                     Font: =Font.Arial
                     FontWeight: =FontWeight.Semibold
@@ -119,6 +122,7 @@
 
                 LinkCanvas3 As Link:
                     Align: ='LinkCanvas.Align'.Center
+                    BorderStyle: =""
                     DisplayMode: =DisplayMode.Edit
                     Font: =Font.Arial
                     FontWeight: =FontWeight.Semibold
@@ -158,6 +162,7 @@
 
                 TextCanvas2_1 As Text:
                     Align: ='TextCanvas.Align'.Center
+                    BorderStyle: =""
                     DisplayMode: =DisplayMode.Edit
                     Height: =28
                     Size: =18
@@ -170,6 +175,7 @@
 
                 LinkCanvas1_1 As Link:
                     Align: ='LinkCanvas.Align'.Center
+                    BorderStyle: =""
                     DisplayMode: =DisplayMode.Edit
                     Font: =Font.Arial
                     FontWeight: =FontWeight.Semibold
@@ -184,6 +190,7 @@
 
                 LinkCanvas2_1 As Link:
                     Align: ='LinkCanvas.Align'.Center
+                    BorderStyle: =""
                     DisplayMode: =DisplayMode.Edit
                     Font: =Font.Arial
                     FontWeight: =FontWeight.Semibold
@@ -198,6 +205,7 @@
 
                 LinkCanvas3_1 As Link:
                     Align: ='LinkCanvas.Align'.Center
+                    BorderStyle: =""
                     DisplayMode: =DisplayMode.Edit
                     Font: =Font.Arial
                     FontWeight: =FontWeight.Semibold
@@ -237,6 +245,7 @@
 
                 TextCanvas2_2 As Text:
                     Align: ='TextCanvas.Align'.Center
+                    BorderStyle: =""
                     DisplayMode: =DisplayMode.Edit
                     Height: =28
                     Size: =18
@@ -249,6 +258,7 @@
 
                 LinkCanvas1_2 As Link:
                     Align: ='LinkCanvas.Align'.Center
+                    BorderStyle: =""
                     DisplayMode: =DisplayMode.Edit
                     Font: =Font.Arial
                     FontWeight: =FontWeight.Semibold
@@ -263,6 +273,7 @@
 
                 LinkCanvas2_2 As Link:
                     Align: ='LinkCanvas.Align'.Center
+                    BorderStyle: =""
                     DisplayMode: =DisplayMode.Edit
                     Font: =Font.Arial
                     FontWeight: =FontWeight.Semibold
@@ -287,6 +298,7 @@
                     ZIndex: =4
 
             ButtonCanvas3 As Button:
+                BorderStyle: =""
                 DisplayMode: =DisplayMode.Edit
                 Height: =32
                 OnSelect: =Navigate('Home Screen',ScreenTransition.None)

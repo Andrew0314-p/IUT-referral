@@ -269,7 +269,8 @@
         "Y",
         "Width",
         "DisplayMode",
-        "ZIndex"
+        "ZIndex",
+        "BorderStyle"
       ],
       "DynamicProperties": [
         {
@@ -341,6 +342,11 @@
         {
           "Category": "Data",
           "PropertyName": "VerticalAlign",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Data",
+          "PropertyName": "BorderStyle",
           "RuleProviderType": "Unknown"
         },
         {
@@ -417,7 +423,8 @@
         "Y",
         "Width",
         "DisplayMode",
-        "ZIndex"
+        "ZIndex",
+        "BorderStyle"
       ],
       "DynamicProperties": [
         {
@@ -489,6 +496,11 @@
         {
           "Category": "Data",
           "PropertyName": "VerticalAlign",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Data",
+          "PropertyName": "BorderStyle",
           "RuleProviderType": "Unknown"
         },
         {
@@ -565,7 +577,8 @@
         "Y",
         "Width",
         "DisplayMode",
-        "ZIndex"
+        "ZIndex",
+        "BorderStyle"
       ],
       "DynamicProperties": [
         {
@@ -637,6 +650,11 @@
         {
           "Category": "Data",
           "PropertyName": "VerticalAlign",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Data",
+          "PropertyName": "BorderStyle",
           "RuleProviderType": "Unknown"
         },
         {
@@ -713,7 +731,8 @@
         "Y",
         "Width",
         "DisplayMode",
-        "ZIndex"
+        "ZIndex",
+        "BorderStyle"
       ],
       "DynamicProperties": [
         {
@@ -785,6 +804,11 @@
         {
           "Category": "Data",
           "PropertyName": "VerticalAlign",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Data",
+          "PropertyName": "BorderStyle",
           "RuleProviderType": "Unknown"
         },
         {
@@ -861,7 +885,8 @@
         "Y",
         "Width",
         "DisplayMode",
-        "ZIndex"
+        "ZIndex",
+        "BorderStyle"
       ],
       "DynamicProperties": [
         {
@@ -933,6 +958,11 @@
         {
           "Category": "Data",
           "PropertyName": "VerticalAlign",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Data",
+          "PropertyName": "BorderStyle",
           "RuleProviderType": "Unknown"
         },
         {
@@ -1009,7 +1039,8 @@
         "Y",
         "Width",
         "DisplayMode",
-        "ZIndex"
+        "ZIndex",
+        "BorderStyle"
       ],
       "DynamicProperties": [
         {
@@ -1081,6 +1112,11 @@
         {
           "Category": "Data",
           "PropertyName": "VerticalAlign",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Data",
+          "PropertyName": "BorderStyle",
           "RuleProviderType": "Unknown"
         },
         {
@@ -1402,7 +1438,8 @@
           "InvariantPropertyName": "OnSelect",
           "IsLockable": false,
           "NameMapSourceSchema": "?"
-        }
+        },
+        "BorderStyle"
       ],
       "DynamicProperties": [
         {
@@ -1479,6 +1516,11 @@
         {
           "Category": "Data",
           "PropertyName": "FontSize",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Data",
+          "PropertyName": "BorderStyle",
           "RuleProviderType": "Unknown"
         },
         {
@@ -1568,7 +1610,8 @@
         "Width",
         "Height",
         "DisplayMode",
-        "ZIndex"
+        "ZIndex",
+        "BorderStyle"
       ],
       "DynamicProperties": [
         {
@@ -1645,6 +1688,11 @@
         {
           "Category": "Data",
           "PropertyName": "FontSize",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Data",
+          "PropertyName": "BorderStyle",
           "RuleProviderType": "Unknown"
         },
         {
@@ -1737,7 +1785,8 @@
           "InvariantPropertyName": "OnSelect",
           "IsLockable": false,
           "NameMapSourceSchema": "?"
-        }
+        },
+        "BorderStyle"
       ],
       "DynamicProperties": [
         {
@@ -1814,6 +1863,11 @@
         {
           "Category": "Data",
           "PropertyName": "FontSize",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Data",
+          "PropertyName": "BorderStyle",
           "RuleProviderType": "Unknown"
         },
         {
@@ -1903,7 +1957,8 @@
         "Width",
         "Height",
         "DisplayMode",
-        "ZIndex"
+        "ZIndex",
+        "BorderStyle"
       ],
       "DynamicProperties": [
         {
@@ -1980,6 +2035,11 @@
         {
           "Category": "Data",
           "PropertyName": "FontSize",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Data",
+          "PropertyName": "BorderStyle",
           "RuleProviderType": "Unknown"
         },
         {
@@ -2064,7 +2124,8 @@
         "Width",
         "Height",
         "DisplayMode",
-        "ZIndex"
+        "ZIndex",
+        "BorderStyle"
       ],
       "DynamicProperties": [
         {
@@ -2141,6 +2202,11 @@
         {
           "Category": "Data",
           "PropertyName": "FontSize",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Data",
+          "PropertyName": "BorderStyle",
           "RuleProviderType": "Unknown"
         },
         {
@@ -2233,7 +2299,8 @@
           "InvariantPropertyName": "OnSelect",
           "IsLockable": false,
           "NameMapSourceSchema": "?"
-        }
+        },
+        "BorderStyle"
       ],
       "DynamicProperties": [
         {
@@ -2310,6 +2377,11 @@
         {
           "Category": "Data",
           "PropertyName": "FontSize",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Data",
+          "PropertyName": "BorderStyle",
           "RuleProviderType": "Unknown"
         },
         {

@@ -134,6 +134,7 @@
                     FeatureItemButton1 As Button:
                         AccessibleLabel: ="Featured item button"
                         Appearance: ='ButtonCanvas.Appearance'.Transparent
+                        BorderStyle: =""
                         DisplayMode: =DisplayMode.Edit
                         FontSize: =20
                         FontWeight: =FontWeight.Bold
@@ -149,6 +150,7 @@
 
                     DescriptionText1 As Text:
                         Align: ='TextCanvas.Align'.Center
+                        BorderStyle: =""
                         DisplayMode: =DisplayMode.Edit
                         FillPortions: =1
                         Height: =32
@@ -225,6 +227,7 @@
                     FeatureItemButton21 As Button:
                         AccessibleLabel: ="Featured item button"
                         Appearance: ='ButtonCanvas.Appearance'.Transparent
+                        BorderStyle: =""
                         DisplayMode: =DisplayMode.Edit
                         FontSize: =20
                         FontWeight: =FontWeight.Bold
@@ -239,6 +242,7 @@
 
                     DescriptionText21 As Text:
                         Align: ='TextCanvas.Align'.Center
+                        BorderStyle: =""
                         DisplayMode: =DisplayMode.Edit
                         FillPortions: =1
                         Height: =32
@@ -315,6 +319,7 @@
                     FeatureItemButton31 As Button:
                         AccessibleLabel: ="Featured item button"
                         Appearance: ='ButtonCanvas.Appearance'.Transparent
+                        BorderStyle: =""
                         DisplayMode: =DisplayMode.Edit
                         FontSize: =20
                         FontWeight: =FontWeight.Bold
@@ -330,6 +335,7 @@
 
                     DescriptionText31 As Text:
                         Align: ='TextCanvas.Align'.Center
+                        BorderStyle: =""
                         DisplayMode: =DisplayMode.Edit
                         FillPortions: =1
                         Height: =32
@@ -406,6 +412,7 @@
                     FeatureItemButton41 As Button:
                         AccessibleLabel: ="Featured item button"
                         Appearance: ='ButtonCanvas.Appearance'.Transparent
+                        BorderStyle: =""
                         DisplayMode: =DisplayMode.Edit
                         FontSize: =20
                         FontWeight: =FontWeight.Bold
@@ -420,6 +427,7 @@
 
                     DescriptionText41 As Text:
                         Align: ='TextCanvas.Align'.Center
+                        BorderStyle: =""
                         DisplayMode: =DisplayMode.Edit
                         FillPortions: =1
                         Height: =32
@@ -496,6 +504,7 @@
                     FeatureItemButton51 As Button:
                         AccessibleLabel: ="Featured item button"
                         Appearance: ='ButtonCanvas.Appearance'.Transparent
+                        BorderStyle: =""
                         DisplayMode: =DisplayMode.Edit
                         FontSize: =20
                         FontWeight: =FontWeight.Bold
@@ -510,6 +519,7 @@
 
                     DescriptionText51 As Text:
                         Align: ='TextCanvas.Align'.Center
+                        BorderStyle: =""
                         DisplayMode: =DisplayMode.Edit
                         FillPortions: =1
                         Height: =32
@@ -586,6 +596,7 @@
                     FeatureItemButton61 As Button:
                         AccessibleLabel: ="Featured item button"
                         Appearance: ='ButtonCanvas.Appearance'.Transparent
+                        BorderStyle: =""
                         DisplayMode: =DisplayMode.Edit
                         FontSize: =20
                         FontWeight: =FontWeight.Bold
@@ -601,6 +612,7 @@
 
                     DescriptionText61 As Text:
                         Align: ='TextCanvas.Align'.Center
+                        BorderStyle: =""
                         DisplayMode: =DisplayMode.Edit
                         FillPortions: =1
                         Height: =32

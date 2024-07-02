@@ -360,7 +360,8 @@
           "IsLockable": false,
           "NameMapSourceSchema": "?"
         },
-        "Visible"
+        "Visible",
+        "BorderStyle"
       ],
       "DynamicProperties": [
         {
@@ -425,6 +426,11 @@
           "Category": "Data",
           "PropertyName": "Text",
           "RuleProviderType": "User"
+        },
+        {
+          "Category": "Data",
+          "PropertyName": "BorderStyle",
+          "RuleProviderType": "Unknown"
         },
         {
           "Category": "Design",
@@ -1921,7 +1927,8 @@
           "InvariantPropertyName": "AccessibleLabel",
           "IsLockable": false,
           "NameMapSourceSchema": "?"
-        }
+        },
+        "BorderStyle"
       ],
       "DynamicProperties": [
         {
@@ -2025,6 +2032,11 @@
           "RuleProviderType": "Unknown"
         },
         {
+          "Category": "Data",
+          "PropertyName": "BorderStyle",
+          "RuleProviderType": "Unknown"
+        },
+        {
           "Category": "Design",
           "PropertyName": "X",
           "RuleProviderType": "Unknown"
@@ -2087,7 +2099,8 @@
           "InvariantPropertyName": "Text",
           "IsLockable": false,
           "NameMapSourceSchema": "?"
-        }
+        },
+        "BorderStyle"
       ],
       "DynamicProperties": [
         {
@@ -2161,6 +2174,11 @@
           "RuleProviderType": "Unknown"
         },
         {
+          "Category": "Data",
+          "PropertyName": "BorderStyle",
+          "RuleProviderType": "Unknown"
+        },
+        {
           "Category": "Design",
           "PropertyName": "X",
           "RuleProviderType": "Unknown"
@@ -2223,7 +2241,8 @@
           "InvariantPropertyName": "OnSelect",
           "IsLockable": false,
           "NameMapSourceSchema": "?"
-        }
+        },
+        "BorderStyle"
       ],
       "DynamicProperties": [
         {
@@ -2294,6 +2313,11 @@
         {
           "Category": "Data",
           "PropertyName": "Text",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Data",
+          "PropertyName": "BorderStyle",
           "RuleProviderType": "Unknown"
         },
         {
@@ -5415,7 +5439,8 @@
           "InvariantPropertyName": "Appearance",
           "IsLockable": false,
           "NameMapSourceSchema": "?"
-        }
+        },
+        "BorderStyle"
       ],
       "DynamicProperties": [
         {
@@ -5499,6 +5524,11 @@
           "RuleProviderType": "User"
         },
         {
+          "Category": "Data",
+          "PropertyName": "BorderStyle",
+          "RuleProviderType": "Unknown"
+        },
+        {
           "Category": "Design",
           "PropertyName": "Y",
           "RuleProviderType": "Unknown"
@@ -5577,7 +5607,8 @@
           "InvariantPropertyName": "FontColor",
           "IsLockable": false,
           "NameMapSourceSchema": "?"
-        }
+        },
+        "BorderStyle"
       ],
       "DynamicProperties": [
         {
@@ -5659,6 +5690,11 @@
           "Category": "Data",
           "PropertyName": "FontColor",
           "RuleProviderType": "User"
+        },
+        {
+          "Category": "Data",
+          "PropertyName": "BorderStyle",
+          "RuleProviderType": "Unknown"
         },
         {
           "Category": "Design",
@@ -6452,6 +6488,12 @@
           "PropertyName": "AlignInContainer"
         },
         {
+          "ControlPropertyState": "LayoutMinWidth",
+          "Property": {
+            "Category": "Design",
+            "PropertyName": "LayoutMinWidth",
+            "RuleProviderType": "Unknown"
+          },
           "PropertyName": "LayoutMinWidth"
         },
         {
@@ -7362,7 +7404,8 @@
           "InvariantPropertyName": "Appearance",
           "IsLockable": false,
           "NameMapSourceSchema": "?"
-        }
+        },
+        "BorderStyle"
       ],
       "DynamicProperties": [
         {
@@ -7444,6 +7487,11 @@
           "Category": "Data",
           "PropertyName": "Appearance",
           "RuleProviderType": "User"
+        },
+        {
+          "Category": "Data",
+          "PropertyName": "BorderStyle",
+          "RuleProviderType": "Unknown"
         },
         {
           "Category": "Design",
@@ -8987,15 +9035,39 @@
       ],
       "DynamicProperties": [
         {
+          "ControlPropertyState": "FillPortions",
+          "Property": {
+            "Category": "Design",
+            "PropertyName": "FillPortions",
+            "RuleProviderType": "Unknown"
+          },
           "PropertyName": "FillPortions"
         },
         {
+          "ControlPropertyState": "AlignInContainer",
+          "Property": {
+            "Category": "Design",
+            "PropertyName": "AlignInContainer",
+            "RuleProviderType": "Unknown"
+          },
           "PropertyName": "AlignInContainer"
         },
         {
+          "ControlPropertyState": "LayoutMinWidth",
+          "Property": {
+            "Category": "Design",
+            "PropertyName": "LayoutMinWidth",
+            "RuleProviderType": "Unknown"
+          },
           "PropertyName": "LayoutMinWidth"
         },
         {
+          "ControlPropertyState": "LayoutMinHeight",
+          "Property": {
+            "Category": "Design",
+            "PropertyName": "LayoutMinHeight",
+            "RuleProviderType": "Unknown"
+          },
           "PropertyName": "LayoutMinHeight"
         }
       ],
@@ -9337,7 +9409,8 @@
           "InvariantPropertyName": "FontColor",
           "IsLockable": false,
           "NameMapSourceSchema": "?"
-        }
+        },
+        "BorderStyle"
       ],
       "DynamicProperties": [
         {
@@ -9429,6 +9502,11 @@
           "Category": "Data",
           "PropertyName": "FontColor",
           "RuleProviderType": "User"
+        },
+        {
+          "Category": "Data",
+          "PropertyName": "BorderStyle",
+          "RuleProviderType": "Unknown"
         },
         {
           "Category": "Design",

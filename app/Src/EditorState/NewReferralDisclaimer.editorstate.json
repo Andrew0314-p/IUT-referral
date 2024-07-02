@@ -902,7 +902,8 @@
           "InvariantPropertyName": "Size",
           "IsLockable": false,
           "NameMapSourceSchema": "?"
-        }
+        },
+        "BorderStyle"
       ],
       "DynamicProperties": [
         {
@@ -1000,6 +1001,11 @@
         {
           "Category": "Data",
           "PropertyName": "Size",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Data",
+          "PropertyName": "BorderStyle",
           "RuleProviderType": "Unknown"
         },
         {
@@ -1233,7 +1239,8 @@
           "InvariantPropertyName": "OnSelect",
           "IsLockable": false,
           "NameMapSourceSchema": "?"
-        }
+        },
+        "BorderStyle"
       ],
       "DynamicProperties": [
         {
@@ -1304,6 +1311,11 @@
         {
           "Category": "Data",
           "PropertyName": "Text",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Data",
+          "PropertyName": "BorderStyle",
           "RuleProviderType": "Unknown"
         },
         {

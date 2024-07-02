@@ -134,6 +134,7 @@
                     FeatureItemButton3 As Button:
                         AccessibleLabel: ="Featured item button"
                         Appearance: ='ButtonCanvas.Appearance'.Transparent
+                        BorderStyle: =""
                         DisplayMode: =DisplayMode.Edit
                         FontSize: =20
                         FontWeight: =FontWeight.Bold
@@ -212,6 +213,7 @@
                     FeatureItemButton23 As Button:
                         AccessibleLabel: ="Featured item button"
                         Appearance: ='ButtonCanvas.Appearance'.Transparent
+                        BorderStyle: =""
                         DisplayMode: =DisplayMode.Edit
                         FontSize: =20
                         FontWeight: =FontWeight.Bold
@@ -290,6 +292,7 @@
                     FeatureItemButton33 As Button:
                         AccessibleLabel: ="Featured item button"
                         Appearance: ='ButtonCanvas.Appearance'.Transparent
+                        BorderStyle: =""
                         DisplayMode: =DisplayMode.Edit
                         FontSize: =20
                         FontWeight: =FontWeight.Bold
@@ -368,6 +371,7 @@
                     FeatureItemButton43 As Button:
                         AccessibleLabel: ="Featured item button"
                         Appearance: ='ButtonCanvas.Appearance'.Transparent
+                        BorderStyle: =""
                         DisplayMode: =DisplayMode.Edit
                         FontSize: =20
                         FontWeight: =FontWeight.Bold
@@ -446,6 +450,7 @@
                     FeatureItemButton53 As Button:
                         AccessibleLabel: ="Featured item button"
                         Appearance: ='ButtonCanvas.Appearance'.Transparent
+                        BorderStyle: =""
                         DisplayMode: =DisplayMode.Edit
                         FontSize: =20
                         FontWeight: =FontWeight.Bold
