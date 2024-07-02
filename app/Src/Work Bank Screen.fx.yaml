@@ -368,7 +368,7 @@
                 ControlContainer As groupContainer.verticalAutoLayoutContainer:
                     DropShadow: =DropShadow.Regular
                     FillPortions: =0
-                    Height: =ButtonContainer.Height + 'Filter/AssignContainer'.Height + AssignedContainer.Height * 1
+                    Height: =ButtonContainer.Height + 'Filter/AssignContainer'.Height
                     LayoutDirection: =LayoutDirection.Vertical
                     LayoutMinHeight: =100
                     LayoutMinWidth: =250
@@ -487,7 +487,6 @@
                             ZIndex: =5
 
                     AssignedContainer As groupContainer.horizontalAutoLayoutContainer:
-                        DropShadow: =DropShadow.Light
                         FillPortions: =0
                         Height: =WorkBankHeader.Height / 2
                         LayoutMinHeight: =100
@@ -497,6 +496,7 @@
                         RadiusBottomRight: =4
                         RadiusTopLeft: =4
                         RadiusTopRight: =4
+                        Visible: =If(searchMode = false, true, false)
                         X: =40
                         Y: =40
                         ZIndex: =2
@@ -748,6 +748,7 @@
                         RadiusBottomRight: =4
                         RadiusTopLeft: =4
                         RadiusTopRight: =4
+                        Visible: =If(searchMode = true, true, false)
                         ZIndex: =3
 
                         EmployeeSearch As text:
@@ -759,7 +760,6 @@
                             HoverBorderColor: =Self.Fill
                             HoverFill: =RGBA(0, 0, 0, 0)
                             LayoutMinWidth: =0
-                            Visible: =If(sharedWorkBankMode = true Or myInTrayMode = true, true, false)
                             ZIndex: =1
 
                         SearchIcon_1 As icon.Search:
@@ -940,6 +940,7 @@
                             OnSelect: |-
                                 =Set(_selectedApprover, ThisItem);
                                 Set(_selectedApproverPhoto, Office365Users.UserPhoto(ThisItem.Id));
+                                UpdateContext({searchMode: false});
                                 Reset(EmployeeSearch);
                             Width: =Parent.TemplateWidth - 2*Self.X
                             Y: =1
@@ -979,13 +980,18 @@
                         Title3 As label:
                             BorderColor: =
                             Color: =RGBA(0, 0, 0, 1)
-                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                            DisabledColor: =RGBA(255, 255, 255, 1)
                             FocusedBorderThickness: =2
                             Font: =App.Theme.Font
                             FontWeight: =FontWeight.Semibold
                             Height: =Self.Size * 1.8
                             HoverColor: =
-                            OnSelect: =
+                            OnSelect: |-
+                                =Set(_selectedApprover, ThisItem);
+                                Set(_selectedApproverPhoto, Office365Users.UserPhoto(ThisItem.Id));
+                                UpdateContext({searchMode: false});
+                                Reset(EmployeeSearch);
                             PaddingLeft: |
                                 =5
                             Size: =12
@@ -1023,72 +1029,273 @@
                             Y: =Parent.TemplateHeight - 1
                             ZIndex: =6
 
-                    "Gallery6 As gallery.'BrowseLayout_Horizontal_TwoTextOneImageVariant_ver5.0'":
-                        BorderColor: =App.Theme.Colors.Darker40
-                        DelayItemLoading: =true
-                        Items: |-
-                            =Table(
-                                {
-                                    Header: "Referral ID",
-                                    Value: _selectedReferral.ID
-                                },
-                                {
-                                    Header: "Policyholder Name",
-                                    Value: _selectedReferral.'1st - Policyholder First Name' & " " & _selectedReferral.'1st - Policyholder Last Name'
-                                },
-                                {
-                                    Header: "Referral Type",
-                                    Value: Trim(_selectedReferral.'1st Policy Type') & If(
-                                        Lower(Trim(_selectedReferral.'1st Policy Type')) = "auto",
-                                        (" " & Trim(_selectedReferral.'1st Auto - Line of Business')),
-                                        If(Lower(Trim(_selectedReferral.'1st Policy Type')) = "fire",
-                                        (" " & Trim(_selectedReferral.'1st Fire - Line of Business')),"")
-                                    )
-                                }
-                            )
-                        LayoutMinHeight: =287
-                        LayoutMinWidth: =320
-                        LoadingSpinner: =LoadingSpinner.Data
-                        TemplatePadding: =0
-                        TemplateSize: =Min(440, Self.Height - 60)
-                        Visible: =If(myInTrayMode = true, true, false) And If(EmployeeBrowseGallery.Visible = true, false, true)
+                    "'Referral Info Container' As groupContainer.horizontalAutoLayoutContainer":
+                        DropShadow: =DropShadow.Light
+                        LayoutMinHeight: =100
+                        LayoutMinWidth: =250
+                        LayoutMode: =LayoutMode.Auto
+                        RadiusBottomLeft: =4
+                        RadiusBottomRight: =4
+                        RadiusTopLeft: =4
+                        RadiusTopRight: =4
                         ZIndex: =7
 
-                        Title11 As label:
-                            Color: =RGBA(50, 49, 48, 1)
-                            DisabledColor: =RGBA(166, 166, 166, 1)
-                            Font: =App.Theme.Font
-                            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
-                            Height: =Self.Size * 1.8
-                            OnSelect: =Select(Parent)
-                            PaddingBottom: =0
-                            PaddingLeft: =0
-                            PaddingRight: =0
-                            PaddingTop: =0
-                            Text: =ThisItem.Header
-                            VerticalAlign: =VerticalAlign.Top
-                            Width: =Parent.TemplateWidth - 64
-                            X: =32
-                            Y: |
-                                =16
+                        "Gallery1 As gallery.'BrowseLayout_Vertical_OneTextVariant_ver5.0'":
+                            BorderColor: =App.Theme.Colors.Darker40
+                            DelayItemLoading: =true
+                            Items: |-
+                                =Table(
+                                    {
+                                        Header: "Referral ID",
+                                        Value: _selectedReferral.ID
+                                    },
+                                    {
+                                        Header: "Policyholder Name",
+                                        Value: _selectedReferral.'1st - Policyholder First Name' & " " & _selectedReferral.'1st - Policyholder Last Name'
+                                    },
+                                    {
+                                        Header: "Referral Type",
+                                        Value: Trim(_selectedReferral.'1st Policy Type') & If(
+                                            Lower(Trim(_selectedReferral.'1st Policy Type')) = "auto",
+                                            (" " & Trim(_selectedReferral.'1st Auto - Line of Business')),
+                                            If(Lower(Trim(_selectedReferral.'1st Policy Type')) = "fire",
+                                            (" " & Trim(_selectedReferral.'1st Fire - Line of Business')),"")
+                                        )
+                                    }
+                                )
+                            Layout: =Layout.Vertical
+                            LoadingSpinner: =LoadingSpinner.Data
+                            ShowScrollbar: =false
+                            TemplatePadding: =0
+                            TemplateSize: =80
+                            ZIndex: =1
+
+                            Title2 As label:
+                                Color: =RGBA(50, 49, 48, 1)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                Font: =App.Theme.Font
+                                FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                                Height: =Self.Size * 1.8
+                                OnSelect: =Select(Parent)
+                                PaddingBottom: =0
+                                PaddingLeft: =0
+                                PaddingRight: =0
+                                PaddingTop: =0
+                                Text: =ThisItem.Header
+                                VerticalAlign: =VerticalAlign.Top
+                                Width: =Parent.TemplateWidth - 86
+                                X: =16
+                                Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+                                ZIndex: =1
+
+                            NextArrow2 As icon.ChevronRight:
+                                AccessibleLabel: =Self.Tooltip
+                                BorderColor: =App.Theme.Colors.Darker40
+                                Color: =RGBA(166, 166, 166, 1)
+                                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                                DisabledColor: =RGBA(244, 244, 244, 1)
+                                Height: =50
+                                Icon: =Icon.ChevronRight
+                                OnSelect: =Select(Parent)
+                                PaddingBottom: =12
+                                PaddingLeft: =12
+                                PaddingRight: =12
+                                PaddingTop: =12
+                                Tooltip: ="View item details"
+                                Width: =50
+                                X: =Parent.TemplateWidth - Self.Width - 12
+                                Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+                                ZIndex: =2
+
+                            Separator2 As rectangle:
+                                BorderColor: =App.Theme.Colors.Darker40
+                                Fill: =RGBA(255, 255, 255, 1)
+                                Height: =8
+                                OnSelect: =Select(Parent)
+                                Width: =Parent.TemplateWidth
+                                Y: =Parent.TemplateHeight - Self.Height
+                                ZIndex: =3
+
+                            Rectangle3 As rectangle:
+                                BorderColor: =App.Theme.Colors.Darker40
+                                Fill: =App.Theme.Colors.Darker30
+                                Height: =Parent.TemplateHeight - Separator2.Height
+                                OnSelect: =Select(Parent)
+                                Visible: =ThisItem.IsSelected
+                                Width: =4
+                                ZIndex: =4
+
+                        "Gallery1_1 As gallery.'BrowseLayout_Vertical_OneTextVariant_ver5.0'":
+                            BorderColor: =App.Theme.Colors.Darker40
+                            DelayItemLoading: =true
+                            Items: |-
+                                =Table(
+                                    {
+                                        Header: "Referral ID",
+                                        Value: _selectedReferral.ID
+                                    },
+                                    {
+                                        Header: "Policyholder Name",
+                                        Value: _selectedReferral.'1st - Policyholder First Name' & " " & _selectedReferral.'1st - Policyholder Last Name'
+                                    },
+                                    {
+                                        Header: "Referral Type",
+                                        Value: Trim(_selectedReferral.'1st Policy Type') & If(
+                                            Lower(Trim(_selectedReferral.'1st Policy Type')) = "auto",
+                                            (" " & Trim(_selectedReferral.'1st Auto - Line of Business')),
+                                            If(Lower(Trim(_selectedReferral.'1st Policy Type')) = "fire",
+                                            (" " & Trim(_selectedReferral.'1st Fire - Line of Business')),"")
+                                        )
+                                    }
+                                )
+                            Layout: =Layout.Vertical
+                            LayoutMinHeight: =287
+                            LayoutMinWidth: =320
+                            LoadingSpinner: =LoadingSpinner.Data
+                            ShowScrollbar: =false
+                            TemplatePadding: =0
+                            TemplateSize: =80
                             ZIndex: =2
 
-                        Subtitle9 As label:
-                            Color: =RGBA(0, 0, 0, 1)
-                            DisabledColor: =RGBA(166, 166, 166, 1)
-                            Font: =App.Theme.Font
-                            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
-                            Height: =Self.Size * 1.8
-                            OnSelect: =Select(Parent)
-                            PaddingBottom: =0
-                            PaddingLeft: =0
-                            PaddingRight: =0
-                            PaddingTop: =0
-                            Size: =12
-                            Text: =ThisItem.Value
-                            VerticalAlign: =VerticalAlign.Top
-                            Width: =Title11.Width
-                            X: =Title11.X
-                            Y: =Title11.Y + Title11.Height + 8
+                            Title2_1 As label:
+                                Color: =RGBA(50, 49, 48, 1)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                Font: =App.Theme.Font
+                                FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                                Height: =Self.Size * 1.8
+                                OnSelect: =Select(Parent)
+                                PaddingBottom: =0
+                                PaddingLeft: =0
+                                PaddingRight: =0
+                                PaddingTop: =0
+                                Text: =ThisItem.Header
+                                VerticalAlign: =VerticalAlign.Top
+                                Width: =Parent.TemplateWidth - 86
+                                X: =16
+                                Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+                                ZIndex: =1
+
+                            NextArrow2_1 As icon.ChevronRight:
+                                AccessibleLabel: =Self.Tooltip
+                                BorderColor: =App.Theme.Colors.Darker40
+                                Color: =RGBA(166, 166, 166, 1)
+                                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                                DisabledColor: =RGBA(244, 244, 244, 1)
+                                Height: =50
+                                Icon: =Icon.ChevronRight
+                                OnSelect: =Select(Parent)
+                                PaddingBottom: =12
+                                PaddingLeft: =12
+                                PaddingRight: =12
+                                PaddingTop: =12
+                                Tooltip: ="View item details"
+                                Width: =50
+                                X: =Parent.TemplateWidth - Self.Width - 12
+                                Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+                                ZIndex: =2
+
+                            Separator2_1 As rectangle:
+                                BorderColor: =App.Theme.Colors.Darker40
+                                Fill: =RGBA(255, 255, 255, 1)
+                                Height: =8
+                                OnSelect: =Select(Parent)
+                                Width: =Parent.TemplateWidth
+                                Y: =Parent.TemplateHeight - Self.Height
+                                ZIndex: =3
+
+                            Rectangle3_1 As rectangle:
+                                BorderColor: =App.Theme.Colors.Darker40
+                                Fill: =App.Theme.Colors.Darker30
+                                Height: =Parent.TemplateHeight - Separator2_1.Height
+                                OnSelect: =Select(Parent)
+                                Visible: =ThisItem.IsSelected
+                                Width: =4
+                                ZIndex: =4
+
+                        "Gallery1_2 As gallery.'BrowseLayout_Vertical_OneTextVariant_ver5.0'":
+                            BorderColor: =App.Theme.Colors.Darker40
+                            DelayItemLoading: =true
+                            Items: |-
+                                =Table(
+                                    {
+                                        Header: "Referral ID",
+                                        Value: _selectedReferral.ID
+                                    },
+                                    {
+                                        Header: "Policyholder Name",
+                                        Value: _selectedReferral.'1st - Policyholder First Name' & " " & _selectedReferral.'1st - Policyholder Last Name'
+                                    },
+                                    {
+                                        Header: "Referral Type",
+                                        Value: Trim(_selectedReferral.'1st Policy Type') & If(
+                                            Lower(Trim(_selectedReferral.'1st Policy Type')) = "auto",
+                                            (" " & Trim(_selectedReferral.'1st Auto - Line of Business')),
+                                            If(Lower(Trim(_selectedReferral.'1st Policy Type')) = "fire",
+                                            (" " & Trim(_selectedReferral.'1st Fire - Line of Business')),"")
+                                        )
+                                    }
+                                )
+                            Layout: =Layout.Vertical
+                            LayoutMinHeight: =287
+                            LayoutMinWidth: =320
+                            LoadingSpinner: =LoadingSpinner.Data
+                            ShowScrollbar: =false
+                            TemplatePadding: =0
+                            TemplateSize: =80
                             ZIndex: =3
+
+                            Title2_2 As label:
+                                Color: =RGBA(50, 49, 48, 1)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                Font: =App.Theme.Font
+                                FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                                Height: =Self.Size * 1.8
+                                OnSelect: =Select(Parent)
+                                PaddingBottom: =0
+                                PaddingLeft: =0
+                                PaddingRight: =0
+                                PaddingTop: =0
+                                Text: =ThisItem.Header
+                                VerticalAlign: =VerticalAlign.Top
+                                Width: =Parent.TemplateWidth - 86
+                                X: =16
+                                Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+                                ZIndex: =1
+
+                            NextArrow2_2 As icon.ChevronRight:
+                                AccessibleLabel: =Self.Tooltip
+                                BorderColor: =App.Theme.Colors.Darker40
+                                Color: =RGBA(166, 166, 166, 1)
+                                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                                DisabledColor: =RGBA(244, 244, 244, 1)
+                                Height: =50
+                                Icon: =Icon.ChevronRight
+                                OnSelect: =Select(Parent)
+                                PaddingBottom: =12
+                                PaddingLeft: =12
+                                PaddingRight: =12
+                                PaddingTop: =12
+                                Tooltip: ="View item details"
+                                Width: =50
+                                X: =Parent.TemplateWidth - Self.Width - 12
+                                Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+                                ZIndex: =2
+
+                            Separator2_2 As rectangle:
+                                BorderColor: =App.Theme.Colors.Darker40
+                                Fill: =RGBA(255, 255, 255, 1)
+                                Height: =8
+                                OnSelect: =Select(Parent)
+                                Width: =Parent.TemplateWidth
+                                Y: =Parent.TemplateHeight - Self.Height
+                                ZIndex: =3
+
+                            Rectangle3_2 As rectangle:
+                                BorderColor: =App.Theme.Colors.Darker40
+                                Fill: =App.Theme.Colors.Darker30
+                                Height: =Parent.TemplateHeight - Separator2_2.Height
+                                OnSelect: =Select(Parent)
+                                Visible: =ThisItem.IsSelected
+                                Width: =4
+                                ZIndex: =4
 
