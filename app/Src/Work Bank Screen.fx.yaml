@@ -241,6 +241,7 @@
                                 OthersInvolved: ThisItem.'Others Involved'
                             }
                         )
+                    ShowScrollbar: =false
                     TemplateFill: =If(ThisItem.IsSelected, RGBA(230, 230, 230, 1), RGBA(0, 0, 0, 0))
                     TemplatePadding: =0
                     TemplateSize: =116
@@ -1168,7 +1169,7 @@
                             FillPortions: =1
                             Font: =App.Theme.Font
                             Size: =13
-                            Text: =_selectedApprover.DisplayName & " (" & _selectedApprover.MailNickname& ")"
+                            Text: =_selectedApprover.DisplayName & " (" & _selectedApprover.MailNickname & ")"
                             ZIndex: =2
 
                         AssignedEmployeePicture As image:
