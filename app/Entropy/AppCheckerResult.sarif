@@ -913,66 +913,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "App._selectedApproverPhoto"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "App._selectedApproverPhoto",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "_selectedApproverPhoto",
-                "module": "App",
-                "type": "App"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-UnusedVariables",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "App._submittingRequest"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "App._submittingRequest",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "_submittingRequest",
-                "module": "App",
-                "type": "App"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-UnusedVariables",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "'Work Bank Screen'.CurrentItem"
                 }
               ],

@@ -508,11 +508,7 @@
                             LayoutMinHeight: =32
                             LayoutMinWidth: =96
                             OnSelect: |-
-                                =Refresh('Referral Intake Tool Submissions');
-                                Reset(EmployeeSearch);
-                                Set(_submittingRequest, true);
-                                
-                                UpdateContext({ 
+                                =UpdateContext({ 
                                     oldestRecord: First(Sort(Filter('Referral Intake Tool Submissions', IsBlank('Assigned To')), 'Created On')),
                                     clickedCount: CountRows(WorkBankCollection)
                                 });
@@ -601,18 +597,10 @@
                                         '3rd Auto Business - State Code': oldestRecord.'3rd Auto Business - State Code',
                                         '3rd Auto - Business Name': oldestRecord.'3rd Auto - Business Name',
                                         '3rd Auto Personal - State Code': oldestRecord.'3rd Auto Personal - State Code',
-                                        'Details': oldestRecord.'Details',
+                                        Details: oldestRecord.Details,
                                         'Others Involved': oldestRecord.'Others Involved'
                                     }
                                 )
-                                );
-                                
-                                Collect(
-                                    WorkBankCollection,
-                                    Filter(
-                                        'Referral Intake Tool Submissions',
-                                        IsBlank('Assigned To') || 'Assigned To' = _selectedApprover.MailNickname
-                                    )
                                 );
                             Text: |-
                                 ="Assign To:"
@@ -632,6 +620,17 @@
                             Text: =_selectedApprover.DisplayName & " (" & _selectedApprover.MailNickname& ")"
                             ZIndex: =2
 
+                        Image1 As image:
+                            AlignInContainer: =AlignInContainer.Stretch
+                            BorderColor: =App.Theme.Colors.Darker40
+                            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                            DisabledFill: =RGBA(244, 244, 244, 1)
+                            Height: =1
+                            Image: =_selectedApproverPhoto
+                            LayoutMinHeight: =1
+                            LayoutMinWidth: =1
+                            ZIndex: =3
+
                         ButtonCanvas5 As Button:
                             AlignInContainer: =AlignInContainer.Stretch
                             Appearance: ='ButtonCanvas.Appearance'.Secondary
@@ -650,7 +649,7 @@
                             Width: =96
                             X: =0
                             Y: =0
-                            ZIndex: =3
+                            ZIndex: =4
 
                         ButtonCanvas2 As Button:
                             AlignInContainer: =AlignInContainer.Stretch
@@ -664,7 +663,7 @@
                             Width: =96
                             X: =0
                             Y: =0
-                            ZIndex: =4
+                            ZIndex: =5
 
                     "'Filter/AssignContainer' As groupContainer.horizontalAutoLayoutContainer":
                         FillPortions: =0
