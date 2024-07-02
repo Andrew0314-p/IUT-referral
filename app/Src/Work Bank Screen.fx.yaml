@@ -1004,6 +1004,7 @@
                         BorderColor: =App.Theme.Colors.Darker40
                         Color: =RGBA(0, 0, 0, 1)
                         DisabledColor: =RGBA(166, 166, 166, 1)
+                        FillPortions: =1
                         Font: =App.Theme.Font
                         Size: =13
                         Text: =If(!IsBlank(_selectedApprover.DisplayName),_selectedApprover.DisplayName & " (" &_selectedApprover.MailNickname & ")","No Employee Entered")
