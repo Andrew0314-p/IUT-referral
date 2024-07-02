@@ -261,7 +261,15 @@
                         PaddingRight: =0
                         PaddingTop: =0
                         Text: |-
-                            ="ID: " & ThisItem.ID
+                            ="ID: " & ThisItem.ID & " | " & Trim(ThisItem.'1st Policy Type') & If(
+                                Lower(Trim(ThisItem.'1st Policy Type')) = "auto",
+                                (" " & Trim(ThisItem.'1st Auto - Line of Business')),
+                                If(
+                                    Lower(Trim(ThisItem.'1st Policy Type')) = "fire",
+                                    (" " & Trim(ThisItem.'1st Fire - Line of Business')),
+                                    ""
+                                )
+                            ) & " Lines"
                         VerticalAlign: =VerticalAlign.Top
                         Width: =Parent.TemplateWidth - 86
                         X: =16
@@ -299,16 +307,7 @@
                         PaddingRight: =0
                         PaddingTop: =0
                         Size: =12
-                        Text: |-
-                            =Trim(ThisItem.'1st Policy Type') & If(
-                                Lower(Trim(ThisItem.'1st Policy Type')) = "auto",
-                                (" " & Trim(ThisItem.'1st Auto - Line of Business')),
-                                If(
-                                    Lower(Trim(ThisItem.'1st Policy Type')) = "fire",
-                                    (" " & Trim(ThisItem.'1st Fire - Line of Business')),
-                                    ""
-                                )
-                            )
+                        Text: ="Assigned to " & ThisItem.'Assigned To'
                         VerticalAlign: =VerticalAlign.Top
                         Width: =Title4.Width
                         X: =Title4.X
@@ -369,7 +368,7 @@
                 ControlContainer As groupContainer.verticalAutoLayoutContainer:
                     DropShadow: =DropShadow.Regular
                     FillPortions: =0
-                    Height: =ButtonContainer.Height + 'Filter/AssignContainer'.Height + Seperator.Height
+                    Height: =ButtonContainer.Height + 'Filter/AssignContainer'.Height + AssignedContainer.Height * 1
                     LayoutDirection: =LayoutDirection.Vertical
                     LayoutMinHeight: =100
                     LayoutMinWidth: =250
@@ -396,7 +395,7 @@
                             AlignInContainer: =AlignInContainer.Stretch
                             Appearance: =If(sharedWorkBankMode = true, 'ButtonCanvas.Appearance'.Primary, 'ButtonCanvas.Appearance'.Secondary)
                             BasePaletteColor: =
-                            BorderStyle: =""
+                            BorderStyle: =BorderStyle.None
                             DisplayMode: =DisplayMode.Edit
                             FillPortions: =1
                             FontColor: |
@@ -416,7 +415,7 @@
                         MyInTray As Button:
                             AlignInContainer: =AlignInContainer.Stretch
                             Appearance: =If(myInTrayMode = true, 'ButtonCanvas.Appearance'.Primary, 'ButtonCanvas.Appearance'.Secondary)
-                            BorderStyle: =""
+                            BorderStyle: =BorderStyle.None
                             DisplayMode: =DisplayMode.Edit
                             FillPortions: =1
                             FontColor: =If(myInTrayMode = false,RGBA(189, 49, 51, 1), RGBA(255, 255, 255, 1))
@@ -434,7 +433,7 @@
                         MyTeam As Button:
                             AlignInContainer: =AlignInContainer.Stretch
                             Appearance: =If(myTeamMode = true, 'ButtonCanvas.Appearance'.Primary, 'ButtonCanvas.Appearance'.Secondary)
-                            BorderStyle: =""
+                            BorderStyle: =BorderStyle.None
                             DisplayMode: =DisplayMode.Edit
                             FillPortions: =1
                             FontColor: =If(myTeamMode = false,RGBA(189, 49, 51, 1), RGBA(255, 255, 255, 1))
@@ -452,7 +451,7 @@
                         Reports As Button:
                             AlignInContainer: =AlignInContainer.Stretch
                             Appearance: =If(reportsMode = true, 'ButtonCanvas.Appearance'.Primary, 'ButtonCanvas.Appearance'.Secondary)
-                            BorderStyle: =""
+                            BorderStyle: =BorderStyle.None
                             DisplayMode: =DisplayMode.Edit
                             FillPortions: =1
                             FontColor: =If(reportsMode = false,RGBA(189, 49, 51, 1), RGBA(255, 255, 255, 1))
@@ -472,7 +471,7 @@
                             Align: =Align.Justify
                             AlignInContainer: =AlignInContainer.Stretch
                             Appearance: ='ButtonCanvas.Appearance'.Secondary
-                            BorderStyle: =""
+                            BorderStyle: =BorderStyle.None
                             DisplayMode: =DisplayMode.Edit
                             FontColor: =RGBA(189, 49, 51, 1)
                             Height: =32
@@ -487,6 +486,258 @@
                             Y: =0
                             ZIndex: =5
 
+                    AssignedContainer As groupContainer.horizontalAutoLayoutContainer:
+                        DropShadow: =DropShadow.Light
+                        FillPortions: =0
+                        Height: =WorkBankHeader.Height / 2
+                        LayoutMinHeight: =100
+                        LayoutMinWidth: =250
+                        LayoutMode: =LayoutMode.Auto
+                        RadiusBottomLeft: =4
+                        RadiusBottomRight: =4
+                        RadiusTopLeft: =4
+                        RadiusTopRight: =4
+                        X: =40
+                        Y: =40
+                        ZIndex: =2
+
+                        AssignButton As Button:
+                            AlignInContainer: =AlignInContainer.Stretch
+                            BorderStyle: =""
+                            DisplayMode: =DisplayMode.Edit
+                            FillPortions: =
+                            Height: =32
+                            LayoutMinHeight: =32
+                            LayoutMinWidth: =96
+                            OnSelect: |-
+                                =Refresh('Referral Intake Tool Submissions');
+                                Reset(EmployeeSearch);
+                                Set(_submittingRequest, true);
+                                
+                                UpdateContext({ 
+                                    oldestRecord: First(Sort(Filter('Referral Intake Tool Submissions', IsBlank('Assigned To')), 'Created On')),
+                                    clickedCount: CountRows(WorkBankCollection)
+                                });
+                                
+                                If(
+                                    IsBlank(oldestRecord),
+                                    Notify("No record found without a value in 'Assigned To' field.", NotificationType.Error),
+                                    Patch(
+                                        'Referral Intake Tool Submissions',
+                                        oldestRecord,
+                                        { 'Assigned To': _selectedApprover.MailNickname }
+                                    );
+                                
+                                    UpdateContext({ clickedCount: clickedCount + 1 });
+                                    Collect(
+                                    WorkBankCollection,
+                                    {
+                                        ID: oldestRecord.ID,
+                                        'Created On': oldestRecord.'Created On',
+                                        'Assigned To': _selectedApprover.MailNickname,
+                                        '1st - Policyholder First Name': oldestRecord.'Policyholder First Name',
+                                        '1st - Policyholder Last Name': oldestRecord.'Policyholder Last Name',
+                                        '1st - Policyholder Phone Number': oldestRecord.'Policyholder Phone Number',
+                                        '1st Date of Loss': oldestRecord.'1st Date of Loss',
+                                        '1st Policy Number': oldestRecord.'1st Policy Number',
+                                        '1st Claim Number': oldestRecord.'1st Claim Number',
+                                        '1st Policy Type': oldestRecord.'1st Policy Type',
+                                        '1st Fire - Street': oldestRecord.'1st Fire - Street',
+                                        '1st Fire - City': oldestRecord.'1st Fire - City',
+                                        '1st Fire - State': oldestRecord.'1st Fire - State',
+                                        '1st Fire - Line of Business': oldestRecord.'1st Fire - Line of Business',
+                                        '1st Fire Business Lines - State Code': oldestRecord.'1st Fire Business Lines - State Code',
+                                        '1st Fire - Business Policy Types': oldestRecord.'1st Fire - Business Policy Types',
+                                        '1st Fire - Business Name': oldestRecord.'1st Fire - Business Name',
+                                        '1st Fire Personal Lines - State Code': oldestRecord.'1st Fire Personal Lines - State Code',
+                                        '1st Fire - Personal Policy Type': oldestRecord.'1st Fire - Personal Policy Type',
+                                        '1st Auto - VIN': oldestRecord.'1st Auto -  VIN',
+                                        '1st Auto - License Plate': oldestRecord.'1st Auto -  License Plate',
+                                        '1st Auto - Make': oldestRecord.'1st Auto -  Make',
+                                        '1st Auto - Model': oldestRecord.'1st Auto -  Model',
+                                        '1st Auto - Line of Business': oldestRecord.'1st Auto - Line of Business',
+                                        '1st Auto Business - State Code': oldestRecord.'1st Auto Business - State Code',
+                                        '1st Auto - Business Name': oldestRecord.'1st Auto - Business Name',
+                                        '1st Auto Personal - State Code': oldestRecord.'1st Auto Personal - State Code',
+                                        'Is there a second Policy?': oldestRecord.'Is there a second Policy?',
+                                        '2nd Policy Number': oldestRecord.'2nd Policy Number',
+                                        '2nd Claim Number': oldestRecord.'2nd Claim Number',
+                                        '2nd Date of Loss': oldestRecord.'2nd Date of Loss',
+                                        'Multiple Policy - 2nd Policy Type': oldestRecord.'Multiple Policy - 2nd Policy Type',
+                                        '2nd Fire - Street': oldestRecord.'2nd Fire - Street',
+                                        '2nd Fire - City': oldestRecord.'2nd Fire - City',
+                                        '2nd Fire - State': oldestRecord.'2nd Fire - State',
+                                        '2nd Fire - Line of Business': oldestRecord.'2nd Fire - Line of Business',
+                                        '2nd Fire - Business State Code': oldestRecord.'2nd Fire - Business State Code',
+                                        '2nd Fire - Business Name': oldestRecord.'2nd Fire - Business Name',
+                                        '2nd Fire - Business Policy Type': oldestRecord.'2nd Fire - Business Policy Type',
+                                        '2nd Fire Personal - State Code': oldestRecord.'2nd Fire Personal - State Code',
+                                        '2nd Fire - Personal Policy Type': oldestRecord.'2nd Fire - Personal Policy Type',
+                                        '2nd Auto - VIN': oldestRecord.'2nd Auto - VIN',
+                                        '2nd Auto - License Plate': oldestRecord.'2nd Auto - License Plate',
+                                        '2nd Auto - Make': oldestRecord.'2nd Auto - Make',
+                                        '2nd Auto - Model': oldestRecord.'2nd Auto - Model',
+                                        '2nd Auto - Line of Business': oldestRecord.'2nd Auto - Line of Business',
+                                        '2nd Auto Business - State Code': oldestRecord.'2nd Auto Business - State Code',
+                                        '2nd Auto - Business Name': oldestRecord.'2nd Auto - Business Name',
+                                        '2nd Auto Personal - State Code': oldestRecord.'2nd Auto Personal - State Code',
+                                        'Is there a 3rd Policy?': oldestRecord.'Is there a 3rd Policy?',
+                                        '3rd - Policy Number': oldestRecord.'3rd - Policy Number',
+                                        '3rd - Claim Number': oldestRecord.'3rd - Claim Number',
+                                        '3rd Date of Loss': oldestRecord.'3rd Date of Loss',
+                                        'Multiple Policy - 3rd Policy Type': oldestRecord.'Multiple Policy - 3rd Policy Type',
+                                        '3rd Fire - Street': oldestRecord.'3rd Fire - Street',
+                                        '3rd Fire - City': oldestRecord.'3rd Fire - City',
+                                        '3rd Fire - State': oldestRecord.'3rd Fire - State',
+                                        '3rd Fire - Line of Business': oldestRecord.'3rd Fire - Line of Business',
+                                        '3rd Fire - Business State Code': oldestRecord.'3rd Fire - Business State Code',
+                                        '3rd Fire - Business Policy Type': oldestRecord.'3rd Fire - Business Policy Type',
+                                        '3rd Fire - Business Name': oldestRecord.'3rd Fire - Business Name',
+                                        '3rd Fire Personal - State Code': oldestRecord.'3rd Fire Personal - State Code',
+                                        '3rd Fire - Personal Policy Type': oldestRecord.'3rd Fire - Personal Policy Type',
+                                        '3rd Auto - VIN': oldestRecord.'3rd Auto - VIN',
+                                        '3rd Auto - License Plate': oldestRecord.'3rd Auto - License Plate',
+                                        '3rd Auto - Make': oldestRecord.'3rd Auto - Make',
+                                        '3rd Auto - Model': oldestRecord.'3rd Auto - Model',
+                                        '3rd Auto - Line of Business': oldestRecord.'3rd Auto - Line of Business',
+                                        '3rd Auto Business - State Code': oldestRecord.'3rd Auto Business - State Code',
+                                        '3rd Auto - Business Name': oldestRecord.'3rd Auto - Business Name',
+                                        '3rd Auto Personal - State Code': oldestRecord.'3rd Auto Personal - State Code',
+                                        Details: oldestRecord.Details,
+                                        'Others Involved': oldestRecord.'Others Involved'
+                                    }
+                                )
+                                );
+                                
+                                /*/Patch(
+                                    'Referral Intake Tool Submissions',
+                                    LookUp(
+                                        Sort(Filter('Referral Intake Tool Submissions', IsBlank('Assigned To')), 'Created On'),
+                                        ID = 'Queue Gallery'.Selected.ID
+                                    ),
+                                    { 'Assigned To': _selectedApprover.MailNickname }
+                                );
+                                
+                                ClearCollect(
+                                    WorkBankCollection,
+                                    ForAll(
+                                        Sort(Filter('Referral Intake Tool Submissions', IsBlank('Assigned To')), 'Created On'),
+                                        If(
+                                            IsBlank('Assigned To'),
+                                            ThisRecord,
+                                            First(Sort(Filter('Referral Intake Tool Submissions', IsBlank('Assigned To')), 'Created On'))
+                                        )
+                                    )
+                                );/*/
+                            Text: |-
+                                =If(sharedWorkBankMode = true, "Assign To: ", "Reassign To: ")
+                            Visible: =If(sharedWorkBankMode = true Or myInTrayMode = true, true, false)
+                            Width: =110
+                            X: =0
+                            Y: =0
+                            ZIndex: =1
+
+                        AssignLabel As label:
+                            AlignInContainer: =AlignInContainer.Stretch
+                            BorderColor: =App.Theme.Colors.Darker40
+                            Color: =RGBA(0, 0, 0, 1)
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            Font: =App.Theme.Font
+                            Size: =13
+                            Text: =If(!IsBlank(_selectedApprover.DisplayName),_selectedApprover.DisplayName & " (" &_selectedApprover.MailNickname & ")","No Employee Entered")
+                            Visible: =If(sharedWorkBankMode = true Or myInTrayMode = true, true, false)
+                            Width: =AssignButton.Width * 3
+                            ZIndex: =2
+
+                        ButtonCanvas5 As Button:
+                            AlignInContainer: =AlignInContainer.Stretch
+                            Appearance: ='ButtonCanvas.Appearance'.Secondary
+                            BorderStyle: =BorderStyle.None
+                            BorderThickness: =
+                            DisplayMode: =DisplayMode.Edit
+                            FillPortions: =1
+                            FontColor: =RGBA(189, 49, 51, 1)
+                            Height: =32
+                            LayoutMinHeight: =32
+                            LayoutMinWidth: =96
+                            OnSelect: |-
+                                =UpdateContext({searchMode: true})
+                            Text: ="Change Employee"
+                            Width: =96
+                            X: =0
+                            Y: =0
+                            ZIndex: =3
+
+                        AssignProfilePicture As image:
+                            AlignInContainer: =AlignInContainer.Center
+                            BorderColor: =App.Theme.Colors.Darker40
+                            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                            DisabledFill: =RGBA(244, 244, 244, 1)
+                            DisplayMode: =DisplayMode.View
+                            Height: =AssignedContainer.Height
+                            Image: =If(!IsBlank(_selectedApproverPhoto),_selectedApproverPhoto)
+                            Visible: =If(sharedWorkBankMode = true Or myInTrayMode = true, true, false)
+                            ZIndex: =4
+
+                        Label1 As label:
+                            BorderColor: =App.Theme.Colors.Darker40
+                            Color: =RGBA(0, 0, 0, 1)
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            Font: =App.Theme.Font
+                            Size: =13
+                            Text: ='Queue Gallery'.Selected.'Assigned To'
+                            ZIndex: =5
+
+                        ButtonCanvas4 As Button:
+                            AlignInContainer: =AlignInContainer.Stretch
+                            BorderStyle: =""
+                            DisplayMode: =DisplayMode.Edit
+                            FillPortions: =1
+                            Height: =32
+                            LayoutMinHeight: =32
+                            LayoutMinWidth: =96
+                            OnSelect: |-
+                                =Refresh('Referral Intake Tool Submissions');
+                                
+                                UpdateContext({ 
+                                    oldestRecord: First(Sort(Filter('Referral Intake Tool Submissions', !IsBlank('Assigned To')), 'Created On')),
+                                    clickedCount: CountRows(WorkBankCollection)
+                                });
+                                
+                                If(
+                                    IsBlank(oldestRecord),
+                                    Notify("No cases have been assigned.", NotificationType.Error),
+                                    Patch(
+                                        'Referral Intake Tool Submissions',
+                                        oldestRecord,
+                                        { 'Assigned To': Blank() }
+                                    );
+                                
+                                    UpdateContext({ clickedCount: clickedCount + 1 })
+                                )
+                            Text: ="Remove Assigned"
+                            Width: =96
+                            X: =0
+                            Y: =0
+                            ZIndex: =6
+
+                        ButtonCanvas2 As Button:
+                            AlignInContainer: =AlignInContainer.Stretch
+                            BorderStyle: =""
+                            DisplayMode: =DisplayMode.Edit
+                            FillPortions: =1
+                            Height: =32
+                            LayoutMinHeight: =32
+                            LayoutMinWidth: =96
+                            OnSelect: |-
+                                =ClearCollect(WorkBankCollection, {});
+                                ClearCollect(ItemValues, {});
+                            Text: ="Clear Collection"
+                            Width: =96
+                            X: =0
+                            Y: =0
+                            ZIndex: =7
+
                     "'Filter/AssignContainer' As groupContainer.horizontalAutoLayoutContainer":
                         FillPortions: =0
                         Height: =WorkBankHeader.Height / 2
@@ -497,7 +748,7 @@
                         RadiusBottomRight: =4
                         RadiusTopLeft: =4
                         RadiusTopRight: =4
-                        ZIndex: =2
+                        ZIndex: =3
 
                         EmployeeSearch As text:
                             BorderStyle: =BorderStyle.None
@@ -525,13 +776,6 @@
                             PaddingTop: =10
                             Visible: =If(sharedWorkBankMode = true Or myInTrayMode = true, true, false)
                             ZIndex: =2
-
-                    Seperator As rectangle:
-                        BorderColor: =App.Theme.Colors.Darker40
-                        Fill: =App.Theme.Colors.Primary
-                        Height: =Seperator_1.Height
-                        Visible: =false
-                        ZIndex: =3
 
                 DataContainer As groupContainer.horizontalAutoLayoutContainer:
                     DropShadow: =DropShadow.Light
@@ -847,238 +1091,4 @@
                             X: =Title11.X
                             Y: =Title11.Y + Title11.Height + 8
                             ZIndex: =3
-
-                AssignedContainer As groupContainer.horizontalAutoLayoutContainer:
-                    DropShadow: =DropShadow.Light
-                    FillPortions: =0
-                    Height: =ControlContainer.Height / 2
-                    LayoutMinHeight: =100
-                    LayoutMinWidth: =250
-                    LayoutMode: =LayoutMode.Auto
-                    RadiusBottomLeft: =4
-                    RadiusBottomRight: =4
-                    RadiusTopLeft: =4
-                    RadiusTopRight: =4
-                    X: =40
-                    Y: =40
-                    ZIndex: =3
-
-                    AssignButton As Button:
-                        AlignInContainer: =AlignInContainer.Stretch
-                        BorderStyle: =""
-                        DisplayMode: =DisplayMode.Edit
-                        FillPortions: =
-                        Height: =32
-                        LayoutMinHeight: =32
-                        LayoutMinWidth: =96
-                        OnSelect: |-
-                            =Refresh('Referral Intake Tool Submissions');
-                            Reset(EmployeeSearch);
-                            Set(_submittingRequest, true);
-                            
-                            UpdateContext({ 
-                                oldestRecord: First(Sort(Filter('Referral Intake Tool Submissions', IsBlank('Assigned To')), 'Created On')),
-                                clickedCount: CountRows(WorkBankCollection)
-                            });
-                            
-                            If(
-                                IsBlank(oldestRecord),
-                                Notify("No record found without a value in 'Assigned To' field.", NotificationType.Error),
-                                Patch(
-                                    'Referral Intake Tool Submissions',
-                                    oldestRecord,
-                                    { 'Assigned To': _selectedApprover.MailNickname }
-                                );
-                            
-                                UpdateContext({ clickedCount: clickedCount + 1 });
-                                Collect(
-                                WorkBankCollection,
-                                {
-                                    ID: oldestRecord.ID,
-                                    'Created On': oldestRecord.'Created On',
-                                    'Assigned To': oldestRecord.'Assigned To',
-                                    '1st - Policyholder First Name': oldestRecord.'Policyholder First Name',
-                                    '1st - Policyholder Last Name': oldestRecord.'Policyholder Last Name',
-                                    '1st - Policyholder Phone Number': oldestRecord.'Policyholder Phone Number',
-                                    '1st Date of Loss': oldestRecord.'1st Date of Loss',
-                                    '1st Policy Number': oldestRecord.'1st Policy Number',
-                                    '1st Claim Number': oldestRecord.'1st Claim Number',
-                                    '1st Policy Type': oldestRecord.'1st Policy Type',
-                                    '1st Fire - Street': oldestRecord.'1st Fire - Street',
-                                    '1st Fire - City': oldestRecord.'1st Fire - City',
-                                    '1st Fire - State': oldestRecord.'1st Fire - State',
-                                    '1st Fire - Line of Business': oldestRecord.'1st Fire - Line of Business',
-                                    '1st Fire Business Lines - State Code': oldestRecord.'1st Fire Business Lines - State Code',
-                                    '1st Fire - Business Policy Types': oldestRecord.'1st Fire - Business Policy Types',
-                                    '1st Fire - Business Name': oldestRecord.'1st Fire - Business Name',
-                                    '1st Fire Personal Lines - State Code': oldestRecord.'1st Fire Personal Lines - State Code',
-                                    '1st Fire - Personal Policy Type': oldestRecord.'1st Fire - Personal Policy Type',
-                                    '1st Auto - VIN': oldestRecord.'1st Auto -  VIN',
-                                    '1st Auto - License Plate': oldestRecord.'1st Auto -  License Plate',
-                                    '1st Auto - Make': oldestRecord.'1st Auto -  Make',
-                                    '1st Auto - Model': oldestRecord.'1st Auto -  Model',
-                                    '1st Auto - Line of Business': oldestRecord.'1st Auto - Line of Business',
-                                    '1st Auto Business - State Code': oldestRecord.'1st Auto Business - State Code',
-                                    '1st Auto - Business Name': oldestRecord.'1st Auto - Business Name',
-                                    '1st Auto Personal - State Code': oldestRecord.'1st Auto Personal - State Code',
-                                    'Is there a second Policy?': oldestRecord.'Is there a second Policy?',
-                                    '2nd Policy Number': oldestRecord.'2nd Policy Number',
-                                    '2nd Claim Number': oldestRecord.'2nd Claim Number',
-                                    '2nd Date of Loss': oldestRecord.'2nd Date of Loss',
-                                    'Multiple Policy - 2nd Policy Type': oldestRecord.'Multiple Policy - 2nd Policy Type',
-                                    '2nd Fire - Street': oldestRecord.'2nd Fire - Street',
-                                    '2nd Fire - City': oldestRecord.'2nd Fire - City',
-                                    '2nd Fire - State': oldestRecord.'2nd Fire - State',
-                                    '2nd Fire - Line of Business': oldestRecord.'2nd Fire - Line of Business',
-                                    '2nd Fire - Business State Code': oldestRecord.'2nd Fire - Business State Code',
-                                    '2nd Fire - Business Name': oldestRecord.'2nd Fire - Business Name',
-                                    '2nd Fire - Business Policy Type': oldestRecord.'2nd Fire - Business Policy Type',
-                                    '2nd Fire Personal - State Code': oldestRecord.'2nd Fire Personal - State Code',
-                                    '2nd Fire - Personal Policy Type': oldestRecord.'2nd Fire - Personal Policy Type',
-                                    '2nd Auto - VIN': oldestRecord.'2nd Auto - VIN',
-                                    '2nd Auto - License Plate': oldestRecord.'2nd Auto - License Plate',
-                                    '2nd Auto - Make': oldestRecord.'2nd Auto - Make',
-                                    '2nd Auto - Model': oldestRecord.'2nd Auto - Model',
-                                    '2nd Auto - Line of Business': oldestRecord.'2nd Auto - Line of Business',
-                                    '2nd Auto Business - State Code': oldestRecord.'2nd Auto Business - State Code',
-                                    '2nd Auto - Business Name': oldestRecord.'2nd Auto - Business Name',
-                                    '2nd Auto Personal - State Code': oldestRecord.'2nd Auto Personal - State Code',
-                                    'Is there a 3rd Policy?': oldestRecord.'Is there a 3rd Policy?',
-                                    '3rd - Policy Number': oldestRecord.'3rd - Policy Number',
-                                    '3rd - Claim Number': oldestRecord.'3rd - Claim Number',
-                                    '3rd Date of Loss': oldestRecord.'3rd Date of Loss',
-                                    'Multiple Policy - 3rd Policy Type': oldestRecord.'Multiple Policy - 3rd Policy Type',
-                                    '3rd Fire - Street': oldestRecord.'3rd Fire - Street',
-                                    '3rd Fire - City': oldestRecord.'3rd Fire - City',
-                                    '3rd Fire - State': oldestRecord.'3rd Fire - State',
-                                    '3rd Fire - Line of Business': oldestRecord.'3rd Fire - Line of Business',
-                                    '3rd Fire - Business State Code': oldestRecord.'3rd Fire - Business State Code',
-                                    '3rd Fire - Business Policy Type': oldestRecord.'3rd Fire - Business Policy Type',
-                                    '3rd Fire - Business Name': oldestRecord.'3rd Fire - Business Name',
-                                    '3rd Fire Personal - State Code': oldestRecord.'3rd Fire Personal - State Code',
-                                    '3rd Fire - Personal Policy Type': oldestRecord.'3rd Fire - Personal Policy Type',
-                                    '3rd Auto - VIN': oldestRecord.'3rd Auto - VIN',
-                                    '3rd Auto - License Plate': oldestRecord.'3rd Auto - License Plate',
-                                    '3rd Auto - Make': oldestRecord.'3rd Auto - Make',
-                                    '3rd Auto - Model': oldestRecord.'3rd Auto - Model',
-                                    '3rd Auto - Line of Business': oldestRecord.'3rd Auto - Line of Business',
-                                    '3rd Auto Business - State Code': oldestRecord.'3rd Auto Business - State Code',
-                                    '3rd Auto - Business Name': oldestRecord.'3rd Auto - Business Name',
-                                    '3rd Auto Personal - State Code': oldestRecord.'3rd Auto Personal - State Code',
-                                    Details: oldestRecord.Details,
-                                    'Others Involved': oldestRecord.'Others Involved'
-                                }
-                            )
-                            );
-                            
-                            /*/Patch(
-                                'Referral Intake Tool Submissions',
-                                LookUp(
-                                    Sort(Filter('Referral Intake Tool Submissions', IsBlank('Assigned To')), 'Created On'),
-                                    ID = 'Queue Gallery'.Selected.ID
-                                ),
-                                { 'Assigned To': _selectedApprover.MailNickname }
-                            );
-                            
-                            ClearCollect(
-                                WorkBankCollection,
-                                ForAll(
-                                    Sort(Filter('Referral Intake Tool Submissions', IsBlank('Assigned To')), 'Created On'),
-                                    If(
-                                        IsBlank('Assigned To'),
-                                        ThisRecord,
-                                        First(Sort(Filter('Referral Intake Tool Submissions', IsBlank('Assigned To')), 'Created On'))
-                                    )
-                                )
-                            );/*/
-                        Text: |-
-                            =If(sharedWorkBankMode = true, "Assign To: ", "Reassign To: ")
-                        Visible: =If(sharedWorkBankMode = true Or myInTrayMode = true, true, false)
-                        Width: =110
-                        X: =0
-                        Y: =0
-                        ZIndex: =1
-
-                    AssignLabel As label:
-                        AlignInContainer: =AlignInContainer.Stretch
-                        BorderColor: =App.Theme.Colors.Darker40
-                        Color: =RGBA(0, 0, 0, 1)
-                        DisabledColor: =RGBA(166, 166, 166, 1)
-                        FillPortions: =1
-                        Font: =App.Theme.Font
-                        Size: =13
-                        Text: =If(!IsBlank(_selectedApprover.DisplayName),_selectedApprover.DisplayName & " (" &_selectedApprover.MailNickname & ")","No Employee Entered")
-                        Visible: =If(sharedWorkBankMode = true Or myInTrayMode = true, true, false)
-                        Width: =AssignButton.Width * 4
-                        ZIndex: =2
-
-                    AssignProfilePicture As image:
-                        AlignInContainer: =AlignInContainer.Center
-                        BorderColor: =App.Theme.Colors.Darker40
-                        DisabledBorderColor: =RGBA(166, 166, 166, 1)
-                        DisabledFill: =RGBA(244, 244, 244, 1)
-                        DisplayMode: =DisplayMode.View
-                        Height: =AssignedContainer.Height
-                        Image: =If(!IsBlank(_selectedApproverPhoto),_selectedApproverPhoto)
-                        Visible: =If(sharedWorkBankMode = true Or myInTrayMode = true, true, false)
-                        ZIndex: =3
-
-                    Label1 As label:
-                        BorderColor: =App.Theme.Colors.Darker40
-                        Color: =RGBA(0, 0, 0, 1)
-                        DisabledColor: =RGBA(166, 166, 166, 1)
-                        Font: =App.Theme.Font
-                        Size: =13
-                        Text: ='Queue Gallery'.Selected.'Assigned To'
-                        ZIndex: =4
-
-                    ButtonCanvas4 As Button:
-                        AlignInContainer: =AlignInContainer.Stretch
-                        BorderStyle: =""
-                        DisplayMode: =DisplayMode.Edit
-                        FillPortions: =1
-                        Height: =32
-                        LayoutMinHeight: =32
-                        LayoutMinWidth: =96
-                        OnSelect: |-
-                            =Refresh('Referral Intake Tool Submissions');
-                            
-                            UpdateContext({ 
-                                oldestRecord: First(Sort(Filter('Referral Intake Tool Submissions', !IsBlank('Assigned To')), 'Created On')),
-                                clickedCount: CountRows(WorkBankCollection)
-                            });
-                            
-                            If(
-                                IsBlank(oldestRecord),
-                                Notify("No cases have been assigned.", NotificationType.Error),
-                                Patch(
-                                    'Referral Intake Tool Submissions',
-                                    oldestRecord,
-                                    { 'Assigned To': Blank() }
-                                );
-                            
-                                UpdateContext({ clickedCount: clickedCount + 1 })
-                            )
-                        Text: ="Remove Assigned"
-                        Width: =96
-                        X: =0
-                        Y: =0
-                        ZIndex: =5
-
-                    ButtonCanvas2 As Button:
-                        AlignInContainer: =AlignInContainer.Stretch
-                        BorderStyle: =""
-                        DisplayMode: =DisplayMode.Edit
-                        FillPortions: =1
-                        Height: =32
-                        LayoutMinHeight: =32
-                        LayoutMinWidth: =96
-                        OnSelect: |-
-                            =ClearCollect(WorkBankCollection, {});
-                            ClearCollect(ItemValues, {});
-                        Text: ="Clear Collection"
-                        Width: =96
-                        X: =0
-                        Y: =0
-                        ZIndex: =6
 
