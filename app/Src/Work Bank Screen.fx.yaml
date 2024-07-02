@@ -696,7 +696,8 @@
                             DisabledColor: =RGBA(244, 244, 244, 1)
                             Height: ='Referral Search'.Height
                             Icon: =Icon.Search
-                            OnSelect: =
+                            OnSelect: |-
+                                =UpdateContext({searchMode: false})
                             PaddingBottom: =10
                             PaddingLeft: =10
                             PaddingRight: =10
