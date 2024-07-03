@@ -88,7 +88,7 @@
                 RadiusBottomRight: =8
                 RadiusTopLeft: =8
                 RadiusTopRight: =8
-                Visible: =If(myInTrayMode = true, true, false) And If(IsEmpty(WorkBankCollection), false, true)
+                Visible: =If(myInTrayMode = true, true, false) And If(IsEmpty(WorkBankCollection), false, true) And If(CountRows(Filter(WorkBankCollection,User.Mail = User().Email)) > 0, true, false)
                 Width: =WorkBankHeader.Width * (1/4)
                 ZIndex: =1
 
@@ -752,7 +752,7 @@
                         RadiusBottomRight: =4
                         RadiusTopLeft: =4
                         RadiusTopRight: =4
-                        Visible: =If(myInTrayMode = true, true, false)  And If(EmployeeBrowseGallery.Visible = true, false, true) And If(IsEmpty(WorkBankCollection), false, true)
+                        Visible: =If(myInTrayMode = true, true, false)  And If(EmployeeBrowseGallery.Visible = true, false, true) And If('Queue Gallery'.Visible = true, true, false) And If(CountRows(Filter(WorkBankCollection,User.Mail = User().Email)) > 0, true, false)
                         ZIndex: =7
 
                         "Gallery1 As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver5.0'":
@@ -779,7 +779,7 @@
                                     },
                                     {
                                         Header: "Assigned To",
-                                        Value: _selectedReferral.'Assigned To'
+                                        Value: _selectedReferral.User.DisplayName & " (" & _selectedReferral.User.MailNickname & ")"
                                     }
                                 )
                             Layout: =Layout.Vertical
