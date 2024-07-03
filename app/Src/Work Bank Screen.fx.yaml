@@ -560,42 +560,6 @@
                             Y: =0
                             ZIndex: =17
 
-                        "'1st Date of Loss1' As PowerAppsOneGridTemplate_dataField.textualColumn":
-                            FieldDisplayName: ="1st Date of Loss"
-                            FieldName: ="cr065__1stdateofloss"
-                            FieldType: ="d"
-                            FieldVariantName: ="textualColumn"
-                            Height: =100
-                            Order: =5
-                            Width: =0
-                            X: =0
-                            Y: =0
-                            ZIndex: =18
-
-                        "'2nd Date of Loss1' As PowerAppsOneGridTemplate_dataField.textualColumn":
-                            FieldDisplayName: ="2nd Date of Loss"
-                            FieldName: ="cr065__2nddateofloss"
-                            FieldType: ="d"
-                            FieldVariantName: ="textualColumn"
-                            Height: =100
-                            Order: =6
-                            Width: =0
-                            X: =0
-                            Y: =0
-                            ZIndex: =19
-
-                        "'3rd Date of Loss1' As PowerAppsOneGridTemplate_dataField.textualColumn":
-                            FieldDisplayName: ="3rd Date of Loss"
-                            FieldName: ="cr065__3rddateofloss"
-                            FieldType: ="d"
-                            FieldVariantName: ="textualColumn"
-                            Height: =100
-                            Order: =7
-                            Width: =0
-                            X: =0
-                            Y: =0
-                            ZIndex: =20
-
                         "'Policyholder Last Name1' As PowerAppsOneGridTemplate_dataField.textualColumn":
                             FieldDisplayName: ="Policyholder Last Name"
                             FieldName: ="cr065__1stpolicyholderlastname"
@@ -619,6 +583,42 @@
                             X: =0
                             Y: =0
                             ZIndex: =22
+
+                        "'1st Date of Loss - Working1' As PowerAppsOneGridTemplate_dataField.textualColumn":
+                            FieldDisplayName: ="1st Date of Loss - Working"
+                            FieldName: ="cr065_stdateoflossana"
+                            FieldType: ="d"
+                            FieldVariantName: ="textualColumn"
+                            Height: =100
+                            Order: =6
+                            Width: =0
+                            X: =0
+                            Y: =0
+                            ZIndex: =23
+
+                        "'2nd Date of Loss - Working1' As PowerAppsOneGridTemplate_dataField.textualColumn":
+                            FieldDisplayName: ="2nd Date of Loss - Working"
+                            FieldName: ="cr065_nddateoflossworking"
+                            FieldType: ="d"
+                            FieldVariantName: ="textualColumn"
+                            Height: =100
+                            Order: =7
+                            Width: =0
+                            X: =0
+                            Y: =0
+                            ZIndex: =24
+
+                        "'3rd Date of Loss - Working1' As PowerAppsOneGridTemplate_dataField.textualColumn":
+                            FieldDisplayName: ="3rd Date of Loss - Working"
+                            FieldName: ="cr065_rddateoflossworking"
+                            FieldType: ="d"
+                            FieldVariantName: ="textualColumn"
+                            Height: =100
+                            Order: =8
+                            Width: =0
+                            X: =0
+                            Y: =0
+                            ZIndex: =25
 
                     EmployeeBrowseGallery As gallery.PeoplePickerTabletGallery:
                         AccessibleLabel: ="User look up search results"
@@ -774,6 +774,8 @@
                                     }
                                 )
                             Layout: =Layout.Vertical
+                            LayoutMinHeight: =287
+                            LayoutMinWidth: =320
                             LoadingSpinner: =LoadingSpinner.Data
                             ShowScrollbar: =false
                             TemplatePadding: =0
