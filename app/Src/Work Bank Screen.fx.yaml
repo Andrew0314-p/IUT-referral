@@ -38,12 +38,13 @@
             ZIndex: =2
 
             WorkBankHeader As Header:
+                AlignInContainer: =AlignInContainer.Start
                 DisplayMode: =DisplayMode.Edit
                 Height: =75
                 LayoutMinHeight: =75
                 LayoutMinWidth: =Parent.Width
                 Logo: =SF_Ovals_Rev_Standard_RGB_Microsoft
-                LogoTooltip: =
+                LogoTooltip: ="Home"
                 OnSelectLogo: =Navigate('Home Screen')
                 Title: ="Work Bank"
                 UserEmail: =User().Email
@@ -518,7 +519,7 @@
                         onRowSelect: =false
                         onSave: =false
                         OnSelect: =false
-                        Visible: =If(sharedWorkBankMode = true, true, false) And If(EmployeeBrowseGallery.Visible = true, false, true)
+                        Visible: =If(myTeamMode = true, true, false) And If(EmployeeBrowseGallery.Visible = true, false, true)
                         Width: =If(Self.X + 800 > Parent.Width, Parent.Width - Self.X, 800)
                         X: =0
                         Y: =0
@@ -976,7 +977,6 @@
                                 ZIndex: =3
 
                     EmptyCollectionWarning As groupContainer.horizontalAutoLayoutContainer:
-                        DropShadow: =DropShadow.Light
                         LayoutMinHeight: =100
                         LayoutMinWidth: =250
                         LayoutMode: =LayoutMode.Auto
@@ -984,7 +984,7 @@
                         RadiusBottomRight: =4
                         RadiusTopLeft: =4
                         RadiusTopRight: =4
-                        Visible: =If(myInTrayMode = true, true, false) And If('Referral Info Container'.Visible = false, true, false)
+                        Visible: =If(myInTrayMode = true, true, false) And If('Referral Info Container'.Visible = false, true, false) And If(EmployeeBrowseGallery.Visible = false, true, false)
                         ZIndex: =8
 
                         EmptyCollectionText As Text:
@@ -1078,7 +1078,6 @@
                         AssignButton As Button:
                             AlignInContainer: =AlignInContainer.Stretch
                             DisplayMode: =DisplayMode.Edit
-                            FillPortions: =1
                             Height: =32
                             LayoutMinHeight: =32
                             LayoutMinWidth: =96
@@ -1179,7 +1178,7 @@
                                 );
                             Text: |-
                                 ="Assign To: " & _selectedApprover.DisplayName & " (" &_selectedApprover.MailNickname & ")"
-                            Width: =96
+                            Width: =Len(AssignButton.Text) * 8
                             X: =0
                             Y: =0
                             ZIndex: =1
