@@ -1185,3 +1185,13 @@
                             Y: =0
                             ZIndex: =6
 
+                        TextCanvas4 As Text:
+                            DisplayMode: =DisplayMode.Edit
+                            Height: =32
+                            LayoutMinHeight: =32
+                            LayoutMinWidth: =96
+                            Width: =96
+                            X: =0
+                            Y: =0
+                            ZIndex: =7
+
