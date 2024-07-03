@@ -84,7 +84,7 @@
                 RadiusBottomRight: =8
                 RadiusTopLeft: =8
                 RadiusTopRight: =8
-                Visible: =If(myInTrayMode = true, true, false)
+                Visible: =If(myInTrayMode = true, true, false) And If(IsEmpty(WorkBankCollection), false, true)
                 Width: =WorkBankHeader.Width * (1/4)
                 ZIndex: =1
 
@@ -747,7 +747,7 @@
                         RadiusBottomRight: =4
                         RadiusTopLeft: =4
                         RadiusTopRight: =4
-                        Visible: =If(myInTrayMode = true, true, false)  And If(EmployeeBrowseGallery.Visible = true, false, true)
+                        Visible: =If(myInTrayMode = true, true, false)  And If(EmployeeBrowseGallery.Visible = true, false, true) And If(IsEmpty(WorkBankCollection), false, true)
                         ZIndex: =7
 
                         "Gallery1 As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver5.0'":
@@ -975,6 +975,38 @@
                                 Y: =Parent.TemplateHeight - Self.Height
                                 ZIndex: =3
 
+                    EmptyCollectionWarning As groupContainer.horizontalAutoLayoutContainer:
+                        DropShadow: =DropShadow.Light
+                        LayoutMinHeight: =100
+                        LayoutMinWidth: =250
+                        LayoutMode: =LayoutMode.Auto
+                        RadiusBottomLeft: =4
+                        RadiusBottomRight: =4
+                        RadiusTopLeft: =4
+                        RadiusTopRight: =4
+                        Visible: =If(myInTrayMode = true, true, false) And If('Referral Info Container'.Visible = false, true, false)
+                        ZIndex: =8
+
+                        EmptyCollectionText As Text:
+                            Align: ='TextCanvas.Align'.Center
+                            AlignInContainer: =AlignInContainer.Stretch
+                            BorderStyle: =BorderStyle.None
+                            DisplayMode: =DisplayMode.Edit
+                            FillPortions: =1
+                            FontItalic: =false
+                            FontStrikethrough: =false
+                            FontUnderline: =false
+                            Height: =32
+                            LayoutMinHeight: =32
+                            LayoutMinWidth: =96
+                            Size: =20
+                            Text: ="You have no cases assigned. Please check the Shared Work Bank for more work."
+                            Weight: ='TextCanvas.Weight'.Regular
+                            Width: =96
+                            X: =0
+                            Y: =0
+                            ZIndex: =1
+
                 AssignContainer As groupContainer.verticalAutoLayoutContainer:
                     FillPortions: =0
                     Height: =AssignedInfoContainer.Height
@@ -1046,6 +1078,7 @@
                         AssignButton As Button:
                             AlignInContainer: =AlignInContainer.Stretch
                             DisplayMode: =DisplayMode.Edit
+                            FillPortions: =1
                             Height: =32
                             LayoutMinHeight: =32
                             LayoutMinWidth: =96
@@ -1145,26 +1178,11 @@
                                 )
                                 );
                             Text: |-
-                                ="Assign To:"
+                                ="Assign To: " & _selectedApprover.DisplayName & " (" &_selectedApprover.MailNickname & ")"
                             Width: =96
                             X: =0
                             Y: =0
                             ZIndex: =1
-
-                        AssignedEmployee As label:
-                            BorderColor: =App.Theme.Colors.Darker40
-                            Color: =RGBA(0, 0, 0, 1)
-                            DisabledColor: =RGBA(166, 166, 166, 1)
-                            Font: =App.Theme.Font
-                            Size: =13
-                            Text: |-
-                                =If(
-                                    IsBlank(_selectedApprover),
-                                    "No Employee Selected",
-                                    _selectedApprover.DisplayName & " (" & _selectedApprover.MailNickname & ")"
-                                )
-                            Width: =Len(AssignedEmployee.Text) * 10
-                            ZIndex: =2
 
                         AssignedEmployeePicture As image:
                             AlignInContainer: =AlignInContainer.Stretch
@@ -1239,7 +1257,11 @@
                             Height: =32
                             LayoutMinHeight: =32
                             LayoutMinWidth: =96
-                            OnSelect: =ClearCollect(WorkBankCollection, {})
+                            OnSelect: |-
+                                =ClearCollect(WorkBankCollection, {});
+                                ClearCollect(ItemValues, {});
+                                Remove(ItemValues, FirstN(ItemValues, 1));
+                                Remove(WorkBankCollection, FirstN(WorkBankCollection, 1));
                             Text: ="Clear Collection"
                             Width: =96
                             X: =0
