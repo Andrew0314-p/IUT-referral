@@ -2,12 +2,14 @@
     Fill: =Color.White
     LoadingSpinnerColor: =App.Theme.Colors.Primary
 
-    ScreenContainer2 As groupContainer.verticalAutoLayoutContainer:
+    HomeScreenContainer As groupContainer.verticalAutoLayoutContainer:
         DropShadow: =DropShadow.Light
         Fill: =RGBA(245, 245, 245, 1)
         Height: =Parent.Height
+        LayoutAlignItems: =LayoutAlignItems.Stretch
         LayoutDirection: =LayoutDirection.Vertical
         LayoutGap: =16
+        LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
         LayoutMode: =LayoutMode.Auto
         PaddingBottom: =16
         PaddingLeft: =16
@@ -21,6 +23,7 @@
         ZIndex: =1
 
         HeaderContainer2 As groupContainer.horizontalAutoLayoutContainer:
+            AlignInContainer: =AlignInContainer.SetByContainer
             DropShadow: =DropShadow.Light
             Fill: =RGBA(255, 255, 255, 1)
             FillPortions: =0
@@ -51,7 +54,8 @@
                 Y: =0
                 ZIndex: =3
 
-        MainContainer2 As groupContainer.horizontalAutoLayoutContainer:
+        "'Screens Container' As groupContainer.horizontalAutoLayoutContainer":
+            AlignInContainer: =AlignInContainer.SetByContainer
             DropShadow: =DropShadow.Light
             Fill: =RGBA(245, 245, 245, 1)
             LayoutAlignItems: =LayoutAlignItems.Stretch
@@ -72,6 +76,7 @@
             ZIndex: =4
 
             "'New Referral Container' As groupContainer.verticalAutoLayoutContainer":
+                AlignInContainer: =AlignInContainer.SetByContainer
                 DropShadow: =DropShadow.Regular
                 Fill: =RGBA(255, 255, 255, 1)
                 LayoutAlignItems: =LayoutAlignItems.Center
@@ -165,6 +170,7 @@
                         ZIndex: =10
 
             "'View Referral Container' As groupContainer.verticalAutoLayoutContainer":
+                AlignInContainer: =AlignInContainer.SetByContainer
                 DropShadow: =DropShadow.Regular
                 Fill: =RGBA(255, 255, 255, 1)
                 LayoutAlignItems: =LayoutAlignItems.Center
@@ -257,6 +263,7 @@
                         ZIndex: =16
 
             "'Work Bank Container' As groupContainer.verticalAutoLayoutContainer":
+                AlignInContainer: =AlignInContainer.SetByContainer
                 DropShadow: =DropShadow.Regular
                 Fill: =RGBA(255, 255, 255, 1)
                 LayoutAlignItems: =LayoutAlignItems.Center
@@ -350,6 +357,7 @@
                         ZIndex: =22
 
             "'Employee Information Container' As groupContainer.verticalAutoLayoutContainer":
+                AlignInContainer: =AlignInContainer.SetByContainer
                 DropShadow: =DropShadow.Regular
                 Fill: =RGBA(255, 255, 255, 1)
                 LayoutAlignItems: =LayoutAlignItems.Center
@@ -442,6 +450,7 @@
                         ZIndex: =28
 
             "'RVCR Container' As groupContainer.verticalAutoLayoutContainer":
+                AlignInContainer: =AlignInContainer.SetByContainer
                 DropShadow: =DropShadow.Regular
                 Fill: =RGBA(255, 255, 255, 1)
                 LayoutAlignItems: =LayoutAlignItems.Center
@@ -534,6 +543,7 @@
                         ZIndex: =34
 
             "'Additional Info Container' As groupContainer.verticalAutoLayoutContainer":
+                AlignInContainer: =AlignInContainer.SetByContainer
                 DropShadow: =DropShadow.Regular
                 Fill: =RGBA(255, 255, 255, 1)
                 LayoutAlignItems: =LayoutAlignItems.Center

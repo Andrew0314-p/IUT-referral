@@ -4,7 +4,7 @@
     OnVisible: |-
         =UpdateContext({sharedWorkBankMode: true, myInTrayMode: false, myTeamMode: false, reportsMode: false, searchMode: false,clickedCount: 0})
 
-    ScreenContainer1 As groupContainer.verticalAutoLayoutContainer:
+    WorkBankScreenContainer As groupContainer.verticalAutoLayoutContainer:
         DropShadow: =DropShadow.Light
         Fill: =RGBA(245, 245, 245, 1)
         Height: =Parent.Height
@@ -24,6 +24,7 @@
         ZIndex: =1
 
         HeaderContainer1 As groupContainer.horizontalAutoLayoutContainer:
+            AlignInContainer: =AlignInContainer.SetByContainer
             DropShadow: =DropShadow.Light
             Fill: =RGBA(255, 255, 255, 1)
             FillPortions: =0
@@ -55,7 +56,8 @@
                 Y: =0
                 ZIndex: =1
 
-        BottomContainer1 As groupContainer.horizontalAutoLayoutContainer:
+        "'Work Container' As groupContainer.horizontalAutoLayoutContainer":
+            AlignInContainer: =AlignInContainer.SetByContainer
             Fill: =RGBA(245, 245, 245, 1)
             LayoutAlignItems: =LayoutAlignItems.Stretch
             LayoutGap: =16
@@ -74,6 +76,7 @@
             ZIndex: =3
 
             SelectContainer As groupContainer.verticalAutoLayoutContainer:
+                AlignInContainer: =AlignInContainer.SetByContainer
                 DropShadow: =DropShadow.Light
                 Fill: =RGBA(255, 255, 255, 1)
                 FillPortions: =0
@@ -156,7 +159,7 @@
                     DelayItemLoading: =true
                     Fill: =RGBA(214, 221, 224, 0.23)
                     Height: =SelectContainer.Height - 'Input Container'.Height - (Seperator_1.Height * 100)
-                    Items: =WorkBankCollection
+                    Items: =Filter(WorkBankCollection,User.Mail = User().Email)
                     Layout: =Layout.Vertical
                     LayoutMinHeight: =1
                     LayoutMinWidth: =320
@@ -354,6 +357,7 @@
                         ZIndex: =6
 
             ViewContainer As groupContainer.verticalAutoLayoutContainer:
+                AlignInContainer: =AlignInContainer.SetByContainer
                 DropShadow: =DropShadow.Light
                 Fill: =RGBA(255, 255, 255, 1)
                 FillPortions: =7
