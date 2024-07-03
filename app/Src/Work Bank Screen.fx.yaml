@@ -425,7 +425,7 @@
                             LayoutMinWidth: =96
                             OnSelect: |-
                                 =UpdateContext({sharedWorkBankMode: false, myInTrayMode: true, myTeamMode: false, reportsMode: false})
-                            Text: ="My InTray"
+                            Text: ="View Referrals"
                             Width: =96
                             X: =0
                             Y: =0
