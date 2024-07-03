@@ -485,7 +485,7 @@
                             Layout: ='ButtonCanvas.Layout'.IconOnly
                             LayoutMinHeight: =32
                             LayoutMinWidth: =96
-                            OnSelect: =Refresh('Referral Intake Tool Submissions')
+                            OnSelect: =Refresh('Referral Intake Tool Submissions');
                             Text: ="Refresh"
                             Width: =96
                             X: =0
@@ -776,6 +776,10 @@
                                             If(Lower(Trim(_selectedReferral.'1st Policy Type')) = "fire",
                                             (" " & Trim(_selectedReferral.'1st Fire - Line of Business')),"")
                                         )
+                                    },
+                                    {
+                                        Header: "Assigned To",
+                                        Value: _selectedReferral.'Assigned To'
                                     }
                                 )
                             Layout: =Layout.Vertical
