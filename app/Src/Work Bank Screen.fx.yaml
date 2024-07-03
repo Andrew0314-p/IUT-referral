@@ -893,7 +893,7 @@
                             ZIndex: =1
 
                     AssignalTypeContainer As groupContainer.horizontalAutoLayoutContainer:
-                        Fill: =RGBA(245, 245, 245, 1)
+                        Fill: =RGBA(255, 255, 255, 1)
                         LayoutAlignItems: =LayoutAlignItems.Stretch
                         LayoutGap: =16
                         LayoutMinHeight: =100
@@ -912,9 +912,9 @@
                         Visible: =If(sharedWorkBankMode = true, true, false)
                         ZIndex: =9
 
-                        "'ABL Container_1' As groupContainer.verticalAutoLayoutContainer":
+                        "'ABL Container' As groupContainer.verticalAutoLayoutContainer":
                             AlignInContainer: =AlignInContainer.Center
-                            DropShadow: =DropShadow.Light
+                            DropShadow: =DropShadow.Semibold
                             Fill: =RGBA(255, 255, 255, 1)
                             Height: =300
                             LayoutAlignItems: =LayoutAlignItems.Center
@@ -943,7 +943,7 @@
                                 LayoutGap: =5
                                 LayoutJustifyContent: =LayoutJustifyContent.End
                                 LayoutMinHeight: =100
-                                LayoutMinWidth: ='ABL Container_1'.Width
+                                LayoutMinWidth: ='ABL Container'.Width
                                 LayoutMode: =LayoutMode.Auto
                                 RadiusBottomLeft: =4
                                 RadiusBottomRight: =4
@@ -956,6 +956,7 @@
                                     BorderColor: =App.Theme.Colors.Darker40
                                     DisabledBorderColor: =RGBA(166, 166, 166, 1)
                                     DisabledFill: =RGBA(244, 244, 244, 1)
+                                    Image: =Pictogram_Auto_Car_rgb
                                     ImagePosition: =ImagePosition.Fill
                                     RadiusBottomLeft: =90
                                     RadiusBottomRight: =90
@@ -967,7 +968,7 @@
                                 AlignInContainer: =AlignInContainer.SetByContainer
                                 LayoutDirection: =LayoutDirection.Vertical
                                 LayoutMinHeight: =100
-                                LayoutMinWidth: ='ABL Container_1'.Width
+                                LayoutMinWidth: ='ABL Container'.Width
                                 LayoutMode: =LayoutMode.Auto
                                 PaddingTop: =20
                                 RadiusBottomLeft: =4
@@ -993,11 +994,11 @@
                                     Y: =0
                                     ZIndex: =9
 
-                        "'APL Container_1' As groupContainer.verticalAutoLayoutContainer":
+                        "'APL Container' As groupContainer.verticalAutoLayoutContainer":
                             AlignInContainer: =AlignInContainer.Center
                             DropShadow: =DropShadow.Light
                             Fill: =RGBA(255, 255, 255, 1)
-                            Height: ='ABL Container_1'.Height
+                            Height: ='ABL Container'.Height
                             LayoutAlignItems: =LayoutAlignItems.Center
                             LayoutDirection: =LayoutDirection.Vertical
                             LayoutGap: =5
@@ -1024,7 +1025,7 @@
                                 LayoutGap: =5
                                 LayoutJustifyContent: =LayoutJustifyContent.End
                                 LayoutMinHeight: =100
-                                LayoutMinWidth: ='APL Container_1'.Width
+                                LayoutMinWidth: ='APL Container'.Width
                                 LayoutMode: =LayoutMode.Auto
                                 RadiusBottomLeft: =4
                                 RadiusBottomRight: =4
@@ -1037,6 +1038,7 @@
                                     BorderColor: =App.Theme.Colors.Darker40
                                     DisabledBorderColor: =RGBA(166, 166, 166, 1)
                                     DisabledFill: =RGBA(244, 244, 244, 1)
+                                    Image: =Pictogram_Farm_Truck_rgb
                                     ImagePosition: =ImagePosition.Fill
                                     RadiusBottomLeft: =90
                                     RadiusBottomRight: =90
@@ -1048,7 +1050,7 @@
                                 AlignInContainer: =AlignInContainer.SetByContainer
                                 LayoutDirection: =LayoutDirection.Vertical
                                 LayoutMinHeight: =100
-                                LayoutMinWidth: ='APL Container_1'.Width
+                                LayoutMinWidth: ='APL Container'.Width
                                 LayoutMode: =LayoutMode.Auto
                                 PaddingTop: =20
                                 RadiusBottomLeft: =4
@@ -1074,11 +1076,11 @@
                                     Y: =0
                                     ZIndex: =15
 
-                        "'FBL Container_1' As groupContainer.verticalAutoLayoutContainer":
+                        "'FBL Container' As groupContainer.verticalAutoLayoutContainer":
                             AlignInContainer: =AlignInContainer.Center
                             DropShadow: =DropShadow.Light
                             Fill: =RGBA(255, 255, 255, 1)
-                            Height: ='ABL Container_1'.Height
+                            Height: ='ABL Container'.Height
                             LayoutAlignItems: =LayoutAlignItems.Center
                             LayoutDirection: =LayoutDirection.Vertical
                             LayoutGap: =5
@@ -1105,7 +1107,7 @@
                                 LayoutGap: =5
                                 LayoutJustifyContent: =LayoutJustifyContent.End
                                 LayoutMinHeight: =100
-                                LayoutMinWidth: ='FBL Container_1'.Width
+                                LayoutMinWidth: ='FBL Container'.Width
                                 LayoutMode: =LayoutMode.Auto
                                 RadiusBottomLeft: =4
                                 RadiusBottomRight: =4
@@ -1118,6 +1120,7 @@
                                     BorderColor: =App.Theme.Colors.Darker40
                                     DisabledBorderColor: =RGBA(166, 166, 166, 1)
                                     DisabledFill: =RGBA(244, 244, 244, 1)
+                                    Image: =Pictogram_Fire_rgb
                                     ImagePosition: =ImagePosition.Fill
                                     RadiusBottomLeft: =90
                                     RadiusBottomRight: =90
@@ -1129,7 +1132,7 @@
                                 AlignInContainer: =AlignInContainer.SetByContainer
                                 LayoutDirection: =LayoutDirection.Vertical
                                 LayoutMinHeight: =100
-                                LayoutMinWidth: ='FBL Container_1'.Width
+                                LayoutMinWidth: ='FBL Container'.Width
                                 LayoutMode: =LayoutMode.Auto
                                 PaddingTop: =20
                                 RadiusBottomLeft: =4
@@ -1155,11 +1158,11 @@
                                     Y: =0
                                     ZIndex: =21
 
-                        "'FPL Container_1' As groupContainer.verticalAutoLayoutContainer":
+                        "'FPL Container' As groupContainer.verticalAutoLayoutContainer":
                             AlignInContainer: =AlignInContainer.Center
                             DropShadow: =DropShadow.Light
                             Fill: =RGBA(255, 255, 255, 1)
-                            Height: ='ABL Container_1'.Height
+                            Height: ='ABL Container'.Height
                             LayoutAlignItems: =LayoutAlignItems.Center
                             LayoutDirection: =LayoutDirection.Vertical
                             LayoutGap: =5
@@ -1186,7 +1189,7 @@
                                 LayoutGap: =5
                                 LayoutJustifyContent: =LayoutJustifyContent.End
                                 LayoutMinHeight: =100
-                                LayoutMinWidth: ='FPL Container_1'.Width
+                                LayoutMinWidth: ='FPL Container'.Width
                                 LayoutMode: =LayoutMode.Auto
                                 RadiusBottomLeft: =4
                                 RadiusBottomRight: =4
@@ -1199,6 +1202,7 @@
                                     BorderColor: =App.Theme.Colors.Darker40
                                     DisabledBorderColor: =RGBA(166, 166, 166, 1)
                                     DisabledFill: =RGBA(244, 244, 244, 1)
+                                    Image: =Pictogram_Fire_rgb
                                     ImagePosition: =ImagePosition.Fill
                                     RadiusBottomLeft: =90
                                     RadiusBottomRight: =90
@@ -1210,7 +1214,7 @@
                                 AlignInContainer: =AlignInContainer.SetByContainer
                                 LayoutDirection: =LayoutDirection.Vertical
                                 LayoutMinHeight: =100
-                                LayoutMinWidth: ='FPL Container_1'.Width
+                                LayoutMinWidth: ='FPL Container'.Width
                                 LayoutMode: =LayoutMode.Auto
                                 PaddingTop: =20
                                 RadiusBottomLeft: =4
@@ -1236,11 +1240,11 @@
                                     Y: =0
                                     ZIndex: =27
 
-                        "'Multiple Container_1' As groupContainer.verticalAutoLayoutContainer":
+                        "'Multiple Container' As groupContainer.verticalAutoLayoutContainer":
                             AlignInContainer: =AlignInContainer.Center
                             DropShadow: =DropShadow.Light
                             Fill: =RGBA(255, 255, 255, 1)
-                            Height: ='ABL Container_1'.Height
+                            Height: ='ABL Container'.Height
                             LayoutAlignItems: =LayoutAlignItems.Center
                             LayoutDirection: =LayoutDirection.Vertical
                             LayoutGap: =5
@@ -1267,7 +1271,7 @@
                                 LayoutGap: =5
                                 LayoutJustifyContent: =LayoutJustifyContent.End
                                 LayoutMinHeight: =100
-                                LayoutMinWidth: ='Multiple Container_1'.Width
+                                LayoutMinWidth: ='Multiple Container'.Width
                                 LayoutMode: =LayoutMode.Auto
                                 RadiusBottomLeft: =4
                                 RadiusBottomRight: =4
@@ -1280,6 +1284,7 @@
                                     BorderColor: =App.Theme.Colors.Darker40
                                     DisabledBorderColor: =RGBA(166, 166, 166, 1)
                                     DisabledFill: =RGBA(244, 244, 244, 1)
+                                    Image: =Pictogram_Business_Partners_rgb
                                     ImagePosition: =ImagePosition.Fill
                                     RadiusBottomLeft: =90
                                     RadiusBottomRight: =90
@@ -1291,7 +1296,7 @@
                                 AlignInContainer: =AlignInContainer.SetByContainer
                                 LayoutDirection: =LayoutDirection.Vertical
                                 LayoutMinHeight: =100
-                                LayoutMinWidth: ='Multiple Container_1'.Width
+                                LayoutMinWidth: ='Multiple Container'.Width
                                 LayoutMode: =LayoutMode.Auto
                                 PaddingTop: =20
                                 RadiusBottomLeft: =4
@@ -1328,6 +1333,7 @@
                     RadiusBottomRight: =4
                     RadiusTopLeft: =4
                     RadiusTopRight: =4
+                    Visible: =If(sharedWorkBankMode = true, false, true)
                     ZIndex: =3
 
                     EmployeeSearchSeperator As rectangle:
