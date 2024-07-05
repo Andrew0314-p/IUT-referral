@@ -1002,7 +1002,7 @@
                         RadiusBottomRight: =4
                         RadiusTopLeft: =4
                         RadiusTopRight: =4
-                        Visible: =If(sharedWorkBankMode = true, true, false)
+                        Visible: =If(sharedWorkBankMode = true, true, false) And If(EmployeeBrowseGallery.Visible = false, true, false)
                         ZIndex: =9
 
                         "'ABL Container' As groupContainer.verticalAutoLayoutContainer":
@@ -1921,7 +1921,7 @@
                     RadiusBottomRight: =4
                     RadiusTopLeft: =4
                     RadiusTopRight: =4
-                    Visible: =If(myInTrayMode = true, true, false) Or If(sharedWorkBankMode = true, true, false)
+                    Visible: =If(myInTrayMode = true, true, false) Or If(sharedWorkBankMode = true, true, false) Or If(myTeamMode = true, true, false)
                     ZIndex: =3
 
                     EmployeeSearchSeperator As rectangle:
