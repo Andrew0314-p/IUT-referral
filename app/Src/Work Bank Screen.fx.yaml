@@ -176,7 +176,7 @@
                 RadiusBottomRight: =8
                 RadiusTopLeft: =8
                 RadiusTopRight: =8
-                Visible: =true //If(myInTrayMode = true, true, false) And If(IsEmpty(WorkBankCollection), false, true) And If(CountRows(Filter(WorkBankCollection,User.Mail = User().Email)) > 0, true, false)
+                Visible: =If(myInTrayMode = true, true, false) And If(IsEmpty(WorkBankCollection), false, true) And If(CountRows(Filter(WorkBankCollection,'Assigned To Email' = User().Email)) > 0, true, false)
                 Width: =WorkBankHeader.Width * (1/4)
                 ZIndex: =1
 
