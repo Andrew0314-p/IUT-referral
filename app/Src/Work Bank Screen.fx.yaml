@@ -16,6 +16,7 @@
                         ID: ID,
                         'Created On': 'Created On',
                         'Assigned To': 'Assigned To',
+                        'Assigned To Email': 'Assigned To Email',
                         'Referral Type': 'Referral Type',
                         'Fraud Category': 'Category of Fraud',
                         '1st - Policyholder First Name': 'Policyholder First Name',
@@ -844,7 +845,7 @@
                         RadiusBottomRight: =4
                         RadiusTopLeft: =4
                         RadiusTopRight: =4
-                        Visible: =If(myInTrayMode = true, true, false)  And If(EmployeeBrowseGallery.Visible = true, false, true) And If('Queue Gallery'.Visible = true, true, false) And If(CountRows(Filter(WorkBankCollection,User.Mail = User().Email)) > 0, true, false)
+                        Visible: =If(myInTrayMode = true, true, false)  And If(EmployeeBrowseGallery.Visible = true, false, true) And If('Queue Gallery'.Visible = true, true, false) And If(CountRows(Filter(WorkBankCollection,'Assigned To Email' = User().Email)) > 0, true, false)
                         ZIndex: =7
 
                         "Gallery1 As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver5.0'":
@@ -2216,6 +2217,7 @@
                                                 ID: ID,
                                                 'Created On': 'Created On',
                                                 'Assigned To': 'Assigned To',
+                                                'Assigned To Email': 'Assigned To Email',
                                                 'Referral Type': 'Referral Type',
                                                 'Fraud Category': 'Category of Fraud',
                                                 '1st - Policyholder First Name': 'Policyholder First Name',
