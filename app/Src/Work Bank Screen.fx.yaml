@@ -2300,10 +2300,14 @@
                             LayoutMinWidth: =96
                             OnSelect: |-
                                 =UpdateContext({selectedRecord: 'Queue Gallery'.Selected});
-                                Patch(
-                                        'Referral Intake Tool Submissions',
-                                        selectedRecord,
-                                        { 'Assigned To': _selectedApprover.MailNickname,'Assigned To Email': _selectedApprover.Mail }
+                                If(
+                                        IsBlank(selectedRecord),
+                                        Notify("No record selected.", NotificationType.Error),
+                                        Patch(
+                                            'Referral Intake Tool Submissions',
+                                            selectedRecord,
+                                            { 'Assigned To': _selectedApprover.MailNickname, 'Assigned To Email': _selectedApprover.Mail }
+                                        )
                                     )
                             Text: |-
                                 ="Re-Assign To: " & _selectedApprover.DisplayName & " (" &_selectedApprover.MailNickname & ")"

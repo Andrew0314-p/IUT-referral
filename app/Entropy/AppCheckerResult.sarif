@@ -24,7 +24,7 @@
                 },
                 "region": {
                   "charLength": 5,
-                  "charOffset": 60,
+                  "charOffset": 171,
                   "snippet": {
                     "text": "Patch"
                   }
@@ -64,7 +64,7 @@
                 },
                 "region": {
                   "charLength": 14,
-                  "charOffset": 121,
+                  "charOffset": 240,
                   "snippet": {
                     "text": "selectedRecord"
                   }
