@@ -595,7 +595,7 @@
                             FieldType: ="d"
                             FieldVariantName: ="textualColumn"
                             Height: =100
-                            Order: =7
+                            Order: =8
                             Width: =0
                             X: =0
                             Y: =0
@@ -607,7 +607,7 @@
                             FieldType: ="d"
                             FieldVariantName: ="textualColumn"
                             Height: =100
-                            Order: =8
+                            Order: =9
                             Width: =0
                             X: =0
                             Y: =0
@@ -625,13 +625,13 @@
                             Y: =0
                             ZIndex: =25
 
-                        "'Assigned To Info1' As PowerAppsOneGridTemplate_dataField.textualColumn":
-                            FieldDisplayName: ="Assigned To Info"
-                            FieldName: ="cr065_assignedinfo"
+                        "'Assigned To Email1' As PowerAppsOneGridTemplate_dataField.textualColumn":
+                            FieldDisplayName: ="Assigned To Email"
+                            FieldName: ="cr065_assignedtoemail"
                             FieldType: ="s"
                             FieldVariantName: ="textualColumn"
                             Height: =100
-                            Order: =6
+                            Order: =7
                             Width: =0
                             X: =0
                             Y: =0
@@ -1393,7 +1393,9 @@
                             LayoutMinHeight: =32
                             LayoutMinWidth: =96
                             OnSelect: |+
-                                =// Get the oldest record without a value in the 'Assigned To' field
+                                =Refresh('Referral Intake Tool Submissions');
+                                
+                                // Get the oldest record without a value in the 'Assigned To' field
                                 UpdateContext({ oldestRecord: First(Sort(Filter('Referral Intake Tool Submissions', IsBlank('Assigned To')), 'Created On')) });
                                 
                                 // Check if there is an oldest record available
@@ -1554,7 +1556,7 @@
                                     Patch(
                                         'Referral Intake Tool Submissions',
                                         oldestRecord,
-                                        { 'Assigned To': Blank(), 'Assigned To Email': Blank() }  // Change the value to null
+                                        { 'Assigned To': Blank(), 'Assigned To Email': Blank()}  // Change the value to null
                                     )
                                 );
                             Text: ="Remove Assigned"
@@ -1595,7 +1597,8 @@
                             LayoutMinHeight: =32
                             LayoutMinWidth: =96
                             OnSelect: |-
-                                =ClearCollect(WorkBankCollection, {});
+                                =Refresh('Referral Intake Tool Submissions');
+                                ClearCollect(WorkBankCollection, {});
                                 
                                 ForAll(
                                     Filter('Referral Intake Tool Submissions', 'Assigned To Email' = User().Email),

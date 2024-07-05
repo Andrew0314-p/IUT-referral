@@ -1228,7 +1228,7 @@
         {
           "Category": "Behavior",
           "PropertyName": "OnSelect",
-          "RuleProviderType": "Unknown"
+          "RuleProviderType": "User"
         }
       ],
       "StyleName": "",
@@ -1466,7 +1466,7 @@
       "StyleName": "defaultGroupContainerStyle",
       "Type": "ControlInfo"
     },
-    "Assigned To Info1": {
+    "Assigned To Email1": {
       "AllowAccessToGlobals": true,
       "ControlPropertyState": [
         "FieldName",
@@ -1489,7 +1489,7 @@
       "IsLocked": true,
       "LayoutName": "",
       "MetaDataIDKey": "",
-      "Name": "Assigned To Info1",
+      "Name": "Assigned To Email1",
       "OptimizeForDevices": "Off",
       "ParentIndex": 8,
       "PersistMetaDataIDKey": false,
