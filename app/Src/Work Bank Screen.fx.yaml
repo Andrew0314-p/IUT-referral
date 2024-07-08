@@ -691,6 +691,7 @@
                         onRowSelect: =false
                         onSave: =false
                         OnSelect: =false
+                        ReflowBehavior: ='PowerAppsOneGrid.ReflowBehavior'.Reflow
                         Visible: =If(myTeamMode = true, true, false) And If(EmployeeBrowseGallery.Visible = true, false, true)
                         Width: =If(Self.X + 800 > Parent.Width, Parent.Width - Self.X, 800)
                         X: =0
@@ -1924,9 +1925,7 @@
                             Font: =App.Theme.Font
                             Size: =13
                             Text: |-
-                                ="Referral #" & Text('Queue Gallery'.Selected.ID, "[$-en-US]Bold") & 
-                                " | Referral Type: " & Text('Queue Gallery'.Selected.'Referral Type', "[$-en-US]Bold") & 
-                                " | Assigned To: " & Text('Queue Gallery'.Selected.'Assigned To', "[$-en-US]Bold")
+                                ="Referral #" & Text('Queue Gallery'.Selected.ID, "[$-en-US]Bold") & " | Referral Type: " & Text('Queue Gallery'.Selected.'Referral Type') & " | Assigned To: " & Text('Queue Gallery'.Selected.'Assigned To')
                             ZIndex: =1
 
                         Seperator_2 As rectangle:
