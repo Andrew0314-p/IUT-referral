@@ -1183,7 +1183,8 @@
                                                     Details: oldestRecord.Details,
                                                     'Others Involved': oldestRecord.'Others Involved'
                                                 }
-                                            )
+                                            );
+                                            Notify(oldestRecord.'Referral Type' & " has been assigned to " & _selectedApprover.DisplayName & " (" & _selectedApprover.MailNickname & ")", NotificationType.Success)
                                         );
                                         
                                     Text: ="Auto Business Lines"
@@ -1365,7 +1366,8 @@
                                                     Details: oldestRecord.Details,
                                                     'Others Involved': oldestRecord.'Others Involved'
                                                 }
-                                            )
+                                            );
+                                            Notify(oldestRecord.'Referral Type' & " has been assigned to " & _selectedApprover.DisplayName & " (" & _selectedApprover.MailNickname & ")", NotificationType.Success)
                                         );
                                         
                                     Text: ="Auto Personal Lines"
@@ -1547,7 +1549,8 @@
                                                     Details: oldestRecord.Details,
                                                     'Others Involved': oldestRecord.'Others Involved'
                                                 }
-                                            )
+                                            );
+                                            Notify(oldestRecord.'Referral Type' & " has been assigned to " & _selectedApprover.DisplayName & " (" & _selectedApprover.MailNickname & ")", NotificationType.Success)
                                         );
                                         
                                     Text: ="Fire Business Lines"
@@ -1729,7 +1732,8 @@
                                                     Details: oldestRecord.Details,
                                                     'Others Involved': oldestRecord.'Others Involved'
                                                 }
-                                            )
+                                            );
+                                            Notify(oldestRecord.'Referral Type' & " has been assigned to " & _selectedApprover.DisplayName & " (" & _selectedApprover.MailNickname & ")", NotificationType.Success)
                                         );
                                         
                                     Text: ="Fire Personal Lines"
@@ -1911,7 +1915,8 @@
                                                     Details: oldestRecord.Details,
                                                     'Others Involved': oldestRecord.'Others Involved'
                                                 }
-                                            )
+                                            );
+                                            Notify(oldestRecord.'Referral Type' & " has been assigned to " & _selectedApprover.DisplayName & " (" & _selectedApprover.MailNickname & ")", NotificationType.Success)
                                         );
                                         
                                     Text: ="Multiple Policies"
@@ -2105,16 +2110,52 @@
                                             Details: oldestRecord.Details,
                                             'Others Involved': oldestRecord.'Others Involved'
                                         }
-                                    )
+                                    );
+                                    Notify(oldestRecord.'Referral Type' & " has been assigned to " & _selectedApprover.DisplayName & " (" & _selectedApprover.MailNickname & ")", NotificationType.Success)
                                 );
                                 
                             Text: |-
                                 ="Assign To: " & _selectedApprover.DisplayName & " (" &_selectedApprover.MailNickname & ")"
-                            Visible: =If(IsBlank(_selectedApprover), false, true)
+                            Visible: =If(IsBlank(_selectedApprover), false, true) And If(sharedWorkBankMode = true, true, false)
                             Width: =Len(AssignButton.Text) * 8
                             X: =0
                             Y: =0
                             ZIndex: =1
+
+                        ReAssign As Button:
+                            AlignInContainer: =AlignInContainer.Stretch
+                            DisplayMode: =DisplayMode.Edit
+                            Height: =32
+                            LayoutMinHeight: =32
+                            LayoutMinWidth: =96
+                            OnSelect: |-
+                                =UpdateContext({selectedRecord: 'Queue Gallery'.Selected});
+                                If(
+                                    IsBlank(selectedRecord),
+                                    Notify("No record selected.", NotificationType.Error),
+                                    If(
+                                        IsBlank(selectedRecord.ID),
+                                        Notify("Invalid record selected.", NotificationType.Error),
+                                        Patch(
+                                            'Referral Intake Tool Submissions',
+                                            First(Filter('Referral Intake Tool Submissions', ID = selectedRecord.ID)),
+                                            { 'Assigned To': _selectedApprover.MailNickname, 'Assigned To Email': _selectedApprover.Mail }
+                                        );
+                                        UpdateContext({ removed: RemoveIf(WorkBankCollection, ID = selectedRecord.ID) });
+                                        If(
+                                            CountRows(removed) > 0,
+                                            Notify("Referral re-assigned to " & _selectedApprover.DisplayName & " (" & _selectedApprover.MailNickname & ")", NotificationType.Success),
+                                            Notify("Failed to remove record from WorkBankCollection", NotificationType.Error)
+                                        )
+                                    )
+                                )
+                            Text: |-
+                                ="Re-Assign To: " & _selectedApprover.DisplayName & " (" &_selectedApprover.MailNickname & ")"
+                            Visible: =If(IsBlank(_selectedApprover), false, true) And If(myInTrayMode = true, true, false)
+                            Width: =Len(ReAssign.Text) * 8
+                            X: =0
+                            Y: =0
+                            ZIndex: =2
 
                         ChangeEmployee As Button:
                             AlignInContainer: =AlignInContainer.Stretch
@@ -2134,7 +2175,7 @@
                             Width: =96
                             X: =0
                             Y: =0
-                            ZIndex: =4
+                            ZIndex: =3
 
                         RemoveAssigned As Button:
                             AlignInContainer: =AlignInContainer.Stretch
@@ -2165,7 +2206,7 @@
                             Width: =96
                             X: =0
                             Y: =0
-                            ZIndex: =5
+                            ZIndex: =4
 
                         ClearCollection As Button:
                             AlignInContainer: =AlignInContainer.Stretch
@@ -2186,7 +2227,7 @@
                             Width: =96
                             X: =0
                             Y: =0
-                            ZIndex: =6
+                            ZIndex: =5
 
                         ClearCollection_1 As Button:
                             AlignInContainer: =AlignInContainer.Stretch
@@ -2291,40 +2332,5 @@
                             Width: =96
                             X: =0
                             Y: =0
-                            ZIndex: =7
-
-                        ReAssign As Button:
-                            AlignInContainer: =AlignInContainer.Stretch
-                            DisplayMode: =DisplayMode.Edit
-                            Height: =32
-                            LayoutMinHeight: =32
-                            LayoutMinWidth: =96
-                            OnSelect: |-
-                                =UpdateContext({selectedRecord: 'Queue Gallery'.Selected});
-                                If(
-                                    IsBlank(selectedRecord),
-                                    Notify("No record selected.", NotificationType.Error),
-                                    If(
-                                        IsBlank(selectedRecord.ID),
-                                        Notify("Invalid record selected.", NotificationType.Error),
-                                        Patch(
-                                            'Referral Intake Tool Submissions',
-                                            First(Filter('Referral Intake Tool Submissions', ID = selectedRecord.ID)),
-                                            { 'Assigned To': _selectedApprover.MailNickname, 'Assigned To Email': _selectedApprover.Mail }
-                                        );
-                                        UpdateContext({ removed: RemoveIf(WorkBankCollection, ID = selectedRecord.ID) });
-                                        If(
-                                            CountRows(removed) > 0,
-                                            Notify("Referral re-assigned to " & _selectedApprover.DisplayName & " (" & _selectedApprover.MailNickname & ")", NotificationType.Success),
-                                            Notify("Failed to remove record from WorkBankCollection", NotificationType.Error)
-                                        )
-                                    )
-                                )
-                            Text: |-
-                                ="Re-Assign To: " & _selectedApprover.DisplayName & " (" &_selectedApprover.MailNickname & ")"
-                            Visible: =If(IsBlank(_selectedApprover), false, true)
-                            Width: =Len(ReAssign.Text) * 8
-                            X: =0
-                            Y: =0
-                            ZIndex: =8
+                            ZIndex: =6
 
