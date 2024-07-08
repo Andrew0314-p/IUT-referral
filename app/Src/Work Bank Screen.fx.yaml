@@ -694,6 +694,7 @@
                         AlignInContainer: =AlignInContainer.Stretch
                         DisplayMode: =DisplayMode.Edit
                         FillPortions: =1
+                        HeaderFont: =""
                         Height: =If(Self.Y + 500 > Parent.Height, Parent.Height - Self.Y, 500)
                         Items: =Sort('Referral Intake Tool Submissions', ID, If(SortOrder = SortOrder.Ascending, SortOrder.Descending, SortOrder.Ascending))
                         LayoutMinHeight: =If(Self.Y + 500 > Parent.Height, Parent.Height - Self.Y, 500)

@@ -16325,6 +16325,14 @@
           "InvariantPropertyName": "ReflowBehavior",
           "IsLockable": false,
           "NameMapSourceSchema": "?"
+        },
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "",
+          "InvariantPropertyName": "HeaderFont",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
         }
       ],
       "DynamicProperties": [
@@ -16401,6 +16409,11 @@
         {
           "Category": "Data",
           "PropertyName": "ReflowBehavior",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Data",
+          "PropertyName": "HeaderFont",
           "RuleProviderType": "Unknown"
         },
         {
