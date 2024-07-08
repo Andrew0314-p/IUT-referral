@@ -178,7 +178,7 @@
                 RadiusTopLeft: =8
                 RadiusTopRight: =8
                 Visible: =If(myInTrayMode = true, true, false) And If(IsEmpty(WorkBankCollection), false, true) And If(CountRows(Filter(WorkBankCollection,'Assigned To Email' = User().Email)) > 0, true, false)
-                Width: =Len(Title4.Text) * 11
+                Width: =374
                 ZIndex: =1
 
                 "'Search Container' As groupContainer.verticalAutoLayoutContainer":
@@ -2110,6 +2110,7 @@
                                 
                             Text: |-
                                 ="Assign To: " & _selectedApprover.DisplayName & " (" &_selectedApprover.MailNickname & ")"
+                            Visible: =If(IsBlank(_selectedApprover), false, true)
                             Width: =Len(AssignButton.Text) * 8
                             X: =0
                             Y: =0
@@ -2305,12 +2306,13 @@
                                         Notify("No record selected.", NotificationType.Error),
                                         Patch(
                                             'Referral Intake Tool Submissions',
-                                            selectedRecord,
+                                            'Queue Gallery'.Selected,
                                             { 'Assigned To': _selectedApprover.MailNickname, 'Assigned To Email': _selectedApprover.Mail }
                                         )
                                     )
                             Text: |-
                                 ="Re-Assign To: " & _selectedApprover.DisplayName & " (" &_selectedApprover.MailNickname & ")"
+                            Visible: =If(IsBlank(_selectedApprover), false, true)
                             Width: =Len(ReAssign.Text) * 8
                             X: =0
                             Y: =0
