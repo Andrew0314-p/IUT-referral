@@ -914,66 +914,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "'Work Bank Screen'.WorkBankScreenContainer.'Work Container'.ViewContainer.DataContainer.'Referral Info Container'.Gallery3.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "'Work Bank Screen'.WorkBankScreenContainer.'Work Container'.ViewContainer.DataContainer.'Referral Info Container'.Gallery3.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Work Bank Screen",
-                "type": "'Work Bank Screen'.WorkBankScreenContainer.'Work Container'.ViewContainer.DataContainer.'Referral Info Container'.Gallery3"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "'Work Bank Screen'.WorkBankScreenContainer.'Work Container'.ViewContainer.DataContainer.'Referral Info Container'.Gallery3.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "'Work Bank Screen'.WorkBankScreenContainer.'Work Container'.ViewContainer.DataContainer.'Referral Info Container'.Gallery3.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "Work Bank Screen",
-                "type": "'Work Bank Screen'.WorkBankScreenContainer.'Work Container'.ViewContainer.DataContainer.'Referral Info Container'.Gallery3"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "App._selectedApproverPhoto"
                 }
               ],
