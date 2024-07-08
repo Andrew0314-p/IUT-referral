@@ -386,7 +386,7 @@
                         PaddingRight: =0
                         PaddingTop: =0
                         Size: =13
-                        Text: =ThisItem.'1st - Policyholder First Name' & " " & ThisItem.'1st - Policyholder Last Name'
+                        Text: =ThisItem.'Fraud Category'
                         VerticalAlign: =VerticalAlign.Top
                         Width: =Title4.Width
                         X: =Title4.X
@@ -405,7 +405,7 @@
                         PaddingRight: =0
                         PaddingTop: =0
                         Size: =12
-                        Text: =ThisItem.'Fraud Category'
+                        Text: =ThisItem.'1st - Policyholder First Name' & " " & ThisItem.'1st - Policyholder Last Name'
                         VerticalAlign: =VerticalAlign.Top
                         Width: =Title4.Width
                         X: =Title4.X
