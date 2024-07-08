@@ -1959,6 +1959,7 @@
                             Color: =RGBA(0, 0, 0, 1)
                             DisabledColor: =RGBA(166, 166, 166, 1)
                             Font: =App.Theme.Font
+                            Height: =Header1.Height - 20
                             Size: =13
                             Text: |-
                                 ="Referral #" & Text('Queue Gallery'.Selected.ID, "[$-en-US]Bold") & " | Referral Type: " & Text('Queue Gallery'.Selected.'Referral Type') & " | Assigned To: " & Text('Queue Gallery'.Selected.'Assigned To')
@@ -1994,10 +1995,6 @@
                                         {
                                             Header: "Fraud Category",
                                             Value: _selectedReferral.'Fraud Category'
-                                        },
-                                        {
-                                            Header: "Assigned To",
-                                            Value: _selectedReferral.'Assigned To'
                                         },
                                         {
                                             Header: "Referral Type",
