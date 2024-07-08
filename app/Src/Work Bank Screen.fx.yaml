@@ -231,6 +231,7 @@
                             DisabledColor: =RGBA(244, 244, 244, 1)
                             Height: ='Referral Search'.Height
                             Icon: =Icon.Search
+                            OnSelect: =Reset('Referral Search')
                             PaddingBottom: =10
                             PaddingLeft: =10
                             PaddingRight: =10
@@ -384,7 +385,7 @@
                         PaddingLeft: =0
                         PaddingRight: =0
                         PaddingTop: =0
-                        Size: =12
+                        Size: =13
                         Text: =ThisItem.'1st - Policyholder First Name' & " " & ThisItem.'1st - Policyholder Last Name'
                         VerticalAlign: =VerticalAlign.Top
                         Width: =Title4.Width
@@ -1960,7 +1961,6 @@
                             DisabledColor: =RGBA(166, 166, 166, 1)
                             Font: =App.Theme.Font
                             Height: =Header1.Height - 20
-                            Size: =13
                             Text: |-
                                 ="Referral #" & Text('Queue Gallery'.Selected.ID, "[$-en-US]Bold") & " | Referral Type: " & Text('Queue Gallery'.Selected.'Referral Type') & " | Assigned To: " & Text('Queue Gallery'.Selected.'Assigned To')
                             ZIndex: =1
