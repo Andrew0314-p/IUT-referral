@@ -764,7 +764,7 @@
                             FieldType: ="d"
                             FieldVariantName: ="textualColumn"
                             Height: =100
-                            Order: =8
+                            Order: =9
                             Width: =0
                             X: =0
                             Y: =0
@@ -776,7 +776,7 @@
                             FieldType: ="d"
                             FieldVariantName: ="textualColumn"
                             Height: =100
-                            Order: =9
+                            Order: =10
                             Width: =0
                             X: =0
                             Y: =0
@@ -788,7 +788,7 @@
                             FieldType: ="d"
                             FieldVariantName: ="textualColumn"
                             Height: =100
-                            Order: =9
+                            Order: =11
                             Width: =0
                             X: =0
                             Y: =0
@@ -805,6 +805,30 @@
                             X: =0
                             Y: =0
                             ZIndex: =34
+
+                        "'Decision Reasons1' As PowerAppsOneGridTemplate_dataField.textualColumn":
+                            FieldDisplayName: ="Decision Reasons"
+                            FieldName: ="cr065_decisionreasons"
+                            FieldType: ="l"
+                            FieldVariantName: ="textualColumn"
+                            Height: =100
+                            Order: =9
+                            Width: =0
+                            X: =0
+                            Y: =0
+                            ZIndex: =35
+
+                        "'Referral Type1' As PowerAppsOneGridTemplate_dataField.textualColumn":
+                            FieldDisplayName: ="Referral Type"
+                            FieldName: ="cr065_referraltype"
+                            FieldType: ="s"
+                            FieldVariantName: ="textualColumn"
+                            Height: =100
+                            Order: =8
+                            Width: =0
+                            X: =0
+                            Y: =0
+                            ZIndex: =36
 
                     EmployeeBrowseGallery As gallery.PeoplePickerTabletGallery:
                         AccessibleLabel: ="User look up search results"
