@@ -566,7 +566,95 @@
                             Layout: ='ButtonCanvas.Layout'.IconOnly
                             LayoutMinHeight: =32
                             LayoutMinWidth: =96
-                            OnSelect: =Refresh('Referral Intake Tool Submissions');
+                            OnSelect: |-
+                                =Refresh('Referral Intake Tool Submissions');
+                                If(!IsEmpty(WorkBankCollection), ClearCollect(WorkBankCollection, {}));
+                                Remove(WorkBankCollection, FirstN(WorkBankCollection, 1));
+                                
+                                    ClearCollect(WorkBankCollection,
+                                        ForAll(
+                                            Filter('Referral Intake Tool Submissions', 'Assigned To Email' = User().Email),
+                                            {
+                                                User: _selectedApprover,
+                                                ID: ID,
+                                                'Created On': 'Created On',
+                                                'Assigned To': 'Assigned To',
+                                                'Assigned To Email': 'Assigned To Email',
+                                                'Referral Type': 'Referral Type',
+                                                'Fraud Category': 'Category of Fraud',
+                                                '1st - Policyholder First Name': 'Policyholder First Name',
+                                                '1st - Policyholder Last Name': 'Policyholder Last Name',
+                                                '1st - Policyholder Phone Number': 'Policyholder Phone Number',
+                                                '1st Date of Loss': '1st Date of Loss',
+                                                '1st Policy Number': '1st Policy Number',
+                                                '1st Claim Number': '1st Claim Number',
+                                                '1st Policy Type': '1st Policy Type',
+                                                '1st Fire - Street': '1st Fire - Street',
+                                                '1st Fire - City': '1st Fire - City',
+                                                '1st Fire - State': '1st Fire - State',
+                                                '1st Fire - Line of Business': '1st Fire - Line of Business',
+                                                '1st Fire Business Lines - State Code': '1st Fire Business Lines - State Code',
+                                                '1st Fire - Business Policy Types': '1st Fire - Business Policy Types',
+                                                '1st Fire - Business Name': '1st Fire - Business Name',
+                                                '1st Fire Personal Lines - State Code': '1st Fire Personal Lines - State Code',
+                                                '1st Fire - Personal Policy Type': '1st Fire - Personal Policy Type',
+                                                '1st Auto - VIN': '1st Auto -  VIN',
+                                                '1st Auto - License Plate': '1st Auto -  License Plate',
+                                                '1st Auto - Make': '1st Auto -  Make',
+                                                '1st Auto - Model': '1st Auto -  Model',
+                                                '1st Auto - Line of Business': '1st Auto - Line of Business',
+                                                '1st Auto Business - State Code': '1st Auto Business - State Code',
+                                                '1st Auto - Business Name': '1st Auto - Business Name',
+                                                '1st Auto Personal - State Code': '1st Auto Personal - State Code',
+                                                'Is there a second Policy?': 'Is there a second Policy?',
+                                                '2nd Policy Number': '2nd Policy Number',
+                                                '2nd Claim Number': '2nd Claim Number',
+                                                '2nd Date of Loss': '2nd Date of Loss',
+                                                'Multiple Policy - 2nd Policy Type': 'Multiple Policy - 2nd Policy Type',
+                                                '2nd Fire - Street': '2nd Fire - Street',
+                                                '2nd Fire - City': '2nd Fire - City',
+                                                '2nd Fire - State': '2nd Fire - State',
+                                                '2nd Fire - Line of Business': '2nd Fire - Line of Business',
+                                                '2nd Fire - Business State Code': '2nd Fire - Business State Code',
+                                                '2nd Fire - Business Name': '2nd Fire - Business Name',
+                                                '2nd Fire - Business Policy Type': '2nd Fire - Business Policy Type',
+                                                '2nd Fire Personal - State Code': '2nd Fire Personal - State Code',
+                                                '2nd Fire - Personal Policy Type': '2nd Fire - Personal Policy Type',
+                                                '2nd Auto - VIN': '2nd Auto - VIN',
+                                                '2nd Auto - License Plate': '2nd Auto - License Plate',
+                                                '2nd Auto - Make': '2nd Auto - Make',
+                                                '2nd Auto - Model': '2nd Auto - Model',
+                                                '2nd Auto - Line of Business': '2nd Auto - Line of Business',
+                                                '2nd Auto Business - State Code': '2nd Auto Business - State Code',
+                                                '2nd Auto - Business Name': '2nd Auto - Business Name',
+                                                '2nd Auto Personal - State Code': '2nd Auto Personal - State Code',
+                                                'Is there a 3rd Policy?': 'Is there a 3rd Policy?',
+                                                '3rd - Policy Number': '3rd - Policy Number',
+                                                '3rd - Claim Number': '3rd - Claim Number',
+                                                '3rd Date of Loss': '3rd Date of Loss',
+                                                'Multiple Policy - 3rd Policy Type': 'Multiple Policy - 3rd Policy Type',
+                                                '3rd Fire - Street': '3rd Fire - Street',
+                                                '3rd Fire - City': '3rd Fire - City',
+                                                '3rd Fire - State': '3rd Fire - State',
+                                                '3rd Fire - Line of Business': '3rd Fire - Line of Business',
+                                                '3rd Fire - Business State Code': '3rd Fire - Business State Code',
+                                                '3rd Fire - Business Policy Type': '3rd Fire - Business Policy Type',
+                                                '3rd Fire - Business Name': '3rd Fire - Business Name',
+                                                '3rd Fire Personal - State Code': '3rd Fire Personal - State Code',
+                                                '3rd Fire - Personal Policy Type': '3rd Fire - Personal Policy Type',
+                                                '3rd Auto - VIN': '3rd Auto - VIN',
+                                                '3rd Auto - License Plate': '3rd Auto - License Plate',
+                                                '3rd Auto - Make': '3rd Auto - Make',
+                                                '3rd Auto - Model': '3rd Auto - Model',
+                                                '3rd Auto - Line of Business': '3rd Auto - Line of Business',
+                                                '3rd Auto Business - State Code': '3rd Auto Business - State Code',
+                                                '3rd Auto - Business Name': '3rd Auto - Business Name',
+                                                '3rd Auto Personal - State Code': '3rd Auto Personal - State Code',
+                                                Details: Details,
+                                                'Others Involved': 'Others Involved'
+                                            }
+                                        )
+                                    )
                             Text: ="Refresh"
                             Width: =96
                             X: =0
@@ -745,9 +833,14 @@
                             Height: =Parent.TemplateHeight - 2*Self.Y
                             HoverFill: =RGBA(0,0,0,0)
                             OnSelect: |-
-                                =Set(_selectedApprover, ThisItem);
-                                Set(_selectedApproverPhoto, Office365Users.UserPhoto(ThisItem.Id));
-                                UpdateContext({searchMode: false});
+                                =If(myInTrayMode = true, 
+                                    Set(_reassignedApprover, ThisItem);
+                                    Set(_reassignedApproverPhoto, Office365Users.UserPhoto(ThisItem.Id));
+                                    UpdateContext({searchMode: false});,
+                                        Set(_selectedApprover, ThisItem);
+                                        Set(_selectedApproverPhoto, Office365Users.UserPhoto(ThisItem.Id));
+                                        UpdateContext({searchMode: false});
+                                );
                                 Reset(EmployeeSearch);
                             Width: =Parent.TemplateWidth - 2*Self.X
                             Y: =1
@@ -795,9 +888,14 @@
                             Height: =Self.Size * 1.8
                             HoverColor: =
                             OnSelect: |-
-                                =Set(_selectedApprover, ThisItem);
-                                Set(_selectedApproverPhoto, Office365Users.UserPhoto(ThisItem.Id));
-                                UpdateContext({searchMode: false});
+                                =If(myInTrayMode = true, 
+                                    Set(_reassignedApprover, ThisItem);
+                                    Set(_reassignedApproverPhoto, Office365Users.UserPhoto(ThisItem.Id));
+                                    UpdateContext({searchMode: false});,
+                                        Set(_selectedApprover, ThisItem);
+                                        Set(_selectedApproverPhoto, Office365Users.UserPhoto(ThisItem.Id));
+                                        UpdateContext({searchMode: false});
+                                );
                                 Reset(EmployeeSearch);
                             PaddingLeft: |
                                 =5
@@ -835,128 +933,6 @@
                             Width: =Parent.TemplateWidth
                             Y: =Parent.TemplateHeight - 1
                             ZIndex: =6
-
-                    "'Referral Info Container' As groupContainer.horizontalAutoLayoutContainer":
-                        DropShadow: =DropShadow.Light
-                        LayoutMinHeight: =100
-                        LayoutMinWidth: =250
-                        LayoutMode: =LayoutMode.Auto
-                        RadiusBottomLeft: =4
-                        RadiusBottomRight: =4
-                        RadiusTopLeft: =4
-                        RadiusTopRight: =4
-                        Visible: =If(myInTrayMode = true, true, false)  And If(EmployeeBrowseGallery.Visible = true, false, true) And If('Queue Gallery'.Visible = true, true, false) And If(CountRows(Filter(WorkBankCollection,'Assigned To Email' = User().Email)) > 0, true, false)
-                        ZIndex: =7
-
-                        "Gallery1 As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver5.0'":
-                            BorderColor: =App.Theme.Colors.Darker40
-                            DelayItemLoading: =true
-                            FillPortions: =0
-                            Items: |-
-                                =Table(
-                                    {
-                                        Header: "Referral ID",
-                                        Value: _selectedReferral.ID
-                                    },
-                                    {
-                                        Header: "Policyholder Name",
-                                        Value: _selectedReferral.'1st - Policyholder First Name' & " " & _selectedReferral.'1st - Policyholder Last Name'
-                                    },
-                                    {
-                                        Header: "Fraud Category",
-                                        Value: _selectedReferral.'Fraud Category'
-                                    },
-                                    {
-                                        Header: "Assigned To",
-                                        Value: _selectedReferral.'Assigned To'
-                                    },
-                                    {
-                                        Header: "Referral Type",
-                                        Value: _selectedReferral.'Referral Type'
-                                    }
-                                )
-                            Layout: =Layout.Vertical
-                            LayoutMinHeight: =287
-                            LayoutMinWidth: =320
-                            LoadingSpinner: =LoadingSpinner.Data
-                            ShowScrollbar: =false
-                            TemplatePadding: =0
-                            TemplateSize: =90
-                            Visible: =If(IsEmpty(ItemValues), false, true)
-                            Width: =Len(Subtitle2.Text) * 150
-                            ZIndex: =1
-
-                            Title1 As label:
-                                Color: =RGBA(50, 49, 48, 1)
-                                DisabledColor: =RGBA(166, 166, 166, 1)
-                                Font: =App.Theme.Font
-                                FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
-                                Height: =Self.Size * 1.8
-                                OnSelect: =Select(Parent)
-                                PaddingBottom: =0
-                                PaddingLeft: =0
-                                PaddingRight: =0
-                                PaddingTop: =0
-                                Text: |-
-                                    =ThisItem.Header & ":"
-                                VerticalAlign: =VerticalAlign.Top
-                                Width: =Parent.TemplateWidth - 86
-                                X: =16
-                                Y: =(Parent.TemplateHeight - (Self.Size * 1.8 + Subtitle2.Size * 1.8)) / 2
-                                ZIndex: =1
-
-                            Subtitle2 As label:
-                                Color: =RGBA(0, 0, 0, 1)
-                                DisabledColor: =RGBA(166, 166, 166, 1)
-                                Font: =App.Theme.Font
-                                FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
-                                Height: =Self.Size * 1.8
-                                OnSelect: =Select(Parent)
-                                PaddingBottom: =0
-                                PaddingLeft: =0
-                                PaddingRight: =0
-                                PaddingTop: =0
-                                Size: =12
-                                Text: =ThisItem.Value
-                                VerticalAlign: =VerticalAlign.Top
-                                Width: =Title1.Width
-                                X: =Title1.X
-                                Y: =Title1.Y + Title1.Height
-                                ZIndex: =2
-
-                            Separator1 As rectangle:
-                                BorderColor: =App.Theme.Colors.Darker40
-                                Fill: =RGBA(255, 255, 255, 1)
-                                Height: =8
-                                OnSelect: =Select(Parent)
-                                Width: =Parent.TemplateWidth
-                                Y: =Parent.TemplateHeight - Self.Height
-                                ZIndex: =4
-
-                            Rectangle1 As rectangle:
-                                BorderColor: =App.Theme.Colors.Darker40
-                                Fill: =App.Theme.Colors.Darker30
-                                Height: =Parent.TemplateHeight - Separator1.Height
-                                OnSelect: =Select(Parent)
-                                Visible: =ThisItem.IsSelected
-                                Width: =4
-                                ZIndex: =5
-
-                        NoReferralPickedText As Text:
-                            Align: ='TextCanvas.Align'.Center
-                            AlignInContainer: =AlignInContainer.Stretch
-                            DisplayMode: =DisplayMode.Edit
-                            FillPortions: =1
-                            Height: =32
-                            LayoutMinHeight: =32
-                            LayoutMinWidth: =96
-                            Size: =20
-                            Text: ="Please select a referral from the list to left."
-                            Visible: =If(Gallery1.Visible = true, false, true)
-                            Width: =96
-                            X: =0
-                            Y: =0
-                            ZIndex: =2
 
                     EmptyCollectionWarning As groupContainer.horizontalAutoLayoutContainer:
                         LayoutMinHeight: =100
@@ -1925,6 +1901,208 @@
                                     Y: =0
                                     ZIndex: =33
 
+                    "'Referral Info Container' As groupContainer.verticalAutoLayoutContainer":
+                        DropShadow: =DropShadow.Light
+                        LayoutDirection: =LayoutDirection.Vertical
+                        LayoutMinHeight: =100
+                        LayoutMinWidth: =250
+                        LayoutMode: =LayoutMode.Auto
+                        RadiusBottomLeft: =4
+                        RadiusBottomRight: =4
+                        RadiusTopLeft: =4
+                        RadiusTopRight: =4
+                        Visible: =If(myInTrayMode = true, true, false)  And If(EmployeeBrowseGallery.Visible = true, false, true) And If('Queue Gallery'.Visible = true, true, false) And If(CountRows(Filter(WorkBankCollection,'Assigned To Email' = User().Email)) > 0, true, false)
+                        X: =40
+                        Y: =40
+                        ZIndex: =10
+
+                        "Gallery3 As gallery.'BrowseLayout_Horizontal_TwoTextOneImageVariant_ver5.0'":
+                            BorderColor: =App.Theme.Colors.Darker40
+                            DelayItemLoading: =true
+                            Items: |-
+                                =Table(
+                                    {
+                                        Header: "Referral ID",
+                                        Value: _selectedReferral.ID
+                                    }
+                                )
+                            LoadingSpinner: =LoadingSpinner.Data
+                            TemplatePadding: =0
+                            TemplateSize: =Min(440, Self.Height - 60)
+                            ZIndex: =1
+
+                            Title6 As label:
+                                Color: =RGBA(50, 49, 48, 1)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                Font: =App.Theme.Font
+                                FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                                Height: =Self.Size * 1.8
+                                OnSelect: =Select(Parent)
+                                PaddingBottom: =0
+                                PaddingLeft: =0
+                                PaddingRight: =0
+                                PaddingTop: =0
+                                Text: =ThisItem.Header
+                                VerticalAlign: =VerticalAlign.Top
+                                Width: =Parent.TemplateWidth - 64
+                                X: =32
+                                Y: =16
+                                ZIndex: =2
+
+                            Subtitle4 As label:
+                                Color: =RGBA(0, 0, 0, 1)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                Font: =App.Theme.Font
+                                FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                                Height: =Self.Size * 1.8
+                                OnSelect: =Select(Parent)
+                                PaddingBottom: =0
+                                PaddingLeft: =0
+                                PaddingRight: =0
+                                PaddingTop: =0
+                                Size: =12
+                                Text: =ThisItem.Value
+                                VerticalAlign: =VerticalAlign.Top
+                                Width: =Title6.Width
+                                X: =Title6.X
+                                Y: =Title6.Y + Title6.Height + 8
+                                ZIndex: =3
+
+                        "'Referral Galleries Container' As groupContainer.horizontalAutoLayoutContainer":
+                            DropShadow: =DropShadow.Light
+                            LayoutMinHeight: =100
+                            LayoutMinWidth: =250
+                            LayoutMode: =LayoutMode.Auto
+                            RadiusBottomLeft: =4
+                            RadiusBottomRight: =4
+                            RadiusTopLeft: =4
+                            RadiusTopRight: =4
+                            Visible: =If(myInTrayMode = true, true, false)  And If(EmployeeBrowseGallery.Visible = true, false, true) And If('Queue Gallery'.Visible = true, true, false) And If(CountRows(Filter(WorkBankCollection,'Assigned To Email' = User().Email)) > 0, true, false)
+                            ZIndex: =2
+
+                            "Gallery2 As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver5.0'":
+                                BorderColor: =App.Theme.Colors.Darker40
+                                DelayItemLoading: =true
+                                Items: |-
+                                    =Table(
+                                        {
+                                            Header: "Referral ID",
+                                            Value: _selectedReferral.ID
+                                        },
+                                        {
+                                            Header: "Policyholder Name",
+                                            Value: _selectedReferral.'1st - Policyholder First Name' & " " & _selectedReferral.'1st - Policyholder Last Name'
+                                        },
+                                        {
+                                            Header: "Fraud Category",
+                                            Value: _selectedReferral.'Fraud Category'
+                                        },
+                                        {
+                                            Header: "Assigned To",
+                                            Value: _selectedReferral.'Assigned To'
+                                        },
+                                        {
+                                            Header: "Referral Type",
+                                            Value: _selectedReferral.'Referral Type'
+                                        }
+                                    )
+                                Layout: =Layout.Vertical
+                                LayoutMinHeight: =287
+                                LayoutMinWidth: =320
+                                LoadingSpinner: =LoadingSpinner.Data
+                                TemplatePadding: =0
+                                TemplateSize: =90
+                                ZIndex: =1
+
+                                Title5 As label:
+                                    Color: =RGBA(50, 49, 48, 1)
+                                    DisabledColor: =RGBA(166, 166, 166, 1)
+                                    Font: =App.Theme.Font
+                                    FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                                    Height: =Self.Size * 1.8
+                                    OnSelect: =Select(Parent)
+                                    PaddingBottom: =0
+                                    PaddingLeft: =0
+                                    PaddingRight: =0
+                                    PaddingTop: =0
+                                    Text: =ThisItem.Header
+                                    VerticalAlign: =VerticalAlign.Top
+                                    Width: =Parent.TemplateWidth - 86
+                                    X: =16
+                                    Y: =(Parent.TemplateHeight - (Self.Size * 1.8 + Subtitle3.Size * 1.8)) / 2
+                                    ZIndex: =1
+
+                                Subtitle3 As label:
+                                    Color: =RGBA(0, 0, 0, 1)
+                                    DisabledColor: =RGBA(166, 166, 166, 1)
+                                    Font: =App.Theme.Font
+                                    FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                                    Height: =Self.Size * 1.8
+                                    OnSelect: =Select(Parent)
+                                    PaddingBottom: =0
+                                    PaddingLeft: =0
+                                    PaddingRight: =0
+                                    PaddingTop: =0
+                                    Size: =12
+                                    Text: =ThisItem.Value
+                                    VerticalAlign: =VerticalAlign.Top
+                                    Width: =Title5.Width
+                                    X: =Title5.X
+                                    Y: =Title5.Y + Title5.Height
+                                    ZIndex: =2
+
+                                NextArrow2 As icon.ChevronRight:
+                                    AccessibleLabel: =Self.Tooltip
+                                    BorderColor: =App.Theme.Colors.Darker40
+                                    Color: =RGBA(166, 166, 166, 1)
+                                    DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                                    DisabledColor: =RGBA(244, 244, 244, 1)
+                                    Height: =50
+                                    Icon: =Icon.ChevronRight
+                                    OnSelect: =Select(Parent)
+                                    PaddingBottom: =16
+                                    PaddingLeft: =16
+                                    PaddingRight: =16
+                                    PaddingTop: =16
+                                    Tooltip: ="View item details"
+                                    Width: =50
+                                    X: =Parent.TemplateWidth - Self.Width - 12
+                                    Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+                                    ZIndex: =3
+
+                                Separator4 As rectangle:
+                                    BorderColor: =App.Theme.Colors.Darker40
+                                    Fill: =RGBA(255, 255, 255, 1)
+                                    Height: =8
+                                    OnSelect: =Select(Parent)
+                                    Width: =Parent.TemplateWidth
+                                    Y: =Parent.TemplateHeight - Self.Height
+                                    ZIndex: =4
+
+                                Rectangle5 As rectangle:
+                                    BorderColor: =App.Theme.Colors.Darker40
+                                    Fill: =App.Theme.Colors.Darker30
+                                    Height: =Parent.TemplateHeight - Separator4.Height
+                                    OnSelect: =Select(Parent)
+                                    Visible: =ThisItem.IsSelected
+                                    Width: =4
+                                    ZIndex: =5
+
+                            NoReferralPickedText As Text:
+                                Align: ='TextCanvas.Align'.Center
+                                DisplayMode: =DisplayMode.Edit
+                                FillPortions: =1
+                                Height: =32
+                                LayoutMinHeight: =32
+                                LayoutMinWidth: =96
+                                Size: =20
+                                Text: ="Please select a referral from the list to left."
+                                Visible: =If(Gallery2.Visible = true, false, true)
+                                Width: =96
+                                X: =0
+                                Y: =0
+                                ZIndex: =2
+
                 AssignContainer As groupContainer.verticalAutoLayoutContainer:
                     FillPortions: =0
                     Height: =AssignedInfoContainer.Height + 1
@@ -2004,7 +2182,10 @@
 
                         AssignButton As Button:
                             AlignInContainer: =AlignInContainer.Stretch
+                            Appearance: ='ButtonCanvas.Appearance'.Secondary
+                            BorderStyle: =BorderStyle.None
                             DisplayMode: =DisplayMode.Edit
+                            FontColor: =RGBA(189, 49, 51, 1)
                             Height: =32
                             LayoutMinHeight: =32
                             LayoutMinWidth: =96
@@ -2124,7 +2305,10 @@
 
                         ReAssign As Button:
                             AlignInContainer: =AlignInContainer.Stretch
+                            Appearance: =AssignButton.Appearance
+                            BorderStyle: =BorderStyle.None
                             DisplayMode: =DisplayMode.Edit
+                            FontColor: =RGBA(189, 49, 51, 1)
                             Height: =32
                             LayoutMinHeight: =32
                             LayoutMinWidth: =96
@@ -2139,18 +2323,18 @@
                                         Patch(
                                             'Referral Intake Tool Submissions',
                                             First(Filter('Referral Intake Tool Submissions', ID = selectedRecord.ID)),
-                                            { 'Assigned To': _selectedApprover.MailNickname, 'Assigned To Email': _selectedApprover.Mail }
+                                            { 'Assigned To': _reassignedApprover.MailNickname, 'Assigned To Email': _reassignedApprover.Mail }
                                         );
                                         UpdateContext({ removed: RemoveIf(WorkBankCollection, ID = selectedRecord.ID) });
                                         If(
                                             CountRows(removed) > 0,
-                                            Notify("Referral re-assigned to " & _selectedApprover.DisplayName & " (" & _selectedApprover.MailNickname & ")", NotificationType.Success),
-                                            Notify("Failed to remove record from WorkBankCollection", NotificationType.Error)
+                                            Notify("Referral #" & selectedRecord.ID & " re-assigned to " & _reassignedApprover.DisplayName & " (" & _reassignedApprover.MailNickname & ")", NotificationType.Success),
+                                            Notify("You have no referrals to re-assign to" & _reassignedApprover.DisplayName & " (" & _reassignedApprover.MailNickname & ")", NotificationType.Error)
                                         )
                                     )
                                 )
                             Text: |-
-                                ="Re-Assign To: " & _selectedApprover.DisplayName & " (" &_selectedApprover.MailNickname & ")"
+                                ="Re-Assign To: " & _reassignedApprover.DisplayName & " (" &_reassignedApprover.MailNickname & ")"
                             Visible: =If(IsBlank(_selectedApprover), false, true) And If(myInTrayMode = true, true, false)
                             Width: =Len(ReAssign.Text) * 8
                             X: =0
@@ -2171,7 +2355,7 @@
                             OnSelect: |-
                                 =UpdateContext({searchMode: true})
                             Text: ="Change Employee"
-                            Visible: =true
+                            Visible: =If(sharedWorkBankMode = true, true, false) Or If(myInTrayMode = true, true, false)
                             Width: =96
                             X: =0
                             Y: =0
@@ -2229,7 +2413,7 @@
                             Y: =0
                             ZIndex: =5
 
-                        ClearCollection_1 As Button:
+                        LoadCollection As Button:
                             AlignInContainer: =AlignInContainer.Stretch
                             Appearance: ='ButtonCanvas.Appearance'.Secondary
                             BorderStyle: =BorderStyle.None
