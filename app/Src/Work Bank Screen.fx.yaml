@@ -2302,14 +2302,24 @@
                             OnSelect: |-
                                 =UpdateContext({selectedRecord: 'Queue Gallery'.Selected});
                                 If(
-                                        IsBlank(selectedRecord),
-                                        Notify("No record selected.", NotificationType.Error),
+                                    IsBlank(selectedRecord),
+                                    Notify("No record selected.", NotificationType.Error),
+                                    If(
+                                        IsBlank(selectedRecord.ID),
+                                        Notify("Invalid record selected.", NotificationType.Error),
                                         Patch(
                                             'Referral Intake Tool Submissions',
-                                            'Queue Gallery'.Selected,
+                                            First(Filter('Referral Intake Tool Submissions', ID = selectedRecord.ID)),
                                             { 'Assigned To': _selectedApprover.MailNickname, 'Assigned To Email': _selectedApprover.Mail }
+                                        );
+                                        UpdateContext({ removed: RemoveIf(WorkBankCollection, ID = selectedRecord.ID) });
+                                        If(
+                                            CountRows(removed) > 0,
+                                            Notify("Referral re-assigned to " & _selectedApprover.DisplayName & " (" & _selectedApprover.MailNickname & ")", NotificationType.Success),
+                                            Notify("Failed to remove record from WorkBankCollection", NotificationType.Error)
                                         )
                                     )
+                                )
                             Text: |-
                                 ="Re-Assign To: " & _selectedApprover.DisplayName & " (" &_selectedApprover.MailNickname & ")"
                             Visible: =If(IsBlank(_selectedApprover), false, true)
