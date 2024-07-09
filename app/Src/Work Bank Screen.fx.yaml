@@ -2247,6 +2247,7 @@
                                             Size: =13
                                             Text: |-
                                                 ="3rd Claim Number: " & 'Queue Gallery'.Selected.'3rd - Claim Number'
+                                            Visible: =If('Queue Gallery'.Selected.'Is there a 3rd Policy?' = "Yes" And !IsBlank('Queue Gallery'.Selected.'3rd - Claim Number'), true, false)
                                             ZIndex: =9
 
                                         OthersInvolved As label:
