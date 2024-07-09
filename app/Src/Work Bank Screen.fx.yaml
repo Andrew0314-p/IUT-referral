@@ -2136,6 +2136,8 @@
                                         LayoutMinHeight: =100
                                         LayoutMinWidth: =250
                                         LayoutMode: =LayoutMode.Auto
+                                        PaddingLeft: =5
+                                        PaddingTop: =5
                                         RadiusBottomLeft: =4
                                         RadiusBottomRight: =4
                                         RadiusTopLeft: =4
@@ -2225,6 +2227,7 @@
                                             Text: |-
                                                 =If('Queue Gallery'.Selected.'Is there a second Policy?' = "Yes",
                                                     "1st Claim Number: " & 'Queue Gallery'.Selected.'1st Claim Number', "Claim Number: " & 'Queue Gallery'.Selected.'1st Claim Number')
+                                            Visible: =If(!IsBlank('Queue Gallery'.Selected.'1st Claim Number'), true, false)
                                             ZIndex: =7
 
                                         "'2ndClaimNo' As label":
@@ -2236,6 +2239,7 @@
                                             Size: =13
                                             Text: |-
                                                 ="2nd Claim Number: " & 'Queue Gallery'.Selected.'2nd Claim Number'
+                                            Visible: =If('Queue Gallery'.Selected.'Is there a second Policy?' = "Yes" And !IsBlank('Queue Gallery'.Selected.'2nd Claim Number'), true, false)
                                             ZIndex: =8
 
                                         "'3rdClaimNo' As label":
@@ -2259,6 +2263,7 @@
                                             Size: =13
                                             Text: |-
                                                 ="Others Involved: " & 'Queue Gallery'.Selected.'Others Involved'
+                                            Visible: =If(IsBlank('Queue Gallery'.Selected.'Others Involved'), false, true)
                                             ZIndex: =10
 
                                     ReporterContainer As groupContainer.verticalAutoLayoutContainer:
@@ -2267,6 +2272,8 @@
                                         LayoutMinHeight: =100
                                         LayoutMinWidth: =250
                                         LayoutMode: =LayoutMode.Auto
+                                        PaddingLeft: =5
+                                        PaddingTop: =5
                                         RadiusBottomLeft: =4
                                         RadiusBottomRight: =4
                                         RadiusTopLeft: =4
@@ -2397,6 +2404,8 @@
                                         LayoutMinHeight: =100
                                         LayoutMinWidth: =250
                                         LayoutMode: =LayoutMode.Auto
+                                        PaddingLeft: =5
+                                        PaddingTop: =5
                                         RadiusBottomLeft: =4
                                         RadiusBottomRight: =4
                                         RadiusTopLeft: =4
