@@ -2215,6 +2215,40 @@
                                             Visible: =If('Queue Gallery'.Selected.'Is there a 3rd Policy?' = "Yes" And !IsBlank('Queue Gallery'.Selected.'3rd - Policy Number'), true, false)
                                             ZIndex: =6
 
+                                        "'1stClaimNo' As label":
+                                            AlignInContainer: =AlignInContainer.Stretch
+                                            BorderColor: =App.Theme.Colors.Darker40
+                                            Color: =RGBA(0, 0, 0, 1)
+                                            DisabledColor: =RGBA(166, 166, 166, 1)
+                                            Font: =App.Theme.Font
+                                            Size: =13
+                                            Text: |-
+                                                =If('Queue Gallery'.Selected.'Is there a second Policy?' = "Yes",
+                                                    "1st Claim Number: " & 'Queue Gallery'.Selected.'1st Claim Number', "Claim Number: " & 'Queue Gallery'.Selected.'1st Claim Number')
+                                            ZIndex: =7
+
+                                        "'2ndClaimNo' As label":
+                                            AlignInContainer: =AlignInContainer.Stretch
+                                            BorderColor: =App.Theme.Colors.Darker40
+                                            Color: =RGBA(0, 0, 0, 1)
+                                            DisabledColor: =RGBA(166, 166, 166, 1)
+                                            Font: =App.Theme.Font
+                                            Size: =13
+                                            Text: |-
+                                                ="2nd Claim Number: " & 'Queue Gallery'.Selected.'2nd Claim Number'
+                                            ZIndex: =8
+
+                                        "'3rdClaimNo' As label":
+                                            AlignInContainer: =AlignInContainer.Stretch
+                                            BorderColor: =App.Theme.Colors.Darker40
+                                            Color: =RGBA(0, 0, 0, 1)
+                                            DisabledColor: =RGBA(166, 166, 166, 1)
+                                            Font: =App.Theme.Font
+                                            Size: =13
+                                            Text: |-
+                                                ="3rd Claim Number: " & 'Queue Gallery'.Selected.'3rd - Claim Number'
+                                            ZIndex: =9
+
                                         OthersInvolved As label:
                                             AlignInContainer: =AlignInContainer.Stretch
                                             BorderColor: =App.Theme.Colors.Darker40
@@ -2224,7 +2258,7 @@
                                             Size: =13
                                             Text: |-
                                                 ="Others Involved: " & 'Queue Gallery'.Selected.'Others Involved'
-                                            ZIndex: =8
+                                            ZIndex: =10
 
                                     ReporterContainer As groupContainer.verticalAutoLayoutContainer:
                                         DropShadow: =DropShadow.Light
@@ -2236,7 +2270,7 @@
                                         RadiusBottomRight: =4
                                         RadiusTopLeft: =4
                                         RadiusTopRight: =4
-                                        Visible: =If(pageCount = 1, true, false)
+                                        Visible: =If(pageCount = 2, true, false)
                                         ZIndex: =2
 
                                         ReporterName As label:
@@ -2366,7 +2400,7 @@
                                         RadiusBottomRight: =4
                                         RadiusTopLeft: =4
                                         RadiusTopRight: =4
-                                        Visible: =If(pageCount = 2, true, false)
+                                        Visible: =If(pageCount = 1, true, false)
                                         ZIndex: =3
 
                                         Details As label:
