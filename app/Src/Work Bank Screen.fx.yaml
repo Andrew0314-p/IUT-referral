@@ -2020,24 +2020,60 @@
                         Y: =40
                         ZIndex: =10
 
-                        ReferralIntroduction As label:
-                            Align: =Align.Center
-                            AlignInContainer: =AlignInContainer.Stretch
-                            BorderColor: =App.Theme.Colors.Darker40
-                            Color: =RGBA(0, 0, 0, 1)
-                            DisabledColor: =RGBA(166, 166, 166, 1)
-                            Font: =App.Theme.Font
-                            Height: =Header1.Height - 20
-                            Text: |-
-                                ="Referral #" & Text('Queue Gallery'.Selected.ID, "[$-en-US]Bold") & " | Referral Type: " & Text('Queue Gallery'.Selected.'Referral Type') & " | Assigned To: " & Text('Queue Gallery'.Selected.'Assigned To')
+                        ReferralControlContainer As groupContainer.horizontalAutoLayoutContainer:
+                            DropShadow: =DropShadow.Light
+                            FillPortions: =0
+                            Height: |
+                                =60
+                            LayoutMinHeight: =100
+                            LayoutMinWidth: =250
+                            LayoutMode: =LayoutMode.Auto
+                            RadiusBottomLeft: =4
+                            RadiusBottomRight: =4
+                            RadiusTopLeft: =4
+                            RadiusTopRight: =4
                             ZIndex: =1
+
+                            BackArrow As icon.ArrowLeft:
+                                AlignInContainer: =AlignInContainer.Center
+                                BorderColor: =App.Theme.Colors.Darker40
+                                Color: =App.Theme.Colors.Primary
+                                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                                DisabledColor: =RGBA(244, 244, 244, 1)
+                                Height: =40
+                                Icon: =Icon.ArrowLeft
+                                ZIndex: =1
+
+                            ReferralIntroduction As label:
+                                Align: =Align.Center
+                                AlignInContainer: =AlignInContainer.Stretch
+                                BorderColor: =App.Theme.Colors.Darker40
+                                Color: =RGBA(0, 0, 0, 1)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                FillPortions: =1
+                                Font: =App.Theme.Font
+                                Height: =Header1.Height - 20
+                                Text: |-
+                                    ="Referral #" & Text('Queue Gallery'.Selected.ID, "[$-en-US]Bold") & " | Referral Type: " & Text('Queue Gallery'.Selected.'Referral Type') & " | Assigned To: " & Text('Queue Gallery'.Selected.'Assigned To')
+                                ZIndex: =2
+
+                            ForwardArrow As icon.ArrowRight:
+                                AlignInContainer: =AlignInContainer.Center
+                                BorderColor: =App.Theme.Colors.Darker40
+                                Color: =App.Theme.Colors.Primary
+                                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                                DisabledColor: =RGBA(244, 244, 244, 1)
+                                Height: =BackArrow.Height
+                                Icon: =Icon.ArrowRight
+                                OnSelect: =BackArrow.Height
+                                ZIndex: =3
 
                         Seperator_2 As rectangle:
                             AlignInContainer: =AlignInContainer.Stretch
                             BorderColor: =App.Theme.Colors.Darker40
                             Fill: =App.Theme.Colors.Primary
                             Height: =3
-                            ZIndex: =2
+                            ZIndex: =3
 
                         "'Referral Galleries Container' As groupContainer.horizontalAutoLayoutContainer":
                             LayoutDirection: =LayoutDirection.Vertical
@@ -2049,7 +2085,7 @@
                             RadiusTopLeft: =4
                             RadiusTopRight: =4
                             Visible: =If(myInTrayMode = true, true, false)  And If(EmployeeBrowseGallery.Visible = true, false, true) And If('Queue Gallery'.Visible = true, true, false) And If(CountRows(Filter(WorkBankCollection,'Assigned To Email' = User().Email)) > 0, true, false)
-                            ZIndex: =3
+                            ZIndex: =4
 
                             NoReferralPickedText As Text:
                                 Align: ='TextCanvas.Align'.Center
@@ -2111,6 +2147,7 @@
                                             Size: =13
                                             Text: |-
                                                 ="Policyholder Name: " & 'Queue Gallery'.Selected.'1st - Policyholder First Name' & " " & 'Queue Gallery'.Selected.'1st - Policyholder Last Name'
+                                            Visible: =If(IsBlank('Queue Gallery'.Selected.'1st - Policyholder First Name') And IsBlank('Queue Gallery'.Selected.'1st - Policyholder Last Name'), false, true)
                                             ZIndex: =1
 
                                         "'PH Phone #' As label":
