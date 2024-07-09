@@ -2266,6 +2266,43 @@
                                             Visible: =If(IsBlank('Queue Gallery'.Selected.'Others Involved'), false, true)
                                             ZIndex: =10
 
+                                        DecisionReasons As groupContainer.horizontalAutoLayoutContainer:
+                                            DropShadow: =DropShadow.Light
+                                            FillPortions: =0
+                                            Height: =FraudCategory.Height
+                                            LayoutMinHeight: =100
+                                            LayoutMinWidth: =250
+                                            LayoutMode: =LayoutMode.Auto
+                                            RadiusBottomLeft: =4
+                                            RadiusBottomRight: =4
+                                            RadiusTopLeft: =4
+                                            RadiusTopRight: =4
+                                            ZIndex: =12
+
+                                            Label24 As label:
+                                                AlignInContainer: =AlignInContainer.Stretch
+                                                BorderColor: =App.Theme.Colors.Darker40
+                                                Color: =RGBA(0, 0, 0, 1)
+                                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                                Font: =App.Theme.Font
+                                                Size: =13
+                                                Text: |-
+                                                    ="Decision Reason: "
+                                                ZIndex: =1
+
+                                            DropdownCanvas2 As Dropdown.pcfdataset:
+                                                AlignInContainer: =AlignInContainer.Stretch
+                                                DisplayMode: =DisplayMode.Edit
+                                                FillPortions: =1
+                                                Height: =32
+                                                Items: =["Item 1", "Item 2", "Item 3"]
+                                                LayoutMinHeight: =32
+                                                LayoutMinWidth: =320
+                                                Width: =320
+                                                X: =0
+                                                Y: =0
+                                                ZIndex: =2
+
                                     ReporterContainer As groupContainer.verticalAutoLayoutContainer:
                                         DropShadow: =DropShadow.Light
                                         LayoutDirection: =LayoutDirection.Vertical
