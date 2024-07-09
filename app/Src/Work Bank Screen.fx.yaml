@@ -2267,7 +2267,6 @@
                                             ZIndex: =10
 
                                         DecisionReasons As groupContainer.horizontalAutoLayoutContainer:
-                                            DropShadow: =DropShadow.Light
                                             FillPortions: =0
                                             Height: =FraudCategory.Height
                                             LayoutMinHeight: =100
@@ -2292,16 +2291,31 @@
 
                                             DropdownCanvas2 As Dropdown.pcfdataset:
                                                 AlignInContainer: =AlignInContainer.Stretch
+                                                Appearance: ='DropdownCanvas.Appearance'.FilledLighter
+                                                BasePaletteColor: =RGBA(249, 83, 109, 1)
                                                 DisplayMode: =DisplayMode.Edit
-                                                FillPortions: =1
+                                                FontSize: |
+                                                    =17
                                                 Height: =32
-                                                Items: =["Item 1", "Item 2", "Item 3"]
+                                                Items: =["Adverse Action Already Taken", " File Development", "No Action", "Non-renewal", "Premium Change", "Initial Cancel", "Midterm Cancel", "No Action - Inconclusive", "No Action - PH Cancel", "WOTR", "Void"]
                                                 LayoutMinHeight: =32
                                                 LayoutMinWidth: =320
+                                                Required: =true
                                                 Width: =320
                                                 X: =0
                                                 Y: =0
                                                 ZIndex: =2
+
+                                            ButtonCanvas1 As Button:
+                                                AlignInContainer: =AlignInContainer.Stretch
+                                                DisplayMode: =DisplayMode.Edit
+                                                Height: =32
+                                                LayoutMinHeight: =32
+                                                LayoutMinWidth: =96
+                                                Width: =96
+                                                X: =0
+                                                Y: =0
+                                                ZIndex: =3
 
                                     ReporterContainer As groupContainer.verticalAutoLayoutContainer:
                                         DropShadow: =DropShadow.Light
