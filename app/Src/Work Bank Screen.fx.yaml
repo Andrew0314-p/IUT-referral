@@ -2,7 +2,7 @@
     Fill: =Color.White
     LoadingSpinnerColor: =App.Theme.Colors.Primary
     OnVisible: |-
-        =UpdateContext({sharedWorkBankMode: true, myInTrayMode: false, myTeamMode: false, reportsMode: false, searchMode: false,clickedCount: 0});
+        =UpdateContext({sharedWorkBankMode: true, myInTrayMode: false, myTeamMode: false, reportsMode: false, searchMode: false,clickedCount: 0, pageCount: 0});
         
         Refresh('Referral Intake Tool Submissions');
         If(!IsEmpty(WorkBankCollection), ClearCollect(WorkBankCollection, {}));
@@ -2037,11 +2037,15 @@
                             BackArrow As icon.ArrowLeft:
                                 AlignInContainer: =AlignInContainer.Center
                                 BorderColor: =App.Theme.Colors.Darker40
-                                Color: =App.Theme.Colors.Primary
+                                Color: =If(pageCount = 0, RGBA(255, 255, 255, 1), App.Theme.Colors.Primary)
                                 DisabledBorderColor: =RGBA(166, 166, 166, 1)
                                 DisabledColor: =RGBA(244, 244, 244, 1)
+                                DisplayMode: =If(pageCount = 0, DisplayMode.View, DisplayMode.Edit)
+                                Fill: =RGBA(255, 255, 255, 1)
                                 Height: =40
                                 Icon: =Icon.ArrowLeft
+                                OnSelect: |-
+                                    =If(pageCount > 0, UpdateContext({pageCount: pageCount - 1}))
                                 ZIndex: =1
 
                             ReferralIntroduction As label:
@@ -2065,7 +2069,8 @@
                                 DisabledColor: =RGBA(244, 244, 244, 1)
                                 Height: =BackArrow.Height
                                 Icon: =Icon.ArrowRight
-                                OnSelect: =BackArrow.Height
+                                OnSelect: |-
+                                    =If(pageCount < 1, UpdateContext({pageCount: pageCount + 1}))
                                 ZIndex: =3
 
                         Seperator_2 As rectangle:
@@ -2136,6 +2141,7 @@
                                         RadiusBottomRight: =4
                                         RadiusTopLeft: =4
                                         RadiusTopRight: =4
+                                        Visible: =If(pageCount = 0, true, false)
                                         ZIndex: =1
 
                                         "'PH Name' As label":
@@ -2199,7 +2205,7 @@
                                             Visible: =If('Queue Gallery'.Selected.'Is there a 3rd Policy?' = "Yes" And !IsBlank('Queue Gallery'.Selected.'3rd - Policy Number'), true, false)
                                             ZIndex: =5
 
-                                    Container5 As groupContainer.verticalAutoLayoutContainer:
+                                    ReporterContainer As groupContainer.verticalAutoLayoutContainer:
                                         DropShadow: =DropShadow.Light
                                         LayoutDirection: =LayoutDirection.Vertical
                                         LayoutMinHeight: =100
@@ -2209,7 +2215,89 @@
                                         RadiusBottomRight: =4
                                         RadiusTopLeft: =4
                                         RadiusTopRight: =4
+                                        Visible: =If(pageCount = 1, true, false)
                                         ZIndex: =2
+
+                                        ReporterName As label:
+                                            AlignInContainer: =AlignInContainer.Stretch
+                                            BorderColor: =App.Theme.Colors.Darker40
+                                            Color: =RGBA(0, 0, 0, 1)
+                                            DisabledColor: =RGBA(166, 166, 166, 1)
+                                            Font: =App.Theme.Font
+                                            Size: =13
+                                            Text: |-
+                                                ="Reporter Name: " & 'Queue Gallery'.Selected.'Reporter Name'
+                                            Visible: =If(IsBlank('Queue Gallery'.Selected.'Reporter Name'), false, true)
+                                            ZIndex: =1
+
+                                        ReporterEmail As label:
+                                            AlignInContainer: =AlignInContainer.Stretch
+                                            BorderColor: =App.Theme.Colors.Darker40
+                                            Color: =RGBA(0, 0, 0, 1)
+                                            DisabledColor: =RGBA(166, 166, 166, 1)
+                                            Font: =App.Theme.Font
+                                            Size: =13
+                                            Text: |-
+                                                ="Reporter Email: " & 'Queue Gallery'.Selected.'Reporter Email'
+                                            ZIndex: =2
+
+                                        ReporterRole As label:
+                                            AlignInContainer: =AlignInContainer.Stretch
+                                            BorderColor: =App.Theme.Colors.Darker40
+                                            Color: =RGBA(0, 0, 0, 1)
+                                            DisabledColor: =RGBA(166, 166, 166, 1)
+                                            Font: =App.Theme.Font
+                                            Size: =13
+                                            Text: |-
+                                                ="Reporter Role: " & 'Queue Gallery'.Selected.'Reporter Role'
+                                            ZIndex: =3
+
+                                        ReporterDepartment As label:
+                                            AlignInContainer: =AlignInContainer.Stretch
+                                            BorderColor: =App.Theme.Colors.Darker40
+                                            Color: =RGBA(0, 0, 0, 1)
+                                            DisabledColor: =RGBA(166, 166, 166, 1)
+                                            Font: =App.Theme.Font
+                                            Size: =13
+                                            Text: |-
+                                                ="Reporter Department: " & 'Queue Gallery'.Selected.'Department of Reporter'
+                                            Visible: =If('Queue Gallery'.Selected.'Reporter Role' = "Governmental", false, true)
+                                            ZIndex: =4
+
+                                        ReporterAlias As label:
+                                            AlignInContainer: =AlignInContainer.Stretch
+                                            BorderColor: =App.Theme.Colors.Darker40
+                                            Color: =RGBA(0, 0, 0, 1)
+                                            DisabledColor: =RGBA(166, 166, 166, 1)
+                                            Font: =App.Theme.Font
+                                            Size: =13
+                                            Text: |-
+                                                ="Reporter Alias: " & 'Queue Gallery'.Selected.'Reporter Alias'
+                                            Visible: =If('Queue Gallery'.Selected.'Reporter Role' = "Governmental", false, true) And If(IsBlank('Queue Gallery'.Selected.'Reporter Alias'), false, true)
+                                            ZIndex: =5
+
+                                        ReporterPhoneNo As label:
+                                            AlignInContainer: =AlignInContainer.Stretch
+                                            BorderColor: =App.Theme.Colors.Darker40
+                                            Color: =RGBA(0, 0, 0, 1)
+                                            DisabledColor: =RGBA(166, 166, 166, 1)
+                                            Font: =App.Theme.Font
+                                            Size: =13
+                                            Text: |-
+                                                ="Reporter Phone Number: " & 'Queue Gallery'.Selected.'Reporter Phone Number'
+                                            Visible: =If(IsBlank('Queue Gallery'.Selected.'Reporter Phone Number'), false, true)
+                                            ZIndex: =6
+
+                                        Label14 As label:
+                                            AlignInContainer: =AlignInContainer.Stretch
+                                            BorderColor: =App.Theme.Colors.Darker40
+                                            Color: =RGBA(0, 0, 0, 1)
+                                            DisabledColor: =RGBA(166, 166, 166, 1)
+                                            Font: =App.Theme.Font
+                                            Size: =13
+                                            Text: |-
+                                                ="Available to Contact: " & 'Queue Gallery'.Selected.'Additional Info Y/N'
+                                            ZIndex: =7
 
                 AssignContainer As groupContainer.verticalAutoLayoutContainer:
                     FillPortions: =0
