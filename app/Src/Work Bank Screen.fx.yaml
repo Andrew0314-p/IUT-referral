@@ -782,18 +782,6 @@
                             Y: =0
                             ZIndex: =22
 
-                        "'1st Date of Loss - Working1' As PowerAppsOneGridTemplate_dataField.textualColumn":
-                            FieldDisplayName: ="1st Date of Loss - Working"
-                            FieldName: ="cr065_stdateoflossana"
-                            FieldType: ="d"
-                            FieldVariantName: ="textualColumn"
-                            Height: =100
-                            Order: =9
-                            Width: =0
-                            X: =0
-                            Y: =0
-                            ZIndex: =23
-
                         "'2nd Date of Loss - Working1' As PowerAppsOneGridTemplate_dataField.textualColumn":
                             FieldDisplayName: ="2nd Date of Loss - Working"
                             FieldName: ="cr065_nddateoflossworking"
@@ -2278,7 +2266,7 @@
                                             RadiusTopRight: =4
                                             ZIndex: =12
 
-                                            Label24 As label:
+                                            DecisionText As label:
                                                 AlignInContainer: =AlignInContainer.Stretch
                                                 BorderColor: =App.Theme.Colors.Darker40
                                                 Color: =RGBA(0, 0, 0, 1)
@@ -2286,10 +2274,10 @@
                                                 Font: =App.Theme.Font
                                                 Size: =13
                                                 Text: |-
-                                                    ="Decision Reason: "
+                                                    ="Decision Reason: " & If(decisionMode = true, 'Queue Gallery'.Selected.'Decision Reason', " ")
                                                 ZIndex: =1
 
-                                            DropdownCanvas2 As Dropdown.pcfdataset:
+                                            DecisionDropdown As Dropdown.pcfdataset:
                                                 AlignInContainer: =AlignInContainer.Stretch
                                                 Appearance: ='DropdownCanvas.Appearance'.FilledLighter
                                                 BasePaletteColor: =RGBA(249, 83, 109, 1)
@@ -2301,21 +2289,56 @@
                                                 LayoutMinHeight: =32
                                                 LayoutMinWidth: =320
                                                 Required: =true
+                                                Visible: =If(decisionMode = true, true, false)
                                                 Width: =320
                                                 X: =0
                                                 Y: =0
                                                 ZIndex: =2
 
-                                            ButtonCanvas1 As Button:
+                                            ChangeDecision As Button:
                                                 AlignInContainer: =AlignInContainer.Stretch
+                                                Appearance: ='ButtonCanvas.Appearance'.Secondary
+                                                BorderStyle: =BorderStyle.None
                                                 DisplayMode: =DisplayMode.Edit
+                                                FillPortions: =1
+                                                FontColor: =RGBA(189, 49, 51, 1)
                                                 Height: =32
                                                 LayoutMinHeight: =32
                                                 LayoutMinWidth: =96
+                                                OnSelect: |-
+                                                    =UpdateContext({decisionMode: true});
+                                                Text: ="Change Decision"
+                                                Visible: =If(decisionMode = true, false, true)
                                                 Width: =96
                                                 X: =0
                                                 Y: =0
                                                 ZIndex: =3
+
+                                            SubmitDecision As Button:
+                                                AlignInContainer: =AlignInContainer.Stretch
+                                                Appearance: ='ButtonCanvas.Appearance'.Secondary
+                                                BasePaletteColor: =
+                                                BorderStyle: =BorderStyle.None
+                                                DisplayMode: =DisplayMode.Edit
+                                                FillPortions: =1
+                                                FontColor: =RGBA(189, 49, 51, 1)
+                                                Height: =32
+                                                LayoutMinHeight: =32
+                                                LayoutMinWidth: =96
+                                                OnSelect: |-
+                                                    =Patch(
+                                                        'Referral Intake Tool Submissions',
+                                                        LookUp('Referral Intake Tool Submissions', ID = 'Queue Gallery'.Selected.ID),
+                                                        { 'Decision Reasons': DecisionDropdown.Selected.Value }
+                                                    );
+                                                    Update(WorkBankCollection, LookUp(WorkBankCollection, ID = 'Queue Gallery'.Selected.ID), { 'Decision Reason': DecisionDropdown.Selected.Value });
+                                                    UpdateContext({decisionMode: false});
+                                                Text: ="Submit Decision"
+                                                Visible: =If(decisionMode = true, true, false)
+                                                Width: =96
+                                                X: =0
+                                                Y: =0
+                                                ZIndex: =4
 
                                     ReporterContainer As groupContainer.verticalAutoLayoutContainer:
                                         DropShadow: =DropShadow.Light
@@ -2594,6 +2617,7 @@
                                             'Assigned To Email': _selectedApprover.Mail,
                                             'Referral Type':oldestRecord.'Referral Type',
                                             'Fraud Category': oldestRecord.'Category of Fraud',
+                                            'Decision Reason':oldestRecord.'Decision Reasons',
                                             '1st - Policyholder First Name': oldestRecord.'Policyholder First Name',
                                             '1st - Policyholder Last Name': oldestRecord.'Policyholder Last Name',
                                             '1st - Policyholder Phone Number': oldestRecord.'Policyholder Phone Number',
