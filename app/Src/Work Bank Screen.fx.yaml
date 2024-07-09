@@ -2067,7 +2067,7 @@
                                 Y: =0
                                 ZIndex: =2
 
-                            "'Policyholder Information' As groupContainer.horizontalAutoLayoutContainer":
+                            ReferralInformation As groupContainer.horizontalAutoLayoutContainer:
                                 DropShadow: =DropShadow.Light
                                 LayoutDirection: =LayoutDirection.Vertical
                                 LayoutMinHeight: =100
@@ -2078,16 +2078,6 @@
                                 RadiusTopLeft: =4
                                 RadiusTopRight: =4
                                 ZIndex: =3
-
-                                "'PH Title' As label":
-                                    AlignInContainer: =AlignInContainer.Stretch
-                                    BorderColor: =App.Theme.Colors.Darker40
-                                    Color: =RGBA(0, 0, 0, 1)
-                                    DisabledColor: =RGBA(166, 166, 166, 1)
-                                    Font: =App.Theme.Font
-                                    Size: =13
-                                    Text: ="Policyholder Information"
-                                    ZIndex: =1
 
                                 "'PH Data' As groupContainer.horizontalAutoLayoutContainer":
                                     DropShadow: =DropShadow.Light
@@ -2117,7 +2107,6 @@
                                             BorderColor: =App.Theme.Colors.Darker40
                                             Color: =RGBA(0, 0, 0, 1)
                                             DisabledColor: =RGBA(166, 166, 166, 1)
-                                            FillPortions: =1
                                             Font: =App.Theme.Font
                                             Size: =13
                                             Text: |-
@@ -2129,27 +2118,49 @@
                                             BorderColor: =App.Theme.Colors.Darker40
                                             Color: =RGBA(0, 0, 0, 1)
                                             DisabledColor: =RGBA(166, 166, 166, 1)
-                                            FillPortions: =1
                                             Font: =App.Theme.Font
                                             Size: =13
                                             Text: |-
                                                 ="Policyholder Phone Number: " & 'Queue Gallery'.Selected.'Policyholder Phone Number'
+                                            Visible: =If(IsBlank('Queue Gallery'.Selected.'Policyholder Phone Number'), false, true)
                                             ZIndex: =2
 
-                                        Label4 As label:
+                                        "'1stPolicyNo' As label":
                                             AlignInContainer: =AlignInContainer.Stretch
                                             BorderColor: =App.Theme.Colors.Darker40
                                             Color: =RGBA(0, 0, 0, 1)
                                             DisabledColor: =RGBA(166, 166, 166, 1)
-                                            FillPortions: =1
                                             Font: =App.Theme.Font
                                             Size: =13
                                             Text: |-
-                                                =If('Queue Gallery'.Selected.'Is there a 3rd Policy?' = "Yes", "1st Policy Number: " & 'Queue Gallery'.Selected.'1st Policy Number' & Char(10) & "2nd Policy Number: " & 'Queue Gallery'.Selected.'2nd Policy Number' & Char(10) & "3rd Policy Number: " & 'Queue Gallery'.Selected.'3rd - Policy Number', 
-                                                If('Queue Gallery'.Selected.'Is there a second Policy?' = "Yes",  "1st Policy Number: " & 'Queue Gallery'.Selected.'1st Policy Number' & Char(10) & "2nd Policy Number: " & 'Queue Gallery'.Selected.'2nd Policy Number',
-                                                 "Policy Number: " & 'Queue Gallery'.Selected.'1st Policy Number'))
-                                            Visible: =If(IsBlank('Queue Gallery'.Selected.'1st Policy Number') And IsBlank('Queue Gallery'.Selected.'2nd Policy Number') And IsBlank('Queue Gallery'.Selected.'3rd - Policy Number'), false, true)
+                                                =If('Queue Gallery'.Selected.'Is there a second Policy?' = "Yes",
+                                                    "1st Policy Number: " & 'Queue Gallery'.Selected.'1st Policy Number', "Policy Number: " & 'Queue Gallery'.Selected.'1st Policy Number')
+                                            Visible: =If(!IsBlank('Queue Gallery'.Selected.'1st Policy Number'), true, false)
                                             ZIndex: =3
+
+                                        "'2ndPolicyNo' As label":
+                                            AlignInContainer: =AlignInContainer.Stretch
+                                            BorderColor: =App.Theme.Colors.Darker40
+                                            Color: =RGBA(0, 0, 0, 1)
+                                            DisabledColor: =RGBA(166, 166, 166, 1)
+                                            Font: =App.Theme.Font
+                                            Size: =13
+                                            Text: |-
+                                                ="2nd Policy Number: " & 'Queue Gallery'.Selected.'2nd Policy Number'
+                                            Visible: =If('Queue Gallery'.Selected.'Is there a second Policy?' = "Yes" And !IsBlank('Queue Gallery'.Selected.'2nd Policy Number'), true, false)
+                                            ZIndex: =4
+
+                                        "'3rdPolicyNo' As label":
+                                            AlignInContainer: =AlignInContainer.Stretch
+                                            BorderColor: =App.Theme.Colors.Darker40
+                                            Color: =RGBA(0, 0, 0, 1)
+                                            DisabledColor: =RGBA(166, 166, 166, 1)
+                                            Font: =App.Theme.Font
+                                            Size: =13
+                                            Text: |-
+                                                ="3rd Policy Number: " & 'Queue Gallery'.Selected.'3rd - Policy Number'
+                                            Visible: =If('Queue Gallery'.Selected.'Is there a 3rd Policy?' = "Yes" And !IsBlank('Queue Gallery'.Selected.'3rd - Policy Number'), true, false)
+                                            ZIndex: =5
 
                                     Container5 As groupContainer.verticalAutoLayoutContainer:
                                         DropShadow: =DropShadow.Light
@@ -2162,52 +2173,6 @@
                                         RadiusTopLeft: =4
                                         RadiusTopRight: =4
                                         ZIndex: =2
-
-                                        Label5 As label:
-                                            AlignInContainer: =AlignInContainer.Stretch
-                                            BorderColor: =App.Theme.Colors.Darker40
-                                            Color: =RGBA(0, 0, 0, 1)
-                                            DisabledColor: =RGBA(166, 166, 166, 1)
-                                            FillPortions: =1
-                                            Font: =App.Theme.Font
-                                            Size: =13
-                                            Text: |-
-                                                ="1st Policy Number: " & 'Queue Gallery'.Selected.'1st Policy Number'
-                                            ZIndex: =1
-
-                                        Label6 As label:
-                                            AlignInContainer: =AlignInContainer.Stretch
-                                            BorderColor: =App.Theme.Colors.Darker40
-                                            Color: =RGBA(0, 0, 0, 1)
-                                            DisabledColor: =RGBA(166, 166, 166, 1)
-                                            FillPortions: =1
-                                            Font: =App.Theme.Font
-                                            Size: =13
-                                            Text: |-
-                                                ="2nd Policy Number: " & 'Queue Gallery'.Selected.'2nd Policy Number'
-                                            ZIndex: =2
-
-                                        Label7 As label:
-                                            AlignInContainer: =AlignInContainer.Stretch
-                                            BorderColor: =App.Theme.Colors.Darker40
-                                            Color: =RGBA(0, 0, 0, 1)
-                                            DisabledColor: =RGBA(166, 166, 166, 1)
-                                            Font: =App.Theme.Font
-                                            Size: =13
-                                            Text: |-
-                                                ="3rd Policy Number: " & 'Queue Gallery'.Selected.'3rd - Policy Number'
-                                            ZIndex: =3
-
-                            Container2 As groupContainer.horizontalAutoLayoutContainer:
-                                DropShadow: =DropShadow.Light
-                                LayoutMinHeight: =100
-                                LayoutMinWidth: =250
-                                LayoutMode: =LayoutMode.Auto
-                                RadiusBottomLeft: =4
-                                RadiusBottomRight: =4
-                                RadiusTopLeft: =4
-                                RadiusTopRight: =4
-                                ZIndex: =4
 
                 AssignContainer As groupContainer.verticalAutoLayoutContainer:
                     FillPortions: =0
