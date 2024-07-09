@@ -2414,7 +2414,7 @@
                                             Font: =App.Theme.Font
                                             Size: =13
                                             Text: |-
-                                                ="Details: " & Char(10) & 'Queue Gallery'.Selected.Details
+                                                ="Details: " & Char(10) & If(IsBlank('Queue Gallery'.Selected.Details), "N/A", 'Queue Gallery'.Selected.Details)
                                             ZIndex: =1
 
                 AssignContainer As groupContainer.verticalAutoLayoutContainer:
