@@ -2288,7 +2288,7 @@
                                             Visible: =If(IsBlank('Queue Gallery'.Selected.'Reporter Phone Number'), false, true)
                                             ZIndex: =6
 
-                                        Label14 As label:
+                                        ReporterContact As label:
                                             AlignInContainer: =AlignInContainer.Stretch
                                             BorderColor: =App.Theme.Colors.Darker40
                                             Color: =RGBA(0, 0, 0, 1)
@@ -2298,6 +2298,40 @@
                                             Text: |-
                                                 ="Available to Contact: " & 'Queue Gallery'.Selected.'Additional Info Y/N'
                                             ZIndex: =7
+
+                                        InformantName As label:
+                                            AlignInContainer: =AlignInContainer.Stretch
+                                            BorderColor: =App.Theme.Colors.Darker40
+                                            Color: =RGBA(0, 0, 0, 1)
+                                            DisabledColor: =RGBA(166, 166, 166, 1)
+                                            Font: =App.Theme.Font
+                                            Size: =13
+                                            Text: |-
+                                                ="Informant Name: " & 'Queue Gallery'.Selected.'Informant First Name' & " " & 'Queue Gallery'.Selected.'Informant Last Name'
+                                            Visible: =If('Queue Gallery'.Selected.'Informant Y/N' = "Yes", true, false) And If(IsBlank('Queue Gallery'.Selected.'Informant First Name'), false, true) And If(IsBlank('Queue Gallery'.Selected.'Informant Last Name'), false, true)
+                                            ZIndex: =8
+
+                                        InformantPhoneNo As label:
+                                            AlignInContainer: =AlignInContainer.Stretch
+                                            BorderColor: =App.Theme.Colors.Darker40
+                                            Color: =RGBA(0, 0, 0, 1)
+                                            DisabledColor: =RGBA(166, 166, 166, 1)
+                                            Font: =App.Theme.Font
+                                            Size: =13
+                                            Text: |-
+                                                ="Informant Phone Number: " & 'Queue Gallery'.Selected.'Informant Phone Number'
+                                            ZIndex: =9
+
+                                        InformantEmail As label:
+                                            AlignInContainer: =AlignInContainer.Stretch
+                                            BorderColor: =App.Theme.Colors.Darker40
+                                            Color: =RGBA(0, 0, 0, 1)
+                                            DisabledColor: =RGBA(166, 166, 166, 1)
+                                            Font: =App.Theme.Font
+                                            Size: =13
+                                            Text: |-
+                                                ="Informant Email: " & 'Queue Gallery'.Selected.'Informant Email'
+                                            ZIndex: =10
 
                 AssignContainer As groupContainer.verticalAutoLayoutContainer:
                     FillPortions: =0
