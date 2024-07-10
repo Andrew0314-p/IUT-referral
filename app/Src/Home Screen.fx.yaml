@@ -162,105 +162,12 @@
                         LayoutMinHeight: =32
                         LayoutMinWidth: =Parent.Width
                         Size: =16
-                        Text: ="Short description or engaging message"
+                        Text: ="Report suspected cases of fraud"
                         VerticalAlign: ='TextCanvas.VerticalAlign'.Top
                         Width: =Parent.Width
                         X: =0
                         Y: =0
                         ZIndex: =10
-
-            "'View Referral Container' As groupContainer.verticalAutoLayoutContainer":
-                AlignInContainer: =AlignInContainer.SetByContainer
-                DropShadow: =DropShadow.Regular
-                Fill: =RGBA(255, 255, 255, 1)
-                LayoutAlignItems: =LayoutAlignItems.Center
-                LayoutDirection: =LayoutDirection.Vertical
-                LayoutGap: =5
-                LayoutJustifyContent: =LayoutJustifyContent.Center
-                LayoutMinHeight: =300
-                LayoutMinWidth: =If('Home Screen'.Size = ScreenSize.Small, Parent.Width, 400)
-                LayoutMode: =LayoutMode.Auto
-                LayoutOverflowY: =LayoutOverflow.Scroll
-                PaddingBottom: =10
-                PaddingLeft: =5
-                PaddingRight: =5
-                PaddingTop: =10
-                RadiusBottomLeft: =4
-                RadiusBottomRight: =4
-                RadiusTopLeft: =4
-                RadiusTopRight: =4
-                ZIndex: =11
-
-                ImageContainer21 As groupContainer.verticalAutoLayoutContainer:
-                    AlignInContainer: =AlignInContainer.SetByContainer
-                    FillPortions: =1.5
-                    LayoutAlignItems: =LayoutAlignItems.Center
-                    LayoutDirection: =LayoutDirection.Vertical
-                    LayoutGap: =5
-                    LayoutJustifyContent: =LayoutJustifyContent.End
-                    LayoutMinHeight: =100
-                    LayoutMinWidth: ='View Referral Container'.Width
-                    LayoutMode: =LayoutMode.Auto
-                    RadiusBottomLeft: =4
-                    RadiusBottomRight: =4
-                    RadiusTopLeft: =4
-                    RadiusTopRight: =4
-                    Width: =Parent.Width
-                    ZIndex: =12
-
-                    Image21 As image:
-                        BorderColor: =App.Theme.Colors.Darker40
-                        DisabledBorderColor: =RGBA(166, 166, 166, 1)
-                        DisabledFill: =RGBA(244, 244, 244, 1)
-                        Image: =Pictogram_Checklist_rgb
-                        ImagePosition: =ImagePosition.Fill
-                        ZIndex: =13
-
-                TitleContainer21 As groupContainer.verticalAutoLayoutContainer:
-                    AlignInContainer: =AlignInContainer.SetByContainer
-                    LayoutDirection: =LayoutDirection.Vertical
-                    LayoutMinHeight: =100
-                    LayoutMinWidth: ='View Referral Container'.Width
-                    LayoutMode: =LayoutMode.Auto
-                    PaddingTop: =20
-                    RadiusBottomLeft: =4
-                    RadiusBottomRight: =4
-                    RadiusTopLeft: =4
-                    RadiusTopRight: =4
-                    Width: =Parent.Width
-                    ZIndex: =14
-
-                    FeatureItemButton21 As Button:
-                        AccessibleLabel: ="Featured item button"
-                        Appearance: ='ButtonCanvas.Appearance'.Transparent
-                        BorderStyle: =""
-                        DisplayMode: =DisplayMode.Edit
-                        FontSize: =20
-                        FontWeight: =FontWeight.Bold
-                        Height: =32
-                        LayoutMinHeight: =32
-                        LayoutMinWidth: =Parent.Width
-                        Text: ="View Referral"
-                        Width: =Parent.Width
-                        X: =0
-                        Y: =0
-                        ZIndex: =15
-
-                    DescriptionText21 As Text:
-                        Align: ='TextCanvas.Align'.Center
-                        BorderStyle: =""
-                        DisplayMode: =DisplayMode.Edit
-                        FillPortions: =1
-                        Height: =32
-                        LayoutMinHeight: =32
-                        LayoutMinWidth: =Parent.Width
-                        Size: =16
-                        Text: ="Short description or engaging message"
-                        VerticalAlign: ='TextCanvas.VerticalAlign'.Top
-                        Width: =Parent.Width
-                        X: =0
-                        Y: =0
-                        ZIndex: =16
 
             "'Work Bank Container' As groupContainer.verticalAutoLayoutContainer":
                 AlignInContainer: =AlignInContainer.SetByContainer
@@ -349,7 +256,7 @@
                         LayoutMinHeight: =32
                         LayoutMinWidth: =Parent.Width
                         Size: =16
-                        Text: ="Short description or engaging message"
+                        Text: ="Assign and view submitted referrals"
                         VerticalAlign: ='TextCanvas.VerticalAlign'.Top
                         Width: =Parent.Width
                         X: =0
@@ -442,7 +349,7 @@
                         LayoutMinHeight: =32
                         LayoutMinWidth: =Parent.Width
                         Size: =16
-                        Text: ="Short description or engaging message"
+                        Text: ="View and contact employees"
                         VerticalAlign: ='TextCanvas.VerticalAlign'.Top
                         Width: =Parent.Width
                         X: =0

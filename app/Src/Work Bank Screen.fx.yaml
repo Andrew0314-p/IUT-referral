@@ -18,6 +18,7 @@
                         'Assigned To Email': 'Assigned To Email',
                         'Referral Type': 'Referral Type',
                         'Fraud Category': 'Category of Fraud',
+                        'Decision Reason':'Decision Reasons',
                         '1st - Policyholder First Name': 'Policyholder First Name',
                         '1st - Policyholder Last Name': 'Policyholder Last Name',
                         '1st - Policyholder Phone Number': 'Policyholder Phone Number',
@@ -586,97 +587,86 @@
                                         ForAll(
                                             Filter('Referral Intake Tool Submissions', 'Assigned To Email' = User().Email),
                                             {
-                                                User: _selectedApprover,
-                                               ID:oldestRecord.ID,
-                                	'Assigned To':oldestRecord.'Assigned To',
-                                	'Assigned To Email':oldestRecord.'Assigned To Email',
-                                	'Referral Type':oldestRecord.'Referral Type',
-                                	'Fraud Category':oldestRecord.'Category of Fraud',
-                                	'Decision Reason':oldestRecord.'Decision Reasons',
-                                    'Completion Time':oldestRecord.'Completion Time',
-                                    'Reporter Email':oldestRecord.'Reporter Email',
-                                    'Reporter Name':oldestRecord.'Reporter Name',
-                                    'Last modified time':oldestRecord.'Last modified time',
-                                    'Reporter Role':oldestRecord.'Reporter Role',
-                                    'Department of Reporter':oldestRecord.'Reporter Department',
-                                    'Reporter Alias':oldestRecord.'Reporter Alias',
-                                    'Informant Y/N':oldestRecord.'Are you filling this form out for someone else who you got a tip from?',
-                                    'Informant First Name':oldestRecord.'Informant First Name',
-                                    'Informant Last Name':oldestRecord.'Informant Last Name',
-                                    'Informant Phone Number':oldestRecord.'Informant Phone Number',
-                                    'Informant Email':oldestRecord.'Informant Email',
-                                    'Additional Info Y/N':oldestRecord.'Can we contact you for additional information',
-                                    'Reporter Phone Number':oldestRecord.'Reporter Phone Number',
-                                    'Policyholder First Name':oldestRecord.'Policyholder First Name',
-                                    'Policyholder Last Name':oldestRecord.'Policyholder Last Name',
-                                    'Policyholder Phone Number':oldestRecord.'Policyholder Phone Number',
-                                    '1st Date of Loss':oldestRecord.'1st Date of Loss',
-                                    '1st Policy Number':oldestRecord.'1st Policy Number',
-                                    '1st Claim Number':oldestRecord.'1st Claim Number',
-                                    '1st Policy Type':oldestRecord.'1st Policy Type',
-                                    '1st Fire - Street':oldestRecord.'1st Fire - Street',
-                                    '1st Fire - City':oldestRecord.'1st Fire - City',
-                                    '1st Fire - Line of Business':oldestRecord.'1st Fire - Line of Business',
-                                    '1st Fire Business Lines - State Code':oldestRecord.'1st Fire Business Lines - State Code',
-                                    '1st Fire - Business Name':oldestRecord.'1st Fire - Business Name',
-                                    '1st Fire - Business Policy Types':oldestRecord.'1st Fire - Business Policy Types',
-                                    '1st Fire Personal Lines - State Code':oldestRecord.'1st Fire Personal Lines - State Code',
-                                    '1st Fire - Personal Policy Type':oldestRecord.'1st Fire - Personal Policy Type',
-                                    '1st Auto - VIN':oldestRecord.'1st Auto -  VIN',
-                                    '1st Auto - License Plate':oldestRecord.'1st Auto -  License Plate',
-                                    '1st Auto - Make':oldestRecord.'1st Auto -  Make',
-                                    '1st Auto - Model':oldestRecord.'1st Auto -  Model',
-                                    '1st Auto - Line of Business':oldestRecord.'1st Auto - Line of Business',
-                                    '1st Auto Business - State Code':oldestRecord.'1st Auto Business - State Code',
-                                    '1st Auto - Business Name':oldestRecord.'1st Auto - Business Name',
-                                    '1st Auto Personal - State Code':oldestRecord.'1st Auto Personal - State Code',
-                                    '2nd Policy Y/N':oldestRecord.'Is there a second Policy?',
-                                    '2nd Policy Number':oldestRecord.'2nd Policy Number',
-                                    '2nd Claim Number':oldestRecord.'2nd Claim Number',
-                                    '2nd Date of Loss':oldestRecord.'2nd Date of Loss',
-                                    '2nd Policy Type':oldestRecord.'Multiple Policy - 2nd Policy Type',
-                                    '2nd Fire - Street':oldestRecord.'2nd Fire - Street',
-                                    '2nd Fire - City':oldestRecord.'2nd Fire - City',
-                                    '2nd Fire - Line of Business':oldestRecord.'2nd Fire - Line of Business',
-                                    '2nd Fire Business Lines - State Code':oldestRecord.'2nd Fire - Business State Code',
-                                    '2nd Fire - Business Name':oldestRecord.'2nd Fire - Business Name',
-                                    '2nd Fire - Business Policy Type':oldestRecord.'2nd Fire - Business Policy Type',
-                                    '2nd Fire Personal Lines - State Code':oldestRecord.'2nd Fire Personal - State Code',
-                                    '2nd Fire - Personal Policy Type':oldestRecord.'2nd Fire - Personal Policy Type',
-                                    '2nd Auto - VIN':oldestRecord.'2nd Auto - VIN',
-                                    '2nd Auto - License Plate':oldestRecord.'2nd Auto - License Plate',
-                                    '2nd Auto - Make':oldestRecord.'2nd Auto - Make',
-                                    '2nd Auto - Model':oldestRecord.'2nd Auto - Model',
-                                    '2nd Auto - Line of Business':oldestRecord.'2nd Auto - Line of Business',
-                                    '2nd Auto Business - State Code':oldestRecord.'2nd Auto Business - State Code',
-                                    '2nd Auto - Business Name':oldestRecord.'2nd Auto - Business Name',
-                                    '2nd Auto Personal - State Code':oldestRecord.'2nd Auto Personal - State Code',
-                                    '3rd Policy Y/N':oldestRecord.'Is there a 3rd Policy?',
-                                    '3rd - Policy Number':oldestRecord.'3rd - Policy Number',
-                                    '3rd - Claim Number':oldestRecord.'3rd - Claim Number',
-                                    '3rd Date of Loss':oldestRecord.'3rd Date of Loss',
-                                    '3rd Policy Type':oldestRecord.'Multiple Policy - 3rd Policy Type',
-                                    '3rd Fire - Street':oldestRecord.'3rd Fire - Street',
-                                    '3rd Fire - City':oldestRecord.'3rd Fire - City',
-                                    '3rd Fire - Line of Business':oldestRecord.'3rd Fire - Line of Business',
-                                    '3rd Fire Business Lines - State Code':oldestRecord.'3rd Fire - Business State Code',
-                                    '3rd Fire - Business Policy Type':oldestRecord.'3rd Fire - Business Policy Type',
-                                    '3rd Fire - Business Name':oldestRecord.'3rd Fire - Business Name',
-                                    '3rd Fire Personal Lines - State Code':oldestRecord.'3rd Fire Personal - State Code',
-                                    '3rd Fire - Personal Policy Type':oldestRecord.'3rd Fire - Personal Policy Type',
-                                    '3rd Auto - VIN':oldestRecord.'3rd Auto - VIN',
-                                    '3rd Auto - License Plate':oldestRecord.'3rd Auto - License Plate',
-                                    '3rd Auto - Make':oldestRecord.'3rd Auto - Make',
-                                    '3rd Auto - Model':oldestRecord.'3rd Auto - Model',
-                                    '3rd Auto - Line of Business':oldestRecord.'3rd Auto - Line of Business',
-                                    '3rd Auto Business - State Code':oldestRecord.'3rd Auto Business - State Code',
-                                    '3rd Auto - Business Name':oldestRecord.'3rd Auto - Business Name',
-                                    '3rd Auto Personal - State Code':oldestRecord.'3rd Auto Personal - State Code',
-                                    Details:oldestRecord.Details,
-                                    'Others Involved':oldestRecord.'Others Involved'
+                                                ID: ID,
+                                                'Created On': 'Created On',
+                                                'Assigned To': 'Assigned To',
+                                                'Assigned To Email': 'Assigned To Email',
+                                                'Referral Type': 'Referral Type',
+                                                'Fraud Category': 'Category of Fraud',
+                                                'Decision Reason':'Decision Reasons',
+                                                '1st - Policyholder First Name': 'Policyholder First Name',
+                                                '1st - Policyholder Last Name': 'Policyholder Last Name',
+                                                '1st - Policyholder Phone Number': 'Policyholder Phone Number',
+                                                '1st Date of Loss': '1st Date of Loss',
+                                                '1st Policy Number': '1st Policy Number',
+                                                '1st Claim Number': '1st Claim Number',
+                                                '1st Policy Type': '1st Policy Type',
+                                                '1st Fire - Street': '1st Fire - Street',
+                                                '1st Fire - City': '1st Fire - City',
+                                                '1st Fire - State': '1st Fire - State',
+                                                '1st Fire - Line of Business': '1st Fire - Line of Business',
+                                                '1st Fire Business Lines - State Code': '1st Fire Business Lines - State Code',
+                                                '1st Fire - Business Policy Types': '1st Fire - Business Policy Types',
+                                                '1st Fire - Business Name': '1st Fire - Business Name',
+                                                '1st Fire Personal Lines - State Code': '1st Fire Personal Lines - State Code',
+                                                '1st Fire - Personal Policy Type': '1st Fire - Personal Policy Type',
+                                                '1st Auto - VIN': '1st Auto -  VIN',
+                                                '1st Auto - License Plate': '1st Auto -  License Plate',
+                                                '1st Auto - Make': '1st Auto -  Make',
+                                                '1st Auto - Model': '1st Auto -  Model',
+                                                '1st Auto - Line of Business': '1st Auto - Line of Business',
+                                                '1st Auto Business - State Code': '1st Auto Business - State Code',
+                                                '1st Auto - Business Name': '1st Auto - Business Name',
+                                                '1st Auto Personal - State Code': '1st Auto Personal - State Code',
+                                                'Is there a second Policy?': 'Is there a second Policy?',
+                                                '2nd Policy Number': '2nd Policy Number',
+                                                '2nd Claim Number': '2nd Claim Number',
+                                                '2nd Date of Loss': '2nd Date of Loss',
+                                                'Multiple Policy - 2nd Policy Type': 'Multiple Policy - 2nd Policy Type',
+                                                '2nd Fire - Street': '2nd Fire - Street',
+                                                '2nd Fire - City': '2nd Fire - City',
+                                                '2nd Fire - State': '2nd Fire - State',
+                                                '2nd Fire - Line of Business': '2nd Fire - Line of Business',
+                                                '2nd Fire - Business State Code': '2nd Fire - Business State Code',
+                                                '2nd Fire - Business Name': '2nd Fire - Business Name',
+                                                '2nd Fire - Business Policy Type': '2nd Fire - Business Policy Type',
+                                                '2nd Fire Personal - State Code': '2nd Fire Personal - State Code',
+                                                '2nd Fire - Personal Policy Type': '2nd Fire - Personal Policy Type',
+                                                '2nd Auto - VIN': '2nd Auto - VIN',
+                                                '2nd Auto - License Plate': '2nd Auto - License Plate',
+                                                '2nd Auto - Make': '2nd Auto - Make',
+                                                '2nd Auto - Model': '2nd Auto - Model',
+                                                '2nd Auto - Line of Business': '2nd Auto - Line of Business',
+                                                '2nd Auto Business - State Code': '2nd Auto Business - State Code',
+                                                '2nd Auto - Business Name': '2nd Auto - Business Name',
+                                                '2nd Auto Personal - State Code': '2nd Auto Personal - State Code',
+                                                'Is there a 3rd Policy?': 'Is there a 3rd Policy?',
+                                                '3rd - Policy Number': '3rd - Policy Number',
+                                                '3rd - Claim Number': '3rd - Claim Number',
+                                                '3rd Date of Loss': '3rd Date of Loss',
+                                                'Multiple Policy - 3rd Policy Type': 'Multiple Policy - 3rd Policy Type',
+                                                '3rd Fire - Street': '3rd Fire - Street',
+                                                '3rd Fire - City': '3rd Fire - City',
+                                                '3rd Fire - State': '3rd Fire - State',
+                                                '3rd Fire - Line of Business': '3rd Fire - Line of Business',
+                                                '3rd Fire - Business State Code': '3rd Fire - Business State Code',
+                                                '3rd Fire - Business Policy Type': '3rd Fire - Business Policy Type',
+                                                '3rd Fire - Business Name': '3rd Fire - Business Name',
+                                                '3rd Fire Personal - State Code': '3rd Fire Personal - State Code',
+                                                '3rd Fire - Personal Policy Type': '3rd Fire - Personal Policy Type',
+                                                '3rd Auto - VIN': '3rd Auto - VIN',
+                                                '3rd Auto - License Plate': '3rd Auto - License Plate',
+                                                '3rd Auto - Make': '3rd Auto - Make',
+                                                '3rd Auto - Model': '3rd Auto - Model',
+                                                '3rd Auto - Line of Business': '3rd Auto - Line of Business',
+                                                '3rd Auto Business - State Code': '3rd Auto Business - State Code',
+                                                '3rd Auto - Business Name': '3rd Auto - Business Name',
+                                                '3rd Auto Personal - State Code': '3rd Auto Personal - State Code',
+                                                Details: Details,
+                                                'Others Involved': 'Others Involved'
                                             }
                                         )
-                                    );
+                                    )
                             Text: ="Refresh"
                             Width: =96
                             X: =0
@@ -2170,8 +2160,8 @@
                                             Font: =App.Theme.Font
                                             Size: =13
                                             Text: |-
-                                                ="Policyholder Phone Number: " & 'Queue Gallery'.Selected.'Policyholder Phone Number'
-                                            Visible: =If(IsBlank('Queue Gallery'.Selected.'Policyholder Phone Number'), false, true)
+                                                ="Policyholder Phone Number: " & 'Queue Gallery'.Selected.'1st - Policyholder Phone Number'
+                                            Visible: =If(IsBlank('Queue Gallery'.Selected.'1st - Policyholder Phone Number'), false, true)
                                             ZIndex: =3
 
                                         "'1stPolicyNo' As label":
@@ -2280,7 +2270,8 @@
                                                 Font: =App.Theme.Font
                                                 Size: =13
                                                 Text: |-
-                                                    ="Decision Reason: " & If(decisionMode = true, 'Queue Gallery'.Selected.'Decision Reason', " ")
+                                                    ="Decision Reason: " & If(decisionMode = false, 'Queue Gallery'.Selected.'Decision Reason', " ")
+                                                Width: =If(decisionMode = false, Len(DecisionText.Text) * 10, Len(DecisionText.Text) * 9)
                                                 ZIndex: =1
 
                                             DecisionDropdown As Dropdown.pcfdataset:
@@ -2306,7 +2297,6 @@
                                                 Appearance: ='ButtonCanvas.Appearance'.Secondary
                                                 BorderStyle: =BorderStyle.None
                                                 DisplayMode: =DisplayMode.Edit
-                                                FillPortions: =1
                                                 FontColor: =RGBA(189, 49, 51, 1)
                                                 Height: =32
                                                 LayoutMinHeight: =32
@@ -2315,7 +2305,7 @@
                                                     =UpdateContext({decisionMode: true});
                                                 Text: ="Change Decision"
                                                 Visible: =If(decisionMode = true, false, true)
-                                                Width: =96
+                                                Width: =130
                                                 X: =0
                                                 Y: =0
                                                 ZIndex: =3
@@ -2332,19 +2322,119 @@
                                                 LayoutMinHeight: =32
                                                 LayoutMinWidth: =96
                                                 OnSelect: |-
-                                                    =Patch(
+                                                    =Set(selectedRecordID, 'Queue Gallery'.Selected.ID);
+                                                    
+                                                    Patch(
                                                         'Referral Intake Tool Submissions',
-                                                        LookUp('Referral Intake Tool Submissions', ID = 'Queue Gallery'.Selected.ID),
+                                                        LookUp('Referral Intake Tool Submissions', ID = selectedRecordID),
                                                         { 'Decision Reasons': DecisionDropdown.Selected.Value }
                                                     );
-                                                    Update(WorkBankCollection, LookUp(WorkBankCollection, ID = 'Queue Gallery'.Selected.ID), { 'Decision Reason': DecisionDropdown.Selected.Value });
+                                                    Update(WorkBankCollection, LookUp(WorkBankCollection, ID = selectedRecordID), { 'Decision Reason': DecisionDropdown.Selected.Value });
                                                     UpdateContext({decisionMode: false});
+                                                    
+                                                    Refresh('Referral Intake Tool Submissions');
+                                                    If(!IsEmpty(WorkBankCollection), ClearCollect(WorkBankCollection, {}));
+                                                    Remove(WorkBankCollection, FirstN(WorkBankCollection, 1));
+                                                    ClearCollect(WorkBankCollection,
+                                                            ForAll(
+                                                                Filter('Referral Intake Tool Submissions', 'Assigned To Email' = User().Email),
+                                                                {
+                                                                    ID: ID,
+                                                                    'Created On': 'Created On',
+                                                                    'Assigned To': 'Assigned To',
+                                                                    'Assigned To Email': 'Assigned To Email',
+                                                                    'Referral Type': 'Referral Type',
+                                                                    'Fraud Category': 'Category of Fraud',
+                                                                    'Decision Reason':'Decision Reasons',
+                                                                    '1st - Policyholder First Name': 'Policyholder First Name',
+                                                                    '1st - Policyholder Last Name': 'Policyholder Last Name',
+                                                                    '1st - Policyholder Phone Number': 'Policyholder Phone Number',
+                                                                    '1st Date of Loss': '1st Date of Loss',
+                                                                    '1st Policy Number': '1st Policy Number',
+                                                                    '1st Claim Number': '1st Claim Number',
+                                                                    '1st Policy Type': '1st Policy Type',
+                                                                    '1st Fire - Street': '1st Fire - Street',
+                                                                    '1st Fire - City': '1st Fire - City',
+                                                                    '1st Fire - State': '1st Fire - State',
+                                                                    '1st Fire - Line of Business': '1st Fire - Line of Business',
+                                                                    '1st Fire Business Lines - State Code': '1st Fire Business Lines - State Code',
+                                                                    '1st Fire - Business Policy Types': '1st Fire - Business Policy Types',
+                                                                    '1st Fire - Business Name': '1st Fire - Business Name',
+                                                                    '1st Fire Personal Lines - State Code': '1st Fire Personal Lines - State Code',
+                                                                    '1st Fire - Personal Policy Type': '1st Fire - Personal Policy Type',
+                                                                    '1st Auto - VIN': '1st Auto -  VIN',
+                                                                    '1st Auto - License Plate': '1st Auto -  License Plate',
+                                                                    '1st Auto - Make': '1st Auto -  Make',
+                                                                    '1st Auto - Model': '1st Auto -  Model',
+                                                                    '1st Auto - Line of Business': '1st Auto - Line of Business',
+                                                                    '1st Auto Business - State Code': '1st Auto Business - State Code',
+                                                                    '1st Auto - Business Name': '1st Auto - Business Name',
+                                                                    '1st Auto Personal - State Code': '1st Auto Personal - State Code',
+                                                                    'Is there a second Policy?': 'Is there a second Policy?',
+                                                                    '2nd Policy Number': '2nd Policy Number',
+                                                                    '2nd Claim Number': '2nd Claim Number',
+                                                                    '2nd Date of Loss': '2nd Date of Loss',
+                                                                    'Multiple Policy - 2nd Policy Type': 'Multiple Policy - 2nd Policy Type',
+                                                                    '2nd Fire - Street': '2nd Fire - Street',
+                                                                    '2nd Fire - City': '2nd Fire - City',
+                                                                    '2nd Fire - State': '2nd Fire - State',
+                                                                    '2nd Fire - Line of Business': '2nd Fire - Line of Business',
+                                                                    '2nd Fire - Business State Code': '2nd Fire - Business State Code',
+                                                                    '2nd Fire - Business Name': '2nd Fire - Business Name',
+                                                                    '2nd Fire - Business Policy Type': '2nd Fire - Business Policy Type',
+                                                                    '2nd Fire Personal - State Code': '2nd Fire Personal - State Code',
+                                                                    '2nd Fire - Personal Policy Type': '2nd Fire - Personal Policy Type',
+                                                                    '2nd Auto - VIN': '2nd Auto - VIN',
+                                                                    '2nd Auto - License Plate': '2nd Auto - License Plate',
+                                                                    '2nd Auto - Make': '2nd Auto - Make',
+                                                                    '2nd Auto - Model': '2nd Auto - Model',
+                                                                    '2nd Auto - Line of Business': '2nd Auto - Line of Business',
+                                                                    '2nd Auto Business - State Code': '2nd Auto Business - State Code',
+                                                                    '2nd Auto - Business Name': '2nd Auto - Business Name',
+                                                                    '2nd Auto Personal - State Code': '2nd Auto Personal - State Code',
+                                                                    'Is there a 3rd Policy?': 'Is there a 3rd Policy?',
+                                                                    '3rd - Policy Number': '3rd - Policy Number',
+                                                                    '3rd - Claim Number': '3rd - Claim Number',
+                                                                    '3rd Date of Loss': '3rd Date of Loss',
+                                                                    'Multiple Policy - 3rd Policy Type': 'Multiple Policy - 3rd Policy Type',
+                                                                    '3rd Fire - Street': '3rd Fire - Street',
+                                                                    '3rd Fire - City': '3rd Fire - City',
+                                                                    '3rd Fire - State': '3rd Fire - State',
+                                                                    '3rd Fire - Line of Business': '3rd Fire - Line of Business',
+                                                                    '3rd Fire - Business State Code': '3rd Fire - Business State Code',
+                                                                    '3rd Fire - Business Policy Type': '3rd Fire - Business Policy Type',
+                                                                    '3rd Fire - Business Name': '3rd Fire - Business Name',
+                                                                    '3rd Fire Personal - State Code': '3rd Fire Personal - State Code',
+                                                                    '3rd Fire - Personal Policy Type': '3rd Fire - Personal Policy Type',
+                                                                    '3rd Auto - VIN': '3rd Auto - VIN',
+                                                                    '3rd Auto - License Plate': '3rd Auto - License Plate',
+                                                                    '3rd Auto - Make': '3rd Auto - Make',
+                                                                    '3rd Auto - Model': '3rd Auto - Model',
+                                                                    '3rd Auto - Line of Business': '3rd Auto - Line of Business',
+                                                                    '3rd Auto Business - State Code': '3rd Auto Business - State Code',
+                                                                    '3rd Auto - Business Name': '3rd Auto - Business Name',
+                                                                    '3rd Auto Personal - State Code': '3rd Auto Personal - State Code',
+                                                                    Details: Details,
+                                                                    'Others Involved': 'Others Involved'
+                                                                }
+                                                            )
+                                                        );
+                                                        Refresh('Referral Intake Tool Submissions');
                                                 Text: ="Submit Decision"
                                                 Visible: =If(decisionMode = true, true, false)
                                                 Width: =96
                                                 X: =0
                                                 Y: =0
                                                 ZIndex: =4
+
+                                            Label1 As label:
+                                                BorderColor: =App.Theme.Colors.Darker40
+                                                Color: =RGBA(0, 0, 0, 1)
+                                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                                Font: =App.Theme.Font
+                                                Size: =13
+                                                Text: =selectedRecordID
+                                                ZIndex: =5
 
                                     ReporterContainer As groupContainer.verticalAutoLayoutContainer:
                                         DropShadow: =DropShadow.Light
@@ -2853,6 +2943,7 @@
                                                 'Assigned To Email': 'Assigned To Email',
                                                 'Referral Type': 'Referral Type',
                                                 'Fraud Category': 'Category of Fraud',
+                                                'Decision Reason':'Decision Reasons',
                                                 '1st - Policyholder First Name': 'Policyholder First Name',
                                                 '1st - Policyholder Last Name': 'Policyholder Last Name',
                                                 '1st - Policyholder Phone Number': 'Policyholder Phone Number',
