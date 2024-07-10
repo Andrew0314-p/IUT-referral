@@ -56,7 +56,7 @@
 
         "'Screens Container' As groupContainer.horizontalAutoLayoutContainer":
             AlignInContainer: =AlignInContainer.SetByContainer
-            Fill: =RGBA(245, 245, 245, 1)
+            Fill: =RGBA(255, 255, 255, 1)
             LayoutAlignItems: =LayoutAlignItems.Stretch
             LayoutGap: =16
             LayoutMinHeight: =100
@@ -65,7 +65,7 @@
             LayoutOverflowY: =LayoutOverflow.Scroll
             LayoutWrap: =true
             PaddingBottom: =10
-            PaddingLeft: =15
+            PaddingLeft: =16
             PaddingRight: =10
             PaddingTop: =10
             RadiusBottomLeft: =4
