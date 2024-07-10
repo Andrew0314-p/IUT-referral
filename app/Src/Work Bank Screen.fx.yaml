@@ -184,7 +184,7 @@
                 "'Search Container' As groupContainer.verticalAutoLayoutContainer":
                     DropShadow: =DropShadow.Light
                     FillPortions: =0
-                    Height: =ControlContainer.Height + DecisionFilter.Height
+                    Height: =ControlContainer.Height + ReferralControlContainer.Height + Seperator_2.Height
                     LayoutAlignItems: =LayoutAlignItems.Stretch
                     LayoutDirection: =LayoutDirection.Vertical
                     LayoutJustifyContent: =LayoutJustifyContent.Center
@@ -241,7 +241,7 @@
                     "DecisionFilter As 'Tab list'.pcfdataset":
                         AlignInContainer: =AlignInContainer.Center
                         DisplayMode: =DisplayMode.Edit
-                        Height: =55
+                        Height: =60
                         Items: =["No Action Taken", "Action Taken"]
                         LayoutMinHeight: =55
                         LayoutMinWidth: =280
