@@ -177,7 +177,7 @@
                 RadiusBottomRight: =8
                 RadiusTopLeft: =8
                 RadiusTopRight: =8
-                Visible: =If(myInTrayMode = true, true, false) And If(IsEmpty(WorkBankCollection), false, true) And If(CountRows(Filter(WorkBankCollection,'Assigned To Email' = User().Email)) > 0, true, false)
+                Visible: =If(myInTrayMode = true, true, false) Or If(viewDecisionMode = true, true, false) And If(IsEmpty(WorkBankCollection), false, true) And If(CountRows(Filter(WorkBankCollection,'Assigned To Email' = User().Email)) > 0, true, false)
                 Width: =374
                 ZIndex: =1
 
@@ -197,7 +197,7 @@
                     RadiusTopRight: =4
                     ZIndex: =1
 
-                    "'Input Container' As groupContainer.horizontalAutoLayoutContainer":
+                    "'Referral Input Container' As groupContainer.horizontalAutoLayoutContainer":
                         AlignInContainer: =AlignInContainer.SetByContainer
                         FillPortions: =0
                         Height: =ControlContainer.Height
@@ -210,7 +210,7 @@
                         RadiusBottomRight: =4
                         RadiusTopLeft: =4
                         RadiusTopRight: =4
-                        Width: ='Queue Gallery'.Width
+                        Width: ='Referral Queue Gallery'.Width
                         ZIndex: =1
 
                         "'Referral Search' As text":
@@ -244,11 +244,11 @@
                         Height: =3
                         ZIndex: =2
 
-                "'Queue Gallery' As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver5.0'":
+                "'Referral Queue Gallery' As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver5.0'":
                     BorderColor: =App.Theme.Colors.Darker40
                     DelayItemLoading: =true
                     Fill: =RGBA(255, 255, 255, 1)
-                    Height: =SelectContainer.Height - 'Input Container'.Height - (Seperator_1.Height * 100)
+                    Height: =SelectContainer.Height - 'Referral Input Container'.Height - (Seperator_1.Height * 100)
                     Items: |-
                         =Filter(
                             Search(
@@ -351,11 +351,11 @@
                     TemplatePadding: =0
                     TemplateSize: =116
                     Transition: =Transition.Pop
-                    Visible: =If(myInTrayMode = true, true, false) Or If(CountRows(WorkBankCollection) > 0, true, false)
+                    Visible: =If(myInTrayMode = true, true, false) And If(CountRows(WorkBankCollection) > 0, true, false)
                     Width: =Parent.Width * (10/11)
                     ZIndex: =1
 
-                    Title4 As label:
+                    RefNoRefType As label:
                         Color: =RGBA(50, 49, 48, 1)
                         DisabledColor: =RGBA(166, 166, 166, 1)
                         Font: =App.Theme.Font
@@ -371,10 +371,10 @@
                         VerticalAlign: =VerticalAlign.Top
                         Width: =Parent.TemplateWidth - 86
                         X: =16
-                        Y: =(Parent.TemplateHeight - (Self.Size*1.8 + Subtitle5.Size*1.8 + 2 + Body1.Size*1.8)) / 2
+                        Y: =(Parent.TemplateHeight - (Self.Size*1.8 + FraudCat.Size*1.8 + 2 + PHName.Size*1.8)) / 2
                         ZIndex: =1
 
-                    Subtitle5 As label:
+                    FraudCat As label:
                         Color: =RGBA(0, 0, 0, 1)
                         DisabledColor: =RGBA(166, 166, 166, 1)
                         Font: =App.Theme.Font
@@ -388,12 +388,12 @@
                         Size: =13
                         Text: =ThisItem.'Fraud Category'
                         VerticalAlign: =VerticalAlign.Top
-                        Width: =Title4.Width
-                        X: =Title4.X
-                        Y: =Title4.Y + Title4.Height
+                        Width: =RefNoRefType.Width
+                        X: =RefNoRefType.X
+                        Y: =RefNoRefType.Y + RefNoRefType.Height
                         ZIndex: =2
 
-                    Body1 As label:
+                    PHName As label:
                         Color: =RGBA(0, 0, 0, 1)
                         DisabledColor: =RGBA(166, 166, 166, 1)
                         Font: =App.Theme.Font
@@ -407,9 +407,9 @@
                         Size: =12
                         Text: =ThisItem.'1st - Policyholder First Name' & " " & ThisItem.'1st - Policyholder Last Name'
                         VerticalAlign: =VerticalAlign.Top
-                        Width: =Title4.Width
-                        X: =Title4.X
-                        Y: =Subtitle5.Y + Subtitle5.Height
+                        Width: =RefNoRefType.Width
+                        X: =RefNoRefType.X
+                        Y: =FraudCat.Y + FraudCat.Height
                         ZIndex: =3
 
                     NextArrow3 As icon.ChevronRight:
@@ -447,6 +447,210 @@
                         OnSelect: =Select(Parent)
                         Visible: =ThisItem.IsSelected
                         Width: =4
+                        ZIndex: =6
+
+                "'Decision Queue Gallery' As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver5.0'":
+                    BorderColor: =App.Theme.Colors.Darker40
+                    DelayItemLoading: =true
+                    Fill: =RGBA(255, 255, 255, 1)
+                    Height: =SelectContainer.Height - 'Referral Input Container'.Height - (Seperator_1.Height * 100)
+                    Items: |-
+                        =Filter(
+                            Search(
+                                WorkBankCollection,
+                                'Referral Search'.Text,
+                                ID,
+                                'Referral Type',
+                                '1st - Policyholder First Name',
+                                '1st - Policyholder Last Name',
+                                'Fraud Category'
+                            ),
+                            'Assigned To Email' = User().Email
+                        )
+                    Layout: =Layout.Vertical
+                    LayoutMinHeight: =1
+                    LayoutMinWidth: =320
+                    LoadingSpinner: =LoadingSpinner.Data
+                    OnSelect: |
+                        =UpdateContext({ CurrentItem: ThisItem });
+                        Set(_selectedReferral, ThisItem);
+                        
+                        ClearCollect(
+                            ItemValues,
+                            {
+                                ID:ThisItem.ID,
+                                'Assigned To':ThisItem.'Assigned To',
+                                '1stPolicyholderFirstName': ThisItem.'1st - Policyholder First Name',
+                                '1stPolicyholderLastName': ThisItem.'1st - Policyholder Last Name',
+                                '1stPolicyholderPhoneNumber': ThisItem.'1st - Policyholder Phone Number',
+                                '1stDateOfLoss': ThisItem.'1st Date of Loss',
+                                '1stPolicyNumber': ThisItem.'1st Policy Number',
+                                '1stClaimNumber': ThisItem.'1st Claim Number',
+                                '1stPolicyType': ThisItem.'1st Policy Type',
+                                '1stFireStreet': ThisItem.'1st Fire - Street',
+                                '1stFireCity': ThisItem.'1st Fire - City',
+                                '1stFireState': ThisItem.'1st Fire - State',
+                                '1stFireLineOfBusiness': ThisItem.'1st Fire - Line of Business',
+                                '1stFireBusinessLinesStateCode': ThisItem.'1st Fire Business Lines - State Code',
+                                '1stFireBusinessPolicyTypes': ThisItem.'1st Fire - Business Policy Types',
+                                '1stFireBusinessName': ThisItem.'1st Fire - Business Name',
+                                '1stFirePersonalLinesStateCode': ThisItem.'1st Fire Personal Lines - State Code',
+                                '1stFirePersonalPolicyType': ThisItem.'1st Fire - Personal Policy Type',
+                                '1stAutoVIN': ThisItem.'1st Auto - VIN',
+                                '1stAutoLicensePlate': ThisItem.'1st Auto - License Plate',
+                                '1stAutoMake': ThisItem.'1st Auto - Make',
+                                '1stAutoModel': ThisItem.'1st Auto - Model',
+                                '1stAutoLineOfBusiness': ThisItem.'1st Auto - Line of Business',
+                                '1stAutoBusinessStateCode': ThisItem.'1st Auto Business - State Code',
+                                '1stAutoBusinessName': ThisItem.'1st Auto - Business Name',
+                                '1stAutoPersonalStateCode': ThisItem.'1st Auto Personal - State Code',
+                                IsThereASecondPolicy: ThisItem.'Is there a second Policy?',
+                                '2ndPolicyNumber': ThisItem.'2nd Policy Number',
+                                '2ndClaimNumber': ThisItem.'2nd Claim Number',
+                                '2ndDateOfLoss': ThisItem.'2nd Date of Loss',
+                                MultiplePolicy2ndPolicyType: ThisItem.'Multiple Policy - 2nd Policy Type',
+                                '2ndFireStreet': ThisItem.'2nd Fire - Street',
+                                '2ndFireCity': ThisItem.'2nd Fire - City',
+                                '2ndFireState': ThisItem.'2nd Fire - State',
+                                '2ndFireLineOfBusiness': ThisItem.'2nd Fire - Line of Business',
+                                '2ndFireBusinessStateCode': ThisItem.'2nd Fire - Business State Code',
+                                '2ndFireBusinessName': ThisItem.'2nd Fire - Business Name',
+                                '2ndFireBusinessPolicyType': ThisItem.'2nd Fire - Business Policy Type',
+                                '2ndFirePersonalStateCode': ThisItem.'2nd Fire Personal - State Code',
+                                '2ndFirePersonalPolicyType': ThisItem.'2nd Fire - Personal Policy Type',
+                                '2ndAutoVIN': ThisItem.'2nd Auto - VIN',
+                                '2ndAutoLicensePlate': ThisItem.'2nd Auto - License Plate',
+                                '2ndAutoMake': ThisItem.'2nd Auto - Make',
+                                '2ndAutoModel': ThisItem.'2nd Auto - Model',
+                                '2ndAutoLineOfBusiness': ThisItem.'2nd Auto - Line of Business',
+                                '2ndAutoBusinessStateCode': ThisItem.'2nd Auto Business - State Code',
+                                '2ndAutoBusinessName': ThisItem.'2nd Auto - Business Name',
+                                '2ndAutoPersonalStateCode': ThisItem.'2nd Auto Personal - State Code',
+                                IsThereAThirdPolicy: ThisItem.'Is there a 3rd Policy?',
+                                '3rdPolicyNumber': ThisItem.'3rd - Policy Number',
+                                '3rdClaimNumber': ThisItem.'3rd - Claim Number',
+                                '3rdDateOfLoss': ThisItem.'3rd Date of Loss',
+                                MultiplePolicy3rdPolicyType: ThisItem.'Multiple Policy - 3rd Policy Type',
+                                '3rdFireStreet': ThisItem.'3rd Fire - Street',
+                                '3rdFireCity': ThisItem.'3rd Fire - City',
+                                '3rdFireState': ThisItem.'3rd Fire - State',
+                                '3rdFireLineOfBusiness': ThisItem.'3rd Fire - Line of Business',
+                                '3rdFireBusinessStateCode': ThisItem.'3rd Fire - Business State Code',
+                                '3rdFireBusinessPolicyType': ThisItem.'3rd Fire - Business Policy Type',
+                                '3rdFireBusinessName': ThisItem.'3rd Fire - Business Name',
+                                '3rdFirePersonalStateCode': ThisItem.'3rd Fire Personal - State Code',
+                                '3rdFirePersonalPolicyType': ThisItem.'3rd Fire - Personal Policy Type',
+                                '3rdAutoVIN': ThisItem.'3rd Auto - VIN',
+                                '3rdAutoLicensePlate': ThisItem.'3rd Auto - License Plate',
+                                '3rdAutoMake': ThisItem.'3rd Auto - Make',
+                                '3rdAutoModel': ThisItem.'3rd Auto - Model',
+                                '3rdAutoLineOfBusiness': ThisItem.'3rd Auto - Line of Business',
+                                '3rdAutoBusinessStateCode': ThisItem.'3rd Auto Business - State Code',
+                                '3rdAutoBusinessName': ThisItem.'3rd Auto - Business Name',
+                                '3rdAutoPersonalStateCode': ThisItem.'3rd Auto Personal - State Code',
+                                Details: ThisItem.Details,
+                                OthersInvolved: ThisItem.'Others Involved'
+                            }
+                        )
+                    ShowScrollbar: =false
+                    TemplatePadding: =0
+                    TemplateSize: =116
+                    Transition: =Transition.Pop
+                    Visible: =If(viewDecisionMode = true, true, false) And If(CountRows(WorkBankCollection) > 0, true, false)
+                    Width: =Parent.Width * (10/11)
+                    ZIndex: =2
+
+                    RefNoRefType_1 As label:
+                        Color: =RGBA(50, 49, 48, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        Font: =App.Theme.Font
+                        FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                        Height: =Self.Size * 1.8
+                        OnSelect: =Select(Parent)
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Text: |-
+                            ="Referral #" & ThisItem.ID & " | " & Trim(ThisItem.'Referral Type')
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =Parent.TemplateWidth - 86
+                        X: =1
+                        Y: =(Parent.TemplateHeight - (Self.Size*1.8 + FraudCat_1.Size*1.8 + 2 + PHName_1.Size*1.8)) / 2
+                        ZIndex: =1
+
+                    FraudCat_1 As label:
+                        Color: =RGBA(0, 0, 0, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        Font: =App.Theme.Font
+                        FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                        Height: =Self.Size * 1.8
+                        OnSelect: =Select(Parent)
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =13
+                        Text: =ThisItem.'Fraud Category'
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =RefNoRefType_1.Width
+                        X: =1
+                        Y: =RefNoRefType_1.Y + RefNoRefType_1.Height
+                        ZIndex: =2
+
+                    PHName_1 As label:
+                        Color: =RGBA(0, 0, 0, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        Font: =App.Theme.Font
+                        FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                        Height: =Self.Size * 1.8
+                        OnSelect: =Select(Parent)
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =12
+                        Text: =ThisItem.'1st - Policyholder First Name' & " " & ThisItem.'1st - Policyholder Last Name'
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =RefNoRefType_1.Width
+                        X: =1
+                        Y: =FraudCat_1.Y + FraudCat_1.Height
+                        ZIndex: =3
+
+                    NextArrow3_1 As icon.ChevronRight:
+                        AccessibleLabel: =Self.Tooltip
+                        BorderColor: =App.Theme.Colors.Darker40
+                        Color: =RGBA(189, 49, 51, 1)
+                        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                        DisabledColor: =RGBA(244, 244, 244, 1)
+                        Height: =50
+                        Icon: =Icon.ChevronRight
+                        OnSelect: =Select(Parent)
+                        PaddingBottom: =16
+                        PaddingLeft: =16
+                        PaddingRight: =16
+                        PaddingTop: =16
+                        Tooltip: ="View item details"
+                        Width: =1
+                        Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+                        ZIndex: =4
+
+                    Separator6_1 As rectangle:
+                        BorderColor: =App.Theme.Colors.Darker40
+                        Fill: =RGBA(255, 255, 255, 1)
+                        Height: =8
+                        OnSelect: =Select(Parent)
+                        Width: =Parent.TemplateWidth
+                        Y: =Parent.TemplateHeight - Self.Height
+                        ZIndex: =5
+
+                    Rectangle4_1 As rectangle:
+                        BorderColor: =App.Theme.Colors.Primary
+                        Fill: =App.Theme.Colors.Primary
+                        Height: =Parent.TemplateHeight - Separator6_1.Height
+                        OnSelect: =Select(Parent)
+                        Visible: =ThisItem.IsSelected
+                        Width: =1
                         ZIndex: =6
 
             ViewContainer As groupContainer.verticalAutoLayoutContainer:
@@ -2015,7 +2219,7 @@
                         RadiusBottomRight: =4
                         RadiusTopLeft: =4
                         RadiusTopRight: =4
-                        Visible: =If(myInTrayMode = true, true, false)  And If(EmployeeBrowseGallery.Visible = true, false, true) And If('Queue Gallery'.Visible = true, true, false) And If(CountRows(Filter(WorkBankCollection,'Assigned To Email' = User().Email)) > 0, true, false)
+                        Visible: =If(myInTrayMode = true, true, false)  And If(EmployeeBrowseGallery.Visible = true, false, true) And If('Referral Queue Gallery'.Visible = true, true, false) And If(CountRows(Filter(WorkBankCollection,'Assigned To Email' = User().Email)) > 0, true, false)
                         X: =40
                         Y: =40
                         ZIndex: =10
@@ -2058,7 +2262,7 @@
                                 Font: =App.Theme.Font
                                 Height: =Header1.Height - 20
                                 Text: |-
-                                    ="Referral #" & Text('Queue Gallery'.Selected.ID, "[$-en-US]Bold") & " | Referral Type: " & Text('Queue Gallery'.Selected.'Referral Type') & " | Assigned To: " & Text('Queue Gallery'.Selected.'Assigned To')
+                                    ="Referral #" & Text('Referral Queue Gallery'.Selected.ID, "[$-en-US]Bold") & " | Referral Type: " & Text('Referral Queue Gallery'.Selected.'Referral Type') & " | Assigned To: " & Text('Referral Queue Gallery'.Selected.'Assigned To')
                                 ZIndex: =2
 
                             ForwardArrow As icon.ArrowRight:
@@ -2089,7 +2293,7 @@
                             RadiusBottomRight: =4
                             RadiusTopLeft: =4
                             RadiusTopRight: =4
-                            Visible: =If(myInTrayMode = true, true, false)  And If(EmployeeBrowseGallery.Visible = true, false, true) And If('Queue Gallery'.Visible = true, true, false) And If(CountRows(Filter(WorkBankCollection,'Assigned To Email' = User().Email)) > 0, true, false)
+                            Visible: =If(myInTrayMode = true, true, false)  And If(EmployeeBrowseGallery.Visible = true, false, true) And If('Referral Queue Gallery'.Visible = true, true, false) And If(CountRows(Filter(WorkBankCollection,'Assigned To Email' = User().Email)) > 0, true, false)
                             ZIndex: =4
 
                             NoReferralPickedText As Text:
@@ -2155,7 +2359,7 @@
                                             Font: =App.Theme.Font
                                             Size: =13
                                             Text: |-
-                                                ="Fraud Category: " & 'Queue Gallery'.Selected.'Fraud Category'
+                                                ="Fraud Category: " & 'Referral Queue Gallery'.Selected.'Fraud Category'
                                             ZIndex: =1
 
                                         "'PH Name' As label":
@@ -2166,8 +2370,8 @@
                                             Font: =App.Theme.Font
                                             Size: =13
                                             Text: |-
-                                                ="Policyholder Name: " & 'Queue Gallery'.Selected.'1st - Policyholder First Name' & " " & 'Queue Gallery'.Selected.'1st - Policyholder Last Name'
-                                            Visible: =If(IsBlank('Queue Gallery'.Selected.'1st - Policyholder First Name') And IsBlank('Queue Gallery'.Selected.'1st - Policyholder Last Name'), false, true)
+                                                ="Policyholder Name: " & 'Referral Queue Gallery'.Selected.'1st - Policyholder First Name' & " " & 'Referral Queue Gallery'.Selected.'1st - Policyholder Last Name'
+                                            Visible: =If(IsBlank('Referral Queue Gallery'.Selected.'1st - Policyholder First Name') And IsBlank('Referral Queue Gallery'.Selected.'1st - Policyholder Last Name'), false, true)
                                             ZIndex: =2
 
                                         PHPhoneNo As label:
@@ -2178,8 +2382,8 @@
                                             Font: =App.Theme.Font
                                             Size: =13
                                             Text: |-
-                                                ="Policyholder Phone Number: " & 'Queue Gallery'.Selected.'1st - Policyholder Phone Number'
-                                            Visible: =If(IsBlank('Queue Gallery'.Selected.'1st - Policyholder Phone Number'), false, true)
+                                                ="Policyholder Phone Number: " & 'Referral Queue Gallery'.Selected.'1st - Policyholder Phone Number'
+                                            Visible: =If(IsBlank('Referral Queue Gallery'.Selected.'1st - Policyholder Phone Number'), false, true)
                                             ZIndex: =3
 
                                         "'1stPolicyNo' As label":
@@ -2190,9 +2394,9 @@
                                             Font: =App.Theme.Font
                                             Size: =13
                                             Text: |-
-                                                =If('Queue Gallery'.Selected.'Is there a second Policy?' = "Yes",
-                                                    "1st Policy Number: " & 'Queue Gallery'.Selected.'1st Policy Number', "Policy Number: " & 'Queue Gallery'.Selected.'1st Policy Number')
-                                            Visible: =If(!IsBlank('Queue Gallery'.Selected.'1st Policy Number'), true, false)
+                                                =If('Referral Queue Gallery'.Selected.'Is there a second Policy?' = "Yes",
+                                                    "1st Policy Number: " & 'Referral Queue Gallery'.Selected.'1st Policy Number', "Policy Number: " & 'Referral Queue Gallery'.Selected.'1st Policy Number')
+                                            Visible: =If(!IsBlank('Referral Queue Gallery'.Selected.'1st Policy Number'), true, false)
                                             ZIndex: =4
 
                                         "'2ndPolicyNo' As label":
@@ -2203,8 +2407,8 @@
                                             Font: =App.Theme.Font
                                             Size: =13
                                             Text: |-
-                                                ="2nd Policy Number: " & 'Queue Gallery'.Selected.'2nd Policy Number'
-                                            Visible: =If('Queue Gallery'.Selected.'Is there a second Policy?' = "Yes" And !IsBlank('Queue Gallery'.Selected.'2nd Policy Number'), true, false)
+                                                ="2nd Policy Number: " & 'Referral Queue Gallery'.Selected.'2nd Policy Number'
+                                            Visible: =If('Referral Queue Gallery'.Selected.'Is there a second Policy?' = "Yes" And !IsBlank('Referral Queue Gallery'.Selected.'2nd Policy Number'), true, false)
                                             ZIndex: =5
 
                                         "'3rdPolicyNo' As label":
@@ -2215,8 +2419,8 @@
                                             Font: =App.Theme.Font
                                             Size: =13
                                             Text: |-
-                                                ="3rd Policy Number: " & 'Queue Gallery'.Selected.'3rd - Policy Number'
-                                            Visible: =If('Queue Gallery'.Selected.'Is there a 3rd Policy?' = "Yes" And !IsBlank('Queue Gallery'.Selected.'3rd - Policy Number'), true, false)
+                                                ="3rd Policy Number: " & 'Referral Queue Gallery'.Selected.'3rd - Policy Number'
+                                            Visible: =If('Referral Queue Gallery'.Selected.'Is there a 3rd Policy?' = "Yes" And !IsBlank('Referral Queue Gallery'.Selected.'3rd - Policy Number'), true, false)
                                             ZIndex: =6
 
                                         "'1stClaimNo' As label":
@@ -2227,9 +2431,9 @@
                                             Font: =App.Theme.Font
                                             Size: =13
                                             Text: |-
-                                                =If('Queue Gallery'.Selected.'Is there a second Policy?' = "Yes",
-                                                    "1st Claim Number: " & 'Queue Gallery'.Selected.'1st Claim Number', "Claim Number: " & 'Queue Gallery'.Selected.'1st Claim Number')
-                                            Visible: =If(!IsBlank('Queue Gallery'.Selected.'1st Claim Number'), true, false)
+                                                =If('Referral Queue Gallery'.Selected.'Is there a second Policy?' = "Yes",
+                                                    "1st Claim Number: " & 'Referral Queue Gallery'.Selected.'1st Claim Number', "Claim Number: " & 'Referral Queue Gallery'.Selected.'1st Claim Number')
+                                            Visible: =If(!IsBlank('Referral Queue Gallery'.Selected.'1st Claim Number'), true, false)
                                             ZIndex: =7
 
                                         "'2ndClaimNo' As label":
@@ -2240,8 +2444,8 @@
                                             Font: =App.Theme.Font
                                             Size: =13
                                             Text: |-
-                                                ="2nd Claim Number: " & 'Queue Gallery'.Selected.'2nd Claim Number'
-                                            Visible: =If('Queue Gallery'.Selected.'Is there a second Policy?' = "Yes" And !IsBlank('Queue Gallery'.Selected.'2nd Claim Number'), true, false)
+                                                ="2nd Claim Number: " & 'Referral Queue Gallery'.Selected.'2nd Claim Number'
+                                            Visible: =If('Referral Queue Gallery'.Selected.'Is there a second Policy?' = "Yes" And !IsBlank('Referral Queue Gallery'.Selected.'2nd Claim Number'), true, false)
                                             ZIndex: =8
 
                                         "'3rdClaimNo' As label":
@@ -2252,8 +2456,8 @@
                                             Font: =App.Theme.Font
                                             Size: =13
                                             Text: |-
-                                                ="3rd Claim Number: " & 'Queue Gallery'.Selected.'3rd - Claim Number'
-                                            Visible: =If('Queue Gallery'.Selected.'Is there a 3rd Policy?' = "Yes" And !IsBlank('Queue Gallery'.Selected.'3rd - Claim Number'), true, false)
+                                                ="3rd Claim Number: " & 'Referral Queue Gallery'.Selected.'3rd - Claim Number'
+                                            Visible: =If('Referral Queue Gallery'.Selected.'Is there a 3rd Policy?' = "Yes" And !IsBlank('Referral Queue Gallery'.Selected.'3rd - Claim Number'), true, false)
                                             ZIndex: =9
 
                                         OthersInvolved As label:
@@ -2264,8 +2468,8 @@
                                             Font: =App.Theme.Font
                                             Size: =13
                                             Text: |-
-                                                ="Others Involved: " & 'Queue Gallery'.Selected.'Others Involved'
-                                            Visible: =If(IsBlank('Queue Gallery'.Selected.'Others Involved'), false, true)
+                                                ="Others Involved: " & 'Referral Queue Gallery'.Selected.'Others Involved'
+                                            Visible: =If(IsBlank('Referral Queue Gallery'.Selected.'Others Involved'), false, true)
                                             ZIndex: =10
 
                                         DecisionReasons As groupContainer.horizontalAutoLayoutContainer:
@@ -2288,7 +2492,7 @@
                                                 Font: =App.Theme.Font
                                                 Size: =13
                                                 Text: |-
-                                                    ="Decision Reason: " & If(decisionMode = false, 'Queue Gallery'.Selected.'Decision Reason', " ")
+                                                    ="Decision Reason: " & If(decisionMode = false, 'Referral Queue Gallery'.Selected.'Decision Reason', " ")
                                                 Width: =If(decisionMode = false, Len(DecisionText.Text) * 8.5, Len(DecisionText.Text) * 7.8)
                                                 ZIndex: =1
 
@@ -2339,8 +2543,8 @@
                                                 LayoutMinHeight: =32
                                                 LayoutMinWidth: =96
                                                 OnSelect: |-
-                                                    =Set(selectedRecordID, 'Queue Gallery'.Selected.ID);
-                                                    Set(selectedRecordReferralType, 'Queue Gallery'.Selected.'Referral Type');
+                                                    =Set(selectedRecordID, 'Referral Queue Gallery'.Selected.ID);
+                                                    Set(selectedRecordReferralType, 'Referral Queue Gallery'.Selected.'Referral Type');
                                                     
                                                     Patch(
                                                         'Referral Intake Tool Submissions',
@@ -2489,8 +2693,8 @@
                                             Font: =App.Theme.Font
                                             Size: =13
                                             Text: |-
-                                                ="Reporter Name: " & 'Queue Gallery'.Selected.'Reporter Name'
-                                            Visible: =If(IsBlank('Queue Gallery'.Selected.'Reporter Name'), false, true)
+                                                ="Reporter Name: " & 'Referral Queue Gallery'.Selected.'Reporter Name'
+                                            Visible: =If(IsBlank('Referral Queue Gallery'.Selected.'Reporter Name'), false, true)
                                             ZIndex: =1
 
                                         ReporterEmail As label:
@@ -2501,7 +2705,7 @@
                                             Font: =App.Theme.Font
                                             Size: =13
                                             Text: |-
-                                                ="Reporter Email: " & 'Queue Gallery'.Selected.'Reporter Email'
+                                                ="Reporter Email: " & 'Referral Queue Gallery'.Selected.'Reporter Email'
                                             ZIndex: =2
 
                                         ReporterRole As label:
@@ -2512,7 +2716,7 @@
                                             Font: =App.Theme.Font
                                             Size: =13
                                             Text: |-
-                                                ="Reporter Role: " & 'Queue Gallery'.Selected.'Reporter Role'
+                                                ="Reporter Role: " & 'Referral Queue Gallery'.Selected.'Reporter Role'
                                             ZIndex: =3
 
                                         ReporterDepartment As label:
@@ -2523,8 +2727,8 @@
                                             Font: =App.Theme.Font
                                             Size: =13
                                             Text: |-
-                                                ="Reporter Department: " & 'Queue Gallery'.Selected.'Department of Reporter'
-                                            Visible: =If('Queue Gallery'.Selected.'Reporter Role' = "Governmental", false, true)
+                                                ="Reporter Department: " & 'Referral Queue Gallery'.Selected.'Department of Reporter'
+                                            Visible: =If('Referral Queue Gallery'.Selected.'Reporter Role' = "Governmental", false, true)
                                             ZIndex: =4
 
                                         ReporterAlias As label:
@@ -2535,8 +2739,8 @@
                                             Font: =App.Theme.Font
                                             Size: =13
                                             Text: |-
-                                                ="Reporter Alias: " & 'Queue Gallery'.Selected.'Reporter Alias'
-                                            Visible: =If('Queue Gallery'.Selected.'Reporter Role' = "Governmental", false, true) And If(IsBlank('Queue Gallery'.Selected.'Reporter Alias'), false, true)
+                                                ="Reporter Alias: " & 'Referral Queue Gallery'.Selected.'Reporter Alias'
+                                            Visible: =If('Referral Queue Gallery'.Selected.'Reporter Role' = "Governmental", false, true) And If(IsBlank('Referral Queue Gallery'.Selected.'Reporter Alias'), false, true)
                                             ZIndex: =5
 
                                         ReporterPhoneNo As label:
@@ -2547,8 +2751,8 @@
                                             Font: =App.Theme.Font
                                             Size: =13
                                             Text: |-
-                                                ="Reporter Phone Number: " & 'Queue Gallery'.Selected.'Reporter Phone Number'
-                                            Visible: =If(IsBlank('Queue Gallery'.Selected.'Reporter Phone Number'), false, true)
+                                                ="Reporter Phone Number: " & 'Referral Queue Gallery'.Selected.'Reporter Phone Number'
+                                            Visible: =If(IsBlank('Referral Queue Gallery'.Selected.'Reporter Phone Number'), false, true)
                                             ZIndex: =6
 
                                         ReporterContact As label:
@@ -2559,7 +2763,7 @@
                                             Font: =App.Theme.Font
                                             Size: =13
                                             Text: |-
-                                                ="Available to Contact: " & 'Queue Gallery'.Selected.'Additional Info Y/N'
+                                                ="Available to Contact: " & 'Referral Queue Gallery'.Selected.'Additional Info Y/N'
                                             ZIndex: =7
 
                                         InformantName As label:
@@ -2570,8 +2774,8 @@
                                             Font: =App.Theme.Font
                                             Size: =13
                                             Text: |-
-                                                ="Informant Name: " & 'Queue Gallery'.Selected.'Informant First Name' & " " & 'Queue Gallery'.Selected.'Informant Last Name'
-                                            Visible: =If('Queue Gallery'.Selected.'Informant Y/N' = "Yes", true, false) And If(IsBlank('Queue Gallery'.Selected.'Informant First Name'), false, true) And If(IsBlank('Queue Gallery'.Selected.'Informant Last Name'), false, true)
+                                                ="Informant Name: " & 'Referral Queue Gallery'.Selected.'Informant First Name' & " " & 'Referral Queue Gallery'.Selected.'Informant Last Name'
+                                            Visible: =If('Referral Queue Gallery'.Selected.'Informant Y/N' = "Yes", true, false) And If(IsBlank('Referral Queue Gallery'.Selected.'Informant First Name'), false, true) And If(IsBlank('Referral Queue Gallery'.Selected.'Informant Last Name'), false, true)
                                             ZIndex: =8
 
                                         InformantPhoneNo As label:
@@ -2582,8 +2786,8 @@
                                             Font: =App.Theme.Font
                                             Size: =13
                                             Text: |-
-                                                ="Informant Phone Number: " & 'Queue Gallery'.Selected.'Informant Phone Number'
-                                            Visible: =If('Queue Gallery'.Selected.'Informant Y/N' = "Yes", true, false) And If(IsBlank('Queue Gallery'.Selected.'Informant Phone Number'), false, true)
+                                                ="Informant Phone Number: " & 'Referral Queue Gallery'.Selected.'Informant Phone Number'
+                                            Visible: =If('Referral Queue Gallery'.Selected.'Informant Y/N' = "Yes", true, false) And If(IsBlank('Referral Queue Gallery'.Selected.'Informant Phone Number'), false, true)
                                             ZIndex: =9
 
                                         InformantEmail As label:
@@ -2594,8 +2798,8 @@
                                             Font: =App.Theme.Font
                                             Size: =13
                                             Text: |-
-                                                ="Informant Email: " & 'Queue Gallery'.Selected.'Informant Email'
-                                            Visible: =If('Queue Gallery'.Selected.'Informant Y/N' = "Yes", true, false) And If(IsBlank('Queue Gallery'.Selected.'Informant Email'), false, true)
+                                                ="Informant Email: " & 'Referral Queue Gallery'.Selected.'Informant Email'
+                                            Visible: =If('Referral Queue Gallery'.Selected.'Informant Y/N' = "Yes", true, false) And If(IsBlank('Referral Queue Gallery'.Selected.'Informant Email'), false, true)
                                             ZIndex: =10
 
                                     DetailsContainer As groupContainer.verticalAutoLayoutContainer:
@@ -2623,7 +2827,7 @@
                                             Font: =App.Theme.Font
                                             Size: =13
                                             Text: |-
-                                                ="Details: " & Char(10) & If(IsBlank('Queue Gallery'.Selected.Details), "N/A", 'Queue Gallery'.Selected.Details)
+                                                ="Details: " & Char(10) & If(IsBlank('Referral Queue Gallery'.Selected.Details), "N/A", 'Referral Queue Gallery'.Selected.Details)
                                             ZIndex: =1
 
                 AssignContainer As groupContainer.verticalAutoLayoutContainer:
@@ -2848,7 +3052,7 @@
                             LayoutMinHeight: =32
                             LayoutMinWidth: =96
                             OnSelect: |-
-                                =UpdateContext({selectedRecord: 'Queue Gallery'.Selected});
+                                =UpdateContext({selectedRecord: 'Referral Queue Gallery'.Selected});
                                 If(
                                     IsBlank(selectedRecord),
                                     Notify("No record selected.", NotificationType.Error),

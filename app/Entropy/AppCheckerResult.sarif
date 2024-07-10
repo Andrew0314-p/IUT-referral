@@ -74,19 +74,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "'Work Bank Screen'.WorkBankScreenContainer.'Work Container'.SelectContainer.'Search Container'.'Input Container'.'Referral Search'.AccessibleLabel"
+                  "fullyQualifiedName": "'Work Bank Screen'.WorkBankScreenContainer.'Work Container'.SelectContainer.'Search Container'.'Referral Input Container'.'Referral Search'.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "'Work Bank Screen'.WorkBankScreenContainer.'Work Container'.SelectContainer.'Search Container'.'Input Container'.'Referral Search'.AccessibleLabel",
+                  "fullyQualifiedName": "'Work Bank Screen'.WorkBankScreenContainer.'Work Container'.SelectContainer.'Search Container'.'Referral Input Container'.'Referral Search'.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "Work Bank Screen",
-                "type": "'Work Bank Screen'.WorkBankScreenContainer.'Work Container'.SelectContainer.'Search Container'.'Input Container'.'Referral Search'"
+                "type": "'Work Bank Screen'.WorkBankScreenContainer.'Work Container'.SelectContainer.'Search Container'.'Referral Input Container'.'Referral Search'"
               }
             }
           ],
@@ -104,19 +104,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "'Work Bank Screen'.WorkBankScreenContainer.'Work Container'.SelectContainer.'Search Container'.'Input Container'.SearchIcon.AccessibleLabel"
+                  "fullyQualifiedName": "'Work Bank Screen'.WorkBankScreenContainer.'Work Container'.SelectContainer.'Search Container'.'Referral Input Container'.SearchIcon.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "'Work Bank Screen'.WorkBankScreenContainer.'Work Container'.SelectContainer.'Search Container'.'Input Container'.SearchIcon.AccessibleLabel",
+                  "fullyQualifiedName": "'Work Bank Screen'.WorkBankScreenContainer.'Work Container'.SelectContainer.'Search Container'.'Referral Input Container'.SearchIcon.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "Work Bank Screen",
-                "type": "'Work Bank Screen'.WorkBankScreenContainer.'Work Container'.SelectContainer.'Search Container'.'Input Container'.SearchIcon"
+                "type": "'Work Bank Screen'.WorkBankScreenContainer.'Work Container'.SelectContainer.'Search Container'.'Referral Input Container'.SearchIcon"
               }
             }
           ],
@@ -134,19 +134,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "'Work Bank Screen'.WorkBankScreenContainer.'Work Container'.SelectContainer.'Search Container'.'Input Container'.SearchIcon.TabIndex"
+                  "fullyQualifiedName": "'Work Bank Screen'.WorkBankScreenContainer.'Work Container'.SelectContainer.'Search Container'.'Referral Input Container'.SearchIcon.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "'Work Bank Screen'.WorkBankScreenContainer.'Work Container'.SelectContainer.'Search Container'.'Input Container'.SearchIcon.TabIndex",
+                  "fullyQualifiedName": "'Work Bank Screen'.WorkBankScreenContainer.'Work Container'.SelectContainer.'Search Container'.'Referral Input Container'.SearchIcon.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
                 "module": "Work Bank Screen",
-                "type": "'Work Bank Screen'.WorkBankScreenContainer.'Work Container'.SelectContainer.'Search Container'.'Input Container'.SearchIcon"
+                "type": "'Work Bank Screen'.WorkBankScreenContainer.'Work Container'.SelectContainer.'Search Container'.'Referral Input Container'.SearchIcon"
               }
             }
           ],
@@ -164,19 +164,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "'Work Bank Screen'.WorkBankScreenContainer.'Work Container'.SelectContainer.'Queue Gallery'.AccessibleLabel"
+                  "fullyQualifiedName": "'Work Bank Screen'.WorkBankScreenContainer.'Work Container'.SelectContainer.'Referral Queue Gallery'.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "'Work Bank Screen'.WorkBankScreenContainer.'Work Container'.SelectContainer.'Queue Gallery'.AccessibleLabel",
+                  "fullyQualifiedName": "'Work Bank Screen'.WorkBankScreenContainer.'Work Container'.SelectContainer.'Referral Queue Gallery'.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "Work Bank Screen",
-                "type": "'Work Bank Screen'.WorkBankScreenContainer.'Work Container'.SelectContainer.'Queue Gallery'"
+                "type": "'Work Bank Screen'.WorkBankScreenContainer.'Work Container'.SelectContainer.'Referral Queue Gallery'"
               }
             }
           ],
@@ -194,19 +194,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "'Work Bank Screen'.WorkBankScreenContainer.'Work Container'.SelectContainer.'Queue Gallery'.TabIndex"
+                  "fullyQualifiedName": "'Work Bank Screen'.WorkBankScreenContainer.'Work Container'.SelectContainer.'Referral Queue Gallery'.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "'Work Bank Screen'.WorkBankScreenContainer.'Work Container'.SelectContainer.'Queue Gallery'.TabIndex",
+                  "fullyQualifiedName": "'Work Bank Screen'.WorkBankScreenContainer.'Work Container'.SelectContainer.'Referral Queue Gallery'.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
                 "module": "Work Bank Screen",
-                "type": "'Work Bank Screen'.WorkBankScreenContainer.'Work Container'.SelectContainer.'Queue Gallery'"
+                "type": "'Work Bank Screen'.WorkBankScreenContainer.'Work Container'.SelectContainer.'Referral Queue Gallery'"
               }
             }
           ],
@@ -1184,19 +1184,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "App._selectedReferral"
+                  "fullyQualifiedName": "'Work Bank Screen'.WorkBankScreenContainer.'Work Container'.SelectContainer.'Decision Queue Gallery'.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "App._selectedReferral",
+                  "fullyQualifiedName": "'Work Bank Screen'.WorkBankScreenContainer.'Work Container'.SelectContainer.'Decision Queue Gallery'.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
-                "member": "_selectedReferral",
-                "module": "App",
-                "type": "App"
+                "member": "AccessibleLabel",
+                "module": "Work Bank Screen",
+                "type": "'Work Bank Screen'.WorkBankScreenContainer.'Work Container'.SelectContainer.'Decision Queue Gallery'"
               }
             }
           ],
@@ -1206,8 +1206,38 @@
           "properties": {
             "level": "Medium"
           },
-          "ruleId": "app-UnusedVariables",
-          "ruleIndex": 2
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Work Bank Screen'.WorkBankScreenContainer.'Work Container'.SelectContainer.'Decision Queue Gallery'.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Work Bank Screen'.WorkBankScreenContainer.'Work Container'.SelectContainer.'Decision Queue Gallery'.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Work Bank Screen",
+                "type": "'Work Bank Screen'.WorkBankScreenContainer.'Work Container'.SelectContainer.'Decision Queue Gallery'"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 1
         },
         {
           "locations": [
@@ -1255,6 +1285,36 @@
               },
               "properties": {
                 "member": "_reassignedApproverPhoto",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "App._selectedReferral"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App._selectedReferral",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "_selectedReferral",
                 "module": "App",
                 "type": "App"
               }
@@ -1364,19 +1424,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "'Work Bank Screen'.WorkBankScreenContainer.'Work Container'.SelectContainer.'Search Container'.'Input Container'.'Referral Search'.DelayOutput"
+                  "fullyQualifiedName": "'Work Bank Screen'.WorkBankScreenContainer.'Work Container'.SelectContainer.'Search Container'.'Referral Input Container'.'Referral Search'.DelayOutput"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "'Work Bank Screen'.WorkBankScreenContainer.'Work Container'.SelectContainer.'Search Container'.'Input Container'.'Referral Search'.DelayOutput",
+                  "fullyQualifiedName": "'Work Bank Screen'.WorkBankScreenContainer.'Work Container'.SelectContainer.'Search Container'.'Referral Input Container'.'Referral Search'.DelayOutput",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "DelayOutput",
                 "module": "Work Bank Screen",
-                "type": "'Work Bank Screen'.WorkBankScreenContainer.'Work Container'.SelectContainer.'Search Container'.'Input Container'.'Referral Search'"
+                "type": "'Work Bank Screen'.WorkBankScreenContainer.'Work Container'.SelectContainer.'Search Container'.'Referral Input Container'.'Referral Search'"
               }
             }
           ],
