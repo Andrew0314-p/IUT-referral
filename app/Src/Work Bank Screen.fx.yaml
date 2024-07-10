@@ -2271,7 +2271,7 @@
                                                 Size: =13
                                                 Text: |-
                                                     ="Decision Reason: " & If(decisionMode = false, 'Queue Gallery'.Selected.'Decision Reason', " ")
-                                                Width: =If(decisionMode = false, Len(DecisionText.Text) * 10, Len(DecisionText.Text) * 9)
+                                                Width: =If(decisionMode = false, Len(DecisionText.Text) * 8.5, Len(DecisionText.Text) * 7.8)
                                                 ZIndex: =1
 
                                             DecisionDropdown As Dropdown.pcfdataset:
@@ -2287,7 +2287,7 @@
                                                 LayoutMinWidth: =320
                                                 Required: =true
                                                 Visible: =If(decisionMode = true, true, false)
-                                                Width: =320
+                                                Width: =275
                                                 X: =0
                                                 Y: =0
                                                 ZIndex: =2
@@ -2316,7 +2316,6 @@
                                                 BasePaletteColor: =
                                                 BorderStyle: =BorderStyle.None
                                                 DisplayMode: =DisplayMode.Edit
-                                                FillPortions: =1
                                                 FontColor: =RGBA(189, 49, 51, 1)
                                                 Height: =32
                                                 LayoutMinHeight: =32
@@ -2423,10 +2422,30 @@
                                                         );
                                                 Text: ="Submit Decision"
                                                 Visible: =If(decisionMode = true, true, false)
-                                                Width: =96
+                                                Width: =ChangeDecision.Width
                                                 X: =0
                                                 Y: =0
                                                 ZIndex: =4
+
+                                            SubmitDecision_1 As Button:
+                                                AlignInContainer: =AlignInContainer.Stretch
+                                                Appearance: ='ButtonCanvas.Appearance'.Secondary
+                                                BasePaletteColor: =
+                                                BorderStyle: =BorderStyle.None
+                                                DisplayMode: =DisplayMode.Edit
+                                                FontColor: =RGBA(189, 49, 51, 1)
+                                                Height: =32
+                                                LayoutMinHeight: =32
+                                                LayoutMinWidth: =96
+                                                OnSelect: |-
+                                                    =Reset(DecisionDropdown);
+                                                    UpdateContext({decisionMode: false});
+                                                Text: ="Cancel Decision"
+                                                Visible: =If(decisionMode = true, true, false)
+                                                Width: =ChangeDecision.Width
+                                                X: =0
+                                                Y: =0
+                                                ZIndex: =5
 
                                     ReporterContainer As groupContainer.verticalAutoLayoutContainer:
                                         DropShadow: =DropShadow.Light
