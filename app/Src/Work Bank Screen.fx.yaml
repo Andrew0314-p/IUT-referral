@@ -575,8 +575,8 @@
                             ="Referral #" & ThisItem.ID & " | " & Trim(ThisItem.'Referral Type')
                         VerticalAlign: =VerticalAlign.Top
                         Width: =Parent.TemplateWidth - 86
-                        X: =1
-                        Y: =(Parent.TemplateHeight - (Self.Size*1.8 + FraudCat_1.Size*1.8 + 2 + PHName_1.Size*1.8)) / 2
+                        X: =17
+                        Y: =21
                         ZIndex: =1
 
                     FraudCat_1 As label:
@@ -594,8 +594,8 @@
                         Text: =ThisItem.'Fraud Category'
                         VerticalAlign: =VerticalAlign.Top
                         Width: =RefNoRefType_1.Width
-                        X: =1
-                        Y: =RefNoRefType_1.Y + RefNoRefType_1.Height
+                        X: =17
+                        Y: =46
                         ZIndex: =2
 
                     PHName_1 As label:
@@ -613,8 +613,8 @@
                         Text: =ThisItem.'1st - Policyholder First Name' & " " & ThisItem.'1st - Policyholder Last Name'
                         VerticalAlign: =VerticalAlign.Top
                         Width: =RefNoRefType_1.Width
-                        X: =1
-                        Y: =FraudCat_1.Y + FraudCat_1.Height
+                        X: =17
+                        Y: =69
                         ZIndex: =3
 
                     NextArrow3_1 As icon.ChevronRight:
@@ -650,7 +650,7 @@
                         Height: =Parent.TemplateHeight - Separator6_1.Height
                         OnSelect: =Select(Parent)
                         Visible: =ThisItem.IsSelected
-                        Width: =1
+                        Width: =4
                         ZIndex: =6
 
             ViewContainer As groupContainer.verticalAutoLayoutContainer:
@@ -2557,6 +2557,103 @@
                                                     Reset(DecisionDropdown);
                                                     
                                                     Refresh('Referral Intake Tool Submissions');
+                                                    
+                                                    Remove(WorkBankCollection, LookUp(WorkBankCollection, ID = selectedRecordID));
+                                                    Collect(DecisionReasonCollection, 
+                                                            {
+                                                                User: _selectedApprover,
+                                                                ID: 'Referral Queue Gallery'.Selected.ID,
+                                                                'Created On': 'Referral Queue Gallery'.Selected.'Created On',
+                                                                'Assigned To': _selectedApprover.MailNickname,
+                                                                'Assigned To Email': _selectedApprover.Mail,
+                                                                'Referral Type':'Referral Queue Gallery'.Selected.'Referral Type',
+                                                                'Fraud Category': 'Referral Queue Gallery'.Selected.'Fraud Category',
+                                                                'Decision Reason':'Referral Queue Gallery'.Selected.'Decision Reason',
+                                                                'Policyholder First Name': 'Referral Queue Gallery'.Selected.'1st - Policyholder First Name',
+                                                                'Policyholder Last Name': 'Referral Queue Gallery'.Selected.'1st - Policyholder Last Name',
+                                                                'Policyholder Phone Number': 'Referral Queue Gallery'.Selected.'1st - Policyholder Phone Number',
+                                                                '1st Date of Loss': 'Referral Queue Gallery'.Selected.'1st Date of Loss',
+                                                                '1st Policy Number': 'Referral Queue Gallery'.Selected.'1st Policy Number',
+                                                                '1st Claim Number': 'Referral Queue Gallery'.Selected.'1st Claim Number',
+                                                                '1st Policy Type': 'Referral Queue Gallery'.Selected.'1st Policy Type',
+                                                                '1st Fire - Street': 'Referral Queue Gallery'.Selected.'1st Fire - Street',
+                                                                '1st Fire - City': 'Referral Queue Gallery'.Selected.'1st Fire - City',
+                                                                '1st Fire - State': 'Referral Queue Gallery'.Selected.'1st Fire - State',
+                                                                '1st Fire - Line of Business': 'Referral Queue Gallery'.Selected.'1st Fire - Line of Business',
+                                                                '1st Fire Business Lines - State Code': 'Referral Queue Gallery'.Selected.'1st Fire Business Lines - State Code',
+                                                                '1st Fire - Business Policy Types': 'Referral Queue Gallery'.Selected.'1st Fire - Business Policy Types',
+                                                                '1st Fire - Business Name': 'Referral Queue Gallery'.Selected.'1st Fire - Business Name',
+                                                                '1st Fire Personal Lines - State Code': 'Referral Queue Gallery'.Selected.'1st Fire Personal Lines - State Code',
+                                                                '1st Fire - Personal Policy Type': 'Referral Queue Gallery'.Selected.'1st Fire - Personal Policy Type',
+                                                                '1st Auto - VIN':'Referral Queue Gallery'.Selected.'1st Auto - VIN',
+                                                                '1st Auto - License Plate':'Referral Queue Gallery'.Selected.'1st Auto - License Plate',
+                                                                '1st Auto - Make':'Referral Queue Gallery'.Selected.'1st Auto - Make',
+                                                                '1st Auto - Model':'Referral Queue Gallery'.Selected.'1st Auto - Model',
+                                                                '1st Auto - Line of Business': 'Referral Queue Gallery'.Selected.'1st Auto - Line of Business',
+                                                                '1st Auto Business - State Code': 'Referral Queue Gallery'.Selected.'1st Auto Business - State Code',
+                                                                '1st Auto - Business Name': 'Referral Queue Gallery'.Selected.'1st Auto - Business Name',
+                                                                '1st Auto Personal - State Code': 'Referral Queue Gallery'.Selected.'1st Auto Personal - State Code',
+                                                                'Is there a second Policy?': 'Referral Queue Gallery'.Selected.'Is there a second Policy?',
+                                                                '2nd Policy Number': 'Referral Queue Gallery'.Selected.'2nd Policy Number',
+                                                                '2nd Claim Number': 'Referral Queue Gallery'.Selected.'2nd Claim Number',
+                                                                '2nd Date of Loss': 'Referral Queue Gallery'.Selected.'2nd Date of Loss',
+                                                                'Multiple Policy - 2nd Policy Type': 'Referral Queue Gallery'.Selected.'Multiple Policy - 2nd Policy Type',
+                                                                '2nd Fire - Street': 'Referral Queue Gallery'.Selected.'2nd Fire - Street',
+                                                                '2nd Fire - City': 'Referral Queue Gallery'.Selected.'2nd Fire - City',
+                                                                '2nd Fire - State': 'Referral Queue Gallery'.Selected.'2nd Fire - State',
+                                                                '2nd Fire - Line of Business': 'Referral Queue Gallery'.Selected.'2nd Fire - Line of Business',
+                                                                '2nd Fire - Business State Code': 'Referral Queue Gallery'.Selected.'2nd Fire - Business State Code',
+                                                                '2nd Fire - Business Name': 'Referral Queue Gallery'.Selected.'2nd Fire - Business Name',
+                                                                '2nd Fire - Business Policy Type': 'Referral Queue Gallery'.Selected.'2nd Fire - Business Policy Type',
+                                                                '2nd Fire Personal - State Code': 'Referral Queue Gallery'.Selected.'2nd Fire Personal - State Code',
+                                                                '2nd Fire - Personal Policy Type': 'Referral Queue Gallery'.Selected.'2nd Fire - Personal Policy Type',
+                                                                '2nd Auto - VIN': 'Referral Queue Gallery'.Selected.'2nd Auto - VIN',
+                                                                '2nd Auto - License Plate': 'Referral Queue Gallery'.Selected.'2nd Auto - License Plate',
+                                                                '2nd Auto - Make': 'Referral Queue Gallery'.Selected.'2nd Auto - Make',
+                                                                '2nd Auto - Model': 'Referral Queue Gallery'.Selected.'2nd Auto - Model',
+                                                                '2nd Auto - Line of Business': 'Referral Queue Gallery'.Selected.'2nd Auto - Line of Business',
+                                                                '2nd Auto Business - State Code': 'Referral Queue Gallery'.Selected.'2nd Auto Business - State Code',
+                                                                '2nd Auto - Business Name': 'Referral Queue Gallery'.Selected.'2nd Auto - Business Name',
+                                                                '2nd Auto Personal - State Code': 'Referral Queue Gallery'.Selected.'2nd Auto Personal - State Code',
+                                                                'Is there a 3rd Policy?': 'Referral Queue Gallery'.Selected.'Is there a 3rd Policy?',
+                                                                '3rd - Policy Number': 'Referral Queue Gallery'.Selected.'3rd - Policy Number',
+                                                                '3rd - Claim Number': 'Referral Queue Gallery'.Selected.'3rd - Claim Number',
+                                                                '3rd Date of Loss': 'Referral Queue Gallery'.Selected.'3rd Date of Loss',
+                                                                'Multiple Policy - 3rd Policy Type': 'Referral Queue Gallery'.Selected.'Multiple Policy - 3rd Policy Type',
+                                                                '3rd Fire - Street': 'Referral Queue Gallery'.Selected.'3rd Fire - Street',
+                                                                '3rd Fire - City': 'Referral Queue Gallery'.Selected.'3rd Fire - City',
+                                                                '3rd Fire - State': 'Referral Queue Gallery'.Selected.'3rd Fire - State',
+                                                                '3rd Fire - Line of Business': 'Referral Queue Gallery'.Selected.'3rd Fire - Line of Business',
+                                                                '3rd Fire - Business State Code': 'Referral Queue Gallery'.Selected.'3rd Fire - Business State Code',
+                                                                '3rd Fire - Business Policy Type': 'Referral Queue Gallery'.Selected.'3rd Fire - Business Policy Type',
+                                                                '3rd Fire - Business Name': 'Referral Queue Gallery'.Selected.'3rd Fire - Business Name',
+                                                                '3rd Fire Personal - State Code': 'Referral Queue Gallery'.Selected.'3rd Fire Personal - State Code',
+                                                                '3rd Fire - Personal Policy Type': 'Referral Queue Gallery'.Selected.'3rd Fire - Personal Policy Type',
+                                                                '3rd Auto - VIN': 'Referral Queue Gallery'.Selected.'3rd Auto - VIN',
+                                                                '3rd Auto - License Plate': 'Referral Queue Gallery'.Selected.'3rd Auto - License Plate',
+                                                                '3rd Auto - Make': 'Referral Queue Gallery'.Selected.'3rd Auto - Make',
+                                                                '3rd Auto - Model': 'Referral Queue Gallery'.Selected.'3rd Auto - Model',
+                                                                '3rd Auto - Line of Business': 'Referral Queue Gallery'.Selected.'3rd Auto - Line of Business',
+                                                                '3rd Auto Business - State Code': 'Referral Queue Gallery'.Selected.'3rd Auto Business - State Code',
+                                                                '3rd Auto - Business Name': 'Referral Queue Gallery'.Selected.'3rd Auto - Business Name',
+                                                                '3rd Auto Personal - State Code': 'Referral Queue Gallery'.Selected.'3rd Auto Personal - State Code',
+                                                                Details: 'Referral Queue Gallery'.Selected.Details,
+                                                                'Others Involved': 'Referral Queue Gallery'.Selected.'Others Involved',
+                                                                'Reporter Email':'Referral Queue Gallery'.Selected.'Reporter Email',
+                                                                'Reporter Name':'Referral Queue Gallery'.Selected.'Reporter Name',
+                                                                'Reporter Role':'Referral Queue Gallery'.Selected.'Reporter Role',
+                                                                'Reporter Phone Number':'Referral Queue Gallery'.Selected.'Reporter Phone Number',
+                                                                'Reporter Department':'Referral Queue Gallery'.Selected.'Department of Reporter',
+                                                                'Reporter Alias':'Referral Queue Gallery'.Selected.'Reporter Alias',
+                                                                'Informant Y/N':'Referral Queue Gallery'.Selected.'Informant Y/N',
+                                                                'Informant First Name':'Referral Queue Gallery'.Selected.'Informant First Name',
+                                                                'Informant Last Name':'Referral Queue Gallery'.Selected.'Informant Last Name',
+                                                                'Informant Phone Number':'Referral Queue Gallery'.Selected.'Informant Phone Number',
+                                                                'Informant Email':'Referral Queue Gallery'.Selected.'Informant Email',
+                                                                'Additional Info Y/N':'Referral Queue Gallery'.Selected.'Additional Info Y/N'
+                                                            }
+                                                    );
+                                                    
                                                     If(!IsEmpty(WorkBankCollection), ClearCollect(WorkBankCollection, {}));
                                                     Remove(WorkBankCollection, FirstN(WorkBankCollection, 1));
                                                     ClearCollect(WorkBankCollection,
