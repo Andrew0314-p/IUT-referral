@@ -91,7 +91,7 @@
                         'Others Involved': 'Others Involved'
                     }
                 )
-            )
+            );
 
     WorkBankScreenContainer As groupContainer.verticalAutoLayoutContainer:
         DropShadow: =DropShadow.Light
@@ -267,7 +267,7 @@
                     LayoutMinWidth: =320
                     LoadingSpinner: =LoadingSpinner.Data
                     OnSelect: |
-                        =UpdateContext({CurrentItem: ThisItem});
+                        =UpdateContext({ CurrentItem: ThisItem });
                         Set(_selectedReferral, ThisItem);
                         
                         ClearCollect(
@@ -2323,6 +2323,7 @@
                                                 LayoutMinWidth: =96
                                                 OnSelect: |-
                                                     =Set(selectedRecordID, 'Queue Gallery'.Selected.ID);
+                                                    Set(selectedRecordReferralType, 'Queue Gallery'.Selected.'Referral Type');
                                                     
                                                     Patch(
                                                         'Referral Intake Tool Submissions',
@@ -2330,6 +2331,7 @@
                                                         { 'Decision Reasons': DecisionDropdown.Selected.Value }
                                                     );
                                                     Update(WorkBankCollection, LookUp(WorkBankCollection, ID = selectedRecordID), { 'Decision Reason': DecisionDropdown.Selected.Value });
+                                                    Notify("Referral #" & selectedRecordID & " (" & selectedRecordReferralType & ") now has a status of " & DecisionDropdown.Selected.Value, NotificationType.Success);
                                                     UpdateContext({decisionMode: false});
                                                     
                                                     Refresh('Referral Intake Tool Submissions');
@@ -2419,22 +2421,12 @@
                                                                 }
                                                             )
                                                         );
-                                                        Refresh('Referral Intake Tool Submissions');
                                                 Text: ="Submit Decision"
                                                 Visible: =If(decisionMode = true, true, false)
                                                 Width: =96
                                                 X: =0
                                                 Y: =0
                                                 ZIndex: =4
-
-                                            Label1 As label:
-                                                BorderColor: =App.Theme.Colors.Darker40
-                                                Color: =RGBA(0, 0, 0, 1)
-                                                DisabledColor: =RGBA(166, 166, 166, 1)
-                                                Font: =App.Theme.Font
-                                                Size: =13
-                                                Text: =selectedRecordID
-                                                ZIndex: =5
 
                                     ReporterContainer As groupContainer.verticalAutoLayoutContainer:
                                         DropShadow: =DropShadow.Light
