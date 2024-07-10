@@ -504,7 +504,7 @@
                             LayoutMinHeight: =32
                             LayoutMinWidth: =96
                             OnSelect: |-
-                                =UpdateContext({sharedWorkBankMode: true, myInTrayMode: false, myTeamMode: false, reportsMode: false})
+                                =UpdateContext({sharedWorkBankMode: true, myInTrayMode: false, myTeamMode: false, reportsMode: false, viewDecisionMode: false})
                             Text: ="Shared Work Bank"
                             Width: =96
                             X: =0
@@ -522,12 +522,30 @@
                             LayoutMinHeight: =32
                             LayoutMinWidth: =96
                             OnSelect: |-
-                                =UpdateContext({sharedWorkBankMode: false, myInTrayMode: true, myTeamMode: false, reportsMode: false})
+                                =UpdateContext({sharedWorkBankMode: false, myInTrayMode: true, myTeamMode: false, reportsMode: false, viewDecisionMode: false})
                             Text: ="View Referrals"
                             Width: =96
                             X: =0
                             Y: =0
                             ZIndex: =2
+
+                        ViewDecisions As Button:
+                            AlignInContainer: =AlignInContainer.Stretch
+                            Appearance: =If(viewDecisionMode = true, 'ButtonCanvas.Appearance'.Primary, 'ButtonCanvas.Appearance'.Secondary)
+                            BorderStyle: =BorderStyle.None
+                            DisplayMode: =DisplayMode.Edit
+                            FillPortions: =1
+                            FontColor: =If(viewDecisionMode = false,RGBA(189, 49, 51, 1), RGBA(255, 255, 255, 1))
+                            Height: =32
+                            LayoutMinHeight: =32
+                            LayoutMinWidth: =96
+                            OnSelect: |-
+                                =UpdateContext({sharedWorkBankMode: false, myInTrayMode: false, myTeamMode: false, reportsMode: false, viewDecisionMode: true})
+                            Text: ="View Decisions"
+                            Width: =96
+                            X: =0
+                            Y: =0
+                            ZIndex: =3
 
                         MyTeam As Button:
                             AlignInContainer: =AlignInContainer.Stretch
@@ -540,12 +558,12 @@
                             LayoutMinHeight: =32
                             LayoutMinWidth: =96
                             OnSelect: |-
-                                =UpdateContext({sharedWorkBankMode: false, myInTrayMode: false, myTeamMode: true, reportsMode: false})
+                                =UpdateContext({sharedWorkBankMode: false, myInTrayMode: false, myTeamMode: true, reportsMode: false, viewDecisionMode: false})
                             Text: ="My Team"
                             Width: =96
                             X: =0
                             Y: =0
-                            ZIndex: =3
+                            ZIndex: =4
 
                         Reports As Button:
                             AlignInContainer: =AlignInContainer.Stretch
@@ -558,12 +576,12 @@
                             LayoutMinHeight: =32
                             LayoutMinWidth: =96
                             OnSelect: |-
-                                =UpdateContext({sharedWorkBankMode: false, myInTrayMode: false, myTeamMode: false, reportsMode: true})
+                                =UpdateContext({sharedWorkBankMode: false, myInTrayMode: false, myTeamMode: false, reportsMode: true, viewDecisionMode: false})
                             Text: ="Reports"
                             Width: =96
                             X: =0
                             Y: =0
-                            ZIndex: =4
+                            ZIndex: =5
 
                         Refresh As Button:
                             AccessibleLabel: =
@@ -671,7 +689,7 @@
                             Width: =96
                             X: =0
                             Y: =0
-                            ZIndex: =5
+                            ZIndex: =6
 
                 DataContainer As groupContainer.horizontalAutoLayoutContainer:
                     LayoutMinHeight: =100
@@ -2428,7 +2446,7 @@
                                                 Y: =0
                                                 ZIndex: =4
 
-                                            SubmitDecision_1 As Button:
+                                            CancelDecision As Button:
                                                 AlignInContainer: =AlignInContainer.Stretch
                                                 Appearance: ='ButtonCanvas.Appearance'.Secondary
                                                 BasePaletteColor: =

@@ -1124,19 +1124,49 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "'Work Bank Screen'.WorkBankScreenContainer.'Work Container'.ViewContainer.DataContainer.'Referral Info Container'.'Referral Galleries Container'.ReferralInformation.'PH Data'.PolicyContainer.DecisionReasons.SubmitDecision_1.AccessibleLabel"
+                  "fullyQualifiedName": "'Work Bank Screen'.WorkBankScreenContainer.'Work Container'.ViewContainer.DataContainer.'Referral Info Container'.'Referral Galleries Container'.ReferralInformation.'PH Data'.PolicyContainer.DecisionReasons.CancelDecision.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "'Work Bank Screen'.WorkBankScreenContainer.'Work Container'.ViewContainer.DataContainer.'Referral Info Container'.'Referral Galleries Container'.ReferralInformation.'PH Data'.PolicyContainer.DecisionReasons.SubmitDecision_1.AccessibleLabel",
+                  "fullyQualifiedName": "'Work Bank Screen'.WorkBankScreenContainer.'Work Container'.ViewContainer.DataContainer.'Referral Info Container'.'Referral Galleries Container'.ReferralInformation.'PH Data'.PolicyContainer.DecisionReasons.CancelDecision.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "Work Bank Screen",
-                "type": "'Work Bank Screen'.WorkBankScreenContainer.'Work Container'.ViewContainer.DataContainer.'Referral Info Container'.'Referral Galleries Container'.ReferralInformation.'PH Data'.PolicyContainer.DecisionReasons.SubmitDecision_1"
+                "type": "'Work Bank Screen'.WorkBankScreenContainer.'Work Container'.ViewContainer.DataContainer.'Referral Info Container'.'Referral Galleries Container'.ReferralInformation.'PH Data'.PolicyContainer.DecisionReasons.CancelDecision"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Work Bank Screen'.WorkBankScreenContainer.'Work Container'.ViewContainer.ControlContainer.ButtonContainer.ViewDecisions.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Work Bank Screen'.WorkBankScreenContainer.'Work Container'.ViewContainer.ControlContainer.ButtonContainer.ViewDecisions.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Work Bank Screen",
+                "type": "'Work Bank Screen'.WorkBankScreenContainer.'Work Container'.ViewContainer.ControlContainer.ButtonContainer.ViewDecisions"
               }
             }
           ],
