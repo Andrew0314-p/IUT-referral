@@ -1349,7 +1349,7 @@
                                         // Check if there is an oldest record available
                                         If(
                                             IsBlank(oldestRecord),
-                                            Notify("No record found without a value in 'Assigned To' field.", NotificationType.Error),
+                                            Notify("There are no more referrals that have not be assigned. Please check again later", NotificationType.Error),
                                             // Patch the 'Assigned To' field of the oldest record with the selected approver
                                             Patch(
                                                 'Referral Intake Tool Submissions',
@@ -1545,7 +1545,7 @@
                                         
                                         If(
                                             IsBlank(oldestRecord),
-                                            Notify("No record found without a value in 'Assigned To' field.", NotificationType.Error),
+                                            Notify("There are no more referrals that have not be assigned. Please check again later", NotificationType.Error),
                                             // Patch the 'Assigned To' field of the oldest record with the selected approver
                                             Patch(
                                                 'Referral Intake Tool Submissions',
@@ -1741,7 +1741,7 @@
                                         
                                         If(
                                             IsBlank(oldestRecord),
-                                            Notify("No record found without a value in 'Assigned To' field.", NotificationType.Error),
+                                            Notify("There are no more referrals that have not be assigned. Please check again later", NotificationType.Error),
                                             // Patch the 'Assigned To' field of the oldest record with the selected approver
                                             Patch(
                                                 'Referral Intake Tool Submissions',
@@ -1937,7 +1937,7 @@
                                         
                                         If(
                                             IsBlank(oldestRecord),
-                                            Notify("No record found without a value in 'Assigned To' field.", NotificationType.Error),
+                                            Notify("There are no more referrals that have not be assigned. Please check again later", NotificationType.Error),
                                             // Patch the 'Assigned To' field of the oldest record with the selected approver
                                             Patch(
                                                 'Referral Intake Tool Submissions',
@@ -2133,7 +2133,7 @@
                                         
                                         If(
                                             IsBlank(oldestRecord),
-                                            Notify("There are no " & oldestRecord.'Referral Type' & " referrals that not be assigned.", NotificationType.Error),
+                                            Notify("There are no more referrals that have not be assigned. Please check again later", NotificationType.Error),
                                             // Patch the 'Assigned To' field of the oldest record with the selected approver
                                             Patch(
                                                 'Referral Intake Tool Submissions',
@@ -2244,7 +2244,7 @@
                                             Notify("Referral #" & oldestRecord.ID & " (" & oldestRecord.'Referral Type' & ") has been assigned to " & _selectedApprover.DisplayName & " (" & _selectedApprover.MailNickname & ")", NotificationType.Success),
                                             Notify("No employee has been selected", NotificationType.Error);
                                         ));
-                                    Text: ="Multiple Policies"
+                                    Text: ="Multiple Lines"
                                     Width: =Parent.Width
                                     X: =0
                                     Y: =0
@@ -2533,7 +2533,7 @@
                                                 Font: =App.Theme.Font
                                                 Size: =13
                                                 Text: |-
-                                                    ="Decision Reason: " & If(decisionMode = false, 'Referral Queue Gallery'.Selected.'Decision Reason', " ")
+                                                    ="Decision Reason: " & If( decisionMode = false, If( IsBlank('Referral Queue Gallery'.Selected.'Decision Reason'), "No Action", 'Referral Queue Gallery'.Selected.'Decision Reason' ), " " )
                                                 Width: =If(decisionMode = false, Len(DecisionText.Text) * 8.5, Len(DecisionText.Text) * 7.8)
                                                 ZIndex: =1
 
