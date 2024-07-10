@@ -152,35 +152,6 @@
     }
   },
   {
-    "DisplayName": "Decision Reasons (Referral Intake Tool Submissions)",
-    "Name": "cr065_fraudreportform_cr065_decisionreasons",
-    "OptionSetInfoNameMapping": {
-      "827680000": "Adverse Action Already Taken",
-      "827680001": "File Development",
-      "827680002": "No Action",
-      "827680003": "Non-renewal",
-      "827680004": "Premium Change",
-      "827680005": "Initial Cancel",
-      "827680006": "Midterm Cancel",
-      "827680007": "No Action - Inconclusive",
-      "827680008": "No Action - PH Cancel",
-      "827680009": "WOTR",
-      "827680010": "Void"
-    },
-    "OptionSetIsBooleanValued": false,
-    "OptionSetIsGlobal": false,
-    "OptionSetReference": {
-      "OptionSetReferenceItem0": {
-        "OptionSetReferenceColumnName": "cr065_decisionreasons",
-        "OptionSetReferenceEntityName": "Referral Intake Tool Submissions"
-      }
-    },
-    "OptionSetTypeKey": "PicklistType",
-    "RelatedColumnInvariantName": "cr065_decisionreasons",
-    "RelatedEntityName": "Referral Intake Tool Submissions",
-    "Type": "OptionSetInfo"
-  },
-  {
     "DisplayName": "Status (Referral Intake Tool Submissions)",
     "Name": "cr065_fraudreportform_statecode",
     "OptionSetInfoNameMapping": {
