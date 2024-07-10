@@ -65,7 +65,7 @@
             LayoutOverflowY: =LayoutOverflow.Scroll
             LayoutWrap: =true
             PaddingBottom: =10
-            PaddingLeft: =16
+            PaddingLeft: =10
             PaddingRight: =10
             PaddingTop: =10
             RadiusBottomLeft: =4
@@ -95,7 +95,7 @@
                 RadiusBottomRight: =4
                 RadiusTopLeft: =4
                 RadiusTopRight: =4
-                Width: ='Screens Container'.Width * 1/2 - 24
+                Width: ='Screens Container'.Width * 1/2 - 10
                 ZIndex: =5
 
                 ImageContainer1 As groupContainer.verticalAutoLayoutContainer:
@@ -174,7 +174,6 @@
                 AlignInContainer: =AlignInContainer.SetByContainer
                 DropShadow: =DropShadow.Regular
                 Fill: =RGBA(255, 255, 255, 1)
-                FillPortions: =0
                 LayoutAlignItems: =LayoutAlignItems.Center
                 LayoutDirection: =LayoutDirection.Vertical
                 LayoutGap: =5
@@ -191,7 +190,7 @@
                 RadiusBottomRight: =4
                 RadiusTopLeft: =4
                 RadiusTopRight: =4
-                Width: ='New Referral Container'.Width
+                Width: =('New Referral Container'.Width)
                 ZIndex: =17
 
                 ImageContainer31 As groupContainer.verticalAutoLayoutContainer:
@@ -287,7 +286,7 @@
                 RadiusBottomRight: =4
                 RadiusTopLeft: =4
                 RadiusTopRight: =4
-                Width: ='Additional Info Container'.Width
+                Width: =423
                 ZIndex: =23
 
                 ImageContainer41 As groupContainer.verticalAutoLayoutContainer:

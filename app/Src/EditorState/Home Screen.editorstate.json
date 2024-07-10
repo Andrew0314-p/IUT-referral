@@ -5033,7 +5033,14 @@
         "RadiusBottomRight",
         "PaddingBottom",
         "PaddingTop",
-        "PaddingLeft",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "",
+          "InvariantPropertyName": "PaddingLeft",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "PaddingRight"
       ],
       "DynamicProperties": [
