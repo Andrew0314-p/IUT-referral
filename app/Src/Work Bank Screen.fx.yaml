@@ -2,7 +2,7 @@
     Fill: =Color.White
     LoadingSpinnerColor: =App.Theme.Colors.Primary
     OnVisible: |-
-        =UpdateContext({sharedWorkBankMode: true, myInTrayMode: false, myTeamMode: false, reportsMode: false, searchMode: false,clickedCount: 0, pageCount: 0});
+        =UpdateContext({sharedWorkBankMode: true, myInTrayMode: false, myTeamMode: false, reportsMode: false, searchMode: false,clickedCount: 0, pageCount: 0, decisionMode: false});
         
         Refresh('Referral Intake Tool Submissions');
         If(!IsEmpty(WorkBankCollection), ClearCollect(WorkBankCollection, {}));
@@ -1124,6 +1124,7 @@
                                                     'Assigned To Email': _selectedApprover.Mail,
                                                     'Referral Type':oldestRecord.'Referral Type',
                                                     'Fraud Category': oldestRecord.'Category of Fraud',
+                                                    'Decision Reason':oldestRecord.'Decision Reasons',
                                                     '1st - Policyholder First Name': oldestRecord.'Policyholder First Name',
                                                     '1st - Policyholder Last Name': oldestRecord.'Policyholder Last Name',
                                                     '1st - Policyholder Phone Number': oldestRecord.'Policyholder Phone Number',
@@ -1318,6 +1319,7 @@
                                                     'Assigned To Email': _selectedApprover.Mail,
                                                     'Referral Type':oldestRecord.'Referral Type',
                                                     'Fraud Category': oldestRecord.'Category of Fraud',
+                                                    'Decision Reason':oldestRecord.'Decision Reasons',
                                                     '1st - Policyholder First Name': oldestRecord.'Policyholder First Name',
                                                     '1st - Policyholder Last Name': oldestRecord.'Policyholder Last Name',
                                                     '1st - Policyholder Phone Number': oldestRecord.'Policyholder Phone Number',
@@ -1512,6 +1514,7 @@
                                                     'Assigned To Email': _selectedApprover.Mail,
                                                     'Referral Type':oldestRecord.'Referral Type',
                                                     'Fraud Category': oldestRecord.'Category of Fraud',
+                                                    'Decision Reason':oldestRecord.'Decision Reasons',
                                                     '1st - Policyholder First Name': oldestRecord.'Policyholder First Name',
                                                     '1st - Policyholder Last Name': oldestRecord.'Policyholder Last Name',
                                                     '1st - Policyholder Phone Number': oldestRecord.'Policyholder Phone Number',
@@ -1706,6 +1709,7 @@
                                                     'Assigned To Email': _selectedApprover.Mail,
                                                     'Referral Type':oldestRecord.'Referral Type',
                                                     'Fraud Category': oldestRecord.'Category of Fraud',
+                                                    'Decision Reason':oldestRecord.'Decision Reasons',
                                                     '1st - Policyholder First Name': oldestRecord.'Policyholder First Name',
                                                     '1st - Policyholder Last Name': oldestRecord.'Policyholder Last Name',
                                                     '1st - Policyholder Phone Number': oldestRecord.'Policyholder Phone Number',
@@ -1900,6 +1904,7 @@
                                                     'Assigned To Email': _selectedApprover.Mail,
                                                     'Referral Type':oldestRecord.'Referral Type',
                                                     'Fraud Category': oldestRecord.'Category of Fraud',
+                                                    'Decision Reason':oldestRecord.'Decision Reasons',
                                                     '1st - Policyholder First Name': oldestRecord.'Policyholder First Name',
                                                     '1st - Policyholder Last Name': oldestRecord.'Policyholder Last Name',
                                                     '1st - Policyholder Phone Number': oldestRecord.'Policyholder Phone Number',
@@ -2081,7 +2086,7 @@
 
                             NoReferralPickedText As Text:
                                 Align: ='TextCanvas.Align'.Center
-                                AlignInContainer: =AlignInContainer.Center
+                                AlignInContainer: =AlignInContainer.Stretch
                                 DisplayMode: =DisplayMode.Edit
                                 FillPortions: =1
                                 Height: =32
