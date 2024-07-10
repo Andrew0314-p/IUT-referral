@@ -1006,7 +1006,7 @@
                         RadiusBottomRight: =4
                         RadiusTopLeft: =4
                         RadiusTopRight: =4
-                        Visible: =If(myInTrayMode = true, true, false) And If(SelectContainer.Visible = true, false, true) And If(EmployeeBrowseGallery.Visible = false, true, false) And If(IsBlank('Referral Queue Gallery'), true, false) Or If('Referral Info Container'.Visible = true, false, true)
+                        Visible: =If(SelectContainer.Visible = true, false, true) And If(EmployeeBrowseGallery.Visible = false, true, false) And If(IsBlank('Referral Queue Gallery'), true, false) Or If('Referral Info Container'.Visible = true, false, true) And If(myInTrayMode = true, true, false)
                         ZIndex: =8
 
                         EmptyCollectionText As Text:
