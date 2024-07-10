@@ -56,7 +56,6 @@
 
         "'Screens Container' As groupContainer.horizontalAutoLayoutContainer":
             AlignInContainer: =AlignInContainer.SetByContainer
-            DropShadow: =DropShadow.Light
             Fill: =RGBA(245, 245, 245, 1)
             LayoutAlignItems: =LayoutAlignItems.Stretch
             LayoutGap: =16

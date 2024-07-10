@@ -375,13 +375,14 @@
                         Color: =RGBA(50, 49, 48, 1)
                         DisabledColor: =RGBA(166, 166, 166, 1)
                         Font: =App.Theme.Font
-                        FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                        FontWeight: =If(ThisItem.IsSelected, FontWeight.Bold, FontWeight.Normal)
                         Height: =Self.Size * 1.8
                         OnSelect: =Select(Parent)
                         PaddingBottom: =0
                         PaddingLeft: =0
                         PaddingRight: =0
                         PaddingTop: =0
+                        Size: =13
                         Text: |-
                             ="Referral #" & ThisItem.ID & " | " & Trim(ThisItem.'Referral Type')
                         VerticalAlign: =VerticalAlign.Top

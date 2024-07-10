@@ -4682,7 +4682,7 @@
       "MetaDataIDKey": "",
       "Name": "ChangeDecision",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 1,
+      "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -6162,7 +6162,7 @@
       "MetaDataIDKey": "",
       "Name": "DecisionDropdown",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 3,
+      "ParentIndex": 1,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -6325,7 +6325,7 @@
       "MetaDataIDKey": "",
       "Name": "DecisionFilter",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 2,
+      "ParentIndex": 1,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -15598,7 +15598,7 @@
       "MetaDataIDKey": "",
       "Name": "Label2",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 2,
+      "ParentIndex": 3,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -22467,7 +22467,14 @@
         "PressedFill",
         "HoverFill",
         "Font",
-        "FontWeight",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)",
+          "InvariantPropertyName": "FontWeight",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "Align",
         "VerticalAlign",
         "X",
@@ -22653,7 +22660,7 @@
         {
           "Category": "Design",
           "PropertyName": "FontWeight",
-          "RuleProviderType": "Unknown"
+          "RuleProviderType": "User"
         },
         {
           "Category": "Design",
@@ -27505,7 +27512,7 @@
       "MetaDataIDKey": "",
       "Name": "Seperator_1",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 1,
+      "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
