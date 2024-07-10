@@ -238,12 +238,6 @@
                             PaddingTop: =10
                             ZIndex: =2
 
-                    Seperator_1 As rectangle:
-                        BorderColor: =App.Theme.Colors.Darker40
-                        Fill: =App.Theme.Colors.Primary
-                        Height: =3
-                        ZIndex: =2
-
                     "DecisionFilter As 'Tab list'.pcfdataset":
                         AlignInContainer: =AlignInContainer.Center
                         DisplayMode: =DisplayMode.Edit
@@ -255,6 +249,12 @@
                         Width: =257
                         X: =0
                         Y: =0
+                        ZIndex: =2
+
+                    Seperator_1 As rectangle:
+                        BorderColor: =App.Theme.Colors.Darker40
+                        Fill: =App.Theme.Colors.Primary
+                        Height: =3
                         ZIndex: =3
 
                 "'Referral Queue Gallery' As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver5.0'":
