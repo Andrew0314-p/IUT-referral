@@ -366,7 +366,7 @@
                     ShowScrollbar: =false
                     TemplatePadding: =0
                     TemplateSize: =120
-                    Transition: =Transition.Pop
+                    Transition: =Transition.Push
                     Visible: =If(myInTrayMode = true, true, false) And If(CountRows(WorkBankCollection) > 0, true, false)
                     Width: =Parent.Width * (10/11)
                     ZIndex: =1
@@ -450,7 +450,7 @@
 
                     Separator6 As rectangle:
                         BorderColor: =App.Theme.Colors.Primary
-                        BorderStyle: =BorderStyle.Dashed
+                        BorderStyle: =BorderStyle.Dotted
                         BorderThickness: =1
                         Fill: =App.Theme.Colors.Primary
                         Height: =1
@@ -1006,7 +1006,7 @@
                         RadiusBottomRight: =4
                         RadiusTopLeft: =4
                         RadiusTopRight: =4
-                        Visible: =If(myInTrayMode = true, true, false) And If(SelectContainer.Visible = true, false, true) And If(EmployeeBrowseGallery.Visible = false, true, false)
+                        Visible: =If(myInTrayMode = true, true, false) And If(SelectContainer.Visible = true, false, true) And If(EmployeeBrowseGallery.Visible = false, true, false) And If(IsBlank('Referral Queue Gallery'), true, false)
                         ZIndex: =8
 
                         EmptyCollectionText As Text:
@@ -2492,15 +2492,6 @@
                                                 Y: =0
                                                 ZIndex: =5
 
-                                            Label2 As label:
-                                                BorderColor: =App.Theme.Colors.Darker40
-                                                Color: =RGBA(0, 0, 0, 1)
-                                                DisabledColor: =RGBA(166, 166, 166, 1)
-                                                Font: =App.Theme.Font
-                                                Size: =13
-                                                Text: =If(DecisionFilter.Selected.Value = "No Action Taken", "Yellow", "Blue")
-                                                ZIndex: =6
-
                                     ReporterContainer As groupContainer.verticalAutoLayoutContainer:
                                         DropShadow: =DropShadow.Light
                                         LayoutDirection: =LayoutDirection.Vertical
@@ -2957,6 +2948,7 @@
                                     )
                                 );
                             Text: ="Remove Assigned"
+                            Visible: =If(developerMode = true, true, false)
                             Width: =96
                             X: =0
                             Y: =0
@@ -2978,6 +2970,7 @@
                                 Remove(ItemValues, FirstN(ItemValues, 1));
                                 Remove(WorkBankCollection, FirstN(WorkBankCollection, 1));
                             Text: ="Clear Collection"
+                            Visible: =If(developerMode = true, true, false)
                             Width: =96
                             X: =0
                             Y: =0
@@ -3083,8 +3076,27 @@
                                         )
                                     )
                             Text: ="Load Queue"
+                            Visible: =If(developerMode = true, true, false)
                             Width: =96
                             X: =0
                             Y: =0
                             ZIndex: =6
+
+                        DeveloperToggle As Button:
+                            AlignInContainer: =AlignInContainer.Stretch
+                            Appearance: ='ButtonCanvas.Appearance'.Secondary
+                            BorderStyle: =BorderStyle.None
+                            DisplayMode: =DisplayMode.Edit
+                            FillPortions: =1
+                            FontColor: =RGBA(189, 49, 51, 1)
+                            Height: =32
+                            LayoutMinHeight: =32
+                            LayoutMinWidth: =96
+                            OnSelect: |-
+                                =If(developerMode = false, UpdateContext({developerMode: true}), UpdateContext({developerMode: false}))
+                            Text: ="Toggle Developer"
+                            Width: =96
+                            X: =0
+                            Y: =0
+                            ZIndex: =7
 
