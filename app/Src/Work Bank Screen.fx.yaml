@@ -1006,7 +1006,7 @@
                         RadiusBottomRight: =4
                         RadiusTopLeft: =4
                         RadiusTopRight: =4
-                        Visible: =If(myInTrayMode = true, true, false) And If(SelectContainer.Visible = true, false, true) And If(EmployeeBrowseGallery.Visible = false, true, false) And If(IsBlank('Referral Queue Gallery'), true, false)
+                        Visible: =If(myInTrayMode = true, true, false) And If(SelectContainer.Visible = true, false, true) And If(EmployeeBrowseGallery.Visible = false, true, false) And If(IsBlank('Referral Queue Gallery'), true, false) Or If('Referral Info Container'.Visible = true, false, true)
                         ZIndex: =8
 
                         EmptyCollectionText As Text:
@@ -2041,7 +2041,11 @@
                         RadiusBottomRight: =4
                         RadiusTopLeft: =4
                         RadiusTopRight: =4
-                        Visible: =If(myInTrayMode = true, true, false)  And If(EmployeeBrowseGallery.Visible = true, false, true) And If('Referral Queue Gallery'.Visible = true, true, false) And If(CountRows(Filter(WorkBankCollection,'Assigned To Email' = User().Email)) > 0, true, false)
+                        Visible: |-
+                            =If(myInTrayMode = true, true, false)  And If(EmployeeBrowseGallery.Visible = true, false, true) And If('Referral Queue Gallery'.Visible = true, true, false) And If(CountRows(Filter(WorkBankCollection,'Assigned To Email' = User().Email)) > 0, true, false) And 
+                            If(DecisionFilter.Selected.Value = "No Action Taken", 
+                                If(CountRows(Filter(WorkBankCollection, 'Decision Reason' = "No Action" Or 'Decision Reason' = "File Development" Or 'Decision Reason' = "Premium Change" Or IsBlank('Decision Reason'))) > 0, true, false),
+                                If(CountRows(Filter(WorkBankCollection,  'Decision Reason' = "Adverse Action Already Taken" Or 'Decision Reason' = "Non-renewal" Or 'Decision Reason' = "Initial Cancel" Or 'Decision Reason' = "Midterm Cancel" Or 'Decision Reason' = "No Action - Inconclusive" Or 'Decision Reason' = "No Action - PH Cancel" Or 'Decision Reason' = "WOTR" Or 'Decision Reason' = "Void")) > 0, true, false))
                         X: =40
                         Y: =40
                         ZIndex: =10
@@ -2315,7 +2319,7 @@
                                                 Size: =13
                                                 Text: |-
                                                     ="Decision Reason: " & If( decisionMode = false, If( IsBlank('Referral Queue Gallery'.Selected.'Decision Reason'), "No Action", 'Referral Queue Gallery'.Selected.'Decision Reason' ), " " )
-                                                Width: =If(decisionMode = false, Len(DecisionText.Text) * 8.5, Len(DecisionText.Text) * 7.8)
+                                                Width: =If(decisionMode = false, Len(DecisionText.Text) * 9, Len(DecisionText.Text) * 7.8)
                                                 ZIndex: =1
 
                                             DecisionDropdown As Dropdown.pcfdataset:
