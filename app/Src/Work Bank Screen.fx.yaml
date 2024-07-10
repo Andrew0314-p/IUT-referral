@@ -2332,6 +2332,7 @@
                                                     Update(WorkBankCollection, LookUp(WorkBankCollection, ID = selectedRecordID), { 'Decision Reason': DecisionDropdown.Selected.Value });
                                                     Notify("Referral #" & selectedRecordID & " (" & selectedRecordReferralType & ") now has a status of " & DecisionDropdown.Selected.Value, NotificationType.Success);
                                                     UpdateContext({decisionMode: false});
+                                                    Reset(DecisionDropdown);
                                                     
                                                     Refresh('Referral Intake Tool Submissions');
                                                     If(!IsEmpty(WorkBankCollection), ClearCollect(WorkBankCollection, {}));
