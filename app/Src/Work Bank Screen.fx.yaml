@@ -272,7 +272,8 @@
                                     'Referral Type',
                                     '1st - Policyholder First Name',
                                     '1st - Policyholder Last Name',
-                                    'Fraud Category' ),
+                                    'Fraud Category',
+                                    'Decision Reason' ),
                                     'Assigned To Email' = User().Email, 
                                     If( DecisionFilter.Selected.Value = "No Action Taken",
                                      'Decision Reason' = "No Action" Or 'Decision Reason' = "File Development" Or 'Decision Reason' = "Premium Change" Or IsBlank('Decision Reason'),
@@ -480,7 +481,7 @@
                         PaddingRight: =0
                         PaddingTop: =0
                         Size: =12
-                        Text: =If(IsBlank(ThisItem.'Decision Reason'), "No Action", Trim(ThisItem.'Decision Reason'))
+                        Text: =If(IsBlank(ThisItem.'Decision Reason'), "N/A", Trim(ThisItem.'Decision Reason'))
                         VerticalAlign: =VerticalAlign.Top
                         Width: =RefNoRefType.Width
                         X: =PHName.X
@@ -2318,7 +2319,7 @@
                                                 Font: =App.Theme.Font
                                                 Size: =13
                                                 Text: |-
-                                                    ="Decision Reason: " & If( decisionMode = false, If( IsBlank('Referral Queue Gallery'.Selected.'Decision Reason'), "No Action", 'Referral Queue Gallery'.Selected.'Decision Reason' ), " " )
+                                                    ="Decision Reason: " & If( decisionMode = false, If( IsBlank('Referral Queue Gallery'.Selected.'Decision Reason'), "N/A", 'Referral Queue Gallery'.Selected.'Decision Reason' ), " " )
                                                 Width: =If(decisionMode = false, Len(DecisionText.Text) * 9, Len(DecisionText.Text) * 7.8)
                                                 ZIndex: =1
 
