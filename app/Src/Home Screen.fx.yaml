@@ -269,7 +269,6 @@
                 AlignInContainer: =AlignInContainer.SetByContainer
                 DropShadow: =DropShadow.Regular
                 Fill: =RGBA(255, 255, 255, 1)
-                FillPortions: =0
                 LayoutAlignItems: =LayoutAlignItems.Center
                 LayoutDirection: =LayoutDirection.Vertical
                 LayoutGap: =5
@@ -364,7 +363,6 @@
                 AlignInContainer: =AlignInContainer.SetByContainer
                 DropShadow: =DropShadow.Regular
                 Fill: =RGBA(255, 255, 255, 1)
-                FillPortions: =0
                 LayoutAlignItems: =LayoutAlignItems.Center
                 LayoutDirection: =LayoutDirection.Vertical
                 LayoutGap: =5
@@ -433,6 +431,8 @@
                         Height: =32
                         LayoutMinHeight: =32
                         LayoutMinWidth: =Parent.Width
+                        OnSelect: |-
+                            =Launch("https://notesforms002.opr.statefarm.org/sff/W0058553.nsf/docframeset?openform&sffviewcategory=https://sfeuc.opr.statefarm.org/&parentunid=B8AF080891740B1686258B57007248B3")
                         Text: ="Rescission/Void Claim Request"
                         Width: =Parent.Width
                         X: =0
@@ -459,7 +459,6 @@
                 AlignInContainer: =AlignInContainer.SetByContainer
                 DropShadow: =DropShadow.Regular
                 Fill: =RGBA(255, 255, 255, 1)
-                FillPortions: =0
                 LayoutAlignItems: =LayoutAlignItems.Center
                 LayoutDirection: =LayoutDirection.Vertical
                 LayoutGap: =5

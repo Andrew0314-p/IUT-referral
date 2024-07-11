@@ -3515,7 +3515,7 @@
                             OnSelect: |-
                                 =If(developerMode = false, UpdateContext({developerMode: true}), UpdateContext({developerMode: false}))
                             Text: ="Toggle Developer"
-                            Visible: =If(User().Email = "mickey.vreeland.vahilq@statefarm.com", true, false)
+                            Visible: =If(User().Email = "mickey.vreeland.vahilq@statefarm.com", true, false) Or If(User().Email = "christiana.kramer.vahio7@statfarm.com", true, false)
                             Width: =96
                             X: =0
                             Y: =0
