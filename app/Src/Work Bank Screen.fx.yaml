@@ -2102,7 +2102,7 @@
                                 Height: =BackArrow.Height
                                 Icon: =Icon.ArrowRight
                                 OnSelect: |-
-                                    =If(pageCount < 2, UpdateContext({pageCount: pageCount + 1}))
+                                    =If(pageCount < 4, UpdateContext({pageCount: pageCount + 1}))
                                 ZIndex: =3
 
                         Seperator_2 As rectangle:
@@ -2657,6 +2657,165 @@
                                             Text: |-
                                                 ="Details: " & Char(10) & If(IsBlank('Referral Queue Gallery'.Selected.Details), "N/A", 'Referral Queue Gallery'.Selected.Details)
                                             ZIndex: =1
+
+                                    "'1stPolicyContainer' As groupContainer.verticalAutoLayoutContainer":
+                                        DropShadow: =DropShadow.Light
+                                        LayoutDirection: =LayoutDirection.Vertical
+                                        LayoutMinHeight: =100
+                                        LayoutMinWidth: =250
+                                        LayoutMode: =LayoutMode.Auto
+                                        RadiusBottomLeft: =4
+                                        RadiusBottomRight: =4
+                                        RadiusTopLeft: =4
+                                        RadiusTopRight: =4
+                                        Visible: =If(pageCount = 3, true, false)
+                                        ZIndex: =4
+
+                                        "'1stPolicyHeader' As label":
+                                            Align: =Align.Center
+                                            AlignInContainer: =AlignInContainer.Stretch
+                                            BorderColor: =App.Theme.Colors.Darker40
+                                            Color: =RGBA(0, 0, 0, 1)
+                                            DisabledColor: =RGBA(166, 166, 166, 1)
+                                            Font: =App.Theme.Font
+                                            Size: =13
+                                            Text: =If('Referral Queue Gallery'.Selected.'Is there a second Policy?' = "Yes", "1st Policy Information", "Policy Information")
+                                            ZIndex: =1
+
+                                        "'1stReferralType' As label":
+                                            AlignInContainer: =AlignInContainer.Stretch
+                                            BorderColor: =App.Theme.Colors.Darker40
+                                            Color: =RGBA(0, 0, 0, 1)
+                                            DisabledColor: =RGBA(166, 166, 166, 1)
+                                            Font: =App.Theme.Font
+                                            Size: =13
+                                            Text: |-
+                                                =If('Referral Queue Gallery'.Selected.'Is there a second Policy?' = "Yes", "1st Referral Type: ", "Referral Type: ") & Trim('Referral Queue Gallery'.Selected.'1st Policy Type') &
+                                                    If(
+                                                        'Referral Queue Gallery'.Selected.'1st Policy Type' = "Auto",
+                                                        Concatenate(" ", Trim('Referral Queue Gallery'.Selected.'1st Auto - Line of Business')),
+                                                        If(
+                                                            'Referral Queue Gallery'.Selected.'1st Policy Type' = "Fire ",
+                                                            Concatenate(" " & Trim('Referral Queue Gallery'.Selected.'1st Fire - Line of Business')),
+                                                            ""
+                                                        )
+                                                    ) & " Lines"
+                                            ZIndex: =2
+
+                                        "'1stPolicyNumber' As label":
+                                            AlignInContainer: =AlignInContainer.Stretch
+                                            BorderColor: =App.Theme.Colors.Darker40
+                                            Color: =RGBA(0, 0, 0, 1)
+                                            DisabledColor: =RGBA(166, 166, 166, 1)
+                                            Font: =App.Theme.Font
+                                            Size: =13
+                                            Text: |-
+                                                =If('Referral Queue Gallery'.Selected.'Is there a second Policy?' = "Yes", "1st Policy Number: ", "Policy Number: ") & 'Referral Queue Gallery'.Selected.'1st Policy Number'
+                                            ZIndex: =3
+
+                                        "'1stClaimNumber' As label":
+                                            AlignInContainer: =AlignInContainer.Stretch
+                                            BorderColor: =App.Theme.Colors.Darker40
+                                            Color: =RGBA(0, 0, 0, 1)
+                                            DisabledColor: =RGBA(166, 166, 166, 1)
+                                            Font: =App.Theme.Font
+                                            Size: =13
+                                            Text: |-
+                                                =If('Referral Queue Gallery'.Selected.'Is there a second Policy?' = "Yes", "1st Claim Number: ", "Claim Number: ") & 'Referral Queue Gallery'.Selected.'1st Claim Number'
+                                            ZIndex: =4
+
+                                        Label5 As label:
+                                            AlignInContainer: =AlignInContainer.Stretch
+                                            BorderColor: =App.Theme.Colors.Darker40
+                                            Color: =RGBA(0, 0, 0, 1)
+                                            DisabledColor: =RGBA(166, 166, 166, 1)
+                                            Font: =App.Theme.Font
+                                            Size: =13
+                                            Text: ="Text"
+                                            ZIndex: =5
+
+                                        Label6 As label:
+                                            AlignInContainer: =AlignInContainer.Stretch
+                                            BorderColor: =App.Theme.Colors.Darker40
+                                            Color: =RGBA(0, 0, 0, 1)
+                                            DisabledColor: =RGBA(166, 166, 166, 1)
+                                            Font: =App.Theme.Font
+                                            Size: =13
+                                            Text: ="Text"
+                                            ZIndex: =6
+
+                                        Label7 As label:
+                                            AlignInContainer: =AlignInContainer.Stretch
+                                            BorderColor: =App.Theme.Colors.Darker40
+                                            Color: =RGBA(0, 0, 0, 1)
+                                            DisabledColor: =RGBA(166, 166, 166, 1)
+                                            Font: =App.Theme.Font
+                                            Size: =13
+                                            Text: ="Text"
+                                            ZIndex: =7
+
+                                        Label8 As label:
+                                            AlignInContainer: =AlignInContainer.Stretch
+                                            BorderColor: =App.Theme.Colors.Darker40
+                                            Color: =RGBA(0, 0, 0, 1)
+                                            DisabledColor: =RGBA(166, 166, 166, 1)
+                                            Font: =App.Theme.Font
+                                            Size: =13
+                                            Text: ="Text"
+                                            ZIndex: =8
+
+                                        Label9 As label:
+                                            AlignInContainer: =AlignInContainer.Stretch
+                                            BorderColor: =App.Theme.Colors.Darker40
+                                            Color: =RGBA(0, 0, 0, 1)
+                                            DisabledColor: =RGBA(166, 166, 166, 1)
+                                            Font: =App.Theme.Font
+                                            Size: =13
+                                            Text: ="Text"
+                                            ZIndex: =9
+
+                                        Label10 As label:
+                                            AlignInContainer: =AlignInContainer.Stretch
+                                            BorderColor: =App.Theme.Colors.Darker40
+                                            Color: =RGBA(0, 0, 0, 1)
+                                            DisabledColor: =RGBA(166, 166, 166, 1)
+                                            Font: =App.Theme.Font
+                                            Size: =13
+                                            Text: ="Text"
+                                            ZIndex: =10
+
+                                        Label11 As label:
+                                            AlignInContainer: =AlignInContainer.Stretch
+                                            BorderColor: =App.Theme.Colors.Darker40
+                                            Color: =RGBA(0, 0, 0, 1)
+                                            DisabledColor: =RGBA(166, 166, 166, 1)
+                                            Font: =App.Theme.Font
+                                            Size: =13
+                                            Text: ="Text"
+                                            ZIndex: =11
+
+                                        Label13 As label:
+                                            AlignInContainer: =AlignInContainer.Stretch
+                                            BorderColor: =App.Theme.Colors.Darker40
+                                            Color: =RGBA(0, 0, 0, 1)
+                                            DisabledColor: =RGBA(166, 166, 166, 1)
+                                            Font: =App.Theme.Font
+                                            Size: =13
+                                            Text: ="Text"
+                                            ZIndex: =12
+
+                                    Container3 As groupContainer.verticalAutoLayoutContainer:
+                                        DropShadow: =DropShadow.Light
+                                        LayoutDirection: =LayoutDirection.Vertical
+                                        LayoutMinHeight: =100
+                                        LayoutMinWidth: =250
+                                        LayoutMode: =LayoutMode.Auto
+                                        RadiusBottomLeft: =4
+                                        RadiusBottomRight: =4
+                                        RadiusTopLeft: =4
+                                        RadiusTopRight: =4
+                                        Visible: =If(pageCount = 4, true, false)
+                                        ZIndex: =5
 
                 AssignContainer As groupContainer.verticalAutoLayoutContainer:
                     FillPortions: =0
