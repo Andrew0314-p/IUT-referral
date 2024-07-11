@@ -2997,7 +2997,7 @@
                                                     ) & " Lines") = "Auto Business Lines", 'Referral Queue Gallery'.Selected.'1st Auto Business - State Code')
                                             ZIndex: =6
 
-                                        Label7 As label:
+                                        "'1stDateofLoss' As label":
                                             AlignInContainer: =AlignInContainer.Stretch
                                             BorderColor: =App.Theme.Colors.Darker40
                                             Color: =RGBA(0, 0, 0, 1)
@@ -3005,7 +3005,7 @@
                                             Font: =App.Theme.Font
                                             Size: =13
                                             Text: |-
-                                                =If('Referral Queue Gallery'.Selected.'Is there a second Policy?' = "Yes", "1st Claim Number: ", "Claim Number: ") & 'Referral Queue Gallery'.Selected.'1st Claim Number'
+                                                =If('Referral Queue Gallery'.Selected.'Is there a second Policy?' = "Yes", "1st Dtae of Loss: ", "Date of Loss: ") & 'Referral Queue Gallery'.Selected.'1st Date of Loss'
                                             ZIndex: =7
 
                                         Label8 As label:
@@ -3015,7 +3015,8 @@
                                             DisabledColor: =RGBA(166, 166, 166, 1)
                                             Font: =App.Theme.Font
                                             Size: =13
-                                            Text: ="Text"
+                                            Text: |-
+                                                =If('Referral Queue Gallery'.Selected.'Is there a second Policy?' = "Yes", "1st Business Name: ", "Business Name: ") & 'Referral Queue Gallery'.Selected.'1st Fire - Business Name'
                                             ZIndex: =8
 
                                         Label9 As label:
