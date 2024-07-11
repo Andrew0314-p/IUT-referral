@@ -6348,7 +6348,7 @@
       "MetaDataIDKey": "",
       "Name": "ChangeEmployee",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 2,
+      "ParentIndex": 6,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -6541,7 +6541,7 @@
       "MetaDataIDKey": "",
       "Name": "ClearCollection",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 4,
+      "ParentIndex": 3,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -9281,7 +9281,7 @@
       "MetaDataIDKey": "",
       "Name": "DeveloperToggle",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 6,
+      "ParentIndex": 5,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -19365,7 +19365,7 @@
       "MetaDataIDKey": "",
       "Name": "LoadCollection",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 5,
+      "ParentIndex": 4,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -25897,7 +25897,7 @@
       "MetaDataIDKey": "",
       "Name": "RemoveAssigned",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 3,
+      "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
