@@ -2789,7 +2789,7 @@
                                                 =If('Referral Queue Gallery'.Selected.'Is there a second Policy?' = "Yes", "1st Claim Number: ", "Claim Number: ") & 'Referral Queue Gallery'.Selected.'1st Claim Number'
                                             ZIndex: =4
 
-                                        Label5 As label:
+                                        "'1stAddress' As label":
                                             AlignInContainer: =AlignInContainer.Stretch
                                             BorderColor: =App.Theme.Colors.Darker40
                                             Color: =RGBA(0, 0, 0, 1)
@@ -2950,7 +2950,7 @@
                                                         ) & " Lines" = "Auto Personal Lines", false, true)
                                             ZIndex: =5
 
-                                        Label6 As label:
+                                        "'1stStateCode' As label":
                                             AlignInContainer: =AlignInContainer.Stretch
                                             BorderColor: =App.Theme.Colors.Darker40
                                             Color: =RGBA(0, 0, 0, 1)
@@ -3004,7 +3004,8 @@
                                             DisabledColor: =RGBA(166, 166, 166, 1)
                                             Font: =App.Theme.Font
                                             Size: =13
-                                            Text: ="Text"
+                                            Text: |-
+                                                =If('Referral Queue Gallery'.Selected.'Is there a second Policy?' = "Yes", "1st Claim Number: ", "Claim Number: ") & 'Referral Queue Gallery'.Selected.'1st Claim Number'
                                             ZIndex: =7
 
                                         Label8 As label:
