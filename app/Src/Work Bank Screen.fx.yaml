@@ -88,7 +88,19 @@
                         '3rd Auto - Business Name': '3rd Auto - Business Name',
                         '3rd Auto Personal - State Code': '3rd Auto Personal - State Code',
                         Details: Details,
-                        'Others Involved': 'Others Involved'
+                        'Others Involved': 'Others Involved',
+                        'Reporter Email': 'Reporter Email',
+                        'Reporter Name':'Reporter Name',
+                        'Reporter Role':'Reporter Role',
+                        'Reporter Phone Number':'Reporter Phone Number',
+                        'Department of Reporter':'Reporter Department',
+                        'Reporter Alias':'Reporter Alias',
+                        'Informant Y/N':'Are you filling this form out for someone else who you got a tip from?',
+                        'Informant First Name':'Informant First Name',
+                        'Informant Last Name':'Informant Last Name',
+                        'Informant Phone Number':'Informant Phone Number',
+                        'Informant Email':'Informant Email',
+                        'Additional Info Y/N':'Can we contact you for additional information'
                     }
                 )
             );
