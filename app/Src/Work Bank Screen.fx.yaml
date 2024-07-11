@@ -403,7 +403,7 @@
                         PaddingLeft: =0
                         PaddingRight: =0
                         PaddingTop: =0
-                        Size: =13
+                        Size: =12
                         Text: =ThisItem.'1st - Policyholder First Name' & " " & ThisItem.'1st - Policyholder Last Name'
                         VerticalAlign: =VerticalAlign.Top
                         Width: =RefNoRefType.Width
@@ -422,7 +422,7 @@
                         PaddingLeft: =0
                         PaddingRight: =0
                         PaddingTop: =0
-                        Size: =12
+                        Size: =11
                         Text: =ThisItem.'Fraud Category'
                         VerticalAlign: =VerticalAlign.Top
                         Width: =RefNoRefType.Width
@@ -480,7 +480,7 @@
                         PaddingLeft: =0
                         PaddingRight: =0
                         PaddingTop: =0
-                        Size: =12
+                        Size: =11
                         Text: =If(IsBlank(ThisItem.'Decision Reason'), "N/A", Trim(ThisItem.'Decision Reason'))
                         VerticalAlign: =VerticalAlign.Top
                         Width: =RefNoRefType.Width
@@ -2734,7 +2734,7 @@
                                             Text: |-
                                                 =If('Referral Queue Gallery'.Selected.'Is there a second Policy?' = "Yes", "1st Address: ", "Address: ") & 
                                                 If(!IsBlank('Referral Queue Gallery'.Selected.'1st Fire - Street'), Trim('Referral Queue Gallery'.Selected.'1st Fire - Street') & ",", Trim('Referral Queue Gallery'.Selected.'1st Fire - Street')) & 
-                                                If(!IsBlank('Referral Queue Gallery'.Selected.'1st Fire - Street') Or ('Referral Queue Gallery'.Selected.'1st Fire - Street') != " ", Trim('Referral Queue Gallery'.Selected.'1st Fire - City') & " , ", Trim('Referral Queue Gallery'.Selected.'1st Fire - City')) &
+                                                If(!IsBlank('Referral Queue Gallery'.Selected.'1st Fire - Street') Or ('Referral Queue Gallery'.Selected.'1st Fire - Street'), Trim('Referral Queue Gallery'.Selected.'1st Fire - City') & ", ", Trim('Referral Queue Gallery'.Selected.'1st Fire - City')) &
                                                 If((Trim('Referral Queue Gallery'.Selected.'1st Policy Type') &
                                                     If(
                                                         'Referral Queue Gallery'.Selected.'1st Policy Type' = "Auto",
