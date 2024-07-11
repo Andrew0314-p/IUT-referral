@@ -2734,7 +2734,7 @@
                                             Text: |-
                                                 =If('Referral Queue Gallery'.Selected.'Is there a second Policy?' = "Yes", "1st Address: ", "Address: ") & 
                                                 If(!IsBlank('Referral Queue Gallery'.Selected.'1st Fire - Street'), Trim('Referral Queue Gallery'.Selected.'1st Fire - Street') & ",", Trim('Referral Queue Gallery'.Selected.'1st Fire - Street')) & 
-                                                If(!IsBlank('Referral Queue Gallery'.Selected.'1st Fire - Street'), Trim('Referral Queue Gallery'.Selected.'1st Fire - City') & " , ", Trim('Referral Queue Gallery'.Selected.'1st Fire - City')) &
+                                                If(!IsBlank('Referral Queue Gallery'.Selected.'1st Fire - Street') Or ('Referral Queue Gallery'.Selected.'1st Fire - Street') != " ", Trim('Referral Queue Gallery'.Selected.'1st Fire - City') & " , ", Trim('Referral Queue Gallery'.Selected.'1st Fire - City')) &
                                                 If((Trim('Referral Queue Gallery'.Selected.'1st Policy Type') &
                                                     If(
                                                         'Referral Queue Gallery'.Selected.'1st Policy Type' = "Auto",
