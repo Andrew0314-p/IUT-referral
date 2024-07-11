@@ -2733,8 +2733,8 @@
                                             Size: =13
                                             Text: |-
                                                 =If('Referral Queue Gallery'.Selected.'Is there a second Policy?' = "Yes", "1st Address: ", "Address: ") & 
-                                                If(!IsBlank('Referral Queue Gallery'.Selected.'1st Fire - Street'), Trim('Referral Queue Gallery'.Selected.'1st Fire - Street') & ", ", Trim('Referral Queue Gallery'.Selected.'1st Fire - Street')) & 
-                                                If(!IsBlank('Referral Queue Gallery'.Selected.'1st Fire - Street'), Trim('Referral Queue Gallery'.Selected.'1st Fire - City') & ", ", Trim('Referral Queue Gallery'.Selected.'1st Fire - City')) &
+                                                If(!IsBlank('Referral Queue Gallery'.Selected.'1st Fire - Street'), Trim('Referral Queue Gallery'.Selected.'1st Fire - Street') & ",", Trim('Referral Queue Gallery'.Selected.'1st Fire - Street')) & 
+                                                If(!IsBlank('Referral Queue Gallery'.Selected.'1st Fire - Street'), Trim('Referral Queue Gallery'.Selected.'1st Fire - City') & " , ", Trim('Referral Queue Gallery'.Selected.'1st Fire - City')) &
                                                 If((Trim('Referral Queue Gallery'.Selected.'1st Policy Type') &
                                                     If(
                                                         'Referral Queue Gallery'.Selected.'1st Policy Type' = "Auto",
@@ -2809,60 +2809,43 @@
                                             Font: =App.Theme.Font
                                             Size: =13
                                             Text: |-
-                                                =If(
-                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'1st Fire Personal Lines - State Code'), "AL",MatchOptions.Contains), "Alabama",
-                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'1st Fire Personal Lines - State Code'), "AK",MatchOptions.Contains), "Alaska",
-                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'1st Fire Personal Lines - State Code'), "AZ",MatchOptions.Contains), "Arizona",
-                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'1st Fire Personal Lines - State Code'), "AR",MatchOptions.Contains), "Arkansas",
-                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'1st Fire Personal Lines - State Code'), "CA",MatchOptions.Contains), "California",
-                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'1st Fire Personal Lines - State Code'), "CO",MatchOptions.Contains), "Colorado",
-                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'1st Fire Personal Lines - State Code'), "CT",MatchOptions.Contains), "Connecticut",
-                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'1st Fire Personal Lines - State Code'), "DE",MatchOptions.Contains), "Delaware",
-                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'1st Fire Personal Lines - State Code'), "FL",MatchOptions.Contains), "Florida",
-                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'1st Fire Personal Lines - State Code'), "GA",MatchOptions.Contains), "Georgia",
-                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'1st Fire Personal Lines - State Code'), "HI",MatchOptions.Contains), "Hawaii",
-                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'1st Fire Personal Lines - State Code'), "ID",MatchOptions.Contains), "Idaho",
-                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'1st Fire Personal Lines - State Code'), "IL",MatchOptions.Contains), "Illinois",
-                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'1st Fire Personal Lines - State Code'), "IN",MatchOptions.Contains), "Indiana",
-                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'1st Fire Personal Lines - State Code'), "IA",MatchOptions.Contains), "Iowa",
-                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'1st Fire Personal Lines - State Code'), "KS",MatchOptions.Contains), "Kansas",
-                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'1st Fire Personal Lines - State Code'), "KY",MatchOptions.Contains), "Kentucky",
-                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'1st Fire Personal Lines - State Code'), "LA",MatchOptions.Contains), "Louisiana",
-                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'1st Fire Personal Lines - State Code'), "ME",MatchOptions.Contains), "Maine",
-                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'1st Fire Personal Lines - State Code'), "MD",MatchOptions.Contains), "Maryland",
-                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'1st Fire Personal Lines - State Code'), "MA",MatchOptions.Contains), "Massachusetts",
-                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'1st Fire Personal Lines - State Code'), "MI",MatchOptions.Contains), "Michigan",
-                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'1st Fire Personal Lines - State Code'), "MN",MatchOptions.Contains), "Minnesota",
-                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'1st Fire Personal Lines - State Code'), "MS",MatchOptions.Contains), "Mississippi",
-                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'1st Fire Personal Lines - State Code'), "MO",MatchOptions.Contains), "Missouri",
-                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'1st Fire Personal Lines - State Code'), "MT",MatchOptions.Contains), "Montana",
-                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'1st Fire Personal Lines - State Code'), "NE",MatchOptions.Contains), "Nebraska",
-                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'1st Fire Personal Lines - State Code'), "NV",MatchOptions.Contains), "Nevada",
-                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'1st Fire Personal Lines - State Code'), "NH",MatchOptions.Contains), "New Hampshire",
-                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'1st Fire Personal Lines - State Code'), "NJ",MatchOptions.Contains), "New Jersey",
-                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'1st Fire Personal Lines - State Code'), "NM",MatchOptions.Contains), "New Mexico",
-                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'1st Fire Personal Lines - State Code'), "NY",MatchOptions.Contains), "New York",
-                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'1st Fire Personal Lines - State Code'), "NC",MatchOptions.Contains), "North Carolina",
-                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'1st Fire Personal Lines - State Code'), "ND",MatchOptions.Contains), "North Dakota",
-                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'1st Fire Personal Lines - State Code'), "OH",MatchOptions.Contains), "Ohio",
-                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'1st Fire Personal Lines - State Code'), "OK",MatchOptions.Contains), "Oklahoma",
-                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'1st Fire Personal Lines - State Code'), "OR",MatchOptions.Contains), "Oregon",
-                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'1st Fire Personal Lines - State Code'), "PA",MatchOptions.Contains), "Pennsylvania",
-                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'1st Fire Personal Lines - State Code'), "RI",MatchOptions.Contains), "Rhode Island",
-                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'1st Fire Personal Lines - State Code'), "SC",MatchOptions.Contains), "South Carolina",
-                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'1st Fire Personal Lines - State Code'), "SD",MatchOptions.Contains), "South Dakota",
-                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'1st Fire Personal Lines - State Code'), "TN",MatchOptions.Contains), "Tennessee",
-                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'1st Fire Personal Lines - State Code'), "TX",MatchOptions.Contains), "Texas",
-                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'1st Fire Personal Lines - State Code'), "UT",MatchOptions.Contains), "Utah",
-                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'1st Fire Personal Lines - State Code'), "VT",MatchOptions.Contains), "Vermont",
-                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'1st Fire Personal Lines - State Code'), "VA",MatchOptions.Contains), "Virginia",
-                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'1st Fire Personal Lines - State Code'), "WA",MatchOptions.Contains), "Washington",
-                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'1st Fire Personal Lines - State Code'), "WV",MatchOptions.Contains), "West Virginia",
-                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'1st Fire Personal Lines - State Code'), "WI",MatchOptions.Contains), "Wisconsin",
-                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'1st Fire Personal Lines - State Code'), "WY",MatchOptions.Contains), "Wyoming",
-                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'1st Fire Personal Lines - State Code'), "DC",MatchOptions.Contains), "Washington, D.C.",
-                                                    "N/A"
-                                                )
+                                                ="State Code: " & If(Trim('Referral Queue Gallery'.Selected.'1st Policy Type') &
+                                                    (If(
+                                                        'Referral Queue Gallery'.Selected.'1st Policy Type' = "Auto",
+                                                        Concatenate(" ", Trim('Referral Queue Gallery'.Selected.'1st Auto - Line of Business')),
+                                                        If(
+                                                            'Referral Queue Gallery'.Selected.'1st Policy Type' = "Fire ",
+                                                            Concatenate(" " & Trim('Referral Queue Gallery'.Selected.'1st Fire - Line of Business')),
+                                                            ""
+                                                        )
+                                                    ) & " Lines") = "Fire Personal Lines", 'Referral Queue Gallery'.Selected.'1st Fire Personal Lines - State Code',
+                                                    (If(
+                                                        'Referral Queue Gallery'.Selected.'1st Policy Type' = "Auto",
+                                                        Concatenate(" ", Trim('Referral Queue Gallery'.Selected.'1st Auto - Line of Business')),
+                                                        If(
+                                                            'Referral Queue Gallery'.Selected.'1st Policy Type' = "Fire ",
+                                                            Concatenate(" " & Trim('Referral Queue Gallery'.Selected.'1st Fire - Line of Business')),
+                                                            ""
+                                                        )
+                                                    ) & " Lines") = "Auto Personal Lines", 'Referral Queue Gallery'.Selected.'1st Auto Personal - State Code',
+                                                    (If(
+                                                        'Referral Queue Gallery'.Selected.'1st Policy Type' = "Auto",
+                                                        Concatenate(" ", Trim('Referral Queue Gallery'.Selected.'1st Auto - Line of Business')),
+                                                        If(
+                                                            'Referral Queue Gallery'.Selected.'1st Policy Type' = "Fire ",
+                                                            Concatenate(" " & Trim('Referral Queue Gallery'.Selected.'1st Fire - Line of Business')),
+                                                            ""
+                                                        )
+                                                    ) & " Lines") = "Fire Business Lines", 'Referral Queue Gallery'.Selected.'1st Fire Business Lines - State Code',
+                                                    (If(
+                                                        'Referral Queue Gallery'.Selected.'1st Policy Type' = "Auto",
+                                                        Concatenate(" ", Trim('Referral Queue Gallery'.Selected.'1st Auto - Line of Business')),
+                                                        If(
+                                                            'Referral Queue Gallery'.Selected.'1st Policy Type' = "Fire ",
+                                                            Concatenate(" " & Trim('Referral Queue Gallery'.Selected.'1st Fire - Line of Business')),
+                                                            ""
+                                                        )
+                                                    ) & " Lines") = "Auto Business Lines", 'Referral Queue Gallery'.Selected.'1st Auto Business - State Code')
                                             ZIndex: =6
 
                                         Label7 As label:
