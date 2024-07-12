@@ -2747,7 +2747,6 @@
                                             BorderColor: =App.Theme.Colors.Darker40
                                             Color: =RGBA(0, 0, 0, 1)
                                             DisabledColor: =RGBA(166, 166, 166, 1)
-                                            FillPortions: =1
                                             Font: =App.Theme.Font
                                             Size: =13
                                             Text: |-
@@ -2768,7 +2767,6 @@
                                             BorderColor: =App.Theme.Colors.Darker40
                                             Color: =RGBA(0, 0, 0, 1)
                                             DisabledColor: =RGBA(166, 166, 166, 1)
-                                            FillPortions: =1
                                             Font: =App.Theme.Font
                                             Size: =13
                                             Text: |-
@@ -2780,7 +2778,6 @@
                                             BorderColor: =App.Theme.Colors.Darker40
                                             Color: =RGBA(0, 0, 0, 1)
                                             DisabledColor: =RGBA(166, 166, 166, 1)
-                                            FillPortions: =1
                                             Font: =App.Theme.Font
                                             Size: =13
                                             Text: |-
@@ -2792,7 +2789,6 @@
                                             BorderColor: =App.Theme.Colors.Darker40
                                             Color: =RGBA(0, 0, 0, 1)
                                             DisabledColor: =RGBA(166, 166, 166, 1)
-                                            FillPortions: =1
                                             Font: =App.Theme.Font
                                             Size: =13
                                             Text: |-
@@ -2840,7 +2836,6 @@
                                             BorderColor: =App.Theme.Colors.Darker40
                                             Color: =RGBA(0, 0, 0, 1)
                                             DisabledColor: =RGBA(166, 166, 166, 1)
-                                            FillPortions: =1
                                             Font: =App.Theme.Font
                                             Size: =13
                                             Text: |-
@@ -2852,7 +2847,6 @@
                                             BorderColor: =App.Theme.Colors.Darker40
                                             Color: =RGBA(0, 0, 0, 1)
                                             DisabledColor: =RGBA(166, 166, 166, 1)
-                                            FillPortions: =1
                                             Font: =App.Theme.Font
                                             Size: =13
                                             Text: |-
@@ -2869,7 +2863,6 @@
                                             BorderColor: =App.Theme.Colors.Darker40
                                             Color: =RGBA(0, 0, 0, 1)
                                             DisabledColor: =RGBA(166, 166, 166, 1)
-                                            FillPortions: =1
                                             Font: =App.Theme.Font
                                             Size: =13
                                             Text: |-
@@ -3031,7 +3024,6 @@
                                             BorderColor: =App.Theme.Colors.Darker40
                                             Color: =RGBA(0, 0, 0, 1)
                                             DisabledColor: =RGBA(166, 166, 166, 1)
-                                            FillPortions: =1
                                             Font: =App.Theme.Font
                                             Size: =13
                                             Text: |-
@@ -3043,7 +3035,6 @@
                                             BorderColor: =App.Theme.Colors.Darker40
                                             Color: =RGBA(0, 0, 0, 1)
                                             DisabledColor: =RGBA(166, 166, 166, 1)
-                                            FillPortions: =1
                                             Font: =App.Theme.Font
                                             Size: =13
                                             Text: |-
@@ -3055,7 +3046,6 @@
                                             BorderColor: =App.Theme.Colors.Darker40
                                             Color: =RGBA(0, 0, 0, 1)
                                             DisabledColor: =RGBA(166, 166, 166, 1)
-                                            FillPortions: =1
                                             Font: =App.Theme.Font
                                             Size: =13
                                             Text: |-
@@ -3067,7 +3057,6 @@
                                             BorderColor: =App.Theme.Colors.Darker40
                                             Color: =RGBA(0, 0, 0, 1)
                                             DisabledColor: =RGBA(166, 166, 166, 1)
-                                            FillPortions: =1
                                             Font: =App.Theme.Font
                                             Size: =13
                                             Text: |-
@@ -3104,17 +3093,16 @@
                                             BorderColor: =App.Theme.Colors.Darker40
                                             Color: =RGBA(0, 0, 0, 1)
                                             DisabledColor: =RGBA(166, 166, 166, 1)
-                                            FillPortions: =1
                                             Font: =App.Theme.Font
                                             Size: =13
                                             Text: |-
-                                                =If('Referral Queue Gallery'.Selected.'Is there a second Policy?' = "Yes", "1st Referral Type: ", "Referral Type: ") & Trim('Referral Queue Gallery'.Selected.'1st Policy Type') &
+                                                ="2nd Referral Type: " & Trim('Referral Queue Gallery'.Selected.'Multiple Policy - 2nd Policy Type') &
                                                     If(
-                                                        'Referral Queue Gallery'.Selected.'1st Policy Type' = "Auto",
-                                                        Concatenate(" ", Trim('Referral Queue Gallery'.Selected.'1st Auto - Line of Business')),
+                                                        'Referral Queue Gallery'.Selected.'Multiple Policy - 2nd Policy Type' = "Auto",
+                                                        Concatenate(" ", Trim('Referral Queue Gallery'.Selected.'2nd Auto - Line of Business')),
                                                         If(
-                                                            'Referral Queue Gallery'.Selected.'1st Policy Type' = "Fire ",
-                                                            Concatenate(" " & Trim('Referral Queue Gallery'.Selected.'1st Fire - Line of Business')),
+                                                            'Referral Queue Gallery'.Selected.'Multiple Policy - 2nd Policy Type' = "Fire ",
+                                                            Concatenate(" " & Trim('Referral Queue Gallery'.Selected.'2nd Fire - Line of Business')),
                                                             ""
                                                         )
                                                     ) & " Lines"
@@ -3124,7 +3112,6 @@
                                             BorderColor: =App.Theme.Colors.Darker40
                                             Color: =RGBA(0, 0, 0, 1)
                                             DisabledColor: =RGBA(166, 166, 166, 1)
-                                            FillPortions: =1
                                             Font: =App.Theme.Font
                                             Size: =13
                                             Text: |-
@@ -3135,7 +3122,6 @@
                                             BorderColor: =App.Theme.Colors.Darker40
                                             Color: =RGBA(0, 0, 0, 1)
                                             DisabledColor: =RGBA(166, 166, 166, 1)
-                                            FillPortions: =1
                                             Font: =App.Theme.Font
                                             Size: =13
                                             Text: |-
@@ -3146,7 +3132,6 @@
                                             BorderColor: =App.Theme.Colors.Darker40
                                             Color: =RGBA(0, 0, 0, 1)
                                             DisabledColor: =RGBA(166, 166, 166, 1)
-                                            FillPortions: =1
                                             Font: =App.Theme.Font
                                             Size: =13
                                             Text: |-
@@ -3193,7 +3178,6 @@
                                             BorderColor: =App.Theme.Colors.Darker40
                                             Color: =RGBA(0, 0, 0, 1)
                                             DisabledColor: =RGBA(166, 166, 166, 1)
-                                            FillPortions: =1
                                             Font: =App.Theme.Font
                                             Size: =13
                                             Text: |-
@@ -3204,7 +3188,6 @@
                                             BorderColor: =App.Theme.Colors.Darker40
                                             Color: =RGBA(0, 0, 0, 1)
                                             DisabledColor: =RGBA(166, 166, 166, 1)
-                                            FillPortions: =1
                                             Font: =App.Theme.Font
                                             Size: =13
                                             Text: |-
@@ -3220,7 +3203,6 @@
                                             BorderColor: =App.Theme.Colors.Darker40
                                             Color: =RGBA(0, 0, 0, 1)
                                             DisabledColor: =RGBA(166, 166, 166, 1)
-                                            FillPortions: =1
                                             Font: =App.Theme.Font
                                             Size: =13
                                             Text: |-
@@ -3381,7 +3363,6 @@
                                             BorderColor: =App.Theme.Colors.Darker40
                                             Color: =RGBA(0, 0, 0, 1)
                                             DisabledColor: =RGBA(166, 166, 166, 1)
-                                            FillPortions: =1
                                             Font: =App.Theme.Font
                                             Size: =13
                                             Text: |-
@@ -3392,7 +3373,6 @@
                                             BorderColor: =App.Theme.Colors.Darker40
                                             Color: =RGBA(0, 0, 0, 1)
                                             DisabledColor: =RGBA(166, 166, 166, 1)
-                                            FillPortions: =1
                                             Font: =App.Theme.Font
                                             Size: =13
                                             Text: |-
@@ -3403,7 +3383,6 @@
                                             BorderColor: =App.Theme.Colors.Darker40
                                             Color: =RGBA(0, 0, 0, 1)
                                             DisabledColor: =RGBA(166, 166, 166, 1)
-                                            FillPortions: =1
                                             Font: =App.Theme.Font
                                             Size: =13
                                             Text: |-
@@ -3414,7 +3393,6 @@
                                             BorderColor: =App.Theme.Colors.Darker40
                                             Color: =RGBA(0, 0, 0, 1)
                                             DisabledColor: =RGBA(166, 166, 166, 1)
-                                            FillPortions: =1
                                             Font: =App.Theme.Font
                                             Size: =13
                                             Text: |-
