@@ -2216,123 +2216,10 @@
                                             Text: ="Referral Information"
                                             ZIndex: =1
 
-                                        FraudCategory As label:
-                                            AlignInContainer: =AlignInContainer.Stretch
-                                            BorderColor: =App.Theme.Colors.Darker40
-                                            Color: =RGBA(0, 0, 0, 1)
-                                            DisabledColor: =RGBA(166, 166, 166, 1)
-                                            Font: =App.Theme.Font
-                                            Size: =13
-                                            Text: |-
-                                                ="Fraud Category: " & 'Referral Queue Gallery'.Selected.'Fraud Category'
-                                            ZIndex: =2
-
-                                        "'PH Name' As label":
-                                            AlignInContainer: =AlignInContainer.Stretch
-                                            BorderColor: =App.Theme.Colors.Darker40
-                                            Color: =RGBA(0, 0, 0, 1)
-                                            DisabledColor: =RGBA(166, 166, 166, 1)
-                                            Font: =App.Theme.Font
-                                            Size: =13
-                                            Text: |-
-                                                ="Policyholder Name: " & 'Referral Queue Gallery'.Selected.'1st - Policyholder First Name' & " " & 'Referral Queue Gallery'.Selected.'1st - Policyholder Last Name'
-                                            Visible: =If(IsBlank('Referral Queue Gallery'.Selected.'1st - Policyholder First Name') And IsBlank('Referral Queue Gallery'.Selected.'1st - Policyholder Last Name'), false, true)
-                                            ZIndex: =3
-
-                                        PHPhoneNo As label:
-                                            AlignInContainer: =AlignInContainer.Stretch
-                                            BorderColor: =App.Theme.Colors.Darker40
-                                            Color: =RGBA(0, 0, 0, 1)
-                                            DisabledColor: =RGBA(166, 166, 166, 1)
-                                            Font: =App.Theme.Font
-                                            Size: =13
-                                            Text: |-
-                                                ="Policyholder Phone Number: " & 'Referral Queue Gallery'.Selected.'1st - Policyholder Phone Number'
-                                            Visible: =If(IsBlank('Referral Queue Gallery'.Selected.'1st - Policyholder Phone Number'), false, true)
-                                            ZIndex: =4
-
-                                        "'1stPolicyNo' As label":
-                                            AlignInContainer: =AlignInContainer.Stretch
-                                            BorderColor: =App.Theme.Colors.Darker40
-                                            Color: =RGBA(0, 0, 0, 1)
-                                            DisabledColor: =RGBA(166, 166, 166, 1)
-                                            Font: =App.Theme.Font
-                                            Size: =13
-                                            Text: |-
-                                                =If('Referral Queue Gallery'.Selected.'Is there a second Policy?' = "Yes",
-                                                    "1st Policy Number: ", "Policy Number: ") & If(IsBlank('Referral Queue Gallery'.Selected.'1st Policy Number'), "N/A", 'Referral Queue Gallery'.Selected.'1st Policy Number')
-                                            ZIndex: =5
-
-                                        "'2ndPolicyNo' As label":
-                                            AlignInContainer: =AlignInContainer.Stretch
-                                            BorderColor: =App.Theme.Colors.Darker40
-                                            Color: =RGBA(0, 0, 0, 1)
-                                            DisabledColor: =RGBA(166, 166, 166, 1)
-                                            Font: =App.Theme.Font
-                                            Size: =13
-                                            Text: |-
-                                                ="2nd Policy Number: " & If(IsBlank('Referral Queue Gallery'.Selected.'2nd Policy Number'), "N/A", 'Referral Queue Gallery'.Selected.'2nd Policy Number')
-                                            ZIndex: =6
-
-                                        "'3rdPolicyNo' As label":
-                                            AlignInContainer: =AlignInContainer.Stretch
-                                            BorderColor: =App.Theme.Colors.Darker40
-                                            Color: =RGBA(0, 0, 0, 1)
-                                            DisabledColor: =RGBA(166, 166, 166, 1)
-                                            Font: =App.Theme.Font
-                                            Size: =13
-                                            Text: |-
-                                                ="3rd Policy Number: " & If(IsBlank('Referral Queue Gallery'.Selected.'3rd - Policy Number'), "N/A", 'Referral Queue Gallery'.Selected.'3rd - Policy Number')
-                                            ZIndex: =7
-
-                                        "'1stClaimNo' As label":
-                                            AlignInContainer: =AlignInContainer.Stretch
-                                            BorderColor: =App.Theme.Colors.Darker40
-                                            Color: =RGBA(0, 0, 0, 1)
-                                            DisabledColor: =RGBA(166, 166, 166, 1)
-                                            Font: =App.Theme.Font
-                                            Size: =13
-                                            Text: |-
-                                                =If('Referral Queue Gallery'.Selected.'Is there a second Policy?' = "Yes",
-                                                    "1st Claim Number: ", "Claim Number: ") & If(IsBlank('Referral Queue Gallery'.Selected.'1st Claim Number'), "N/A", 'Referral Queue Gallery'.Selected.'1st Claim Number')
-                                            ZIndex: =8
-
-                                        "'2ndClaimNo' As label":
-                                            AlignInContainer: =AlignInContainer.Stretch
-                                            BorderColor: =App.Theme.Colors.Darker40
-                                            Color: =RGBA(0, 0, 0, 1)
-                                            DisabledColor: =RGBA(166, 166, 166, 1)
-                                            Font: =App.Theme.Font
-                                            Size: =13
-                                            Text: |-
-                                                ="2nd Claim Number: " & If(IsBlank('Referral Queue Gallery'.Selected.'2nd Claim Number'), "N/A", 'Referral Queue Gallery'.Selected.'2nd Claim Number')
-                                            ZIndex: =9
-
-                                        "'3rdClaimNo' As label":
-                                            AlignInContainer: =AlignInContainer.Stretch
-                                            BorderColor: =App.Theme.Colors.Darker40
-                                            Color: =RGBA(0, 0, 0, 1)
-                                            DisabledColor: =RGBA(166, 166, 166, 1)
-                                            Font: =App.Theme.Font
-                                            Size: =13
-                                            Text: |-
-                                                ="3rd Claim Number: " & If(IsBlank('Referral Queue Gallery'.Selected.'3rd - Claim Number'), "N/A", 'Referral Queue Gallery'.Selected.'3rd - Claim Number')
-                                            ZIndex: =10
-
-                                        OthersInvolved As label:
-                                            AlignInContainer: =AlignInContainer.Stretch
-                                            BorderColor: =App.Theme.Colors.Darker40
-                                            Color: =RGBA(0, 0, 0, 1)
-                                            DisabledColor: =RGBA(166, 166, 166, 1)
-                                            Font: =App.Theme.Font
-                                            Size: =13
-                                            Text: |-
-                                                ="Others Involved: " & If(IsBlank('Referral Queue Gallery'.Selected.'Others Involved'), "N/A", 'Referral Queue Gallery'.Selected.'Others Involved')
-                                            ZIndex: =11
-
                                         DecisionReasons As groupContainer.horizontalAutoLayoutContainer:
                                             FillPortions: =0
                                             Height: =FraudCategory.Height
+                                            LayoutAlignItems: =LayoutAlignItems.Center
                                             LayoutMinHeight: =100
                                             LayoutMinWidth: =250
                                             LayoutMode: =LayoutMode.Auto
@@ -2340,10 +2227,9 @@
                                             RadiusBottomRight: =4
                                             RadiusTopLeft: =4
                                             RadiusTopRight: =4
-                                            ZIndex: =12
+                                            ZIndex: =2
 
                                             DecisionText As label:
-                                                AlignInContainer: =AlignInContainer.Stretch
                                                 BorderColor: =App.Theme.Colors.Darker40
                                                 Color: =RGBA(0, 0, 0, 1)
                                                 DisabledColor: =RGBA(166, 166, 166, 1)
@@ -2355,7 +2241,6 @@
                                                 ZIndex: =1
 
                                             DecisionDropdown As Dropdown.pcfdataset:
-                                                AlignInContainer: =AlignInContainer.Stretch
                                                 Appearance: ='DropdownCanvas.Appearance'.FilledLighter
                                                 BasePaletteColor: =RGBA(249, 83, 109, 1)
                                                 DisplayMode: =DisplayMode.Edit
@@ -2373,7 +2258,6 @@
                                                 ZIndex: =2
 
                                             ChangeDecision As Button:
-                                                AlignInContainer: =AlignInContainer.Stretch
                                                 Appearance: ='ButtonCanvas.Appearance'.Secondary
                                                 BorderStyle: =BorderStyle.None
                                                 DisplayMode: =DisplayMode.Edit
@@ -2391,7 +2275,6 @@
                                                 ZIndex: =3
 
                                             SubmitDecision As Button:
-                                                AlignInContainer: =AlignInContainer.Stretch
                                                 Appearance: ='ButtonCanvas.Appearance'.Secondary
                                                 BasePaletteColor: =
                                                 BorderStyle: =BorderStyle.None
@@ -2509,7 +2392,6 @@
                                                 ZIndex: =4
 
                                             CancelDecision As Button:
-                                                AlignInContainer: =AlignInContainer.Stretch
                                                 Appearance: ='ButtonCanvas.Appearance'.Secondary
                                                 BasePaletteColor: =
                                                 BorderStyle: =BorderStyle.None
@@ -2527,6 +2409,124 @@
                                                 X: =0
                                                 Y: =0
                                                 ZIndex: =5
+
+                                        FraudCategory As label:
+                                            AlignInContainer: =AlignInContainer.Stretch
+                                            BorderColor: =App.Theme.Colors.Darker40
+                                            Color: =RGBA(0, 0, 0, 1)
+                                            DisabledColor: =RGBA(166, 166, 166, 1)
+                                            Font: =App.Theme.Font
+                                            Size: =13
+                                            Text: |-
+                                                ="Fraud Category: " & 'Referral Queue Gallery'.Selected.'Fraud Category'
+                                            ZIndex: =3
+
+                                        "'PH Name' As label":
+                                            AlignInContainer: =AlignInContainer.Stretch
+                                            BorderColor: =App.Theme.Colors.Darker40
+                                            Color: =RGBA(0, 0, 0, 1)
+                                            DisabledColor: =RGBA(166, 166, 166, 1)
+                                            Font: =App.Theme.Font
+                                            Size: =13
+                                            Text: |-
+                                                ="Policyholder Name: " & 'Referral Queue Gallery'.Selected.'1st - Policyholder First Name' & " " & 'Referral Queue Gallery'.Selected.'1st - Policyholder Last Name'
+                                            Visible: =If(IsBlank('Referral Queue Gallery'.Selected.'1st - Policyholder First Name') And IsBlank('Referral Queue Gallery'.Selected.'1st - Policyholder Last Name'), false, true)
+                                            ZIndex: =4
+
+                                        PHPhoneNo As label:
+                                            AlignInContainer: =AlignInContainer.Stretch
+                                            BorderColor: =App.Theme.Colors.Darker40
+                                            Color: =RGBA(0, 0, 0, 1)
+                                            DisabledColor: =RGBA(166, 166, 166, 1)
+                                            Font: =App.Theme.Font
+                                            Size: =13
+                                            Text: |-
+                                                ="Policyholder Phone Number: " & 'Referral Queue Gallery'.Selected.'1st - Policyholder Phone Number'
+                                            Visible: =If(IsBlank('Referral Queue Gallery'.Selected.'1st - Policyholder Phone Number'), false, true)
+                                            ZIndex: =5
+
+                                        "'1stPolicyNo' As label":
+                                            AlignInContainer: =AlignInContainer.Stretch
+                                            BorderColor: =App.Theme.Colors.Darker40
+                                            Color: =RGBA(0, 0, 0, 1)
+                                            DisabledColor: =RGBA(166, 166, 166, 1)
+                                            Font: =App.Theme.Font
+                                            Size: =13
+                                            Text: |-
+                                                =If('Referral Queue Gallery'.Selected.'Is there a second Policy?' = "Yes",
+                                                    "1st Policy Number: ", "Policy Number: ") & If(IsBlank('Referral Queue Gallery'.Selected.'1st Policy Number'), "N/A", 'Referral Queue Gallery'.Selected.'1st Policy Number')
+                                            ZIndex: =6
+
+                                        "'2ndPolicyNo' As label":
+                                            AlignInContainer: =AlignInContainer.Stretch
+                                            BorderColor: =App.Theme.Colors.Darker40
+                                            Color: =RGBA(0, 0, 0, 1)
+                                            DisabledColor: =RGBA(166, 166, 166, 1)
+                                            Font: =App.Theme.Font
+                                            Size: =13
+                                            Text: |-
+                                                ="2nd Policy Number: " & If(IsBlank('Referral Queue Gallery'.Selected.'2nd Policy Number'), "N/A", 'Referral Queue Gallery'.Selected.'2nd Policy Number')
+                                            Visible: =If('Referral Queue Gallery'.Selected.'Is there a second Policy?' = "Yes", true, false)
+                                            ZIndex: =7
+
+                                        "'3rdPolicyNo' As label":
+                                            AlignInContainer: =AlignInContainer.Stretch
+                                            BorderColor: =App.Theme.Colors.Darker40
+                                            Color: =RGBA(0, 0, 0, 1)
+                                            DisabledColor: =RGBA(166, 166, 166, 1)
+                                            Font: =App.Theme.Font
+                                            Size: =13
+                                            Text: |-
+                                                ="3rd Policy Number: " & If(IsBlank('Referral Queue Gallery'.Selected.'3rd - Policy Number'), "N/A", 'Referral Queue Gallery'.Selected.'3rd - Policy Number')
+                                            Visible: =If('Referral Queue Gallery'.Selected.'Is there a 3rd Policy?' = "Yes", true, false)
+                                            ZIndex: =8
+
+                                        "'1stClaimNo' As label":
+                                            AlignInContainer: =AlignInContainer.Stretch
+                                            BorderColor: =App.Theme.Colors.Darker40
+                                            Color: =RGBA(0, 0, 0, 1)
+                                            DisabledColor: =RGBA(166, 166, 166, 1)
+                                            Font: =App.Theme.Font
+                                            Size: =13
+                                            Text: |-
+                                                =If('Referral Queue Gallery'.Selected.'Is there a second Policy?' = "Yes",
+                                                    "1st Claim Number: ", "Claim Number: ") & If(IsBlank('Referral Queue Gallery'.Selected.'1st Claim Number'), "N/A", 'Referral Queue Gallery'.Selected.'1st Claim Number')
+                                            ZIndex: =9
+
+                                        "'2ndClaimNo' As label":
+                                            AlignInContainer: =AlignInContainer.Stretch
+                                            BorderColor: =App.Theme.Colors.Darker40
+                                            Color: =RGBA(0, 0, 0, 1)
+                                            DisabledColor: =RGBA(166, 166, 166, 1)
+                                            Font: =App.Theme.Font
+                                            Size: =13
+                                            Text: |-
+                                                ="2nd Claim Number: " & If(IsBlank('Referral Queue Gallery'.Selected.'2nd Claim Number'), "N/A", 'Referral Queue Gallery'.Selected.'2nd Claim Number')
+                                            Visible: =If('Referral Queue Gallery'.Selected.'Is there a second Policy?' = "Yes", true, false)
+                                            ZIndex: =10
+
+                                        "'3rdClaimNo' As label":
+                                            AlignInContainer: =AlignInContainer.Stretch
+                                            BorderColor: =App.Theme.Colors.Darker40
+                                            Color: =RGBA(0, 0, 0, 1)
+                                            DisabledColor: =RGBA(166, 166, 166, 1)
+                                            Font: =App.Theme.Font
+                                            Size: =13
+                                            Text: |-
+                                                ="3rd Claim Number: " & If(IsBlank('Referral Queue Gallery'.Selected.'3rd - Claim Number'), "N/A", 'Referral Queue Gallery'.Selected.'3rd - Claim Number')
+                                            Visible: =If('Referral Queue Gallery'.Selected.'Is there a 3rd Policy?' = "Yes", true, false)
+                                            ZIndex: =11
+
+                                        OthersInvolved As label:
+                                            AlignInContainer: =AlignInContainer.Stretch
+                                            BorderColor: =App.Theme.Colors.Darker40
+                                            Color: =RGBA(0, 0, 0, 1)
+                                            DisabledColor: =RGBA(166, 166, 166, 1)
+                                            Font: =App.Theme.Font
+                                            Size: =13
+                                            Text: |-
+                                                ="Others Involved: " & If(IsBlank('Referral Queue Gallery'.Selected.'Others Involved'), "N/A", 'Referral Queue Gallery'.Selected.'Others Involved')
+                                            ZIndex: =12
 
                                     ReporterContainer As groupContainer.verticalAutoLayoutContainer:
                                         DropShadow: =DropShadow.Light
