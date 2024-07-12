@@ -2260,8 +2260,7 @@
                                             Size: =13
                                             Text: |-
                                                 =If('Referral Queue Gallery'.Selected.'Is there a second Policy?' = "Yes",
-                                                    "1st Policy Number: " & 'Referral Queue Gallery'.Selected.'1st Policy Number', "Policy Number: " & 'Referral Queue Gallery'.Selected.'1st Policy Number')
-                                            Visible: =If(!IsBlank('Referral Queue Gallery'.Selected.'1st Policy Number'), true, false)
+                                                    "1st Policy Number: ", "Policy Number: ") & If(IsBlank('Referral Queue Gallery'.Selected.'1st Policy Number'), "N/A", 'Referral Queue Gallery'.Selected.'1st Policy Number')
                                             ZIndex: =5
 
                                         "'2ndPolicyNo' As label":
@@ -2272,8 +2271,7 @@
                                             Font: =App.Theme.Font
                                             Size: =13
                                             Text: |-
-                                                ="2nd Policy Number: " & 'Referral Queue Gallery'.Selected.'2nd Policy Number'
-                                            Visible: =If('Referral Queue Gallery'.Selected.'Is there a second Policy?' = "Yes" And !IsBlank('Referral Queue Gallery'.Selected.'2nd Policy Number'), true, false)
+                                                ="2nd Policy Number: " & If(IsBlank('Referral Queue Gallery'.Selected.'2nd Policy Number'), "N/A", 'Referral Queue Gallery'.Selected.'2nd Policy Number')
                                             ZIndex: =6
 
                                         "'3rdPolicyNo' As label":
@@ -2284,8 +2282,7 @@
                                             Font: =App.Theme.Font
                                             Size: =13
                                             Text: |-
-                                                ="3rd Policy Number: " & 'Referral Queue Gallery'.Selected.'3rd - Policy Number'
-                                            Visible: =If('Referral Queue Gallery'.Selected.'Is there a 3rd Policy?' = "Yes" And !IsBlank('Referral Queue Gallery'.Selected.'3rd - Policy Number'), true, false)
+                                                ="3rd Policy Number: " & If(IsBlank('Referral Queue Gallery'.Selected.'3rd - Policy Number'), "N/A", 'Referral Queue Gallery'.Selected.'3rd - Policy Number')
                                             ZIndex: =7
 
                                         "'1stClaimNo' As label":
@@ -2297,8 +2294,7 @@
                                             Size: =13
                                             Text: |-
                                                 =If('Referral Queue Gallery'.Selected.'Is there a second Policy?' = "Yes",
-                                                    "1st Claim Number: " & 'Referral Queue Gallery'.Selected.'1st Claim Number', "Claim Number: " & 'Referral Queue Gallery'.Selected.'1st Claim Number')
-                                            Visible: =If(!IsBlank('Referral Queue Gallery'.Selected.'1st Claim Number'), true, false)
+                                                    "1st Claim Number: ", "Claim Number: ") & If(IsBlank('Referral Queue Gallery'.Selected.'1st Claim Number'), "N/A", 'Referral Queue Gallery'.Selected.'1st Claim Number')
                                             ZIndex: =8
 
                                         "'2ndClaimNo' As label":
@@ -2309,8 +2305,7 @@
                                             Font: =App.Theme.Font
                                             Size: =13
                                             Text: |-
-                                                ="2nd Claim Number: " & 'Referral Queue Gallery'.Selected.'2nd Claim Number'
-                                            Visible: =If('Referral Queue Gallery'.Selected.'Is there a second Policy?' = "Yes" And !IsBlank('Referral Queue Gallery'.Selected.'2nd Claim Number'), true, false)
+                                                ="2nd Claim Number: " & If(IsBlank('Referral Queue Gallery'.Selected.'2nd Claim Number'), "N/A", 'Referral Queue Gallery'.Selected.'2nd Claim Number')
                                             ZIndex: =9
 
                                         "'3rdClaimNo' As label":
@@ -2321,8 +2316,7 @@
                                             Font: =App.Theme.Font
                                             Size: =13
                                             Text: |-
-                                                ="3rd Claim Number: " & 'Referral Queue Gallery'.Selected.'3rd - Claim Number'
-                                            Visible: =If('Referral Queue Gallery'.Selected.'Is there a 3rd Policy?' = "Yes" And !IsBlank('Referral Queue Gallery'.Selected.'3rd - Claim Number'), true, false)
+                                                ="3rd Claim Number: " & If(IsBlank('Referral Queue Gallery'.Selected.'3rd - Claim Number'), "N/A", 'Referral Queue Gallery'.Selected.'3rd - Claim Number')
                                             ZIndex: =10
 
                                         OthersInvolved As label:
@@ -2333,8 +2327,7 @@
                                             Font: =App.Theme.Font
                                             Size: =13
                                             Text: |-
-                                                ="Others Involved: " & 'Referral Queue Gallery'.Selected.'Others Involved'
-                                            Visible: =If(IsBlank('Referral Queue Gallery'.Selected.'Others Involved'), false, true)
+                                                ="Others Involved: " & If(IsBlank('Referral Queue Gallery'.Selected.'Others Involved'), "N/A", 'Referral Queue Gallery'.Selected.'Others Involved')
                                             ZIndex: =11
 
                                         DecisionReasons As groupContainer.horizontalAutoLayoutContainer:
@@ -2775,7 +2768,7 @@
                                             Font: =App.Theme.Font
                                             Size: =13
                                             Text: |-
-                                                =If('Referral Queue Gallery'.Selected.'Is there a second Policy?' = "Yes", "1st Policy Number: ", "Policy Number: ") & 'Referral Queue Gallery'.Selected.'1st Policy Number'
+                                                =If('Referral Queue Gallery'.Selected.'Is there a second Policy?' = "Yes", "1st Policy Number: ", "Policy Number: ") & If(IsBlank('Referral Queue Gallery'.Selected.'1st Policy Number'), "N/A", 'Referral Queue Gallery'.Selected.'1st Policy Number')
                                             ZIndex: =3
 
                                         "'1stClaimNumber' As label":
@@ -2786,7 +2779,7 @@
                                             Font: =App.Theme.Font
                                             Size: =13
                                             Text: |-
-                                                =If('Referral Queue Gallery'.Selected.'Is there a second Policy?' = "Yes", "1st Claim Number: ", "Claim Number: ") & 'Referral Queue Gallery'.Selected.'1st Claim Number'
+                                                =If('Referral Queue Gallery'.Selected.'Is there a second Policy?' = "Yes", "1st Claim Number: ", "Claim Number: ") & If(IsBlank('Referral Queue Gallery'.Selected.'1st Claim Number'), "N/A", 'Referral Queue Gallery'.Selected.'1st Claim Number')
                                             ZIndex: =4
 
                                         "'1stAddress' As label":
@@ -3005,7 +2998,7 @@
                                             Font: =App.Theme.Font
                                             Size: =13
                                             Text: |-
-                                                =If('Referral Queue Gallery'.Selected.'Is there a second Policy?' = "Yes", "1st Dtae of Loss: ", "Date of Loss: ") & 'Referral Queue Gallery'.Selected.'1st Date of Loss'
+                                                =If('Referral Queue Gallery'.Selected.'Is there a second Policy?' = "Yes", "1st Date of Loss: ", "Date of Loss: ") & If(IsBlank('Referral Queue Gallery'.Selected.'1st Date of Loss'), "N/A", 'Referral Queue Gallery'.Selected.'1st Date of Loss')
                                             ZIndex: =7
 
                                         Label8 As label:
@@ -3026,7 +3019,8 @@
                                             DisabledColor: =RGBA(166, 166, 166, 1)
                                             Font: =App.Theme.Font
                                             Size: =13
-                                            Text: ="Text"
+                                            Text: |-
+                                                =If('Referral Queue Gallery'.Selected.'Is there a second Policy?' = "Yes", "1st VIN: ", "VIN: ") & 'Referral Queue Gallery'.Selected.'1st Auto - VIN'
                                             ZIndex: =9
 
                                         Label10 As label:
@@ -3036,7 +3030,8 @@
                                             DisabledColor: =RGBA(166, 166, 166, 1)
                                             Font: =App.Theme.Font
                                             Size: =13
-                                            Text: ="Text"
+                                            Text: |-
+                                                =If('Referral Queue Gallery'.Selected.'Is there a second Policy?' = "Yes", "1st License Plate: ", "License Plate: ") & 'Referral Queue Gallery'.Selected.'1st Auto - License Plate'
                                             ZIndex: =10
 
                                         Label11 As label:
@@ -3046,7 +3041,8 @@
                                             DisabledColor: =RGBA(166, 166, 166, 1)
                                             Font: =App.Theme.Font
                                             Size: =13
-                                            Text: ="Text"
+                                            Text: |-
+                                                =If('Referral Queue Gallery'.Selected.'Is there a second Policy?' = "Yes", "1st Make: ", "Make: ") & 'Referral Queue Gallery'.Selected.'1st Auto - Make'
                                             ZIndex: =11
 
                                         Label13 As label:
@@ -3056,7 +3052,8 @@
                                             DisabledColor: =RGBA(166, 166, 166, 1)
                                             Font: =App.Theme.Font
                                             Size: =13
-                                            Text: ="Text"
+                                            Text: |-
+                                                =If('Referral Queue Gallery'.Selected.'Is there a second Policy?' = "Yes", "1st Model: ", "Model: ") & 'Referral Queue Gallery'.Selected.'1st Auto - Model'
                                             ZIndex: =12
 
                                     Container3 As groupContainer.verticalAutoLayoutContainer:
