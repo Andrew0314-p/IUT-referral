@@ -2305,7 +2305,8 @@
                                                     Refresh('Referral Intake Tool Submissions');
                                                     If(!IsEmpty(WorkBankCollection), ClearCollect(WorkBankCollection, {}));
                                                     Remove(WorkBankCollection, FirstN(WorkBankCollection, 1));
-                                                    ClearCollect(WorkBankCollection,
+                                                    
+                                                        ClearCollect(WorkBankCollection,
                                                             ForAll(
                                                                 Filter('Referral Intake Tool Submissions', 'Assigned To Email' = User().Email),
                                                                 {
@@ -2385,10 +2386,22 @@
                                                                     '3rd Auto - Business Name': '3rd Auto - Business Name',
                                                                     '3rd Auto Personal - State Code': '3rd Auto Personal - State Code',
                                                                     Details: Details,
-                                                                    'Others Involved': 'Others Involved'
+                                                                    'Others Involved': 'Others Involved',
+                                                                    'Reporter Email': 'Reporter Email',
+                                                                    'Reporter Name':'Reporter Name',
+                                                                    'Reporter Role':'Reporter Role',
+                                                                    'Reporter Phone Number':'Reporter Phone Number',
+                                                                    'Department of Reporter':'Reporter Department',
+                                                                    'Reporter Alias':'Reporter Alias',
+                                                                    'Informant Y/N':'Are you filling this form out for someone else who you got a tip from?',
+                                                                    'Informant First Name':'Informant First Name',
+                                                                    'Informant Last Name':'Informant Last Name',
+                                                                    'Informant Phone Number':'Informant Phone Number',
+                                                                    'Informant Email':'Informant Email',
+                                                                    'Additional Info Y/N':'Can we contact you for additional information'
                                                                 }
                                                             )
-                                                        );
+                                                        )
                                                 Text: ="Submit Decision"
                                                 Visible: =If(decisionMode = true, true, false)
                                                 Width: =ChangeDecision.Width
@@ -3210,7 +3223,7 @@
                                             Font: =App.Theme.Font
                                             Size: =13
                                             Text: |-
-                                                =If('Referral Queue Gallery'.Selected.'Is there a second Policy?' = "Yes", "1st Date of Loss: ", "Date of Loss: ") & If(IsBlank('Referral Queue Gallery'.Selected.'1st Date of Loss'), "N/A", 'Referral Queue Gallery'.Selected.'1st Date of Loss')
+                                                ="2nd Date of Loss: " & If(IsBlank('Referral Queue Gallery'.Selected.'2nd Date of Loss'), "N/A", 'Referral Queue Gallery'.Selected.'2nd Date of Loss')
                                             ZIndex: =6
 
                                         Label8_1 As label:
@@ -3220,12 +3233,13 @@
                                             Font: =App.Theme.Font
                                             Size: =13
                                             Text: |-
-                                                =If('Referral Queue Gallery'.Selected.'Is there a second Policy?' = "Yes", "1st Business Name: ", "Business Name: ") & 
-                                                    If('Referral Queue Gallery'.Selected.'1st Policy Type' = "Auto",
-                                                        (If(IsBlank('Referral Queue Gallery'.Selected.'1st Auto - Business Name'), "N/A", 'Referral Queue Gallery'.Selected.'1st Auto - Business Name')),
+                                                = "2nd Business Name: " & 
                                                     If(
-                                                        'Referral Queue Gallery'.Selected.'1st Policy Type' = "Fire ",
-                                                        (If(IsBlank('Referral Queue Gallery'.Selected.'1st Fire - Business Name'), "N/A", 'Referral Queue Gallery'.Selected.'1st Fire - Business Name'))))
+                                                        Trim('Referral Queue Gallery'.Selected.'Multiple Policy - 2nd Policy Type') = "Auto",
+                                                        (If(IsBlank('Referral Queue Gallery'.Selected.'2nd Auto - Business Name'), "N/A", 'Referral Queue Gallery'.Selected.'2nd Auto - Business Name')),
+                                                    If(
+                                                        Trim('Referral Queue Gallery'.Selected.'Multiple Policy - 2nd Policy Type') = "Fire",
+                                                        (If(IsBlank('Referral Queue Gallery'.Selected.'2nd Fire - Business Name'), "N/A", 'Referral Queue Gallery'.Selected.'2nd Fire - Business Name'))))
                                             ZIndex: =7
 
                                         "'1stAddress_1' As label":
@@ -3235,16 +3249,16 @@
                                             Font: =App.Theme.Font
                                             Size: =13
                                             Text: |-
-                                                =If('Referral Queue Gallery'.Selected.'Is there a second Policy?' = "Yes", "1st Address: ", "Address: ") & 
-                                                If(!IsBlank('Referral Queue Gallery'.Selected.'1st Fire - Street'), Trim('Referral Queue Gallery'.Selected.'1st Fire - Street') & ", ", Trim('Referral Queue Gallery'.Selected.'1st Fire - Street')) & 
-                                                If(!IsBlank('Referral Queue Gallery'.Selected.'1st Fire - Street'), Trim('Referral Queue Gallery'.Selected.'1st Fire - City') & ", ", Trim('Referral Queue Gallery'.Selected.'1st Fire - City')) &
-                                                If((Trim('Referral Queue Gallery'.Selected.'1st Policy Type') &
+                                                ="2nd Address: " & 
+                                                If(!IsBlank('Referral Queue Gallery'.Selected.'2nd Fire - Street'), Trim('Referral Queue Gallery'.Selected.'2nd Fire - Street') & ", ", Trim('Referral Queue Gallery'.Selected.'2nd Fire - Street')) & 
+                                                If(!IsBlank('Referral Queue Gallery'.Selected.'2nd Fire - Street'), Trim('Referral Queue Gallery'.Selected.'2nd Fire - City') & ", ", Trim('Referral Queue Gallery'.Selected.'2nd Fire - City')) &
+                                                If((Trim('Referral Queue Gallery'.Selected.'Multiple Policy - 2nd Policy Type') &
                                                     If(
-                                                        'Referral Queue Gallery'.Selected.'1st Policy Type' = "Auto",
-                                                        Concatenate(" ", Trim('Referral Queue Gallery'.Selected.'1st Auto - Line of Business')),
+                                                        Trim('Referral Queue Gallery'.Selected.'Multiple Policy - 2nd Policy Type') = "Auto",
+                                                        Concatenate(" ", Trim('Referral Queue Gallery'.Selected.'2nd Auto - Line of Business')),
                                                         If(
-                                                            'Referral Queue Gallery'.Selected.'1st Policy Type' = "Fire ",
-                                                            Concatenate(" " & Trim('Referral Queue Gallery'.Selected.'1st Fire - Line of Business')),
+                                                            Trim('Referral Queue Gallery'.Selected.'Multiple Policy - 2nd Policy Type') = "Fire",
+                                                            Concatenate(" " & Trim('Referral Queue Gallery'.Selected.'2nd Fire - Line of Business')),
                                                             ""
                                                         )
                                                     ) & " Lines") = "Fire Personal Lines", 
@@ -3302,13 +3316,12 @@
                                                     IsMatch(Trim('Referral Queue Gallery'.Selected.'1st Fire Personal Lines - State Code'), "DC",MatchOptions.Contains), "Washington, D.C.",
                                                     "N/A"
                                                 ),
-                                                If((Trim('Referral Queue Gallery'.Selected.'1st Policy Type') &
-                                                    If(
-                                                        'Referral Queue Gallery'.Selected.'1st Policy Type' = "Auto",
-                                                        Concatenate(" ", Trim('Referral Queue Gallery'.Selected.'1st Auto - Line of Business')),
+                                                (If(
+                                                        Trim('Referral Queue Gallery'.Selected.'Multiple Policy - 2nd Policy Type') = "Auto",
+                                                        Concatenate(" ", Trim('Referral Queue Gallery'.Selected.'2nd Auto - Line of Business')),
                                                         If(
-                                                            'Referral Queue Gallery'.Selected.'1st Policy Type' = "Fire ",
-                                                            Concatenate(" " & Trim('Referral Queue Gallery'.Selected.'1st Fire - Line of Business')),
+                                                            Trim('Referral Queue Gallery'.Selected.'Multiple Policy - 2nd Policy Type') = "Fire",
+                                                            Concatenate(" " & Trim('Referral Queue Gallery'.Selected.'2nd Fire - Line of Business')),
                                                             ""
                                                         )
                                                     ) & " Lines") = "Fire Business Lines", 
@@ -3365,7 +3378,7 @@
                                                     IsMatch(Trim('Referral Queue Gallery'.Selected.'1st Fire Business Lines - State Code'), "WY",MatchOptions.Contains), "Wyoming", 
                                                     IsMatch(Trim('Referral Queue Gallery'.Selected.'1st Fire Business Lines - State Code'), "DC",MatchOptions.Contains), "Washington, D.C.", 
                                                     "N/A"
-                                                )))
+                                                ))
                                             Visible: |
                                                 =If(
                                                     If(
