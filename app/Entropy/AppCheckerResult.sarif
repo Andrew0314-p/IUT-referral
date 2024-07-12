@@ -734,36 +734,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "'Work Bank Screen'.WorkBankScreenContainer.'Work Container'.ViewContainer.DataContainer.'Referral Info Container'.ReferralControlContainer.ForwardArrow.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "'Work Bank Screen'.WorkBankScreenContainer.'Work Container'.ViewContainer.DataContainer.'Referral Info Container'.ReferralControlContainer.ForwardArrow.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Work Bank Screen",
-                "type": "'Work Bank Screen'.WorkBankScreenContainer.'Work Container'.ViewContainer.DataContainer.'Referral Info Container'.ReferralControlContainer.ForwardArrow"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "'Work Bank Screen'.WorkBankScreenContainer.'Work Container'.ViewContainer.DataContainer.'Referral Info Container'.ReferralControlContainer.ForwardArrow.TabIndex"
                 }
               ],
@@ -788,6 +758,36 @@
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
           "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Work Bank Screen'.WorkBankScreenContainer.'Work Container'.ViewContainer.DataContainer.'Referral Info Container'.ReferralControlContainer.ForwardArrow.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Work Bank Screen'.WorkBankScreenContainer.'Work Container'.ViewContainer.DataContainer.'Referral Info Container'.ReferralControlContainer.ForwardArrow.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Work Bank Screen",
+                "type": "'Work Bank Screen'.WorkBankScreenContainer.'Work Container'.ViewContainer.DataContainer.'Referral Info Container'.ReferralControlContainer.ForwardArrow"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 0
         },
         {
           "locations": [
