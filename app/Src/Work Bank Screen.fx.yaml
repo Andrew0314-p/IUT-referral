@@ -3025,7 +3025,7 @@
                                             Font: =App.Theme.Font
                                             Size: =13
                                             Text: |-
-                                                =If('Referral Queue Gallery'.Selected.'Is there a second Policy?' = "Yes", "1st VIN: ", "VIN: ") & 'Referral Queue Gallery'.Selected.'1st Auto - VIN'
+                                                =If('Referral Queue Gallery'.Selected.'Is there a second Policy?' = "Yes", "1st VIN: ", "VIN: ") & If(IsBlank('Referral Queue Gallery'.Selected.'1st Auto - VIN'), "N/A", 'Referral Queue Gallery'.Selected.'1st Auto - VIN')
                                             ZIndex: =9
 
                                         Label10 As label:
@@ -3036,7 +3036,7 @@
                                             Font: =App.Theme.Font
                                             Size: =13
                                             Text: |-
-                                                =If('Referral Queue Gallery'.Selected.'Is there a second Policy?' = "Yes", "1st License Plate: ", "License Plate: ") & 'Referral Queue Gallery'.Selected.'1st Auto - License Plate'
+                                                =If('Referral Queue Gallery'.Selected.'Is there a second Policy?' = "Yes", "1st License Plate: ", "License Plate: ") & If(IsBlank('Referral Queue Gallery'.Selected.'1st Auto - License Plate'), "N/A", 'Referral Queue Gallery'.Selected.'1st Auto - License Plate')
                                             ZIndex: =10
 
                                         Label11 As label:
@@ -3047,7 +3047,7 @@
                                             Font: =App.Theme.Font
                                             Size: =13
                                             Text: |-
-                                                =If('Referral Queue Gallery'.Selected.'Is there a second Policy?' = "Yes", "1st Make: ", "Make: ") & 'Referral Queue Gallery'.Selected.'1st Auto - Make'
+                                                =If('Referral Queue Gallery'.Selected.'Is there a second Policy?' = "Yes", "1st Make: ", "Make: ") & If(IsBlank('Referral Queue Gallery'.Selected.'1st Auto - Make'), "N/A", 'Referral Queue Gallery'.Selected.'1st Auto - Make')
                                             ZIndex: =11
 
                                         Label13 As label:
@@ -3058,7 +3058,7 @@
                                             Font: =App.Theme.Font
                                             Size: =13
                                             Text: |-
-                                                =If('Referral Queue Gallery'.Selected.'Is there a second Policy?' = "Yes", "1st Model: ", "Model: ") & 'Referral Queue Gallery'.Selected.'1st Auto - Model'
+                                                =If('Referral Queue Gallery'.Selected.'Is there a second Policy?' = "Yes", "1st Model: ", "Model: ") & If(IsBlank('Referral Queue Gallery'.Selected.'1st Auto - Model'), "N/A", 'Referral Queue Gallery'.Selected.'1st Auto - Model')
                                             ZIndex: =12
 
                                     Container3 As groupContainer.verticalAutoLayoutContainer:
