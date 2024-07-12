@@ -2440,6 +2440,18 @@
                                                 ="Fraud Category: " & 'Referral Queue Gallery'.Selected.'Fraud Category'
                                             ZIndex: =3
 
+                                        DateSubmitted As label:
+                                            AlignInContainer: =AlignInContainer.Stretch
+                                            BorderColor: =App.Theme.Colors.Darker40
+                                            Color: =RGBA(0, 0, 0, 1)
+                                            DisabledColor: =RGBA(166, 166, 166, 1)
+                                            Font: =App.Theme.Font
+                                            Height: =35
+                                            Size: =13
+                                            Text: |-
+                                                ="Date Submitted: " & 'Referral Queue Gallery'.Selected.'Created On'
+                                            ZIndex: =4
+
                                         "'PH Name' As label":
                                             AlignInContainer: =AlignInContainer.Stretch
                                             BorderColor: =App.Theme.Colors.Darker40
@@ -2451,7 +2463,7 @@
                                             Text: |-
                                                 ="Policyholder Name: " & 'Referral Queue Gallery'.Selected.'1st - Policyholder First Name' & " " & 'Referral Queue Gallery'.Selected.'1st - Policyholder Last Name'
                                             Visible: =If(IsBlank('Referral Queue Gallery'.Selected.'1st - Policyholder First Name') And IsBlank('Referral Queue Gallery'.Selected.'1st - Policyholder Last Name'), false, true)
-                                            ZIndex: =4
+                                            ZIndex: =5
 
                                         PHPhoneNo As label:
                                             AlignInContainer: =AlignInContainer.Stretch
@@ -2464,7 +2476,7 @@
                                             Text: |-
                                                 ="Policyholder Phone Number: " & 'Referral Queue Gallery'.Selected.'1st - Policyholder Phone Number'
                                             Visible: =If(IsBlank('Referral Queue Gallery'.Selected.'1st - Policyholder Phone Number'), false, true)
-                                            ZIndex: =5
+                                            ZIndex: =6
 
                                         NumPolicies As label:
                                             AlignInContainer: =AlignInContainer.Stretch
@@ -2476,7 +2488,7 @@
                                             Size: =13
                                             Text: |-
                                                 ="Number of Policies: " & If('Referral Queue Gallery'.Selected.'Is there a 3rd Policy?' = "Yes", "3", If('Referral Queue Gallery'.Selected.'Is there a second Policy?', "2", "1"))
-                                            ZIndex: =6
+                                            ZIndex: =7
 
                                         "'1stPolicyNo' As label":
                                             AlignInContainer: =AlignInContainer.Stretch
@@ -2489,7 +2501,7 @@
                                             Text: |-
                                                 =If('Referral Queue Gallery'.Selected.'Is there a second Policy?' = "Yes",
                                                     "1st Policy Number: ", "Policy Number: ") & If(IsBlank('Referral Queue Gallery'.Selected.'1st Policy Number'), "N/A", 'Referral Queue Gallery'.Selected.'1st Policy Number')
-                                            ZIndex: =7
+                                            ZIndex: =8
 
                                         "'2ndPolicyNo' As label":
                                             AlignInContainer: =AlignInContainer.Stretch
@@ -2502,7 +2514,7 @@
                                             Text: |-
                                                 ="2nd Policy Number: " & If(IsBlank('Referral Queue Gallery'.Selected.'2nd Policy Number'), "N/A", 'Referral Queue Gallery'.Selected.'2nd Policy Number')
                                             Visible: =If('Referral Queue Gallery'.Selected.'Is there a second Policy?' = "Yes", true, false)
-                                            ZIndex: =8
+                                            ZIndex: =9
 
                                         "'3rdPolicyNo' As label":
                                             AlignInContainer: =AlignInContainer.Stretch
@@ -2515,7 +2527,7 @@
                                             Text: |-
                                                 ="3rd Policy Number: " & If(IsBlank('Referral Queue Gallery'.Selected.'3rd - Policy Number'), "N/A", 'Referral Queue Gallery'.Selected.'3rd - Policy Number')
                                             Visible: =If('Referral Queue Gallery'.Selected.'Is there a 3rd Policy?' = "Yes", true, false)
-                                            ZIndex: =9
+                                            ZIndex: =10
 
                                         "'1stClaimNo' As label":
                                             AlignInContainer: =AlignInContainer.Stretch
@@ -2528,7 +2540,7 @@
                                             Text: |-
                                                 =If('Referral Queue Gallery'.Selected.'Is there a second Policy?' = "Yes",
                                                     "1st Claim Number: ", "Claim Number: ") & If(IsBlank('Referral Queue Gallery'.Selected.'1st Claim Number'), "N/A", 'Referral Queue Gallery'.Selected.'1st Claim Number')
-                                            ZIndex: =10
+                                            ZIndex: =11
 
                                         "'2ndClaimNo' As label":
                                             AlignInContainer: =AlignInContainer.Stretch
@@ -2541,7 +2553,7 @@
                                             Text: |-
                                                 ="2nd Claim Number: " & If(IsBlank('Referral Queue Gallery'.Selected.'2nd Claim Number'), "N/A", 'Referral Queue Gallery'.Selected.'2nd Claim Number')
                                             Visible: =If('Referral Queue Gallery'.Selected.'Is there a second Policy?' = "Yes", true, false)
-                                            ZIndex: =11
+                                            ZIndex: =12
 
                                         "'3rdClaimNo' As label":
                                             AlignInContainer: =AlignInContainer.Stretch
@@ -2554,7 +2566,7 @@
                                             Text: |-
                                                 ="3rd Claim Number: " & If(IsBlank('Referral Queue Gallery'.Selected.'3rd - Claim Number'), "N/A", 'Referral Queue Gallery'.Selected.'3rd - Claim Number')
                                             Visible: =If('Referral Queue Gallery'.Selected.'Is there a 3rd Policy?' = "Yes", true, false)
-                                            ZIndex: =12
+                                            ZIndex: =13
 
                                         OthersInvolved As label:
                                             AlignInContainer: =AlignInContainer.Stretch
@@ -2566,7 +2578,7 @@
                                             Size: =13
                                             Text: |-
                                                 ="Others Involved: " & If(IsBlank('Referral Queue Gallery'.Selected.'Others Involved'), "N/A", 'Referral Queue Gallery'.Selected.'Others Involved')
-                                            ZIndex: =13
+                                            ZIndex: =14
 
                                     ReporterContainer As groupContainer.verticalAutoLayoutContainer:
                                         DropShadow: =DropShadow.Light
@@ -2789,6 +2801,7 @@
                                             Color: =RGBA(0, 0, 0, 1)
                                             DisabledColor: =RGBA(166, 166, 166, 1)
                                             Font: =App.Theme.Font
+                                            Height: =35
                                             Size: =13
                                             Text: |-
                                                 =If('Referral Queue Gallery'.Selected.'Is there a second Policy?' = "Yes", "1st Referral Type: ", "Referral Type: ") & Trim('Referral Queue Gallery'.Selected.'1st Policy Type') &
@@ -2803,16 +2816,50 @@
                                                     ) & " Lines"
                                             ZIndex: =2
 
+                                        "'1stPolicyType' As label":
+                                            AlignInContainer: =AlignInContainer.Stretch
+                                            BorderColor: =App.Theme.Colors.Darker40
+                                            Color: =RGBA(0, 0, 0, 1)
+                                            DisabledColor: =RGBA(166, 166, 166, 1)
+                                            Font: =App.Theme.Font
+                                            Height: =35
+                                            Size: =13
+                                            Text: |-
+                                                ="1st Policy Type: " & 
+                                                If((Trim('Referral Queue Gallery'.Selected.'1st Policy Type') &
+                                                    If(
+                                                        Trim('Referral Queue Gallery'.Selected.'1st Policy Type') = "Auto",
+                                                        Concatenate(" ", Trim('Referral Queue Gallery'.Selected.'1st Auto - Line of Business')),
+                                                        If(
+                                                            Trim('Referral Queue Gallery'.Selected.'1st Policy Type') = "Fire",
+                                                            Concatenate(" " & Trim('Referral Queue Gallery'.Selected.'1st Fire - Line of Business')),
+                                                            ""
+                                                        )
+                                                    ) & " Lines") = "Fire Personal Lines", 'Referral Queue Gallery'.Selected.'1st Fire - Personal Policy Type',
+                                                    If((Trim('Referral Queue Gallery'.Selected.'1st Policy Type') &
+                                                    If(
+                                                        Trim('Referral Queue Gallery'.Selected.'1st Policy Type') = "Auto",
+                                                        Concatenate(" ", Trim('Referral Queue Gallery'.Selected.'1st Auto - Line of Business')),
+                                                        If(
+                                                            Trim('Referral Queue Gallery'.Selected.'1st Policy Type') = "Fire",
+                                                            Concatenate(" " & Trim('Referral Queue Gallery'.Selected.'1st Fire - Line of Business')),
+                                                            ""
+                                                        )
+                                                    ) & " Lines") = "Fire Business Lines", 'Referral Queue Gallery'.Selected.'1st Fire - Business Policy Types'))
+                                            Visible: =If(Trim('Referral Queue Gallery'.Selected.'1st Policy Type') = "Fire", true, false)
+                                            ZIndex: =3
+
                                         "'1stPolicyNumber' As label":
                                             AlignInContainer: =AlignInContainer.Stretch
                                             BorderColor: =App.Theme.Colors.Darker40
                                             Color: =RGBA(0, 0, 0, 1)
                                             DisabledColor: =RGBA(166, 166, 166, 1)
                                             Font: =App.Theme.Font
+                                            Height: =35
                                             Size: =13
                                             Text: |-
                                                 =If('Referral Queue Gallery'.Selected.'Is there a second Policy?' = "Yes", "1st Policy Number: ", "Policy Number: ") & If(IsBlank('Referral Queue Gallery'.Selected.'1st Policy Number'), "N/A", 'Referral Queue Gallery'.Selected.'1st Policy Number')
-                                            ZIndex: =3
+                                            ZIndex: =4
 
                                         "'1stClaimNumber' As label":
                                             AlignInContainer: =AlignInContainer.Stretch
@@ -2820,10 +2867,11 @@
                                             Color: =RGBA(0, 0, 0, 1)
                                             DisabledColor: =RGBA(166, 166, 166, 1)
                                             Font: =App.Theme.Font
+                                            Height: =35
                                             Size: =13
                                             Text: |-
                                                 =If('Referral Queue Gallery'.Selected.'Is there a second Policy?' = "Yes", "1st Claim Number: ", "Claim Number: ") & If(IsBlank('Referral Queue Gallery'.Selected.'1st Claim Number'), "N/A", 'Referral Queue Gallery'.Selected.'1st Claim Number')
-                                            ZIndex: =4
+                                            ZIndex: =5
 
                                         "'1stStateCode' As label":
                                             AlignInContainer: =AlignInContainer.Stretch
@@ -2831,6 +2879,7 @@
                                             Color: =RGBA(0, 0, 0, 1)
                                             DisabledColor: =RGBA(166, 166, 166, 1)
                                             Font: =App.Theme.Font
+                                            Height: =35
                                             Size: =13
                                             Text: |-
                                                 ="State Code: " & If(Trim('Referral Queue Gallery'.Selected.'1st Policy Type') &
@@ -2870,7 +2919,7 @@
                                                             ""
                                                         )
                                                     ) & " Lines") = "Auto Business Lines", 'Referral Queue Gallery'.Selected.'1st Auto Business - State Code')
-                                            ZIndex: =5
+                                            ZIndex: =6
 
                                         "'1stDateofLoss' As label":
                                             AlignInContainer: =AlignInContainer.Stretch
@@ -2878,17 +2927,19 @@
                                             Color: =RGBA(0, 0, 0, 1)
                                             DisabledColor: =RGBA(166, 166, 166, 1)
                                             Font: =App.Theme.Font
+                                            Height: =35
                                             Size: =13
                                             Text: |-
                                                 =If('Referral Queue Gallery'.Selected.'Is there a second Policy?' = "Yes", "1st Date of Loss: ", "Date of Loss: ") & If(IsBlank('Referral Queue Gallery'.Selected.'1st Date of Loss'), "N/A", 'Referral Queue Gallery'.Selected.'1st Date of Loss')
-                                            ZIndex: =6
+                                            ZIndex: =7
 
-                                        Label8 As label:
+                                        "'1stBusinessName' As label":
                                             AlignInContainer: =AlignInContainer.Stretch
                                             BorderColor: =App.Theme.Colors.Darker40
                                             Color: =RGBA(0, 0, 0, 1)
                                             DisabledColor: =RGBA(166, 166, 166, 1)
                                             Font: =App.Theme.Font
+                                            Height: =35
                                             Size: =13
                                             Text: |-
                                                 =If('Referral Queue Gallery'.Selected.'Is there a second Policy?' = "Yes", "1st Business Name: ", "Business Name: ") & 
@@ -2897,7 +2948,7 @@
                                                     If(
                                                         'Referral Queue Gallery'.Selected.'1st Policy Type' = "Fire ",
                                                         (If(IsBlank('Referral Queue Gallery'.Selected.'1st Fire - Business Name'), "N/A", 'Referral Queue Gallery'.Selected.'1st Fire - Business Name'))))
-                                            ZIndex: =7
+                                            ZIndex: =8
 
                                         "'1stAddress' As label":
                                             AlignInContainer: =AlignInContainer.Stretch
@@ -2905,6 +2956,7 @@
                                             Color: =RGBA(0, 0, 0, 1)
                                             DisabledColor: =RGBA(166, 166, 166, 1)
                                             Font: =App.Theme.Font
+                                            Height: =35
                                             Size: =13
                                             Text: |-
                                                 =If('Referral Queue Gallery'.Selected.'Is there a second Policy?' = "Yes", "1st Address: ", "Address: ") & 
@@ -3039,70 +3091,60 @@
                                                     "N/A"
                                                 )))
                                             Visible: |
-                                                =If(
-                                                    If(
-                                                        'Referral Queue Gallery'.Selected.'1st Policy Type' = "Auto",
-                                                        Concatenate(Trim('Referral Queue Gallery'.Selected.'1st Policy Type'), " ", Trim('Referral Queue Gallery'.Selected.'1st Auto - Line of Business')),
-                                                        If(
-                                                            'Referral Queue Gallery'.Selected.'1st Policy Type' = "Fire ",
-                                                            Concatenate(Trim('Referral Queue Gallery'.Selected.'1st Policy Type'), " " & Trim('Referral Queue Gallery'.Selected.'1st Fire - Line of Business')),
-                                                            ""
-                                                        )
-                                                    ) & " Lines" = "Auto Business Lines" Or
-                                                    If(
-                                                            'Referral Queue Gallery'.Selected.'1st Policy Type' = "Auto",
-                                                            Concatenate(Trim('Referral Queue Gallery'.Selected.'1st Policy Type'), " ", Trim('Referral Queue Gallery'.Selected.'1st Auto - Line of Business')),
-                                                            If(
-                                                                'Referral Queue Gallery'.Selected.'1st Policy Type' = "Fire ",
-                                                                Concatenate(Trim('Referral Queue Gallery'.Selected.'1st Policy Type'), " " & Trim('Referral Queue Gallery'.Selected.'1st Fire - Line of Business')),
-                                                                ""
-                                                            )
-                                                        ) & " Lines" = "Auto Personal Lines", false, true)
-                                            ZIndex: =8
+                                                =If(Trim('Referral Queue Gallery'.Selected.'1st Policy Type') = "Fire", true, false)
+                                            ZIndex: =9
 
-                                        Label9 As label:
+                                        "'1stVIN' As label":
                                             AlignInContainer: =AlignInContainer.Stretch
                                             BorderColor: =App.Theme.Colors.Darker40
                                             Color: =RGBA(0, 0, 0, 1)
                                             DisabledColor: =RGBA(166, 166, 166, 1)
                                             Font: =App.Theme.Font
+                                            Height: =35
                                             Size: =13
                                             Text: |-
                                                 =If('Referral Queue Gallery'.Selected.'Is there a second Policy?' = "Yes", "1st VIN: ", "VIN: ") & If(IsBlank('Referral Queue Gallery'.Selected.'1st Auto - VIN'), "N/A", 'Referral Queue Gallery'.Selected.'1st Auto - VIN')
-                                            ZIndex: =9
+                                            Visible: =If(Trim('Referral Queue Gallery'.Selected.'1st Policy Type') = "Auto", true, false)
+                                            ZIndex: =10
 
-                                        Label10 As label:
+                                        "'1stLicensePlate' As label":
                                             AlignInContainer: =AlignInContainer.Stretch
                                             BorderColor: =App.Theme.Colors.Darker40
                                             Color: =RGBA(0, 0, 0, 1)
                                             DisabledColor: =RGBA(166, 166, 166, 1)
                                             Font: =App.Theme.Font
+                                            Height: =35
                                             Size: =13
                                             Text: |-
                                                 =If('Referral Queue Gallery'.Selected.'Is there a second Policy?' = "Yes", "1st License Plate: ", "License Plate: ") & If(IsBlank('Referral Queue Gallery'.Selected.'1st Auto - License Plate'), "N/A", 'Referral Queue Gallery'.Selected.'1st Auto - License Plate')
-                                            ZIndex: =10
+                                            Visible: =If(Trim('Referral Queue Gallery'.Selected.'1st Policy Type') = "Auto", true, false)
+                                            ZIndex: =11
 
-                                        Label11 As label:
+                                        "'1stMake' As label":
                                             AlignInContainer: =AlignInContainer.Stretch
                                             BorderColor: =App.Theme.Colors.Darker40
                                             Color: =RGBA(0, 0, 0, 1)
                                             DisabledColor: =RGBA(166, 166, 166, 1)
                                             Font: =App.Theme.Font
+                                            Height: =35
                                             Size: =13
                                             Text: |-
                                                 =If('Referral Queue Gallery'.Selected.'Is there a second Policy?' = "Yes", "1st Make: ", "Make: ") & If(IsBlank('Referral Queue Gallery'.Selected.'1st Auto - Make'), "N/A", 'Referral Queue Gallery'.Selected.'1st Auto - Make')
-                                            ZIndex: =11
+                                            Visible: =If(Trim('Referral Queue Gallery'.Selected.'1st Policy Type') = "Auto", true, false)
+                                            ZIndex: =12
 
-                                        Label13 As label:
+                                        "'1stModel' As label":
                                             AlignInContainer: =AlignInContainer.Stretch
                                             BorderColor: =App.Theme.Colors.Darker40
                                             Color: =RGBA(0, 0, 0, 1)
                                             DisabledColor: =RGBA(166, 166, 166, 1)
                                             Font: =App.Theme.Font
+                                            Height: =35
                                             Size: =13
                                             Text: |-
                                                 =If('Referral Queue Gallery'.Selected.'Is there a second Policy?' = "Yes", "1st Model: ", "Model: ") & If(IsBlank('Referral Queue Gallery'.Selected.'1st Auto - Model'), "N/A", 'Referral Queue Gallery'.Selected.'1st Auto - Model')
-                                            ZIndex: =12
+                                            Visible: =If(Trim('Referral Queue Gallery'.Selected.'1st Policy Type') = "Auto", true, false)
+                                            ZIndex: =13
 
                                     "'2ndPolicyContainer' As groupContainer.verticalAutoLayoutContainer":
                                         DropShadow: =DropShadow.Light
@@ -3131,11 +3173,12 @@
                                             Underline: =true
                                             ZIndex: =1
 
-                                        "'1stReferralType_1' As label":
+                                        "'2ndReferralType' As label":
                                             BorderColor: =App.Theme.Colors.Darker40
                                             Color: =RGBA(0, 0, 0, 1)
                                             DisabledColor: =RGBA(166, 166, 166, 1)
                                             Font: =App.Theme.Font
+                                            Height: =35
                                             Size: =13
                                             Text: |-
                                                 ="2nd Referral Type: " & Trim('Referral Queue Gallery'.Selected.'Multiple Policy - 2nd Policy Type') &
@@ -3150,31 +3193,66 @@
                                                     ) & " Lines"
                                             ZIndex: =2
 
-                                        "'1stPolicyNumber_1' As label":
+                                        "'2ndPolicyType' As label":
                                             BorderColor: =App.Theme.Colors.Darker40
                                             Color: =RGBA(0, 0, 0, 1)
                                             DisabledColor: =RGBA(166, 166, 166, 1)
                                             Font: =App.Theme.Font
+                                            Height: =35
+                                            Size: =13
+                                            Text: |-
+                                                ="2nd Policy Type: " & 
+                                                If((Trim('Referral Queue Gallery'.Selected.'Multiple Policy - 2nd Policy Type') &
+                                                    If(
+                                                        Trim('Referral Queue Gallery'.Selected.'Multiple Policy - 2nd Policy Type') = "Auto",
+                                                        Concatenate(" ", Trim('Referral Queue Gallery'.Selected.'2nd Auto - Line of Business')),
+                                                        If(
+                                                            Trim('Referral Queue Gallery'.Selected.'Multiple Policy - 2nd Policy Type') = "Fire",
+                                                            Concatenate(" " & Trim('Referral Queue Gallery'.Selected.'2nd Fire - Line of Business')),
+                                                            ""
+                                                        )
+                                                    ) & " Lines") = "Fire Personal Lines", 'Referral Queue Gallery'.Selected.'2nd Fire - Personal Policy Type',
+                                                    If((Trim('Referral Queue Gallery'.Selected.'Multiple Policy - 2nd Policy Type') &
+                                                    If(
+                                                        Trim('Referral Queue Gallery'.Selected.'Multiple Policy - 2nd Policy Type') = "Auto",
+                                                        Concatenate(" ", Trim('Referral Queue Gallery'.Selected.'2nd Auto - Line of Business')),
+                                                        If(
+                                                            Trim('Referral Queue Gallery'.Selected.'Multiple Policy - 2nd Policy Type') = "Fire",
+                                                            Concatenate(" " & Trim('Referral Queue Gallery'.Selected.'2nd Fire - Line of Business')),
+                                                            ""
+                                                        )
+                                                    ) & " Lines") = "Fire Business Lines", 'Referral Queue Gallery'.Selected.'2nd Fire - Business Policy Type'))
+                                            Visible: = If(Trim('Referral Queue Gallery'.Selected.'Multiple Policy - 2nd Policy Type') = "Fire", true,false)
+                                            ZIndex: =3
+
+                                        "'2ndPolicyNumber' As label":
+                                            BorderColor: =App.Theme.Colors.Darker40
+                                            Color: =RGBA(0, 0, 0, 1)
+                                            DisabledColor: =RGBA(166, 166, 166, 1)
+                                            Font: =App.Theme.Font
+                                            Height: =35
                                             Size: =13
                                             Text: |-
                                                 = "2nd Policy Number: " & If(IsBlank('Referral Queue Gallery'.Selected.'2nd Policy Number'), "N/A", 'Referral Queue Gallery'.Selected.'2nd Policy Number')
-                                            ZIndex: =3
+                                            ZIndex: =4
 
-                                        "'1stClaimNumber_1' As label":
+                                        "'2ndClaimNumber' As label":
                                             BorderColor: =App.Theme.Colors.Darker40
                                             Color: =RGBA(0, 0, 0, 1)
                                             DisabledColor: =RGBA(166, 166, 166, 1)
                                             Font: =App.Theme.Font
+                                            Height: =35
                                             Size: =13
                                             Text: |-
                                                 = "2nd Claim Number: " & If(IsBlank('Referral Queue Gallery'.Selected.'2nd Claim Number'), "N/A", 'Referral Queue Gallery'.Selected.'2nd Claim Number')
-                                            ZIndex: =4
+                                            ZIndex: =5
 
-                                        "'1stStateCode_1' As label":
+                                        "'2ndStateCode' As label":
                                             BorderColor: =App.Theme.Colors.Darker40
                                             Color: =RGBA(0, 0, 0, 1)
                                             DisabledColor: =RGBA(166, 166, 166, 1)
                                             Font: =App.Theme.Font
+                                            Height: =35
                                             Size: =13
                                             Text: |-
                                                 ="State Code: " & If(
@@ -3214,23 +3292,25 @@
                                                             ""
                                                         )
                                                     ) & " Lines" = "Auto Business Lines", 'Referral Queue Gallery'.Selected.'1st Auto Business - State Code')
-                                            ZIndex: =5
+                                            ZIndex: =6
 
-                                        "'1stDateofLoss_1' As label":
+                                        "'2ndDateOfLoss' As label":
                                             BorderColor: =App.Theme.Colors.Darker40
                                             Color: =RGBA(0, 0, 0, 1)
                                             DisabledColor: =RGBA(166, 166, 166, 1)
                                             Font: =App.Theme.Font
+                                            Height: =35
                                             Size: =13
                                             Text: |-
                                                 ="2nd Date of Loss: " & If(IsBlank('Referral Queue Gallery'.Selected.'2nd Date of Loss'), "N/A", 'Referral Queue Gallery'.Selected.'2nd Date of Loss')
-                                            ZIndex: =6
+                                            ZIndex: =7
 
-                                        Label8_1 As label:
+                                        "'2ndBusinessName' As label":
                                             BorderColor: =App.Theme.Colors.Darker40
                                             Color: =RGBA(0, 0, 0, 1)
                                             DisabledColor: =RGBA(166, 166, 166, 1)
                                             Font: =App.Theme.Font
+                                            Height: =35
                                             Size: =13
                                             Text: |-
                                                 = "2nd Business Name: " & 
@@ -3240,13 +3320,14 @@
                                                     If(
                                                         Trim('Referral Queue Gallery'.Selected.'Multiple Policy - 2nd Policy Type') = "Fire",
                                                         (If(IsBlank('Referral Queue Gallery'.Selected.'2nd Fire - Business Name'), "N/A", 'Referral Queue Gallery'.Selected.'2nd Fire - Business Name'))))
-                                            ZIndex: =7
+                                            ZIndex: =8
 
-                                        "'1stAddress_1' As label":
+                                        "'2ndAddress' As label":
                                             BorderColor: =App.Theme.Colors.Darker40
                                             Color: =RGBA(0, 0, 0, 1)
                                             DisabledColor: =RGBA(166, 166, 166, 1)
                                             Font: =App.Theme.Font
+                                            Height: =35
                                             Size: =13
                                             Text: |-
                                                 ="2nd Address: " & 
@@ -3379,67 +3460,56 @@
                                                     IsMatch(Trim('Referral Queue Gallery'.Selected.'2nd Fire - Business State Code'), "DC",MatchOptions.Contains), "Washington, D.C.", 
                                                     "N/A"
                                                 ))
-                                            Visible: |
-                                                =If(
-                                                    If(
-                                                        'Referral Queue Gallery'.Selected.'1st Policy Type' = "Auto",
-                                                        Concatenate(Trim('Referral Queue Gallery'.Selected.'1st Policy Type'), " ", Trim('Referral Queue Gallery'.Selected.'1st Auto - Line of Business')),
-                                                        If(
-                                                            'Referral Queue Gallery'.Selected.'1st Policy Type' = "Fire ",
-                                                            Concatenate(Trim('Referral Queue Gallery'.Selected.'1st Policy Type'), " " & Trim('Referral Queue Gallery'.Selected.'1st Fire - Line of Business')),
-                                                            ""
-                                                        )
-                                                    ) & " Lines" = "Auto Business Lines" Or
-                                                    If(
-                                                            'Referral Queue Gallery'.Selected.'1st Policy Type' = "Auto",
-                                                            Concatenate(Trim('Referral Queue Gallery'.Selected.'1st Policy Type'), " ", Trim('Referral Queue Gallery'.Selected.'1st Auto - Line of Business')),
-                                                            If(
-                                                                'Referral Queue Gallery'.Selected.'1st Policy Type' = "Fire ",
-                                                                Concatenate(Trim('Referral Queue Gallery'.Selected.'1st Policy Type'), " " & Trim('Referral Queue Gallery'.Selected.'1st Fire - Line of Business')),
-                                                                ""
-                                                            )
-                                                        ) & " Lines" = "Auto Personal Lines", false, true)
-                                            ZIndex: =8
+                                            Visible: = If(Trim('Referral Queue Gallery'.Selected.'Multiple Policy - 2nd Policy Type') = "Fire", true,false)
+                                            ZIndex: =9
 
-                                        Label9_1 As label:
+                                        "'2ndVIN' As label":
                                             BorderColor: =App.Theme.Colors.Darker40
                                             Color: =RGBA(0, 0, 0, 1)
                                             DisabledColor: =RGBA(166, 166, 166, 1)
                                             Font: =App.Theme.Font
+                                            Height: =35
                                             Size: =13
                                             Text: |-
                                                 = "2nd VIN: " & If(IsBlank('Referral Queue Gallery'.Selected.'2nd Auto - VIN'), "N/A", 'Referral Queue Gallery'.Selected.'2nd Auto - VIN')
-                                            ZIndex: =9
+                                            Visible: = If(Trim('Referral Queue Gallery'.Selected.'Multiple Policy - 2nd Policy Type') = "Auto", true,false)
+                                            ZIndex: =10
 
-                                        Label10_1 As label:
+                                        "'2ndLicensePlate' As label":
                                             BorderColor: =App.Theme.Colors.Darker40
                                             Color: =RGBA(0, 0, 0, 1)
                                             DisabledColor: =RGBA(166, 166, 166, 1)
                                             Font: =App.Theme.Font
+                                            Height: =35
                                             Size: =13
                                             Text: |-
                                                 ="2nd License Plate: " & If(IsBlank('Referral Queue Gallery'.Selected.'2nd Auto - License Plate'), "N/A", 'Referral Queue Gallery'.Selected.'2nd Auto - License Plate')
-                                            ZIndex: =10
+                                            Visible: = If(Trim('Referral Queue Gallery'.Selected.'Multiple Policy - 2nd Policy Type') = "Auto", true,false)
+                                            ZIndex: =11
 
-                                        Label11_1 As label:
+                                        "'2ndMake' As label":
                                             BorderColor: =App.Theme.Colors.Darker40
                                             Color: =RGBA(0, 0, 0, 1)
                                             DisabledColor: =RGBA(166, 166, 166, 1)
                                             Font: =App.Theme.Font
+                                            Height: =35
                                             Size: =13
                                             Text: |-
                                                 ="2nd Make: " & If(IsBlank('Referral Queue Gallery'.Selected.'2nd Auto - Make'), "N/A", 'Referral Queue Gallery'.Selected.'2nd Auto - Make')
-                                            ZIndex: =11
+                                            Visible: = If(Trim('Referral Queue Gallery'.Selected.'Multiple Policy - 2nd Policy Type') = "Auto", true,false)
+                                            ZIndex: =12
 
-                                        Label13_1 As label:
+                                        "'2ndModel' As label":
                                             BorderColor: =App.Theme.Colors.Darker40
                                             Color: =RGBA(0, 0, 0, 1)
                                             DisabledColor: =RGBA(166, 166, 166, 1)
                                             Font: =App.Theme.Font
+                                            Height: =35
                                             Size: =13
                                             Text: |-
                                                 ="2nd Model: " & If(IsBlank('Referral Queue Gallery'.Selected.'2nd Auto - Model'), "N/A", 'Referral Queue Gallery'.Selected.'2nd Auto - Model')
-                                            ZIndex: =12
+                                            Visible: = If(Trim('Referral Queue Gallery'.Selected.'Multiple Policy - 2nd Policy Type') = "Auto", true,false)
+                                            ZIndex: =13
 
                 AssignContainer As groupContainer.verticalAutoLayoutContainer:
                     FillPortions: =0
