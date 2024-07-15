@@ -3820,6 +3820,9 @@
                         LayoutMinHeight: =100
                         LayoutMinWidth: =250
                         LayoutMode: =LayoutMode.Auto
+                        PaddingBottom: =15
+                        PaddingLeft: =15
+                        PaddingRight: =15
                         PaddingTop: =15
                         RadiusBottomLeft: =4
                         RadiusBottomRight: =4
