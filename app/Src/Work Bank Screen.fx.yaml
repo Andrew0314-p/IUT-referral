@@ -3830,8 +3830,8 @@
                         Visible: =If(myTeamMode = true, true, false) And If(filterMode = true, true, false)
                         ZIndex: =11
 
-                        Container11 As groupContainer.horizontalAutoLayoutContainer:
-                            DropShadow: =DropShadow.Light
+                        FilterContainer1 As groupContainer.horizontalAutoLayoutContainer:
+                            BorderStyle: =BorderStyle.None
                             LayoutDirection: =LayoutDirection.Vertical
                             LayoutMinHeight: =100
                             LayoutMinWidth: =250
@@ -3998,8 +3998,8 @@
                                     LayoutMinWidth: =0
                                     ZIndex: =4
 
-                        Container12 As groupContainer.horizontalAutoLayoutContainer:
-                            DropShadow: =DropShadow.Light
+                        FilterContainer2 As groupContainer.horizontalAutoLayoutContainer:
+                            BorderStyle: =BorderStyle.None
                             LayoutDirection: =LayoutDirection.Vertical
                             LayoutMinHeight: =100
                             LayoutMinWidth: =250
