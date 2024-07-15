@@ -3259,43 +3259,47 @@
                                             Height: =35
                                             Size: =13
                                             Text: |-
-                                                ="State Code: " & If(
+                                                ="State Code: " &
+                                                    If((Trim('Referral Queue Gallery'.Selected.'Multiple Policy - 2nd Policy Type') &
                                                     If(
-                                                        Trim('Referral Queue Gallery'.Selected.'Multiple Policy - 2nd Policy Type') = "Auto",
-                                                        Concatenate(Trim('Referral Queue Gallery'.Selected.'Multiple Policy - 2nd Policy Type'), " ", Trim('Referral Queue Gallery'.Selected.'2nd Auto - Line of Business')),
+                                                        'Referral Queue Gallery'.Selected.'Multiple Policy - 2nd Policy Type' = "Auto",
+                                                        Concatenate(" ", Trim('Referral Queue Gallery'.Selected.'2nd Auto - Line of Business')),
                                                         If(
-                                                            Trim('Referral Queue Gallery'.Selected.'Multiple Policy - 2nd Policy Type') = "Fire",
-                                                            Concatenate(Trim('Referral Queue Gallery'.Selected.'Multiple Policy - 2nd Policy Type'), " ", Trim('Referral Queue Gallery'.Selected.'2nd Fire - Line of Business')),
+                                                            'Referral Queue Gallery'.Selected.'Multiple Policy - 2nd Policy Type' = "Fire",
+                                                            Concatenate(" " & Trim('Referral Queue Gallery'.Selected.'2nd Fire - Line of Business')),
                                                             ""
                                                         )
-                                                    ) & " Lines" = "Fire Personal Lines", 'Referral Queue Gallery'.Selected.'2nd Fire Personal - State Code',
+                                                    ) & " Lines") = "Fire Personal Lines", 'Referral Queue Gallery'.Selected.'2nd Fire Personal - State Code',
+                                                    If((Trim('Referral Queue Gallery'.Selected.'Multiple Policy - 2nd Policy Type') &
                                                     If(
-                                                        Trim('Referral Queue Gallery'.Selected.'Multiple Policy - 2nd Policy Type') = "Auto",
-                                                        Concatenate(Trim('Referral Queue Gallery'.Selected.'Multiple Policy - 2nd Policy Type'), " ", Trim('Referral Queue Gallery'.Selected.'2nd Auto - Line of Business')),
+                                                        'Referral Queue Gallery'.Selected.'Multiple Policy - 2nd Policy Type' = "Auto",
+                                                        Concatenate(" ", Trim('Referral Queue Gallery'.Selected.'2nd Auto - Line of Business')),
                                                         If(
-                                                            Trim('Referral Queue Gallery'.Selected.'Multiple Policy - 2nd Policy Type') = "Fire",
-                                                            Concatenate(Trim('Referral Queue Gallery'.Selected.'Multiple Policy - 2nd Policy Type'), " ", Trim('Referral Queue Gallery'.Selected.'2nd Fire - Line of Business')),
+                                                            'Referral Queue Gallery'.Selected.'Multiple Policy - 2nd Policy Type' = "Fire",
+                                                            Concatenate(" " & Trim('Referral Queue Gallery'.Selected.'2nd Fire - Line of Business')),
                                                             ""
                                                         )
-                                                    ) & " Lines" = "Auto Personal Lines", 'Referral Queue Gallery'.Selected.'1st Auto Personal - State Code',
+                                                    ) & " Lines") = "Auto Personal Lines", 'Referral Queue Gallery'.Selected.'2nd Auto Personal - State Code',
+                                                    If((Trim('Referral Queue Gallery'.Selected.'Multiple Policy - 2nd Policy Type') &
                                                     If(
-                                                        Trim('Referral Queue Gallery'.Selected.'Multiple Policy - 2nd Policy Type') = "Auto",
-                                                        Concatenate(Trim('Referral Queue Gallery'.Selected.'Multiple Policy - 2nd Policy Type'), " ", Trim('Referral Queue Gallery'.Selected.'2nd Auto - Line of Business')),
+                                                        'Referral Queue Gallery'.Selected.'Multiple Policy - 2nd Policy Type' = "Auto",
+                                                        Concatenate(" ", Trim('Referral Queue Gallery'.Selected.'2nd Auto - Line of Business')),
                                                         If(
-                                                            Trim('Referral Queue Gallery'.Selected.'Multiple Policy - 2nd Policy Type') = "Fire",
-                                                            Concatenate(Trim('Referral Queue Gallery'.Selected.'Multiple Policy - 2nd Policy Type'), " ", Trim('Referral Queue Gallery'.Selected.'2nd Fire - Line of Business')),
+                                                            'Referral Queue Gallery'.Selected.'Multiple Policy - 2nd Policy Type' = "Fire",
+                                                            Concatenate(" " & Trim('Referral Queue Gallery'.Selected.'2nd Fire - Line of Business')),
                                                             ""
                                                         )
-                                                    ) & " Lines" = "Fire Business Lines", 'Referral Queue Gallery'.Selected.'2nd Fire - Business State Code',
+                                                    ) & " Lines") = "Fire Business Lines", 'Referral Queue Gallery'.Selected.'2nd Fire - Business State Code',
+                                                    If((Trim('Referral Queue Gallery'.Selected.'Multiple Policy - 2nd Policy Type') &
                                                     If(
-                                                        Trim('Referral Queue Gallery'.Selected.'Multiple Policy - 2nd Policy Type') = "Auto",
-                                                        Concatenate(Trim('Referral Queue Gallery'.Selected.'Multiple Policy - 2nd Policy Type'), " ", Trim('Referral Queue Gallery'.Selected.'2nd Auto - Line of Business')),
+                                                        'Referral Queue Gallery'.Selected.'Multiple Policy - 2nd Policy Type' = "Auto",
+                                                        Concatenate(" ", Trim('Referral Queue Gallery'.Selected.'2nd Auto - Line of Business')),
                                                         If(
-                                                            Trim('Referral Queue Gallery'.Selected.'Multiple Policy - 2nd Policy Type') = "Fire",
-                                                            Concatenate(Trim('Referral Queue Gallery'.Selected.'Multiple Policy - 2nd Policy Type'), " ", Trim('Referral Queue Gallery'.Selected.'2nd Fire - Line of Business')),
+                                                            'Referral Queue Gallery'.Selected.'Multiple Policy - 2nd Policy Type' = "Fire",
+                                                            Concatenate(" " & Trim('Referral Queue Gallery'.Selected.'2nd Fire - Line of Business')),
                                                             ""
                                                         )
-                                                    ) & " Lines" = "Auto Business Lines", 'Referral Queue Gallery'.Selected.'1st Auto Business - State Code')
+                                                    ) & " Lines") = "Auto Business Lines", 'Referral Queue Gallery'.Selected.'2nd Auto Business - State Code'))))
                                             ZIndex: =6
 
                                         "'2ndDateOfLoss' As label":
