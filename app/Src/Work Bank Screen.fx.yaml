@@ -4665,9 +4665,28 @@
                             OnSelect: |-
                                 =UpdateContext({filterMode: true})
                             Text: ="Filter Referral"
-                            Visible: =If(myTeamMode = true, true, false)
+                            Visible: =If(myTeamMode = true, true, false) And If(filterMode = true, false, true)
                             Width: =96
                             X: =0
                             Y: =0
                             ZIndex: =8
+
+                        SearchReferral As Button:
+                            AlignInContainer: =AlignInContainer.Stretch
+                            Appearance: ='ButtonCanvas.Appearance'.Secondary
+                            BorderStyle: =BorderStyle.None
+                            DisplayMode: =DisplayMode.Edit
+                            FillPortions: =1
+                            FontColor: =RGBA(189, 49, 51, 1)
+                            Height: =32
+                            LayoutMinHeight: =32
+                            LayoutMinWidth: =96
+                            OnSelect: |-
+                                =UpdateContext({filterMode: false})
+                            Text: ="Search Referral"
+                            Visible: =If(myTeamMode = true, true, false) And If(filterMode = true, true, false)
+                            Width: =96
+                            X: =0
+                            Y: =0
+                            ZIndex: =9
 
