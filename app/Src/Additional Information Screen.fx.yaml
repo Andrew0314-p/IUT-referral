@@ -4,7 +4,7 @@
 
     ScreenContainer4 As groupContainer.verticalAutoLayoutContainer:
         DropShadow: =DropShadow.Light
-        Fill: =RGBA(245, 245, 245, 1)
+        Fill: =RGBA(255, 255, 255, 1)
         Height: =Parent.Height
         LayoutAlignItems: =LayoutAlignItems.Stretch
         LayoutDirection: =LayoutDirection.Vertical
@@ -55,7 +55,7 @@
                 ZIndex: =1
 
         Container9 As groupContainer.manualLayoutContainer:
-            DropShadow: =DropShadow.Light
+            Fill: =RGBA(255, 255, 255, 1)
             LayoutMinHeight: =100
             LayoutMinWidth: =250
             RadiusBottomLeft: =4
@@ -65,25 +65,25 @@
             ZIndex: =3
 
             Container10 As groupContainer.manualLayoutContainer:
-                DropShadow: =DropShadow.Light
-                Fill: =RGBA(214, 221, 224, 1)
+                DropShadow: =DropShadow.Regular
+                Fill: =RGBA(255, 255, 255, 1)
                 Height: =457
                 RadiusBottomLeft: =4
                 RadiusBottomRight: =4
                 RadiusTopLeft: =4
                 RadiusTopRight: =4
                 Width: =387
-                X: =39
-                Y: =54
+                X: =31
+                Y: =107
                 ZIndex: =1
 
                 TextCanvas2 As Text:
-                    Align: ='TextCanvas.Align'.Start
+                    Align: ='TextCanvas.Align'.Center
                     BorderStyle: =""
                     DisplayMode: =DisplayMode.Edit
                     Height: =40
                     Size: =18
-                    Text: ="IUT Additional resources/JobAids"
+                    Text: ="IUT Additional Resources"
                     Weight: ='TextCanvas.Weight'.Bold
                     Width: =328
                     X: =27
@@ -92,72 +92,64 @@
 
                 LinkCanvas1 As Link:
                     Align: ='LinkCanvas.Align'.Center
+                    AutoHeight: =true
                     BorderStyle: =""
                     DisplayMode: =DisplayMode.Edit
                     Font: =Font.Arial
                     FontWeight: =FontWeight.Semibold
-                    Height: =92
+                    Height: =19
                     Text: ="IUT Guide"
                     URL: |-
                         ="https://intranet.opr.statefarm.org/departments/pcunderwriting/assets/docs/investigativeUnderwritingTeam.pdf"
-                    Width: =398
+                    Width: =383
                     X: =4
-                    Y: =68
+                    Y: =105
                     ZIndex: =2
 
                 LinkCanvas2 As Link:
                     Align: ='LinkCanvas.Align'.Center
+                    AutoHeight: =true
                     BorderStyle: =""
                     DisplayMode: =DisplayMode.Edit
                     Font: =Font.Arial
                     FontWeight: =FontWeight.Semibold
-                    Height: =58
-                    Text: ="NICB Indicators of application fraud (2 of 2)"
+                    Height: =19
+                    Text: ="NICB Indicators of Application Fraud (2 of 2)"
                     URL: |-
                         ="https://intranet.opr.statefarm.org/afclaimssiu/jobtools/indicators/application_fraud2.pdf"
-                    Width: =396
-                    X: =6
-                    Y: =185
+                    Width: =381
+                    X: =4
+                    Y: =(LinkCanvas1.Y + LinkCanvas1.Height) * 1.5
                     ZIndex: =3
 
                 LinkCanvas3 As Link:
                     Align: ='LinkCanvas.Align'.Center
+                    AutoHeight: =false
                     BorderStyle: =""
                     DisplayMode: =DisplayMode.Edit
                     Font: =Font.Arial
                     FontWeight: =FontWeight.Semibold
-                    Height: =84
-                    Text: ="NICB Indicators of application fraud (1 of 2)"
+                    Height: =21
+                    Text: ="NICB Indicators of Application Fraud (1 of 2)"
                     URL: |-
                         ="https://intranet.opr.statefarm.org/afclaimssiu/jobtools/indicators/application_fraud1.pdf"
                     VerticalAlign: ='LinkCanvas.VerticalAlign'.Middle
-                    Width: =399
-                    X: =4
-                    Y: =124
+                    Width: =387
+                    X: =0
+                    Y: =LinkCanvas1.Y + LinkCanvas1.Height * 2
                     ZIndex: =4
 
-            Icon1 As icon.Tools:
-                BorderColor: =App.Theme.Colors.Darker40
-                Color: =App.Theme.Colors.Darker30
-                DisabledBorderColor: =RGBA(166, 166, 166, 1)
-                DisabledColor: =RGBA(244, 244, 244, 1)
-                Height: =50
-                Icon: =Icon.Tools
-                X: =362
-                Y: =72
-                ZIndex: =2
-
             Container10_1 As groupContainer.manualLayoutContainer:
-                DropShadow: =DropShadow.Light
-                Fill: =RGBA(214, 221, 224, 1)
+                DropShadow: =DropShadow.Regular
+                Fill: =RGBA(255, 255, 255, 1)
                 Height: =457
                 RadiusBottomLeft: =4
                 RadiusBottomRight: =4
                 RadiusTopLeft: =4
                 RadiusTopRight: =4
                 Width: =389
-                X: =478
-                Y: =54
+                X: =922
+                Y: =107
                 ZIndex: =3
 
                 TextCanvas2_1 As Text:
@@ -166,7 +158,7 @@
                     DisplayMode: =DisplayMode.Edit
                     Height: =28
                     Size: =18
-                    Text: ="SIU Additional resources/JobAids"
+                    Text: ="SIU Additional Resources"
                     Weight: ='TextCanvas.Weight'.Bold
                     Width: =303
                     X: =40
@@ -175,72 +167,65 @@
 
                 LinkCanvas1_1 As Link:
                     Align: ='LinkCanvas.Align'.Center
+                    AutoHeight: =false
                     BorderStyle: =""
                     DisplayMode: =DisplayMode.Edit
                     Font: =Font.Arial
                     FontWeight: =FontWeight.Semibold
-                    Height: =92
-                    Text: ="NICB Fraud indacators"
+                    Height: =26
+                    Text: ="NICB Fraud Indicators"
                     URL: |-
                         ="https://intranet.opr.statefarm.org/afclaimssiu/jobtools/nicb/nicb2.htm"
-                    Width: =398
+                    Width: =389
                     X: =0
-                    Y: =113
+                    Y: =(LinkCanvas1.Y + LinkCanvas1.Height) * 1.5
                     ZIndex: =2
 
                 LinkCanvas2_1 As Link:
                     Align: ='LinkCanvas.Align'.Center
+                    AutoHeight: =false
+                    BasePaletteColor: =RedTheme.Colors.Primary
                     BorderStyle: =""
                     DisplayMode: =DisplayMode.Edit
                     Font: =Font.Arial
                     FontWeight: =FontWeight.Semibold
-                    Height: =58
+                    Height: =26
                     Text: ="SIU Homepage "
                     URL: |-
                         ="https://intranet.opr.statefarm.org/pcshared/hp/siumciuhp.htm#"
-                    Width: =396
+                    Width: =389
                     X: =0
-                    Y: =88
+                    Y: =LinkCanvas1.Y
                     ZIndex: =3
 
                 LinkCanvas3_1 As Link:
                     Align: ='LinkCanvas.Align'.Center
+                    AutoHeight: =false
                     BorderStyle: =""
                     DisplayMode: =DisplayMode.Edit
                     Font: =Font.Arial
                     FontWeight: =FontWeight.Semibold
-                    Height: =84
+                    Height: =25
                     Text: ="SIU Resources"
                     URL: |-
                         ="https://intranet.opr.statefarm.org/afclaimssiu/tools.htm"
                     VerticalAlign: ='LinkCanvas.VerticalAlign'.Middle
-                    Width: =398
+                    Width: =389
                     X: =0
-                    Y: =171
+                    Y: =LinkCanvas1.Y + LinkCanvas1.Height * 2
                     ZIndex: =4
 
-                Icon1_1 As icon.Tools:
-                    BorderColor: =App.Theme.Colors.Darker40
-                    Color: =App.Theme.Colors.Darker30
-                    DisabledBorderColor: =RGBA(166, 166, 166, 1)
-                    DisabledColor: =RGBA(244, 244, 244, 1)
-                    Height: =52
-                    Icon: =Icon.Tools
-                    X: =331
-                    Y: =16
-                    ZIndex: =5
-
             Container10_2 As groupContainer.manualLayoutContainer:
-                DropShadow: =DropShadow.Light
-                Fill: =RGBA(214, 221, 224, 1)
+                DropShadow: =DropShadow.Regular
+                Fill: =RGBA(255, 255, 255, 1)
                 Height: =457
                 RadiusBottomLeft: =4
                 RadiusBottomRight: =4
                 RadiusTopLeft: =4
                 RadiusTopRight: =4
                 Width: =364
-                X: =927
-                Y: =54
+                X: =488
+                Y: =Container9.Y
                 ZIndex: =4
 
                 TextCanvas2_2 As Text:
@@ -249,7 +234,7 @@
                     DisplayMode: =DisplayMode.Edit
                     Height: =28
                     Size: =18
-                    Text: ="Additional links"
+                    Text: ="Additional Links"
                     Weight: ='TextCanvas.Weight'.Bold
                     Width: =303
                     X: =40
@@ -258,53 +243,33 @@
 
                 LinkCanvas1_2 As Link:
                     Align: ='LinkCanvas.Align'.Center
+                    AutoHeight: =false
                     BorderStyle: =""
                     DisplayMode: =DisplayMode.Edit
                     Font: =Font.Arial
                     FontWeight: =FontWeight.Semibold
-                    Height: =92
+                    Height: =25
                     Text: ="P&C Underwriting Homepage"
                     URL: |-
                         ="https://intranet.opr.statefarm.org/departments/pcunderwriting/"
-                    Width: =392
+                    Width: =364
                     X: =0
-                    Y: =113
+                    Y: =LinkCanvas1.Y
                     ZIndex: =2
 
                 LinkCanvas2_2 As Link:
                     Align: ='LinkCanvas.Align'.Center
+                    AutoHeight: =false
                     BorderStyle: =""
                     DisplayMode: =DisplayMode.Edit
                     Font: =Font.Arial
                     FontWeight: =FontWeight.Semibold
-                    Height: =58
+                    Height: =29
                     Text: ="State Farm Homepage"
                     URL: |-
                         ="https://statefarm.sharepoint.com/sites/Homepage"
-                    Width: =392
+                    Width: =364
                     X: =0
-                    Y: =88
+                    Y: =LinkCanvas1.Y + LinkCanvas1.Height * 2
                     ZIndex: =3
-
-                Image51_1 As image:
-                    BorderColor: =App.Theme.Colors.Darker40
-                    DisabledBorderColor: =RGBA(166, 166, 166, 1)
-                    DisabledFill: =RGBA(244, 244, 244, 1)
-                    Height: =80
-                    Image: =Pictogram_Helpful_Links_rgb
-                    ImagePosition: =ImagePosition.Fill
-                    Width: =79
-                    X: =281
-                    ZIndex: =4
-
-            ButtonCanvas3 As Button:
-                BorderStyle: =""
-                DisplayMode: =DisplayMode.Edit
-                Height: =32
-                OnSelect: =Navigate('Home Screen',ScreenTransition.None)
-                Text: ="Back"
-                Width: =96
-                X: =39
-                Y: =575
-                ZIndex: =5
 

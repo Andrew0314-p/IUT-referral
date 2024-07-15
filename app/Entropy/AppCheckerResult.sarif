@@ -44,36 +44,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "'Additional Information Screen'.ScreenContainer4.Container9.ButtonCanvas3.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "'Additional Information Screen'.ScreenContainer4.Container9.ButtonCanvas3.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Additional Information Screen",
-                "type": "'Additional Information Screen'.ScreenContainer4.Container9.ButtonCanvas3"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "NewReferralDisclaimer.ScreenContainer3_1.FooterContainer1_1.WorkBankContinue_1.AccessibleLabel"
                 }
               ],
@@ -357,36 +327,6 @@
                 "member": "AccessibleLabel",
                 "module": "Work Bank Screen",
                 "type": "'Work Bank Screen'.WorkBankScreenContainer.'Work Container'.ViewContainer.ControlContainer.ButtonContainer.MyTeam"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "'Work Bank Screen'.WorkBankScreenContainer.'Work Container'.ViewContainer.ControlContainer.ButtonContainer.Reports.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "'Work Bank Screen'.WorkBankScreenContainer.'Work Container'.ViewContainer.ControlContainer.ButtonContainer.Reports.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Work Bank Screen",
-                "type": "'Work Bank Screen'.WorkBankScreenContainer.'Work Container'.ViewContainer.ControlContainer.ButtonContainer.Reports"
               }
             }
           ],
@@ -1375,6 +1315,36 @@
               },
               "properties": {
                 "member": "CurrentItem",
+                "module": "Work Bank Screen",
+                "type": "'Work Bank Screen'"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Work Bank Screen'.reportsMode"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Work Bank Screen'.reportsMode",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "reportsMode",
                 "module": "Work Bank Screen",
                 "type": "'Work Bank Screen'"
               }

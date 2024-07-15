@@ -432,7 +432,7 @@
                         LayoutMinHeight: =32
                         LayoutMinWidth: =Parent.Width
                         OnSelect: |-
-                            =Launch("https://notesforms002.opr.statefarm.org/sff/W0058553.nsf/docframeset?openform&sffviewcategory=https://sfeuc.opr.statefarm.org/&parentunid=B8AF080891740B1686258B57007248B3")
+                            =Launch("https://notesforms003.opr.statefarm.org/sff/W0058553.nsf/unidview/13889B9EBEADA23286258B5B00514CA6?editdocument")
                         Text: ="Rescission/Void Claim Request"
                         Width: =Parent.Width
                         X: =0
