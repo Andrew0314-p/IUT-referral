@@ -3814,6 +3814,353 @@
                                             Visible: = If(Trim('Referral Queue Gallery'.Selected.'Multiple Policy - 3rd Policy Type') = "Auto", true,false)
                                             ZIndex: =13
 
+                    FilterContainer As groupContainer.verticalAutoLayoutContainer:
+                        DropShadow: =DropShadow.Light
+                        LayoutDirection: =LayoutDirection.Vertical
+                        LayoutMinHeight: =100
+                        LayoutMinWidth: =250
+                        LayoutMode: =LayoutMode.Auto
+                        PaddingTop: =15
+                        RadiusBottomLeft: =4
+                        RadiusBottomRight: =4
+                        RadiusTopLeft: =4
+                        RadiusTopRight: =4
+                        Visible: =If(myTeamMode = true, true, false) And If(filterMode = true, true, false)
+                        ZIndex: =11
+
+                        PHNameFilterContainer As groupContainer.verticalAutoLayoutContainer:
+                            BorderStyle: =BorderStyle.None
+                            FillPortions: =0
+                            Height: =50
+                            LayoutMinHeight: =100
+                            LayoutMinWidth: =250
+                            LayoutMode: =LayoutMode.Auto
+                            RadiusBottomLeft: =4
+                            RadiusBottomRight: =4
+                            RadiusTopLeft: =4
+                            RadiusTopRight: =4
+                            ZIndex: =1
+
+                            PHTitle As label:
+                                AlignInContainer: =AlignInContainer.Stretch
+                                BorderColor: =App.Theme.Colors.Darker40
+                                Color: =RGBA(0, 0, 0, 1)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                Font: =App.Theme.Font
+                                Size: =13
+                                Text: |-
+                                    ="Policyholder Name: "
+                                Width: =Len(PHTitle.Text) * 9
+                                ZIndex: =1
+
+                            PHNameSearch As text:
+                                AlignInContainer: =AlignInContainer.Stretch
+                                BorderStyle: =BorderStyle.None
+                                Default: =""
+                                FillPortions: =1
+                                Font: =App.Theme.Font
+                                HintText: ="Search Referrals"
+                                HoverBorderColor: =Self.Fill
+                                HoverFill: =RGBA(0, 0, 0, 0)
+                                LayoutMinWidth: =0
+                                ZIndex: =2
+
+                        PHNameFilterContainer_1 As groupContainer.verticalAutoLayoutContainer:
+                            BorderStyle: =BorderStyle.None
+                            FillPortions: =0
+                            Height: =50
+                            LayoutMinHeight: =100
+                            LayoutMinWidth: =250
+                            LayoutMode: =LayoutMode.Auto
+                            RadiusBottomLeft: =4
+                            RadiusBottomRight: =4
+                            RadiusTopLeft: =4
+                            RadiusTopRight: =4
+                            ZIndex: =3
+
+                            PHTitle_1 As label:
+                                AlignInContainer: =AlignInContainer.Stretch
+                                BorderColor: =App.Theme.Colors.Darker40
+                                Color: =RGBA(0, 0, 0, 1)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                Font: =App.Theme.Font
+                                Size: =13
+                                Text: |-
+                                    ="Policyholder Number: "
+                                Width: =Len(PHTitle_1.Text) * 9
+                                ZIndex: =1
+
+                            PHNameSearch_1 As text:
+                                AlignInContainer: =AlignInContainer.Stretch
+                                BorderStyle: =BorderStyle.None
+                                Default: =""
+                                FillPortions: =1
+                                Font: =App.Theme.Font
+                                HintText: ="Search Referrals"
+                                HoverBorderColor: =Self.Fill
+                                HoverFill: =RGBA(0, 0, 0, 0)
+                                LayoutMinWidth: =0
+                                ZIndex: =2
+
+                        PHNameFilterContainer_2 As groupContainer.verticalAutoLayoutContainer:
+                            BorderStyle: =BorderStyle.None
+                            FillPortions: =0
+                            Height: =50
+                            LayoutMinHeight: =100
+                            LayoutMinWidth: =250
+                            LayoutMode: =LayoutMode.Auto
+                            RadiusBottomLeft: =4
+                            RadiusBottomRight: =4
+                            RadiusTopLeft: =4
+                            RadiusTopRight: =4
+                            ZIndex: =4
+
+                            PHTitle_2 As label:
+                                AlignInContainer: =AlignInContainer.Stretch
+                                BorderColor: =App.Theme.Colors.Darker40
+                                Color: =RGBA(0, 0, 0, 1)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                Font: =App.Theme.Font
+                                Size: =13
+                                Text: |-
+                                    ="Claim Number: "
+                                Width: =Len(PHTitle_2.Text) * 9
+                                ZIndex: =1
+
+                            PHNameSearch_2 As text:
+                                AlignInContainer: =AlignInContainer.Stretch
+                                BorderStyle: =BorderStyle.None
+                                Default: =""
+                                FillPortions: =1
+                                Font: =App.Theme.Font
+                                HintText: ="Search Referrals"
+                                HoverBorderColor: =Self.Fill
+                                HoverFill: =RGBA(0, 0, 0, 0)
+                                LayoutMinWidth: =0
+                                ZIndex: =2
+
+                        PHNameFilterContainer_3 As groupContainer.verticalAutoLayoutContainer:
+                            BorderStyle: =BorderStyle.None
+                            FillPortions: =0
+                            Height: =50
+                            LayoutMinHeight: =100
+                            LayoutMinWidth: =250
+                            LayoutMode: =LayoutMode.Auto
+                            RadiusBottomLeft: =4
+                            RadiusBottomRight: =4
+                            RadiusTopLeft: =4
+                            RadiusTopRight: =4
+                            ZIndex: =5
+
+                            PHTitle_3 As label:
+                                AlignInContainer: =AlignInContainer.Stretch
+                                BorderColor: =App.Theme.Colors.Darker40
+                                Color: =RGBA(0, 0, 0, 1)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                Font: =App.Theme.Font
+                                Size: =13
+                                Text: |-
+                                    ="Agent Code or Alias:"
+                                Width: =Len(PHTitle_3.Text) * 9
+                                ZIndex: =1
+
+                            PHNameSearch_3 As text:
+                                AlignInContainer: =AlignInContainer.Stretch
+                                BorderStyle: =BorderStyle.None
+                                Default: =""
+                                FillPortions: =1
+                                Font: =App.Theme.Font
+                                HintText: ="Search Referrals"
+                                HoverBorderColor: =Self.Fill
+                                HoverFill: =RGBA(0, 0, 0, 0)
+                                LayoutMinWidth: =0
+                                ZIndex: =2
+
+                        PHNameFilterContainer_4 As groupContainer.verticalAutoLayoutContainer:
+                            BorderStyle: =BorderStyle.None
+                            FillPortions: =0
+                            Height: =50
+                            LayoutMinHeight: =100
+                            LayoutMinWidth: =250
+                            LayoutMode: =LayoutMode.Auto
+                            RadiusBottomLeft: =4
+                            RadiusBottomRight: =4
+                            RadiusTopLeft: =4
+                            RadiusTopRight: =4
+                            ZIndex: =6
+
+                            PHTitle_4 As label:
+                                AlignInContainer: =AlignInContainer.Stretch
+                                BorderColor: =App.Theme.Colors.Darker40
+                                Color: =RGBA(0, 0, 0, 1)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                Font: =App.Theme.Font
+                                Size: =13
+                                Text: |-
+                                    ="State: "
+                                Width: =Len(PHTitle_4.Text) * 9
+                                ZIndex: =1
+
+                            PHNameSearch_4 As text:
+                                AlignInContainer: =AlignInContainer.Stretch
+                                BorderStyle: =BorderStyle.None
+                                Default: =""
+                                FillPortions: =1
+                                Font: =App.Theme.Font
+                                HintText: ="Search Referrals"
+                                HoverBorderColor: =Self.Fill
+                                HoverFill: =RGBA(0, 0, 0, 0)
+                                LayoutMinWidth: =0
+                                ZIndex: =2
+
+                        PHNameFilterContainer_5 As groupContainer.verticalAutoLayoutContainer:
+                            BorderStyle: =BorderStyle.None
+                            FillPortions: =0
+                            Height: =50
+                            LayoutMinHeight: =100
+                            LayoutMinWidth: =250
+                            LayoutMode: =LayoutMode.Auto
+                            RadiusBottomLeft: =4
+                            RadiusBottomRight: =4
+                            RadiusTopLeft: =4
+                            RadiusTopRight: =4
+                            ZIndex: =7
+
+                            PHTitle_5 As label:
+                                AlignInContainer: =AlignInContainer.Stretch
+                                BorderColor: =App.Theme.Colors.Darker40
+                                Color: =RGBA(0, 0, 0, 1)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                Font: =App.Theme.Font
+                                Size: =13
+                                Text: |-
+                                    ="Status: "
+                                Width: =Len(PHTitle_5.Text) * 9
+                                ZIndex: =1
+
+                            PHNameSearch_5 As text:
+                                AlignInContainer: =AlignInContainer.Stretch
+                                BorderStyle: =BorderStyle.None
+                                Default: =""
+                                FillPortions: =1
+                                Font: =App.Theme.Font
+                                HintText: ="Search Referrals"
+                                HoverBorderColor: =Self.Fill
+                                HoverFill: =RGBA(0, 0, 0, 0)
+                                LayoutMinWidth: =0
+                                ZIndex: =2
+
+                        PHNameFilterContainer_6 As groupContainer.verticalAutoLayoutContainer:
+                            BorderStyle: =BorderStyle.None
+                            FillPortions: =0
+                            Height: =50
+                            LayoutMinHeight: =100
+                            LayoutMinWidth: =250
+                            LayoutMode: =LayoutMode.Auto
+                            RadiusBottomLeft: =4
+                            RadiusBottomRight: =4
+                            RadiusTopLeft: =4
+                            RadiusTopRight: =4
+                            ZIndex: =8
+
+                            PHTitle_6 As label:
+                                AlignInContainer: =AlignInContainer.Stretch
+                                BorderColor: =App.Theme.Colors.Darker40
+                                Color: =RGBA(0, 0, 0, 1)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                Font: =App.Theme.Font
+                                Size: =13
+                                Text: |-
+                                    ="Assigned Alias: "
+                                Width: =Len(PHTitle_6.Text) * 9
+                                ZIndex: =1
+
+                            PHNameSearch_6 As text:
+                                AlignInContainer: =AlignInContainer.Stretch
+                                BorderStyle: =BorderStyle.None
+                                Default: =""
+                                FillPortions: =1
+                                Font: =App.Theme.Font
+                                HintText: ="Search Referrals"
+                                HoverBorderColor: =Self.Fill
+                                HoverFill: =RGBA(0, 0, 0, 0)
+                                LayoutMinWidth: =0
+                                ZIndex: =2
+
+                        PHNameFilterContainer_7 As groupContainer.verticalAutoLayoutContainer:
+                            BorderStyle: =BorderStyle.None
+                            FillPortions: =0
+                            Height: =50
+                            LayoutMinHeight: =100
+                            LayoutMinWidth: =250
+                            LayoutMode: =LayoutMode.Auto
+                            RadiusBottomLeft: =4
+                            RadiusBottomRight: =4
+                            RadiusTopLeft: =4
+                            RadiusTopRight: =4
+                            ZIndex: =9
+
+                            PHTitle_7 As label:
+                                AlignInContainer: =AlignInContainer.Stretch
+                                BorderColor: =App.Theme.Colors.Darker40
+                                Color: =RGBA(0, 0, 0, 1)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                Font: =App.Theme.Font
+                                Size: =13
+                                Text: |-
+                                    ="Referral Type: "
+                                Width: =Len(PHTitle_7.Text) * 9
+                                ZIndex: =1
+
+                            PHNameSearch_7 As text:
+                                AlignInContainer: =AlignInContainer.Stretch
+                                BorderStyle: =BorderStyle.None
+                                Default: =""
+                                FillPortions: =1
+                                Font: =App.Theme.Font
+                                HintText: ="Search Referrals"
+                                HoverBorderColor: =Self.Fill
+                                HoverFill: =RGBA(0, 0, 0, 0)
+                                LayoutMinWidth: =0
+                                ZIndex: =2
+
+                        PHNameFilterContainer_8 As groupContainer.verticalAutoLayoutContainer:
+                            BorderStyle: =BorderStyle.None
+                            FillPortions: =0
+                            Height: =50
+                            LayoutMinHeight: =100
+                            LayoutMinWidth: =250
+                            LayoutMode: =LayoutMode.Auto
+                            RadiusBottomLeft: =4
+                            RadiusBottomRight: =4
+                            RadiusTopLeft: =4
+                            RadiusTopRight: =4
+                            ZIndex: =10
+
+                            PHTitle_8 As label:
+                                AlignInContainer: =AlignInContainer.Stretch
+                                BorderColor: =App.Theme.Colors.Darker40
+                                Color: =RGBA(0, 0, 0, 1)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                Font: =App.Theme.Font
+                                Size: =13
+                                Text: |-
+                                    ="Policyholder Name: "
+                                Width: =Len(PHTitle_8.Text) * 9
+                                ZIndex: =1
+
+                            PHNameSearch_8 As text:
+                                AlignInContainer: =AlignInContainer.Stretch
+                                BorderStyle: =BorderStyle.None
+                                Default: =""
+                                FillPortions: =1
+                                Font: =App.Theme.Font
+                                HintText: ="Search Referrals"
+                                HoverBorderColor: =Self.Fill
+                                HoverFill: =RGBA(0, 0, 0, 0)
+                                LayoutMinWidth: =0
+                                ZIndex: =2
+
                 AssignContainer As groupContainer.verticalAutoLayoutContainer:
                     FillPortions: =0
                     Height: =AssignedInfoContainer.Height + 1
