@@ -537,7 +537,7 @@
       "MetaDataIDKey": "",
       "Name": "1stBusinessName",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 7,
+      "ParentIndex": 6,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -1180,7 +1180,7 @@
       "MetaDataIDKey": "",
       "Name": "1stClaimNumber",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 4,
+      "ParentIndex": 3,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -1502,7 +1502,7 @@
       "MetaDataIDKey": "",
       "Name": "1stDateofLoss",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 6,
+      "ParentIndex": 5,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -3717,7 +3717,7 @@
       "MetaDataIDKey": "",
       "Name": "1stPolicyNumber",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 3,
+      "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -4040,7 +4040,7 @@
       "MetaDataIDKey": "",
       "Name": "1stPolicyType",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 2,
+      "ParentIndex": 7,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -4689,7 +4689,7 @@
       "MetaDataIDKey": "",
       "Name": "1stStateCode",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 5,
+      "ParentIndex": 4,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -4700,7 +4700,7 @@
         {
           "Category": "Data",
           "PropertyName": "Text",
-          "RuleProviderType": "Unknown"
+          "RuleProviderType": "User"
         },
         {
           "Category": "Data",
@@ -5436,7 +5436,7 @@
       "MetaDataIDKey": "",
       "Name": "2ndAddress",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 8,
+      "ParentIndex": 9,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -10252,7 +10252,7 @@
       "MetaDataIDKey": "",
       "Name": "2ndVIN",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 9,
+      "ParentIndex": 8,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -12752,7 +12752,7 @@
       "MetaDataIDKey": "",
       "Name": "AssignedInfoContainer",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 1,
+      "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -18152,7 +18152,7 @@
       "MetaDataIDKey": "",
       "Name": "EmployeeSearchContainer",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 2,
+      "ParentIndex": 1,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -32363,7 +32363,7 @@
       "MetaDataIDKey": "",
       "Name": "ReporterAlias",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 8,
+      "ParentIndex": 9,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -32676,7 +32676,7 @@
       "MetaDataIDKey": "",
       "Name": "ReporterContact",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 10,
+      "ParentIndex": 7,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -33236,7 +33236,7 @@
       "MetaDataIDKey": "",
       "Name": "ReporterDepartment",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 7,
+      "ParentIndex": 8,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -34528,7 +34528,7 @@
       "MetaDataIDKey": "",
       "Name": "ReporterPhoneNo",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 9,
+      "ParentIndex": 10,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
