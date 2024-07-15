@@ -3874,13 +3874,13 @@
                                     Default: =""
                                     FillPortions: =1
                                     Font: =App.Theme.Font
-                                    HintText: ="Search Referrals"
+                                    HintText: ="Search Policyholder Name"
                                     HoverBorderColor: =Self.Fill
                                     HoverFill: =RGBA(0, 0, 0, 0)
                                     LayoutMinWidth: =0
                                     ZIndex: =2
 
-                            PolicyClaimNoFilterContainer As groupContainer.verticalAutoLayoutContainer:
+                            PolicyNoFilterContainer As groupContainer.verticalAutoLayoutContainer:
                                 BorderStyle: =BorderStyle.None
                                 Height: =50
                                 LayoutMinHeight: =1
@@ -3910,11 +3910,23 @@
                                     Default: =""
                                     FillPortions: =1
                                     Font: =App.Theme.Font
-                                    HintText: ="Search Referrals"
+                                    HintText: ="Search Policy Number"
                                     HoverBorderColor: =Self.Fill
                                     HoverFill: =RGBA(0, 0, 0, 0)
                                     LayoutMinWidth: =0
                                     ZIndex: =2
+
+                            ClaimNoFilterContainer As groupContainer.verticalAutoLayoutContainer:
+                                BorderStyle: =BorderStyle.None
+                                Height: =50
+                                LayoutMinHeight: =1
+                                LayoutMinWidth: =250
+                                LayoutMode: =LayoutMode.Auto
+                                RadiusBottomLeft: =4
+                                RadiusBottomRight: =4
+                                RadiusTopLeft: =4
+                                RadiusTopRight: =4
+                                ZIndex: =3
 
                                 ClaimNo As label:
                                     AlignInContainer: =AlignInContainer.Stretch
@@ -3934,7 +3946,7 @@
                                     Default: =""
                                     FillPortions: =1
                                     Font: =App.Theme.Font
-                                    HintText: ="Search Referrals"
+                                    HintText: ="Search Claim Number"
                                     HoverBorderColor: =Self.Fill
                                     HoverFill: =RGBA(0, 0, 0, 0)
                                     LayoutMinWidth: =0
@@ -3950,7 +3962,7 @@
                                 RadiusBottomRight: =4
                                 RadiusTopLeft: =4
                                 RadiusTopRight: =4
-                                ZIndex: =3
+                                ZIndex: =4
 
                                 AgentCodeAlias As label:
                                     AlignInContainer: =AlignInContainer.Stretch
@@ -3970,11 +3982,23 @@
                                     Default: =""
                                     FillPortions: =1
                                     Font: =App.Theme.Font
-                                    HintText: ="Search Referrals"
+                                    HintText: ="Search Agent Code or Alias"
                                     HoverBorderColor: =Self.Fill
                                     HoverFill: =RGBA(0, 0, 0, 0)
                                     LayoutMinWidth: =0
                                     ZIndex: =2
+
+                            AssignedAliasFilterContainer As groupContainer.verticalAutoLayoutContainer:
+                                BorderStyle: =BorderStyle.None
+                                Height: =50
+                                LayoutMinHeight: =1
+                                LayoutMinWidth: =250
+                                LayoutMode: =LayoutMode.Auto
+                                RadiusBottomLeft: =4
+                                RadiusBottomRight: =4
+                                RadiusTopLeft: =4
+                                RadiusTopRight: =4
+                                ZIndex: =5
 
                                 AssignedAlias As label:
                                     AlignInContainer: =AlignInContainer.Stretch
@@ -3994,7 +4018,7 @@
                                     Default: =""
                                     FillPortions: =1
                                     Font: =App.Theme.Font
-                                    HintText: ="Search Referrals"
+                                    HintText: ="Search Assigned Alias"
                                     HoverBorderColor: =Self.Fill
                                     HoverFill: =RGBA(0, 0, 0, 0)
                                     LayoutMinWidth: =0
@@ -4050,7 +4074,7 @@
                                     Default: =""
                                     FillPortions: =1
                                     Font: =App.Theme.Font
-                                    HintText: ="Search Referrals"
+                                    HintText: ="Search Status"
                                     HoverBorderColor: =Self.Fill
                                     HoverFill: =RGBA(0, 0, 0, 0)
                                     LayoutMinWidth: =0
@@ -4086,7 +4110,7 @@
                                     Default: =""
                                     FillPortions: =1
                                     Font: =App.Theme.Font
-                                    HintText: ="Search Referrals"
+                                    HintText: ="Search State"
                                     HoverBorderColor: =Self.Fill
                                     HoverFill: =RGBA(0, 0, 0, 0)
                                     LayoutMinWidth: =0
@@ -4110,7 +4134,7 @@
                                     Default: =""
                                     FillPortions: =1
                                     Font: =App.Theme.Font
-                                    HintText: ="Search Referrals"
+                                    HintText: ="Search Referral Type"
                                     HoverBorderColor: =Self.Fill
                                     HoverFill: =RGBA(0, 0, 0, 0)
                                     LayoutMinWidth: =0
@@ -4146,7 +4170,7 @@
                                     Default: =""
                                     FillPortions: =1
                                     Font: =App.Theme.Font
-                                    HintText: ="Search Referrals"
+                                    HintText: ="Search Start Date"
                                     HoverBorderColor: =Self.Fill
                                     HoverFill: =RGBA(0, 0, 0, 0)
                                     LayoutMinWidth: =0
@@ -4170,7 +4194,7 @@
                                     Default: =""
                                     FillPortions: =1
                                     Font: =App.Theme.Font
-                                    HintText: ="Search Referrals"
+                                    HintText: ="Search End Date"
                                     HoverBorderColor: =Self.Fill
                                     HoverFill: =RGBA(0, 0, 0, 0)
                                     LayoutMinWidth: =0
