@@ -3830,9 +3830,8 @@
 
                         PHNameFilterContainer As groupContainer.verticalAutoLayoutContainer:
                             BorderStyle: =BorderStyle.None
-                            FillPortions: =0
                             Height: =50
-                            LayoutMinHeight: =100
+                            LayoutMinHeight: =1
                             LayoutMinWidth: =250
                             LayoutMode: =LayoutMode.Auto
                             RadiusBottomLeft: =4
@@ -3865,11 +3864,10 @@
                                 LayoutMinWidth: =0
                                 ZIndex: =2
 
-                        PHNameFilterContainer_1 As groupContainer.verticalAutoLayoutContainer:
+                        PolicyNumberFilterContainer As groupContainer.verticalAutoLayoutContainer:
                             BorderStyle: =BorderStyle.None
-                            FillPortions: =0
                             Height: =50
-                            LayoutMinHeight: =100
+                            LayoutMinHeight: =1
                             LayoutMinWidth: =250
                             LayoutMode: =LayoutMode.Auto
                             RadiusBottomLeft: =4
@@ -3886,7 +3884,7 @@
                                 Font: =App.Theme.Font
                                 Size: =13
                                 Text: |-
-                                    ="Policyholder Number: "
+                                    ="Policy Number: "
                                 Width: =Len(PHTitle_1.Text) * 9
                                 ZIndex: =1
 
@@ -3902,11 +3900,10 @@
                                 LayoutMinWidth: =0
                                 ZIndex: =2
 
-                        PHNameFilterContainer_2 As groupContainer.verticalAutoLayoutContainer:
+                        ClaimNumberFilterContainer As groupContainer.verticalAutoLayoutContainer:
                             BorderStyle: =BorderStyle.None
-                            FillPortions: =0
                             Height: =50
-                            LayoutMinHeight: =100
+                            LayoutMinHeight: =1
                             LayoutMinWidth: =250
                             LayoutMode: =LayoutMode.Auto
                             RadiusBottomLeft: =4
@@ -3939,11 +3936,10 @@
                                 LayoutMinWidth: =0
                                 ZIndex: =2
 
-                        PHNameFilterContainer_3 As groupContainer.verticalAutoLayoutContainer:
+                        AgentCodeFilterContainer As groupContainer.verticalAutoLayoutContainer:
                             BorderStyle: =BorderStyle.None
-                            FillPortions: =0
                             Height: =50
-                            LayoutMinHeight: =100
+                            LayoutMinHeight: =1
                             LayoutMinWidth: =250
                             LayoutMode: =LayoutMode.Auto
                             RadiusBottomLeft: =4
@@ -3976,11 +3972,10 @@
                                 LayoutMinWidth: =0
                                 ZIndex: =2
 
-                        PHNameFilterContainer_4 As groupContainer.verticalAutoLayoutContainer:
+                        StateFilterContainer As groupContainer.verticalAutoLayoutContainer:
                             BorderStyle: =BorderStyle.None
-                            FillPortions: =0
                             Height: =50
-                            LayoutMinHeight: =100
+                            LayoutMinHeight: =1
                             LayoutMinWidth: =250
                             LayoutMode: =LayoutMode.Auto
                             RadiusBottomLeft: =4
@@ -4013,11 +4008,10 @@
                                 LayoutMinWidth: =0
                                 ZIndex: =2
 
-                        PHNameFilterContainer_5 As groupContainer.verticalAutoLayoutContainer:
+                        StatusFilterContainer As groupContainer.verticalAutoLayoutContainer:
                             BorderStyle: =BorderStyle.None
-                            FillPortions: =0
                             Height: =50
-                            LayoutMinHeight: =100
+                            LayoutMinHeight: =1
                             LayoutMinWidth: =250
                             LayoutMode: =LayoutMode.Auto
                             RadiusBottomLeft: =4
@@ -4050,11 +4044,10 @@
                                 LayoutMinWidth: =0
                                 ZIndex: =2
 
-                        PHNameFilterContainer_6 As groupContainer.verticalAutoLayoutContainer:
+                        AssignedAliasFilterContainer As groupContainer.verticalAutoLayoutContainer:
                             BorderStyle: =BorderStyle.None
-                            FillPortions: =0
                             Height: =50
-                            LayoutMinHeight: =100
+                            LayoutMinHeight: =1
                             LayoutMinWidth: =250
                             LayoutMode: =LayoutMode.Auto
                             RadiusBottomLeft: =4
@@ -4087,11 +4080,10 @@
                                 LayoutMinWidth: =0
                                 ZIndex: =2
 
-                        PHNameFilterContainer_7 As groupContainer.verticalAutoLayoutContainer:
+                        ReferralTypeFilterContainer As groupContainer.verticalAutoLayoutContainer:
                             BorderStyle: =BorderStyle.None
-                            FillPortions: =0
                             Height: =50
-                            LayoutMinHeight: =100
+                            LayoutMinHeight: =1
                             LayoutMinWidth: =250
                             LayoutMode: =LayoutMode.Auto
                             RadiusBottomLeft: =4
@@ -4124,11 +4116,10 @@
                                 LayoutMinWidth: =0
                                 ZIndex: =2
 
-                        PHNameFilterContainer_8 As groupContainer.verticalAutoLayoutContainer:
+                        StartDateFilterContainer As groupContainer.verticalAutoLayoutContainer:
                             BorderStyle: =BorderStyle.None
-                            FillPortions: =0
                             Height: =50
-                            LayoutMinHeight: =100
+                            LayoutMinHeight: =1
                             LayoutMinWidth: =250
                             LayoutMode: =LayoutMode.Auto
                             RadiusBottomLeft: =4
@@ -4145,11 +4136,47 @@
                                 Font: =App.Theme.Font
                                 Size: =13
                                 Text: |-
-                                    ="Policyholder Name: "
+                                    ="Start Date: "
                                 Width: =Len(PHTitle_8.Text) * 9
                                 ZIndex: =1
 
                             PHNameSearch_8 As text:
+                                AlignInContainer: =AlignInContainer.Stretch
+                                BorderStyle: =BorderStyle.None
+                                Default: =""
+                                FillPortions: =1
+                                Font: =App.Theme.Font
+                                HintText: ="Search Referrals"
+                                HoverBorderColor: =Self.Fill
+                                HoverFill: =RGBA(0, 0, 0, 0)
+                                LayoutMinWidth: =0
+                                ZIndex: =2
+
+                        EndDateFilterContainer As groupContainer.verticalAutoLayoutContainer:
+                            BorderStyle: =BorderStyle.None
+                            Height: =50
+                            LayoutMinHeight: =1
+                            LayoutMinWidth: =250
+                            LayoutMode: =LayoutMode.Auto
+                            RadiusBottomLeft: =4
+                            RadiusBottomRight: =4
+                            RadiusTopLeft: =4
+                            RadiusTopRight: =4
+                            ZIndex: =11
+
+                            PHTitle_9 As label:
+                                AlignInContainer: =AlignInContainer.Stretch
+                                BorderColor: =App.Theme.Colors.Darker40
+                                Color: =RGBA(0, 0, 0, 1)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                Font: =App.Theme.Font
+                                Size: =13
+                                Text: |-
+                                    ="End Date: "
+                                Width: =Len(PHTitle_9.Text) * 9
+                                ZIndex: =1
+
+                            PHNameSearch_9 As text:
                                 AlignInContainer: =AlignInContainer.Stretch
                                 BorderStyle: =BorderStyle.None
                                 Default: =""
