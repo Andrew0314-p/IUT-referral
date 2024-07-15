@@ -2165,7 +2165,7 @@
                                 LayoutMinHeight: =32
                                 LayoutMinWidth: =96
                                 Size: =20
-                                Text: ="Please select a referral from the list to left."
+                                Text: ="Please select a referral from the list to the left."
                                 Visible: =If(IsEmpty(ItemValues), true, false)
                                 Width: =96
                                 X: =0
