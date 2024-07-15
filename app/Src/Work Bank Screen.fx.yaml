@@ -3836,11 +3836,13 @@
                             LayoutMinHeight: =100
                             LayoutMinWidth: =250
                             LayoutMode: =LayoutMode.Auto
+                            PaddingLeft: =15
+                            PaddingRight: =15
                             RadiusBottomLeft: =4
                             RadiusBottomRight: =4
                             RadiusTopLeft: =4
                             RadiusTopRight: =4
-                            ZIndex: =11
+                            ZIndex: =1
 
                             PHNameFilterContainer As groupContainer.verticalAutoLayoutContainer:
                                 BorderStyle: =BorderStyle.None
@@ -3899,7 +3901,7 @@
                                     Size: =13
                                     Text: |-
                                         ="Policy Number: "
-                                    Width: =Len(PolicyNo.Text) * 9
+                                    Width: =Len(PHTitle.Text) * 9
                                     ZIndex: =1
 
                                 PolicyNoSearch As text:
@@ -3923,7 +3925,7 @@
                                     Size: =13
                                     Text: |-
                                         ="Claim Number: "
-                                    Width: =Len(ClaimNo.Text) * 9
+                                    Width: =Len(PHTitle.Text) * 9
                                     ZIndex: =3
 
                                 ClaimNoSearch As text:
@@ -3959,7 +3961,7 @@
                                     Size: =13
                                     Text: |-
                                         ="Agent Code or Alias:"
-                                    Width: =Len(AgentCodeAlias.Text) * 9
+                                    Width: =Len(PHTitle.Text) * 9
                                     ZIndex: =1
 
                                 AgenCodeAliasSearch As text:
@@ -3983,7 +3985,7 @@
                                     Size: =13
                                     Text: |-
                                         ="Assigned Alias: "
-                                    Width: =Len(AssignedAlias.Text) * 9
+                                    Width: =Len(PHTitle.Text) * 9
                                     ZIndex: =3
 
                                 AssignedAliasSearch As text:
@@ -3998,17 +4000,26 @@
                                     LayoutMinWidth: =0
                                     ZIndex: =4
 
+                        Rectangle1 As rectangle:
+                            AlignInContainer: =AlignInContainer.Stretch
+                            BorderColor: =App.Theme.Colors.Darker40
+                            Fill: =App.Theme.Colors.Primary
+                            Width: =1
+                            ZIndex: =2
+
                         FilterContainer2 As groupContainer.horizontalAutoLayoutContainer:
                             BorderStyle: =BorderStyle.None
                             LayoutDirection: =LayoutDirection.Vertical
                             LayoutMinHeight: =100
                             LayoutMinWidth: =250
                             LayoutMode: =LayoutMode.Auto
+                            PaddingLeft: =15
+                            PaddingRight: =15
                             RadiusBottomLeft: =4
                             RadiusBottomRight: =4
                             RadiusTopLeft: =4
                             RadiusTopRight: =4
-                            ZIndex: =12
+                            ZIndex: =3
 
                             StatusFilterContainer As groupContainer.horizontalAutoLayoutContainer:
                                 BorderStyle: =BorderStyle.None
@@ -4030,8 +4041,8 @@
                                     Size: =13
                                     Text: |-
                                         ="Status: "
-                                    Width: =Len(Status.Text) * 9
-                                    ZIndex: =1
+                                    Width: =Len(StartDate.Text) * 9
+                                    ZIndex: =2
 
                                 StatusSearch As text:
                                     AlignInContainer: =AlignInContainer.Stretch
@@ -4043,7 +4054,7 @@
                                     HoverBorderColor: =Self.Fill
                                     HoverFill: =RGBA(0, 0, 0, 0)
                                     LayoutMinWidth: =0
-                                    ZIndex: =2
+                                    ZIndex: =3
 
                             StateFilterContainer As groupContainer.verticalAutoLayoutContainer:
                                 BorderStyle: =BorderStyle.None
@@ -4066,7 +4077,7 @@
                                     Size: =13
                                     Text: |-
                                         ="State: "
-                                    Width: =Len(StateLabel.Text) * 9
+                                    Width: =Len(StartDate.Text) * 9
                                     ZIndex: =1
 
                                 StateSearch As text:
@@ -4090,7 +4101,7 @@
                                     Size: =13
                                     Text: |-
                                         ="Referral Type: "
-                                    Width: =Len(ReferralType.Text) * 9
+                                    Width: =Len(StartDate.Text) * 9
                                     ZIndex: =3
 
                                 ReferralTypeSearch As text:
@@ -4150,7 +4161,7 @@
                                     Size: =13
                                     Text: |-
                                         ="End Date: "
-                                    Width: =Len(EndDate.Text) * 9
+                                    Width: =Len(StartDate.Text) * 9
                                     ZIndex: =3
 
                                 EndDateSearch As text:
@@ -4620,7 +4631,7 @@
                             OnSelect: |-
                                 =If(developerMode = false, UpdateContext({developerMode: true}), UpdateContext({developerMode: false}))
                             Text: ="Toggle Developer"
-                            Visible: =If(User().Email = "mickey.vreeland.vahilq@statefarm.com", true, false) Or If(User().Email = "christiana.kramer.vahio7@statfarm.com", true, false)
+                            Visible: =false //If(User().Email = "mickey.vreeland.vahilq@statefarm.com", true, false) Or If(User().Email = "christiana.kramer.vahio7@statfarm.com", true, false)
                             Width: =96
                             X: =0
                             Y: =0
