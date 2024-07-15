@@ -3197,38 +3197,6 @@
                                                     ) & " Lines"
                                             ZIndex: =2
 
-                                        "'2ndPolicyType' As label":
-                                            BorderColor: =App.Theme.Colors.Darker40
-                                            Color: =RGBA(0, 0, 0, 1)
-                                            DisabledColor: =RGBA(166, 166, 166, 1)
-                                            Font: =App.Theme.Font
-                                            Height: =35
-                                            Size: =13
-                                            Text: |-
-                                                ="2nd Policy Type: " & 
-                                                If((Trim('Referral Queue Gallery'.Selected.'Multiple Policy - 2nd Policy Type') &
-                                                    If(
-                                                        Trim('Referral Queue Gallery'.Selected.'Multiple Policy - 2nd Policy Type') = "Auto",
-                                                        Concatenate(" ", Trim('Referral Queue Gallery'.Selected.'2nd Auto - Line of Business')),
-                                                        If(
-                                                            Trim('Referral Queue Gallery'.Selected.'Multiple Policy - 2nd Policy Type') = "Fire",
-                                                            Concatenate(" " & Trim('Referral Queue Gallery'.Selected.'2nd Fire - Line of Business')),
-                                                            ""
-                                                        )
-                                                    ) & " Lines") = "Fire Personal Lines", 'Referral Queue Gallery'.Selected.'2nd Fire - Personal Policy Type',
-                                                    If((Trim('Referral Queue Gallery'.Selected.'Multiple Policy - 2nd Policy Type') &
-                                                    If(
-                                                        Trim('Referral Queue Gallery'.Selected.'Multiple Policy - 2nd Policy Type') = "Auto",
-                                                        Concatenate(" ", Trim('Referral Queue Gallery'.Selected.'2nd Auto - Line of Business')),
-                                                        If(
-                                                            Trim('Referral Queue Gallery'.Selected.'Multiple Policy - 2nd Policy Type') = "Fire",
-                                                            Concatenate(" " & Trim('Referral Queue Gallery'.Selected.'2nd Fire - Line of Business')),
-                                                            ""
-                                                        )
-                                                    ) & " Lines") = "Fire Business Lines", 'Referral Queue Gallery'.Selected.'2nd Fire - Business Policy Type'))
-                                            Visible: = If(Trim('Referral Queue Gallery'.Selected.'Multiple Policy - 2nd Policy Type') = "Fire", true,false)
-                                            ZIndex: =3
-
                                         "'2ndPolicyNumber' As label":
                                             BorderColor: =App.Theme.Colors.Darker40
                                             Color: =RGBA(0, 0, 0, 1)
@@ -3238,7 +3206,7 @@
                                             Size: =13
                                             Text: |-
                                                 = "2nd Policy Number: " & If(IsBlank('Referral Queue Gallery'.Selected.'2nd Policy Number'), "N/A", 'Referral Queue Gallery'.Selected.'2nd Policy Number')
-                                            ZIndex: =4
+                                            ZIndex: =3
 
                                         "'2ndClaimNumber' As label":
                                             BorderColor: =App.Theme.Colors.Darker40
@@ -3249,7 +3217,7 @@
                                             Size: =13
                                             Text: |-
                                                 = "2nd Claim Number: " & If(IsBlank('Referral Queue Gallery'.Selected.'2nd Claim Number'), "N/A", 'Referral Queue Gallery'.Selected.'2nd Claim Number')
-                                            ZIndex: =5
+                                            ZIndex: =4
 
                                         "'2ndStateCode' As label":
                                             BorderColor: =App.Theme.Colors.Darker40
@@ -3300,7 +3268,7 @@
                                                             ""
                                                         )
                                                     ) & " Lines") = "Auto Business Lines", 'Referral Queue Gallery'.Selected.'2nd Auto Business - State Code'))))
-                                            ZIndex: =6
+                                            ZIndex: =5
 
                                         "'2ndDateOfLoss' As label":
                                             BorderColor: =App.Theme.Colors.Darker40
@@ -3311,7 +3279,7 @@
                                             Size: =13
                                             Text: |-
                                                 ="2nd Date of Loss: " & If(IsBlank('Referral Queue Gallery'.Selected.'2nd Date of Loss'), "N/A", 'Referral Queue Gallery'.Selected.'2nd Date of Loss')
-                                            ZIndex: =7
+                                            ZIndex: =6
 
                                         "'2ndBusinessName' As label":
                                             BorderColor: =App.Theme.Colors.Darker40
@@ -3328,6 +3296,38 @@
                                                     If(
                                                         Trim('Referral Queue Gallery'.Selected.'Multiple Policy - 2nd Policy Type') = "Fire",
                                                         (If(IsBlank('Referral Queue Gallery'.Selected.'2nd Fire - Business Name'), "N/A", 'Referral Queue Gallery'.Selected.'2nd Fire - Business Name'))))
+                                            ZIndex: =7
+
+                                        "'2ndPolicyType' As label":
+                                            BorderColor: =App.Theme.Colors.Darker40
+                                            Color: =RGBA(0, 0, 0, 1)
+                                            DisabledColor: =RGBA(166, 166, 166, 1)
+                                            Font: =App.Theme.Font
+                                            Height: =35
+                                            Size: =13
+                                            Text: |-
+                                                ="2nd Policy Type: " & 
+                                                If((Trim('Referral Queue Gallery'.Selected.'Multiple Policy - 2nd Policy Type') &
+                                                    If(
+                                                        Trim('Referral Queue Gallery'.Selected.'Multiple Policy - 2nd Policy Type') = "Auto",
+                                                        Concatenate(" ", Trim('Referral Queue Gallery'.Selected.'2nd Auto - Line of Business')),
+                                                        If(
+                                                            Trim('Referral Queue Gallery'.Selected.'Multiple Policy - 2nd Policy Type') = "Fire",
+                                                            Concatenate(" " & Trim('Referral Queue Gallery'.Selected.'2nd Fire - Line of Business')),
+                                                            ""
+                                                        )
+                                                    ) & " Lines") = "Fire Personal Lines", 'Referral Queue Gallery'.Selected.'2nd Fire - Personal Policy Type',
+                                                    If((Trim('Referral Queue Gallery'.Selected.'Multiple Policy - 2nd Policy Type') &
+                                                    If(
+                                                        Trim('Referral Queue Gallery'.Selected.'Multiple Policy - 2nd Policy Type') = "Auto",
+                                                        Concatenate(" ", Trim('Referral Queue Gallery'.Selected.'2nd Auto - Line of Business')),
+                                                        If(
+                                                            Trim('Referral Queue Gallery'.Selected.'Multiple Policy - 2nd Policy Type') = "Fire",
+                                                            Concatenate(" " & Trim('Referral Queue Gallery'.Selected.'2nd Fire - Line of Business')),
+                                                            ""
+                                                        )
+                                                    ) & " Lines") = "Fire Business Lines", 'Referral Queue Gallery'.Selected.'2nd Fire - Business Policy Type'))
+                                            Visible: = If(Trim('Referral Queue Gallery'.Selected.'Multiple Policy - 2nd Policy Type') = "Fire", true,false)
                                             ZIndex: =8
 
                                         "'2ndAddress' As label":
@@ -3508,6 +3508,375 @@
                                             ZIndex: =12
 
                                         "'2ndModel' As label":
+                                            BorderColor: =App.Theme.Colors.Darker40
+                                            Color: =RGBA(0, 0, 0, 1)
+                                            DisabledColor: =RGBA(166, 166, 166, 1)
+                                            Font: =App.Theme.Font
+                                            Height: =35
+                                            Size: =13
+                                            Text: |-
+                                                ="2nd Model: " & If(IsBlank('Referral Queue Gallery'.Selected.'2nd Auto - Model'), "N/A", 'Referral Queue Gallery'.Selected.'2nd Auto - Model')
+                                            Visible: = If(Trim('Referral Queue Gallery'.Selected.'Multiple Policy - 2nd Policy Type') = "Auto", true,false)
+                                            ZIndex: =13
+
+                                    "'3rdPolicyContainer' As groupContainer.verticalAutoLayoutContainer":
+                                        DropShadow: =DropShadow.Light
+                                        LayoutAlignItems: =LayoutAlignItems.Stretch
+                                        LayoutDirection: =LayoutDirection.Vertical
+                                        LayoutMinHeight: =100
+                                        LayoutMinWidth: =250
+                                        LayoutMode: =LayoutMode.Auto
+                                        RadiusBottomLeft: =4
+                                        RadiusBottomRight: =4
+                                        RadiusTopLeft: =4
+                                        RadiusTopRight: =4
+                                        Visible: =If(pageCount = 5, true, false)
+                                        ZIndex: =7
+
+                                        "'2ndPolicyHeader_1' As label":
+                                            Align: =Align.Center
+                                            AutoHeight: =true
+                                            BorderColor: =App.Theme.Colors.Darker40
+                                            Color: =RGBA(0, 0, 0, 1)
+                                            DisabledColor: =RGBA(166, 166, 166, 1)
+                                            Font: =App.Theme.Font
+                                            FontWeight: =FontWeight.Bold
+                                            Size: =13
+                                            Text: ="Third Policy Information"
+                                            Underline: =true
+                                            ZIndex: =1
+
+                                        "'2ndReferralType_1' As label":
+                                            BorderColor: =App.Theme.Colors.Darker40
+                                            Color: =RGBA(0, 0, 0, 1)
+                                            DisabledColor: =RGBA(166, 166, 166, 1)
+                                            Font: =App.Theme.Font
+                                            Height: =35
+                                            Size: =13
+                                            Text: |-
+                                                ="3rd Referral Type: " & Trim('Referral Queue Gallery'.Selected.'Multiple Policy - 3rd Policy Type') &
+                                                    If(
+                                                        Trim('Referral Queue Gallery'.Selected.'Multiple Policy - 3rd Policy Type') = "Auto",
+                                                        Concatenate(" ", Trim('Referral Queue Gallery'.Selected.'3rd Auto - Line of Business')),
+                                                        If(
+                                                            Trim('Referral Queue Gallery'.Selected.'Multiple Policy - 3rd Policy Type') = "Fire",
+                                                            Concatenate(" " & Trim('Referral Queue Gallery'.Selected.'3rd Fire - Line of Business')),
+                                                            ""
+                                                        )
+                                                    ) & " Lines"
+                                            ZIndex: =2
+
+                                        "'2ndPolicyNumber_1' As label":
+                                            BorderColor: =App.Theme.Colors.Darker40
+                                            Color: =RGBA(0, 0, 0, 1)
+                                            DisabledColor: =RGBA(166, 166, 166, 1)
+                                            Font: =App.Theme.Font
+                                            Height: =35
+                                            Size: =13
+                                            Text: |-
+                                                = "3rd Policy Number: " & If(IsBlank('Referral Queue Gallery'.Selected.'3rd - Policy Number'), "N/A", 'Referral Queue Gallery'.Selected.'3rd - Policy Number')
+                                            ZIndex: =3
+
+                                        "'2ndClaimNumber_1' As label":
+                                            BorderColor: =App.Theme.Colors.Darker40
+                                            Color: =RGBA(0, 0, 0, 1)
+                                            DisabledColor: =RGBA(166, 166, 166, 1)
+                                            Font: =App.Theme.Font
+                                            Height: =35
+                                            Size: =13
+                                            Text: |-
+                                                = "3rd Claim Number: " & If(IsBlank('Referral Queue Gallery'.Selected.'3rd - Claim Number'), "N/A", 'Referral Queue Gallery'.Selected.'3rd - Claim Number')
+                                            ZIndex: =4
+
+                                        "'2ndStateCode_1' As label":
+                                            BorderColor: =App.Theme.Colors.Darker40
+                                            Color: =RGBA(0, 0, 0, 1)
+                                            DisabledColor: =RGBA(166, 166, 166, 1)
+                                            Font: =App.Theme.Font
+                                            Height: =35
+                                            Size: =13
+                                            Text: |-
+                                                ="State Code: " &
+                                                    If((Trim('Referral Queue Gallery'.Selected.'Multiple Policy - 3rd Policy Type') &
+                                                    If(
+                                                        'Referral Queue Gallery'.Selected.'Multiple Policy - 3rd Policy Type' = "Auto",
+                                                        Concatenate(" ", Trim('Referral Queue Gallery'.Selected.'3rd Auto - Line of Business')),
+                                                        If(
+                                                            'Referral Queue Gallery'.Selected.'Multiple Policy - 2nd Policy Type' = "Fire",
+                                                            Concatenate(" " & Trim('Referral Queue Gallery'.Selected.'3rd Fire - Line of Business')),
+                                                            ""
+                                                        )
+                                                    ) & " Lines") = "Fire Personal Lines", 'Referral Queue Gallery'.Selected.'3rd Fire Personal - State Code',
+                                                    If((Trim('Referral Queue Gallery'.Selected.'Multiple Policy - 3rd Policy Type') &
+                                                    If(
+                                                        'Referral Queue Gallery'.Selected.'Multiple Policy - 3rd Policy Type' = "Auto",
+                                                        Concatenate(" ", Trim('Referral Queue Gallery'.Selected.'3rd Auto - Line of Business')),
+                                                        If(
+                                                            'Referral Queue Gallery'.Selected.'Multiple Policy - 3rd Policy Type' = "Fire",
+                                                            Concatenate(" " & Trim('Referral Queue Gallery'.Selected.'3rd Fire - Line of Business')),
+                                                            ""
+                                                        )
+                                                    ) & " Lines") = "Auto Personal Lines", 'Referral Queue Gallery'.Selected.'3rd Auto Personal - State Code',
+                                                    If((Trim('Referral Queue Gallery'.Selected.'Multiple Policy - 3rd Policy Type') &
+                                                    If(
+                                                        'Referral Queue Gallery'.Selected.'Multiple Policy - 3rd Policy Type' = "Auto",
+                                                        Concatenate(" ", Trim('Referral Queue Gallery'.Selected.'3rd Auto - Line of Business')),
+                                                        If(
+                                                            'Referral Queue Gallery'.Selected.'Multiple Policy - 3rd Policy Type' = "Fire",
+                                                            Concatenate(" " & Trim('Referral Queue Gallery'.Selected.'3rd Fire - Line of Business')),
+                                                            ""
+                                                        )
+                                                    ) & " Lines") = "Fire Business Lines", 'Referral Queue Gallery'.Selected.'3rd Fire - Business State Code',
+                                                    If((Trim('Referral Queue Gallery'.Selected.'Multiple Policy - 3rd Policy Type') &
+                                                    If(
+                                                        'Referral Queue Gallery'.Selected.'Multiple Policy - 3rd Policy Type' = "Auto",
+                                                        Concatenate(" ", Trim('Referral Queue Gallery'.Selected.'3rd Auto - Line of Business')),
+                                                        If(
+                                                            'Referral Queue Gallery'.Selected.'Multiple Policy - 3rd Policy Type' = "Fire",
+                                                            Concatenate(" " & Trim('Referral Queue Gallery'.Selected.'3rd Fire - Line of Business')),
+                                                            ""
+                                                        )
+                                                    ) & " Lines") = "Auto Business Lines", 'Referral Queue Gallery'.Selected.'3rd Auto Business - State Code'))))
+                                            ZIndex: =5
+
+                                        "'2ndDateOfLoss_1' As label":
+                                            BorderColor: =App.Theme.Colors.Darker40
+                                            Color: =RGBA(0, 0, 0, 1)
+                                            DisabledColor: =RGBA(166, 166, 166, 1)
+                                            Font: =App.Theme.Font
+                                            Height: =35
+                                            Size: =13
+                                            Text: |-
+                                                ="3rd Date of Loss: " & If(IsBlank('Referral Queue Gallery'.Selected.'3rd Date of Loss'), "N/A", 'Referral Queue Gallery'.Selected.'3rd Date of Loss')
+                                            ZIndex: =6
+
+                                        "'2ndBusinessName_1' As label":
+                                            BorderColor: =App.Theme.Colors.Darker40
+                                            Color: =RGBA(0, 0, 0, 1)
+                                            DisabledColor: =RGBA(166, 166, 166, 1)
+                                            Font: =App.Theme.Font
+                                            Height: =35
+                                            Size: =13
+                                            Text: |-
+                                                = "3rd Business Name: " & 
+                                                    If(
+                                                        Trim('Referral Queue Gallery'.Selected.'Multiple Policy - 3rd Policy Type') = "Auto",
+                                                        (If(IsBlank('Referral Queue Gallery'.Selected.'3rd Auto - Business Name'), "N/A", 'Referral Queue Gallery'.Selected.'3rd Auto - Business Name')),
+                                                    If(
+                                                        Trim('Referral Queue Gallery'.Selected.'Multiple Policy - 3rd Policy Type') = "Fire",
+                                                        (If(IsBlank('Referral Queue Gallery'.Selected.'3rd Fire - Business Name'), "N/A", 'Referral Queue Gallery'.Selected.'3rd Fire - Business Name'))))
+                                            ZIndex: =7
+
+                                        "'2ndPolicyType_1' As label":
+                                            BorderColor: =App.Theme.Colors.Darker40
+                                            Color: =RGBA(0, 0, 0, 1)
+                                            DisabledColor: =RGBA(166, 166, 166, 1)
+                                            Font: =App.Theme.Font
+                                            Height: =35
+                                            Size: =13
+                                            Text: |-
+                                                ="3rd Policy Type: " & 
+                                                If((Trim('Referral Queue Gallery'.Selected.'Multiple Policy - 3rd Policy Type') &
+                                                    If(
+                                                        Trim('Referral Queue Gallery'.Selected.'Multiple Policy - 3rd Policy Type') = "Auto",
+                                                        Concatenate(" ", Trim('Referral Queue Gallery'.Selected.'3rd Auto - Line of Business')),
+                                                        If(
+                                                            Trim('Referral Queue Gallery'.Selected.'Multiple Policy - 3rd Policy Type') = "Fire",
+                                                            Concatenate(" " & Trim('Referral Queue Gallery'.Selected.'3rd Fire - Line of Business')),
+                                                            ""
+                                                        )
+                                                    ) & " Lines") = "Fire Personal Lines", 'Referral Queue Gallery'.Selected.'3rd Fire - Personal Policy Type',
+                                                    If((Trim('Referral Queue Gallery'.Selected.'Multiple Policy - 3rd Policy Type') &
+                                                    If(
+                                                        Trim('Referral Queue Gallery'.Selected.'Multiple Policy - 3rd Policy Type') = "Auto",
+                                                        Concatenate(" ", Trim('Referral Queue Gallery'.Selected.'3rd Auto - Line of Business')),
+                                                        If(
+                                                            Trim('Referral Queue Gallery'.Selected.'Multiple Policy - 3rd Policy Type') = "Fire",
+                                                            Concatenate(" " & Trim('Referral Queue Gallery'.Selected.'3rd Fire - Line of Business')),
+                                                            ""
+                                                        )
+                                                    ) & " Lines") = "Fire Business Lines", 'Referral Queue Gallery'.Selected.'3rd Fire - Business Policy Type'))
+                                            Visible: = If(Trim('Referral Queue Gallery'.Selected.'Multiple Policy - 2nd Policy Type') = "Fire", true,false)
+                                            ZIndex: =8
+
+                                        "'2ndAddress_1' As label":
+                                            BorderColor: =App.Theme.Colors.Darker40
+                                            Color: =RGBA(0, 0, 0, 1)
+                                            DisabledColor: =RGBA(166, 166, 166, 1)
+                                            Font: =App.Theme.Font
+                                            Height: =35
+                                            Size: =13
+                                            Text: |-
+                                                ="3rd Address: " & 
+                                                If(!IsBlank('Referral Queue Gallery'.Selected.'3rd Fire - Street'), Trim('Referral Queue Gallery'.Selected.'3rd Fire - Street') & ", ", Trim('Referral Queue Gallery'.Selected.'3rd Fire - Street')) & 
+                                                If(!IsBlank('Referral Queue Gallery'.Selected.'3rd Fire - Street'), Trim('Referral Queue Gallery'.Selected.'3rd Fire - City') & ", ", Trim('Referral Queue Gallery'.Selected.'3rd Fire - City')) &
+                                                If((Trim('Referral Queue Gallery'.Selected.'Multiple Policy - 3rd Policy Type') &
+                                                    If(
+                                                        Trim('Referral Queue Gallery'.Selected.'Multiple Policy - 3rd Policy Type') = "Auto",
+                                                        Concatenate(" ", Trim('Referral Queue Gallery'.Selected.'3rd Auto - Line of Business')),
+                                                        If(
+                                                            Trim('Referral Queue Gallery'.Selected.'Multiple Policy - 3rd Policy Type') = "Fire",
+                                                            Concatenate(" " & Trim('Referral Queue Gallery'.Selected.'3rd Fire - Line of Business')),
+                                                            ""
+                                                        )
+                                                    ) & " Lines") = "Fire Personal Lines", 
+                                                    If(
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire Personal - State Code'), "AL",MatchOptions.Contains), "Alabama",
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire Personal - State Code'), "AK",MatchOptions.Contains), "Alaska",
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire Personal - State Code'), "AZ",MatchOptions.Contains), "Arizona",
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire Personal - State Code'), "AR",MatchOptions.Contains), "Arkansas",
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire Personal - State Code'), "CA",MatchOptions.Contains), "California",
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire Personal - State Code'), "CO",MatchOptions.Contains), "Colorado",
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire Personal - State Code'), "CT",MatchOptions.Contains), "Connecticut",
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire Personal - State Code'), "DE",MatchOptions.Contains), "Delaware",
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire Personal - State Code'), "FL",MatchOptions.Contains), "Florida",
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire Personal - State Code'), "GA",MatchOptions.Contains), "Georgia",
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire Personal - State Code'), "HI",MatchOptions.Contains), "Hawaii",
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire Personal - State Code'), "ID",MatchOptions.Contains), "Idaho",
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire Personal - State Code'), "IL",MatchOptions.Contains), "Illinois",
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire Personal - State Code'), "IN",MatchOptions.Contains), "Indiana",
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire Personal - State Code'), "IA",MatchOptions.Contains), "Iowa",
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire Personal - State Code'), "KS",MatchOptions.Contains), "Kansas",
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire Personal - State Code'), "KY",MatchOptions.Contains), "Kentucky",
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire Personal - State Code'), "LA",MatchOptions.Contains), "Louisiana",
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire Personal - State Code'), "ME",MatchOptions.Contains), "Maine",
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire Personal - State Code'), "MD",MatchOptions.Contains), "Maryland",
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire Personal - State Code'), "MA",MatchOptions.Contains), "Massachusetts",
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire Personal - State Code'), "MI",MatchOptions.Contains), "Michigan",
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire Personal - State Code'), "MN",MatchOptions.Contains), "Minnesota",
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire Personal - State Code'), "MS",MatchOptions.Contains), "Mississippi",
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire Personal - State Code'), "MO",MatchOptions.Contains), "Missouri",
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire Personal - State Code'), "MT",MatchOptions.Contains), "Montana",
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire Personal - State Code'), "NE",MatchOptions.Contains), "Nebraska",
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire Personal - State Code'), "NV",MatchOptions.Contains), "Nevada",
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire Personal - State Code'), "NH",MatchOptions.Contains), "New Hampshire",
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire Personal - State Code'), "NJ",MatchOptions.Contains), "New Jersey",
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire Personal - State Code'), "NM",MatchOptions.Contains), "New Mexico",
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire Personal - State Code'), "NY",MatchOptions.Contains), "New York",
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire Personal - State Code'), "NC",MatchOptions.Contains), "North Carolina",
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire Personal - State Code'), "ND",MatchOptions.Contains), "North Dakota",
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire Personal - State Code'), "OH",MatchOptions.Contains), "Ohio",
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire Personal - State Code'), "OK",MatchOptions.Contains), "Oklahoma",
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire Personal - State Code'), "OR",MatchOptions.Contains), "Oregon",
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire Personal - State Code'), "PA",MatchOptions.Contains), "Pennsylvania",
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire Personal - State Code'), "RI",MatchOptions.Contains), "Rhode Island",
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire Personal - State Code'), "SC",MatchOptions.Contains), "South Carolina",
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire Personal - State Code'), "SD",MatchOptions.Contains), "South Dakota",
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire Personal - State Code'), "TN",MatchOptions.Contains), "Tennessee",
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire Personal - State Code'), "TX",MatchOptions.Contains), "Texas",
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire Personal - State Code'), "UT",MatchOptions.Contains), "Utah",
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire Personal - State Code'), "VT",MatchOptions.Contains), "Vermont",
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire Personal - State Code'), "VA",MatchOptions.Contains), "Virginia",
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire Personal - State Code'), "WA",MatchOptions.Contains), "Washington",
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire Personal - State Code'), "WV",MatchOptions.Contains), "West Virginia",
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire Personal - State Code'), "WI",MatchOptions.Contains), "Wisconsin",
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire Personal - State Code'), "WY",MatchOptions.Contains), "Wyoming",
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire Personal - State Code'), "DC",MatchOptions.Contains), "Washington, D.C.",
+                                                    "N/A"
+                                                ),
+                                                (If(
+                                                        Trim('Referral Queue Gallery'.Selected.'Multiple Policy - 3rd Policy Type') = "Auto",
+                                                        Concatenate(" ", Trim('Referral Queue Gallery'.Selected.'3rd Auto - Line of Business')),
+                                                        If(
+                                                            Trim('Referral Queue Gallery'.Selected.'Multiple Policy - 3rd Policy Type') = "Fire",
+                                                            Concatenate(" " & Trim('Referral Queue Gallery'.Selected.'3rd Fire - Line of Business')),
+                                                            ""
+                                                        )
+                                                    ) & " Lines") = "Fire Business Lines", 
+                                                    If(
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire - Business State Code'), "AL",MatchOptions.Contains), "Alabama",
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire - Business State Code'), "AK",MatchOptions.Contains), "Alaska", 
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire - Business State Code'), "AZ",MatchOptions.Contains), "Arizona", 
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire - Business State Code'), "AR",MatchOptions.Contains), "Arkansas", 
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire - Business State Code'), "CA",MatchOptions.Contains), "California", 
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire - Business State Code'), "CO",MatchOptions.Contains), "Colorado", 
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire - Business State Code'), "CT",MatchOptions.Contains), "Connecticut", 
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire - Business State Code'), "DE",MatchOptions.Contains), "Delaware", 
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire - Business State Code'), "FL",MatchOptions.Contains), "Florida", 
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire - Business State Code'), "GA",MatchOptions.Contains), "Georgia", 
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire - Business State Code'), "HI",MatchOptions.Contains), "Hawaii", 
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire - Business State Code'), "ID",MatchOptions.Contains), "Idaho", 
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire - Business State Code'), "IL",MatchOptions.Contains), "Illinois", 
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire - Business State Code'), "IN",MatchOptions.Contains), "Indiana", 
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire - Business State Code'), "IA",MatchOptions.Contains), "Iowa", 
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire - Business State Code'), "KS",MatchOptions.Contains), "Kansas", 
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire - Business State Code'), "KY",MatchOptions.Contains), "Kentucky", 
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire - Business State Code'), "LA",MatchOptions.Contains), "Louisiana", 
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire - Business State Code'), "ME",MatchOptions.Contains), "Maine", 
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire - Business State Code'), "MD",MatchOptions.Contains), "Maryland", 
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire - Business State Code'), "MA",MatchOptions.Contains), "Massachusetts", 
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire - Business State Code'), "MI",MatchOptions.Contains), "Michigan", 
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire - Business State Code'), "MN",MatchOptions.Contains), "Minnesota", 
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire - Business State Code'), "MS",MatchOptions.Contains), "Mississippi", 
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire - Business State Code'), "MO",MatchOptions.Contains), "Missouri", 
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire - Business State Code'), "MT",MatchOptions.Contains), "Montana", 
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire - Business State Code'), "NE",MatchOptions.Contains), "Nebraska", 
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire - Business State Code'), "NV",MatchOptions.Contains), "Nevada", 
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire - Business State Code'), "NH",MatchOptions.Contains), "New Hampshire", 
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire - Business State Code'), "NJ",MatchOptions.Contains), "New Jersey", 
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire - Business State Code'), "NM",MatchOptions.Contains), "New Mexico", 
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire - Business State Code'), "NY",MatchOptions.Contains), "New York", 
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire - Business State Code'), "NC",MatchOptions.Contains), "North Carolina", 
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire - Business State Code'), "ND",MatchOptions.Contains), "North Dakota", 
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire - Business State Code'), "OH",MatchOptions.Contains), "Ohio", 
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire - Business State Code'), "OK",MatchOptions.Contains), "Oklahoma", 
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire - Business State Code'), "OR",MatchOptions.Contains), "Oregon", 
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire - Business State Code'), "PA",MatchOptions.Contains), "Pennsylvania", 
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire - Business State Code'), "RI",MatchOptions.Contains), "Rhode Island", 
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire - Business State Code'), "SC",MatchOptions.Contains), "South Carolina", 
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire - Business State Code'), "SD",MatchOptions.Contains), "South Dakota", 
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire - Business State Code'), "TN",MatchOptions.Contains), "Tennessee", 
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire - Business State Code'), "TX",MatchOptions.Contains), "Texas", 
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire - Business State Code'), "UT",MatchOptions.Contains), "Utah", 
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire - Business State Code'), "VT",MatchOptions.Contains), "Vermont", 
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire - Business State Code'), "VA",MatchOptions.Contains), "Virginia", 
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire - Business State Code'), "WA",MatchOptions.Contains), "Washington", 
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire - Business State Code'), "WV",MatchOptions.Contains), "West Virginia",
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire - Business State Code'), "WI",MatchOptions.Contains), "Wisconsin", 
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire - Business State Code'), "WY",MatchOptions.Contains), "Wyoming", 
+                                                    IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire - Business State Code'), "DC",MatchOptions.Contains), "Washington, D.C.", 
+                                                    "N/A"
+                                                ))
+                                            Visible: = If(Trim('Referral Queue Gallery'.Selected.'Multiple Policy - 2nd Policy Type') = "Fire", true,false)
+                                            ZIndex: =9
+
+                                        "'2ndVIN_1' As label":
+                                            BorderColor: =App.Theme.Colors.Darker40
+                                            Color: =RGBA(0, 0, 0, 1)
+                                            DisabledColor: =RGBA(166, 166, 166, 1)
+                                            Font: =App.Theme.Font
+                                            Height: =35
+                                            Size: =13
+                                            Text: |-
+                                                = "2nd VIN: " & If(IsBlank('Referral Queue Gallery'.Selected.'2nd Auto - VIN'), "N/A", 'Referral Queue Gallery'.Selected.'2nd Auto - VIN')
+                                            Visible: = If(Trim('Referral Queue Gallery'.Selected.'Multiple Policy - 2nd Policy Type') = "Auto", true,false)
+                                            ZIndex: =10
+
+                                        "'2ndLicensePlate_1' As label":
+                                            BorderColor: =App.Theme.Colors.Darker40
+                                            Color: =RGBA(0, 0, 0, 1)
+                                            DisabledColor: =RGBA(166, 166, 166, 1)
+                                            Font: =App.Theme.Font
+                                            Height: =35
+                                            Size: =13
+                                            Text: |-
+                                                ="2nd License Plate: " & If(IsBlank('Referral Queue Gallery'.Selected.'2nd Auto - License Plate'), "N/A", 'Referral Queue Gallery'.Selected.'2nd Auto - License Plate')
+                                            Visible: = If(Trim('Referral Queue Gallery'.Selected.'Multiple Policy - 2nd Policy Type') = "Auto", true,false)
+                                            ZIndex: =11
+
+                                        "'2ndMake_1' As label":
+                                            BorderColor: =App.Theme.Colors.Darker40
+                                            Color: =RGBA(0, 0, 0, 1)
+                                            DisabledColor: =RGBA(166, 166, 166, 1)
+                                            Font: =App.Theme.Font
+                                            Height: =35
+                                            Size: =13
+                                            Text: |-
+                                                ="2nd Make: " & If(IsBlank('Referral Queue Gallery'.Selected.'2nd Auto - Make'), "N/A", 'Referral Queue Gallery'.Selected.'2nd Auto - Make')
+                                            Visible: = If(Trim('Referral Queue Gallery'.Selected.'Multiple Policy - 2nd Policy Type') = "Auto", true,false)
+                                            ZIndex: =12
+
+                                        "'2ndModel_1' As label":
                                             BorderColor: =App.Theme.Colors.Darker40
                                             Color: =RGBA(0, 0, 0, 1)
                                             DisabledColor: =RGBA(166, 166, 166, 1)
