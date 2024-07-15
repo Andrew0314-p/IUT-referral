@@ -4065,7 +4065,7 @@
                                     Size: =13
                                     Text: |-
                                         ="Status: "
-                                    Width: =Len(StartDate.Text) * 9
+                                    Width: =Len(FraudCategoryTitle.Text) * 9
                                     ZIndex: =2
 
                                 StatusSearch As text:
@@ -4080,7 +4080,7 @@
                                     LayoutMinWidth: =0
                                     ZIndex: =3
 
-                            StateFilterContainer As groupContainer.verticalAutoLayoutContainer:
+                            StateFilterContainer_1 As groupContainer.verticalAutoLayoutContainer:
                                 BorderStyle: =BorderStyle.None
                                 Height: =50
                                 LayoutMinHeight: =1
@@ -4092,6 +4092,42 @@
                                 RadiusTopRight: =4
                                 ZIndex: =2
 
+                                ReferralType_1 As label:
+                                    AlignInContainer: =AlignInContainer.Stretch
+                                    BorderColor: =App.Theme.Colors.Darker40
+                                    Color: =RGBA(0, 0, 0, 1)
+                                    DisabledColor: =RGBA(166, 166, 166, 1)
+                                    Font: =App.Theme.Font
+                                    Size: =13
+                                    Text: |-
+                                        ="Referral Type: "
+                                    Width: =Len(FraudCategoryTitle.Text) * 9
+                                    ZIndex: =3
+
+                                ReferralTypeSearch_1 As text:
+                                    AlignInContainer: =AlignInContainer.Stretch
+                                    BorderStyle: =BorderStyle.None
+                                    Default: =""
+                                    FillPortions: =1
+                                    Font: =App.Theme.Font
+                                    HintText: ="Search Referral Type"
+                                    HoverBorderColor: =Self.Fill
+                                    HoverFill: =RGBA(0, 0, 0, 0)
+                                    LayoutMinWidth: =0
+                                    ZIndex: =4
+
+                            StateFilterContainer As groupContainer.verticalAutoLayoutContainer:
+                                BorderStyle: =BorderStyle.None
+                                Height: =50
+                                LayoutMinHeight: =1
+                                LayoutMinWidth: =250
+                                LayoutMode: =LayoutMode.Auto
+                                RadiusBottomLeft: =4
+                                RadiusBottomRight: =4
+                                RadiusTopLeft: =4
+                                RadiusTopRight: =4
+                                ZIndex: =3
+
                                 StateLabel As label:
                                     AlignInContainer: =AlignInContainer.Stretch
                                     BorderColor: =App.Theme.Colors.Darker40
@@ -4101,7 +4137,7 @@
                                     Size: =13
                                     Text: |-
                                         ="State: "
-                                    Width: =Len(StartDate.Text) * 9
+                                    Width: =Len(FraudCategoryTitle.Text) * 9
                                     ZIndex: =1
 
                                 StateSearch As text:
@@ -4116,30 +4152,6 @@
                                     LayoutMinWidth: =0
                                     ZIndex: =2
 
-                                ReferralType As label:
-                                    AlignInContainer: =AlignInContainer.Stretch
-                                    BorderColor: =App.Theme.Colors.Darker40
-                                    Color: =RGBA(0, 0, 0, 1)
-                                    DisabledColor: =RGBA(166, 166, 166, 1)
-                                    Font: =App.Theme.Font
-                                    Size: =13
-                                    Text: |-
-                                        ="Referral Type: "
-                                    Width: =Len(StartDate.Text) * 9
-                                    ZIndex: =3
-
-                                ReferralTypeSearch As text:
-                                    AlignInContainer: =AlignInContainer.Stretch
-                                    BorderStyle: =BorderStyle.None
-                                    Default: =""
-                                    FillPortions: =1
-                                    Font: =App.Theme.Font
-                                    HintText: ="Search Referral Type"
-                                    HoverBorderColor: =Self.Fill
-                                    HoverFill: =RGBA(0, 0, 0, 0)
-                                    LayoutMinWidth: =0
-                                    ZIndex: =4
-
                             StartDateFilterContainer As groupContainer.verticalAutoLayoutContainer:
                                 BorderStyle: =BorderStyle.None
                                 Height: =50
@@ -4150,7 +4162,7 @@
                                 RadiusBottomRight: =4
                                 RadiusTopLeft: =4
                                 RadiusTopRight: =4
-                                ZIndex: =3
+                                ZIndex: =4
 
                                 StartDate As label:
                                     AlignInContainer: =AlignInContainer.Stretch
@@ -4161,7 +4173,7 @@
                                     Size: =13
                                     Text: |-
                                         ="Start Date: "
-                                    Width: =Len(StartDate.Text) * 9
+                                    Width: =Len(FraudCategoryTitle.Text) * 9
                                     ZIndex: =1
 
                                 StartDateSearch As text:
@@ -4185,7 +4197,7 @@
                                     Size: =13
                                     Text: |-
                                         ="End Date: "
-                                    Width: =Len(StartDate.Text) * 9
+                                    Width: =Len(FraudCategoryTitle.Text) * 9
                                     ZIndex: =3
 
                                 EndDateSearch As text:
@@ -4199,6 +4211,42 @@
                                     HoverFill: =RGBA(0, 0, 0, 0)
                                     LayoutMinWidth: =0
                                     ZIndex: =4
+
+                            StateFilterContainer_2 As groupContainer.verticalAutoLayoutContainer:
+                                BorderStyle: =BorderStyle.None
+                                Height: =50
+                                LayoutMinHeight: =1
+                                LayoutMinWidth: =250
+                                LayoutMode: =LayoutMode.Auto
+                                RadiusBottomLeft: =4
+                                RadiusBottomRight: =4
+                                RadiusTopLeft: =4
+                                RadiusTopRight: =4
+                                ZIndex: =5
+
+                                FraudCategoryTitle As label:
+                                    AlignInContainer: =AlignInContainer.Stretch
+                                    BorderColor: =App.Theme.Colors.Darker40
+                                    Color: =RGBA(0, 0, 0, 1)
+                                    DisabledColor: =RGBA(166, 166, 166, 1)
+                                    Font: =App.Theme.Font
+                                    Size: =13
+                                    Text: |-
+                                        ="Fraud Category: "
+                                    Width: =Len(FraudCategoryTitle.Text) * 9
+                                    ZIndex: =1
+
+                                FraudCategorySearch As text:
+                                    AlignInContainer: =AlignInContainer.Stretch
+                                    BorderStyle: =BorderStyle.None
+                                    Default: =""
+                                    FillPortions: =1
+                                    Font: =App.Theme.Font
+                                    HintText: ="Search Fraud Category"
+                                    HoverBorderColor: =Self.Fill
+                                    HoverFill: =RGBA(0, 0, 0, 0)
+                                    LayoutMinWidth: =0
+                                    ZIndex: =2
 
                 AssignContainer As groupContainer.verticalAutoLayoutContainer:
                     FillPortions: =0
