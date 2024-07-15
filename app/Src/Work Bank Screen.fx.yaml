@@ -2,7 +2,7 @@
     Fill: =Color.White
     LoadingSpinnerColor: =App.Theme.Colors.Primary
     OnVisible: |-
-        =UpdateContext({sharedWorkBankMode: true, myInTrayMode: false, myTeamMode: false, reportsMode: false, searchMode: false,clickedCount: 0, pageCount: 0, decisionMode: false});
+        =UpdateContext({sharedWorkBankMode: true, myInTrayMode: false, myTeamMode: false, reportsMode: false, searchMode: false,clickedCount: 0, pageCount: 0, decisionMode: false, filterMode: false});
         
         Refresh('Referral Intake Tool Submissions');
         If(!IsEmpty(WorkBankCollection), ClearCollect(WorkBankCollection, {}));
@@ -754,7 +754,7 @@
                         onSave: =false
                         OnSelect: =false
                         ReflowBehavior: ='PowerAppsOneGrid.ReflowBehavior'.Reflow
-                        Visible: =If(myTeamMode = true, true, false) And If(EmployeeBrowseGallery.Visible = true, false, true)
+                        Visible: =If(myTeamMode = true, true, false) And If(EmployeeBrowseGallery.Visible = true, false, true) And If(filterMode = true, false, true)
                         Width: =If(Self.X + 800 > Parent.Width, Parent.Width - Self.X, 800)
                         X: =0
                         Y: =0
@@ -4274,4 +4274,23 @@
                             X: =0
                             Y: =0
                             ZIndex: =7
+
+                        FilterReferral As Button:
+                            AlignInContainer: =AlignInContainer.Stretch
+                            Appearance: ='ButtonCanvas.Appearance'.Secondary
+                            BorderStyle: =BorderStyle.None
+                            DisplayMode: =DisplayMode.Edit
+                            FillPortions: =1
+                            FontColor: =RGBA(189, 49, 51, 1)
+                            Height: =32
+                            LayoutMinHeight: =32
+                            LayoutMinWidth: =96
+                            OnSelect: |-
+                                =UpdateContext({filterMode: true})
+                            Text: ="Filter Referral"
+                            Visible: =If(myTeamMode = true, true, false)
+                            Width: =96
+                            X: =0
+                            Y: =0
+                            ZIndex: =8
 
