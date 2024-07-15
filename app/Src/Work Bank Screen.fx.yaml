@@ -295,7 +295,7 @@
                     LayoutMinHeight: =1
                     LayoutMinWidth: =320
                     LoadingSpinner: =LoadingSpinner.Data
-                    OnSelect: |
+                    OnSelect: |-
                         =UpdateContext({ CurrentItem: ThisItem });
                         Set(_selectedReferral, ThisItem);
                         
@@ -375,7 +375,9 @@
                                 Details: ThisItem.Details,
                                 OthersInvolved: ThisItem.'Others Involved'
                             }
-                        )
+                        );
+                        
+                        If('Referral Queue Gallery'.Selected.'Is there a second Policy?' = "No", UpdateContext({pageCount: 3}));
                     ShowScrollbar: =false
                     TemplatePadding: =0
                     TemplateSize: =120
@@ -2489,84 +2491,6 @@
                                             Text: |-
                                                 ="Number of Policies: " & If('Referral Queue Gallery'.Selected.'Is there a 3rd Policy?' = "Yes", "3", If('Referral Queue Gallery'.Selected.'Is there a second Policy?', "2", "1"))
                                             ZIndex: =7
-
-                                        "'1stPolicyNo' As label":
-                                            AlignInContainer: =AlignInContainer.Stretch
-                                            BorderColor: =App.Theme.Colors.Darker40
-                                            Color: =RGBA(0, 0, 0, 1)
-                                            DisabledColor: =RGBA(166, 166, 166, 1)
-                                            Font: =App.Theme.Font
-                                            Height: =35
-                                            Size: =13
-                                            Text: |-
-                                                =If('Referral Queue Gallery'.Selected.'Is there a second Policy?' = "Yes",
-                                                    "1st Policy Number: ", "Policy Number: ") & If(IsBlank('Referral Queue Gallery'.Selected.'1st Policy Number'), "N/A", 'Referral Queue Gallery'.Selected.'1st Policy Number')
-                                            ZIndex: =8
-
-                                        "'2ndPolicyNo' As label":
-                                            AlignInContainer: =AlignInContainer.Stretch
-                                            BorderColor: =App.Theme.Colors.Darker40
-                                            Color: =RGBA(0, 0, 0, 1)
-                                            DisabledColor: =RGBA(166, 166, 166, 1)
-                                            Font: =App.Theme.Font
-                                            Height: =35
-                                            Size: =13
-                                            Text: |-
-                                                ="2nd Policy Number: " & If(IsBlank('Referral Queue Gallery'.Selected.'2nd Policy Number'), "N/A", 'Referral Queue Gallery'.Selected.'2nd Policy Number')
-                                            Visible: =If('Referral Queue Gallery'.Selected.'Is there a second Policy?' = "Yes", true, false)
-                                            ZIndex: =9
-
-                                        "'3rdPolicyNo' As label":
-                                            AlignInContainer: =AlignInContainer.Stretch
-                                            BorderColor: =App.Theme.Colors.Darker40
-                                            Color: =RGBA(0, 0, 0, 1)
-                                            DisabledColor: =RGBA(166, 166, 166, 1)
-                                            Font: =App.Theme.Font
-                                            Height: =35
-                                            Size: =13
-                                            Text: |-
-                                                ="3rd Policy Number: " & If(IsBlank('Referral Queue Gallery'.Selected.'3rd - Policy Number'), "N/A", 'Referral Queue Gallery'.Selected.'3rd - Policy Number')
-                                            Visible: =If('Referral Queue Gallery'.Selected.'Is there a 3rd Policy?' = "Yes", true, false)
-                                            ZIndex: =10
-
-                                        "'1stClaimNo' As label":
-                                            AlignInContainer: =AlignInContainer.Stretch
-                                            BorderColor: =App.Theme.Colors.Darker40
-                                            Color: =RGBA(0, 0, 0, 1)
-                                            DisabledColor: =RGBA(166, 166, 166, 1)
-                                            Font: =App.Theme.Font
-                                            Height: =35
-                                            Size: =13
-                                            Text: |-
-                                                =If('Referral Queue Gallery'.Selected.'Is there a second Policy?' = "Yes",
-                                                    "1st Claim Number: ", "Claim Number: ") & If(IsBlank('Referral Queue Gallery'.Selected.'1st Claim Number'), "N/A", 'Referral Queue Gallery'.Selected.'1st Claim Number')
-                                            ZIndex: =11
-
-                                        "'2ndClaimNo' As label":
-                                            AlignInContainer: =AlignInContainer.Stretch
-                                            BorderColor: =App.Theme.Colors.Darker40
-                                            Color: =RGBA(0, 0, 0, 1)
-                                            DisabledColor: =RGBA(166, 166, 166, 1)
-                                            Font: =App.Theme.Font
-                                            Height: =35
-                                            Size: =13
-                                            Text: |-
-                                                ="2nd Claim Number: " & If(IsBlank('Referral Queue Gallery'.Selected.'2nd Claim Number'), "N/A", 'Referral Queue Gallery'.Selected.'2nd Claim Number')
-                                            Visible: =If('Referral Queue Gallery'.Selected.'Is there a second Policy?' = "Yes", true, false)
-                                            ZIndex: =12
-
-                                        "'3rdClaimNo' As label":
-                                            AlignInContainer: =AlignInContainer.Stretch
-                                            BorderColor: =App.Theme.Colors.Darker40
-                                            Color: =RGBA(0, 0, 0, 1)
-                                            DisabledColor: =RGBA(166, 166, 166, 1)
-                                            Font: =App.Theme.Font
-                                            Height: =35
-                                            Size: =13
-                                            Text: |-
-                                                ="3rd Claim Number: " & If(IsBlank('Referral Queue Gallery'.Selected.'3rd - Claim Number'), "N/A", 'Referral Queue Gallery'.Selected.'3rd - Claim Number')
-                                            Visible: =If('Referral Queue Gallery'.Selected.'Is there a 3rd Policy?' = "Yes", true, false)
-                                            ZIndex: =13
 
                                         OthersInvolved As label:
                                             AlignInContainer: =AlignInContainer.Stretch
