@@ -876,10 +876,13 @@
                             PHNameSearch.Text in 'Policyholder Full Name' && 
                             ( IsBlank(PolicyNoSearch.Text) || PolicyNoSearch.Text in '1st Policy Number' || PolicyNoSearch.Text in '2nd Policy Number' || PolicyNoSearch.Text in '3rd - Policy Number' ) && 
                             ( IsBlank(ClaimNoSearch.Text) || ClaimNoSearch.Text in '1st Claim Number' || ClaimNoSearch.Text in '2nd Claim Number' || ClaimNoSearch.Text in '3rd - Claim Number' ) &&
-                            ReferralTypeSearch.Text in 'Referral Type' ||
-                            AgenCodeAliasSearch.Text in 'Reporter Alias'
+                            ReferralTypeSearch.Text in 'Referral Type' &&
+                            ( IsBlank(AgenCodeAliasSearch.Text) || AgenCodeAliasSearch.Text in 'Reporter Alias') &&
+                            ( IsBlank(FraudCategoryFilterDropdown.Selected.Value) || 'Category of Fraud' = FraudCategoryFilterDropdown.Selected.Value)
                             ), 
                             ID, SortOrder.Ascending )
+                            
+                            //( IsBlank(FraudCategoryFilter.Selected.Value) || 'Category of Fraud' = FraudCategoryFilter.Selected.Value)
                         onCellValueChange: =false
                         onFilter: =false
                         onNavigate: =false
@@ -2081,7 +2084,6 @@
                                 DisabledBorderColor: =RGBA(166, 166, 166, 1)
                                 DisabledColor: =RGBA(244, 244, 244, 1)
                                 DisplayMode: =If(pageCount = 0, DisplayMode.View, DisplayMode.Edit)
-                                Fill: =RGBA(255, 255, 255, 1)
                                 Height: =40
                                 Icon: =Icon.ArrowLeft
                                 OnSelect: |-
@@ -4042,16 +4044,24 @@
                                     Width: =Len(FraudCategoryTitle.Text) * 9
                                     ZIndex: =2
 
-                                StatusSearch As text:
+                                DecisionFilterDropdown As Dropdown.pcfdataset:
                                     AlignInContainer: =AlignInContainer.Stretch
-                                    BorderStyle: =BorderStyle.None
-                                    Default: =""
+                                    Appearance: ='DropdownCanvas.Appearance'.FilledLighter
+                                    BasePaletteColor: =RGBA(249, 83, 109, 1)
+                                    DisplayMode: =DisplayMode.Edit
                                     FillPortions: =1
-                                    Font: =App.Theme.Font
-                                    HintText: ="Search Status"
-                                    HoverBorderColor: =Self.Fill
-                                    HoverFill: =RGBA(0, 0, 0, 0)
-                                    ZIndex: =3
+                                    FontSize: |
+                                        =17
+                                    Height: =32
+                                    Items: =["Adverse Action Already Taken", "File Development", "No Action", "Non-renewal", "Premium Change", "Initial Cancel", "Midterm Cancel", "No Action - Inconclusive", "No Action - PH Cancel", "WOTR", "Void"]
+                                    LayoutMinHeight: =32
+                                    LayoutMinWidth: =320
+                                    Required: =true
+                                    Visible: =true
+                                    Width: =275
+                                    X: =0
+                                    Y: =0
+                                    ZIndex: =4
 
                             ReferralTypeFilterContainer As groupContainer.verticalAutoLayoutContainer:
                                 BorderStyle: =BorderStyle.None
@@ -4117,6 +4127,25 @@
                                     HoverBorderColor: =Self.Fill
                                     HoverFill: =RGBA(0, 0, 0, 0)
                                     ZIndex: =2
+
+                                FraudCategoryFilterDropdown As Dropdown.pcfdataset:
+                                    AlignInContainer: =AlignInContainer.Stretch
+                                    Appearance: ='DropdownCanvas.Appearance'.FilledLighter
+                                    BasePaletteColor: =RGBA(249, 83, 109, 1)
+                                    DisplayMode: =DisplayMode.Edit
+                                    FillPortions: =1
+                                    FontSize: |
+                                        =17
+                                    Height: =32
+                                    Items: =Distinct('Referral Intake Tool Submissions','Category of Fraud')
+                                    LayoutMinHeight: =32
+                                    LayoutMinWidth: =320
+                                    Required: =true
+                                    Visible: =true
+                                    Width: =275
+                                    X: =0
+                                    Y: =0
+                                    ZIndex: =3
 
                             StateFilterContainer As groupContainer.verticalAutoLayoutContainer:
                                 BorderStyle: =BorderStyle.None
@@ -4721,9 +4750,9 @@
                                 Reset(ClaimNoSearch);
                                 Reset(AgenCodeAliasSearch); 
                                 Reset(AssignedAliasSearch);
-                                Reset(StatusSearch);
+                                Reset(DecisionFilterDropdown);
                                 Reset(ReferralTypeSearch);
-                                Reset(FraudCategorySearch);
+                                Reset(FraudCategoryFilterDropdown);
                                 Reset(StateSearch);
                                 Reset(StartDateSearch);
                                 Reset(EndDateSearch);
