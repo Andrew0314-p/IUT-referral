@@ -717,7 +717,9 @@
                                                 'Informant Last Name':'Informant Last Name',
                                                 'Informant Phone Number':'Informant Phone Number',
                                                 'Informant Email':'Informant Email',
-                                                'Additional Info Y/N':'Can we contact you for additional information'
+                                                'Additional Info Y/N':'Can we contact you for additional information',
+                                                'Start Date':'Start Date',
+                                                'End Date':'End Date'
                                             }
                                         )
                                     )
@@ -1213,7 +1215,7 @@
                                             Patch(
                                                 'Referral Intake Tool Submissions',
                                                 oldestRecord,
-                                                { 'Assigned To': _selectedApprover.MailNickname,'Assigned To Email': _selectedApprover.Mail}
+                                                { 'Assigned To': _selectedApprover.MailNickname,'Assigned To Email': _selectedApprover.Mail, 'Start Date': Now()}
                                             );
                                             
                                             // Update the clicked count
@@ -1313,7 +1315,9 @@
                                                     'Informant Last Name':oldestRecord.'Informant Last Name',
                                                     'Informant Phone Number':oldestRecord.'Informant Phone Number',
                                                     'Informant Email':oldestRecord.'Informant Email',
-                                                    'Additional Info Y/N':oldestRecord.'Can we contact you for additional information'
+                                                    'Additional Info Y/N':oldestRecord.'Can we contact you for additional information',
+                                                    'Start Date':oldestRecord.'Start Date',
+                                                    'End Date':oldestRecord.'End Date'
                                                 }
                                             );
                                             Notify("Referral #" & oldestRecord.ID & " (" & oldestRecord.'Referral Type' & ") has been assigned to " & _selectedApprover.DisplayName & " (" & _selectedApprover.MailNickname & ")", NotificationType.Success),
@@ -1398,7 +1402,7 @@
                                             Patch(
                                                 'Referral Intake Tool Submissions',
                                                 oldestRecord,
-                                                { 'Assigned To': _selectedApprover.MailNickname,'Assigned To Email': _selectedApprover.Mail}
+                                                { 'Assigned To': _selectedApprover.MailNickname,'Assigned To Email': _selectedApprover.Mail, 'Start Date': Now()}
                                             );
                                             
                                             // Update the clicked count
@@ -1498,7 +1502,9 @@
                                                     'Informant Last Name':oldestRecord.'Informant Last Name',
                                                     'Informant Phone Number':oldestRecord.'Informant Phone Number',
                                                     'Informant Email':oldestRecord.'Informant Email',
-                                                    'Additional Info Y/N':oldestRecord.'Can we contact you for additional information'
+                                                    'Additional Info Y/N':oldestRecord.'Can we contact you for additional information',
+                                                    'Start Date':oldestRecord.'Start Date',
+                                                    'End Date':oldestRecord.'End Date'
                                                 }
                                             );
                                             Notify("Referral #" & oldestRecord.ID & " (" & oldestRecord.'Referral Type' & ") has been assigned to " & _selectedApprover.DisplayName & " (" & _selectedApprover.MailNickname & ")", NotificationType.Success),
@@ -1582,7 +1588,7 @@
                                             Patch(
                                                 'Referral Intake Tool Submissions',
                                                 oldestRecord,
-                                                { 'Assigned To': _selectedApprover.MailNickname,'Assigned To Email': _selectedApprover.Mail}
+                                                { 'Assigned To': _selectedApprover.MailNickname,'Assigned To Email': _selectedApprover.Mail, 'Start Date': Now()}
                                             );
                                             
                                             // Update the clicked count
@@ -1682,7 +1688,9 @@
                                                     'Informant Last Name':oldestRecord.'Informant Last Name',
                                                     'Informant Phone Number':oldestRecord.'Informant Phone Number',
                                                     'Informant Email':oldestRecord.'Informant Email',
-                                                    'Additional Info Y/N':oldestRecord.'Can we contact you for additional information'
+                                                    'Additional Info Y/N':oldestRecord.'Can we contact you for additional information',
+                                                    'Start Date':oldestRecord.'Start Date',
+                                                    'End Date':oldestRecord.'End Date'
                                                 }
                                             );
                                             Notify("Referral #" & oldestRecord.ID & " (" & oldestRecord.'Referral Type' & ") has been assigned to " & _selectedApprover.DisplayName & " (" & _selectedApprover.MailNickname & ")", NotificationType.Success),
@@ -1766,7 +1774,7 @@
                                             Patch(
                                                 'Referral Intake Tool Submissions',
                                                 oldestRecord,
-                                                { 'Assigned To': _selectedApprover.MailNickname,'Assigned To Email': _selectedApprover.Mail}
+                                                { 'Assigned To': _selectedApprover.MailNickname,'Assigned To Email': _selectedApprover.Mail, 'Start Date': Now()}
                                             );
                                             
                                             // Update the clicked count
@@ -1866,7 +1874,9 @@
                                                     'Informant Last Name':oldestRecord.'Informant Last Name',
                                                     'Informant Phone Number':oldestRecord.'Informant Phone Number',
                                                     'Informant Email':oldestRecord.'Informant Email',
-                                                    'Additional Info Y/N':oldestRecord.'Can we contact you for additional information'
+                                                    'Additional Info Y/N':oldestRecord.'Can we contact you for additional information',
+                                                    'Start Date':oldestRecord.'Start Date',
+                                                    'End Date':oldestRecord.'End Date'
                                                 }
                                             );
                                             Notify("Referral #" & oldestRecord.ID & " (" & oldestRecord.'Referral Type' & ") has been assigned to " & _selectedApprover.DisplayName & " (" & _selectedApprover.MailNickname & ")", NotificationType.Success),
@@ -1950,7 +1960,7 @@
                                             Patch(
                                                 'Referral Intake Tool Submissions',
                                                 oldestRecord,
-                                                { 'Assigned To': _selectedApprover.MailNickname,'Assigned To Email': _selectedApprover.Mail}
+                                                { 'Assigned To': _selectedApprover.MailNickname,'Assigned To Email': _selectedApprover.Mail, 'Start Date': Now()}
                                             );
                                             
                                             // Update the clicked count
@@ -2050,7 +2060,9 @@
                                                     'Informant Last Name':oldestRecord.'Informant Last Name',
                                                     'Informant Phone Number':oldestRecord.'Informant Phone Number',
                                                     'Informant Email':oldestRecord.'Informant Email',
-                                                    'Additional Info Y/N':oldestRecord.'Can we contact you for additional information'
+                                                    'Additional Info Y/N':oldestRecord.'Can we contact you for additional information',
+                                                    'Start Date':oldestRecord.'Start Date',
+                                                    'End Date':oldestRecord.'End Date'
                                                 }
                                             );
                                             Notify("Referral #" & oldestRecord.ID & " (" & oldestRecord.'Referral Type' & ") has been assigned to " & _selectedApprover.DisplayName & " (" & _selectedApprover.MailNickname & ")", NotificationType.Success),
@@ -2501,6 +2513,30 @@
                                             Text: |-
                                                 ="Others Involved: " & If(IsBlank('Referral Queue Gallery'.Selected.'Others Involved'), "N/A", 'Referral Queue Gallery'.Selected.'Others Involved')
                                             ZIndex: =14
+
+                                        Label1 As label:
+                                            AlignInContainer: =AlignInContainer.Stretch
+                                            BorderColor: =App.Theme.Colors.Darker40
+                                            Color: =RGBA(0, 0, 0, 1)
+                                            DisabledColor: =RGBA(166, 166, 166, 1)
+                                            Font: =App.Theme.Font
+                                            Height: =35
+                                            Size: =13
+                                            Text: |-
+                                                ="Start Date: " & If(IsBlank('Referral Queue Gallery'.Selected.'Start Date'), "N/A", 'Referral Queue Gallery'.Selected.'Start Date')
+                                            ZIndex: =15
+
+                                        Label1_1 As label:
+                                            AlignInContainer: =AlignInContainer.Stretch
+                                            BorderColor: =App.Theme.Colors.Darker40
+                                            Color: =RGBA(0, 0, 0, 1)
+                                            DisabledColor: =RGBA(166, 166, 166, 1)
+                                            Font: =App.Theme.Font
+                                            Height: =35
+                                            Size: =13
+                                            Text: |-
+                                                ="End Date: " & If(IsBlank('Referral Queue Gallery'.Selected.'End Date'), "N/A", 'Referral Queue Gallery'.Selected.'End Date')
+                                            ZIndex: =16
 
                                     ReporterContainer As groupContainer.verticalAutoLayoutContainer:
                                         DropShadow: =DropShadow.Light
@@ -4538,7 +4574,7 @@
                                     Patch(
                                         'Referral Intake Tool Submissions',
                                         oldestRecord,
-                                        { 'Assigned To': Blank(), 'Assigned To Email': Blank(), 'Decision Reasons': Blank()}  // Change the value to null
+                                        { 'Assigned To': Blank(), 'Assigned To Email': Blank(), 'Decision Reasons': Blank(), 'Start Date': Blank(), 'End Date': Blank()}  // Change the value to null
                                     )
                                 );
                             Text: ="Remove Assigned"
@@ -4677,7 +4713,9 @@
                                                 'Informant Last Name':'Informant Last Name',
                                                 'Informant Phone Number':'Informant Phone Number',
                                                 'Informant Email':'Informant Email',
-                                                'Additional Info Y/N':'Can we contact you for additional information'
+                                                'Additional Info Y/N':'Can we contact you for additional information',
+                                                'Start Date':'Start Date',
+                                                'End Date':'End Date'
                                             }
                                         )
                                     )
