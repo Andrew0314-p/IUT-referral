@@ -1093,7 +1093,6 @@
                             ZIndex: =52
 
                     EmptyCollectionWarning As groupContainer.horizontalAutoLayoutContainer:
-                        AlignInContainer: =AlignInContainer.SetByContainer
                         LayoutMode: =LayoutMode.Auto
                         RadiusBottomLeft: =4
                         RadiusBottomRight: =4
@@ -1104,8 +1103,10 @@
 
                         EmptyCollectionText As Text:
                             Align: ='TextCanvas.Align'.Center
+                            AlignInContainer: =AlignInContainer.Stretch
                             BorderStyle: =BorderStyle.None
                             DisplayMode: =DisplayMode.Edit
+                            FillPortions: =1
                             FontItalic: =false
                             FontStrikethrough: =false
                             FontUnderline: =false
