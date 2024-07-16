@@ -2130,7 +2130,7 @@
                                     =If('Referral Queue Gallery'.Selected.'Is there a 3rd Policy?' = "Yes",
                                         If(pageCount < 5, UpdateContext({pageCount: pageCount + 1})), 
                                         If('Referral Queue Gallery'.Selected.'Is there a second Policy?' = "Yes", If(pageCount < 4, UpdateContext({pageCount: pageCount + 1})),
-                                        If(pageCount < 3, UpdateContext({pageCount: pageCount + 1})) And UpdateContext({pageCount: 3})))
+                                        If(pageCount < 3, UpdateContext({pageCount: pageCount + 1}))))
                                 ZIndex: =3
 
                         Seperator_2 As rectangle:
