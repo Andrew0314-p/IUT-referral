@@ -877,7 +877,7 @@
                             ( IsBlank(PolicyNoSearch.Text) || PolicyNoSearch.Text in '1st Policy Number' || PolicyNoSearch.Text in '2nd Policy Number' || PolicyNoSearch.Text in '3rd - Policy Number' ) && 
                             ( IsBlank(ClaimNoSearch.Text) || ClaimNoSearch.Text in '1st Claim Number' || ClaimNoSearch.Text in '2nd Claim Number' || ClaimNoSearch.Text in '3rd - Claim Number' ) &&
                             ReferralTypeSearch.Text in 'Referral Type' ||
-                            9IsAgenCodeAliasSearch.Text in 'Reporter Alias'
+                            AgenCodeAliasSearch.Text in 'Reporter Alias'
                             ), 
                             ID, SortOrder.Ascending )
                         onCellValueChange: =false
@@ -1118,6 +1118,7 @@
                         ZIndex: =4
 
                         "'ABL Container' As groupContainer.verticalAutoLayoutContainer":
+                            AlignInContainer: =AlignInContainer.Start
                             BorderColor: =RGBA(233, 79, 76, 1)
                             DropShadow: =DropShadow.Semibold
                             Fill: =RGBA(255, 255, 255, 1)
@@ -1126,6 +1127,7 @@
                             LayoutDirection: =LayoutDirection.Vertical
                             LayoutGap: =5
                             LayoutJustifyContent: =LayoutJustifyContent.Center
+                            LayoutMinHeight: =400
                             LayoutMode: =LayoutMode.Auto
                             LayoutOverflowY: =LayoutOverflow.Scroll
                             PaddingBottom: =10
@@ -1139,6 +1141,8 @@
                             ZIndex: =5
 
                             ImageContainer3_1 As groupContainer.verticalAutoLayoutContainer:
+                                AlignInContainer: =AlignInContainer.Center
+                                FillPortions: =0
                                 LayoutAlignItems: =LayoutAlignItems.Center
                                 LayoutDirection: =LayoutDirection.Vertical
                                 LayoutGap: =5
@@ -1159,6 +1163,7 @@
                                     ZIndex: =1
 
                             TitleContainer3_1 As groupContainer.verticalAutoLayoutContainer:
+                                AlignInContainer: =AlignInContainer.Center
                                 LayoutDirection: =LayoutDirection.Vertical
                                 LayoutMode: =LayoutMode.Auto
                                 PaddingTop: =20
@@ -1324,6 +1329,7 @@
                             ZIndex: =11
 
                             ImageContainer23_1 As groupContainer.verticalAutoLayoutContainer:
+                                FillPortions: =0
                                 LayoutAlignItems: =LayoutAlignItems.Center
                                 LayoutDirection: =LayoutDirection.Vertical
                                 LayoutGap: =5
@@ -3842,6 +3848,7 @@
                                 ZIndex: =1
 
                                 PHTitle As label:
+                                    AlignInContainer: =AlignInContainer.Stretch
                                     BorderColor: =App.Theme.Colors.Darker40
                                     Color: =RGBA(0, 0, 0, 1)
                                     DisabledColor: =RGBA(166, 166, 166, 1)
@@ -3853,8 +3860,10 @@
                                     ZIndex: =1
 
                                 PHNameSearch As text:
+                                    AlignInContainer: =AlignInContainer.Stretch
                                     BorderStyle: =BorderStyle.None
                                     Default: =""
+                                    FillPortions: =1
                                     Font: =App.Theme.Font
                                     HintText: ="Search Policyholder Name"
                                     HoverBorderColor: =Self.Fill
@@ -3872,6 +3881,7 @@
                                 ZIndex: =2
 
                                 PolicyNo As label:
+                                    AlignInContainer: =AlignInContainer.Stretch
                                     BorderColor: =App.Theme.Colors.Darker40
                                     Color: =RGBA(0, 0, 0, 1)
                                     DisabledColor: =RGBA(166, 166, 166, 1)
@@ -3883,8 +3893,10 @@
                                     ZIndex: =1
 
                                 PolicyNoSearch As text:
+                                    AlignInContainer: =AlignInContainer.Stretch
                                     BorderStyle: =BorderStyle.None
                                     Default: =""
+                                    FillPortions: =1
                                     Font: =App.Theme.Font
                                     HintText: ="Search Policy Number"
                                     HoverBorderColor: =Self.Fill
@@ -3902,6 +3914,7 @@
                                 ZIndex: =3
 
                                 ClaimNo As label:
+                                    AlignInContainer: =AlignInContainer.Stretch
                                     BorderColor: =App.Theme.Colors.Darker40
                                     Color: =RGBA(0, 0, 0, 1)
                                     DisabledColor: =RGBA(166, 166, 166, 1)
@@ -3913,6 +3926,7 @@
                                     ZIndex: =3
 
                                 ClaimNoSearch As text:
+                                    AlignInContainer: =AlignInContainer.Stretch
                                     BorderStyle: =BorderStyle.None
                                     Default: =""
                                     Font: =App.Theme.Font
@@ -3932,6 +3946,7 @@
                                 ZIndex: =4
 
                                 AgentCodeAlias As label:
+                                    AlignInContainer: =AlignInContainer.Stretch
                                     BorderColor: =App.Theme.Colors.Darker40
                                     Color: =RGBA(0, 0, 0, 1)
                                     DisabledColor: =RGBA(166, 166, 166, 1)
@@ -3943,8 +3958,10 @@
                                     ZIndex: =1
 
                                 AgenCodeAliasSearch As text:
+                                    AlignInContainer: =AlignInContainer.Stretch
                                     BorderStyle: =BorderStyle.None
                                     Default: =""
+                                    FillPortions: =1
                                     Font: =App.Theme.Font
                                     HintText: ="Search Agent Code or Alias"
                                     HoverBorderColor: =Self.Fill
@@ -3962,6 +3979,7 @@
                                 ZIndex: =5
 
                                 AssignedAlias As label:
+                                    AlignInContainer: =AlignInContainer.Stretch
                                     BorderColor: =App.Theme.Colors.Darker40
                                     Color: =RGBA(0, 0, 0, 1)
                                     DisabledColor: =RGBA(166, 166, 166, 1)
@@ -3973,8 +3991,10 @@
                                     ZIndex: =3
 
                                 AssignedAliasSearch As text:
+                                    AlignInContainer: =AlignInContainer.Stretch
                                     BorderStyle: =BorderStyle.None
                                     Default: =""
+                                    FillPortions: =1
                                     Font: =App.Theme.Font
                                     HintText: ="Search Assigned Alias"
                                     HoverBorderColor: =Self.Fill
