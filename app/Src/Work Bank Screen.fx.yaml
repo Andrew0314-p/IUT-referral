@@ -2534,7 +2534,6 @@
                                             BorderColor: =App.Theme.Colors.Darker40
                                             Color: =RGBA(0, 0, 0, 1)
                                             DisabledColor: =RGBA(166, 166, 166, 1)
-                                            FillPortions: =1
                                             Font: =App.Theme.Font
                                             Size: =13
                                             Text: |-
@@ -4036,6 +4035,38 @@
                             RadiusTopRight: =4
                             ZIndex: =3
 
+                            ReferralTypeFilterContainer As groupContainer.verticalAutoLayoutContainer:
+                                BorderStyle: =BorderStyle.None
+                                Height: =50
+                                LayoutMode: =LayoutMode.Auto
+                                RadiusBottomLeft: =4
+                                RadiusBottomRight: =4
+                                RadiusTopLeft: =4
+                                RadiusTopRight: =4
+                                ZIndex: =1
+
+                                ReferralType As label:
+                                    AlignInContainer: =AlignInContainer.Stretch
+                                    BorderColor: =App.Theme.Colors.Darker40
+                                    Color: =RGBA(0, 0, 0, 1)
+                                    DisabledColor: =RGBA(166, 166, 166, 1)
+                                    Font: =App.Theme.Font
+                                    Size: =13
+                                    Text: |-
+                                        ="Referral Type: "
+                                    Width: =Len(FraudCategoryTitle.Text) * 9
+                                    ZIndex: =3
+
+                                ReferralTypeSearch As text:
+                                    AlignInContainer: =AlignInContainer.Stretch
+                                    BorderStyle: =BorderStyle.None
+                                    Default: =""
+                                    Font: =App.Theme.Font
+                                    HintText: ="Search Referral Type"
+                                    HoverBorderColor: =Self.Fill
+                                    HoverFill: =RGBA(0, 0, 0, 0)
+                                    ZIndex: =4
+
                             StatusFilterContainer As groupContainer.horizontalAutoLayoutContainer:
                                 BorderStyle: =BorderStyle.None
                                 Height: =40
@@ -4044,7 +4075,7 @@
                                 RadiusBottomRight: =4
                                 RadiusTopLeft: =4
                                 RadiusTopRight: =4
-                                ZIndex: =1
+                                ZIndex: =2
 
                                 Status As label:
                                     AlignInContainer: =AlignInContainer.Stretch
@@ -4075,38 +4106,6 @@
                                     Width: =275
                                     X: =0
                                     Y: =0
-                                    ZIndex: =4
-
-                            ReferralTypeFilterContainer As groupContainer.verticalAutoLayoutContainer:
-                                BorderStyle: =BorderStyle.None
-                                Height: =50
-                                LayoutMode: =LayoutMode.Auto
-                                RadiusBottomLeft: =4
-                                RadiusBottomRight: =4
-                                RadiusTopLeft: =4
-                                RadiusTopRight: =4
-                                ZIndex: =2
-
-                                ReferralType As label:
-                                    AlignInContainer: =AlignInContainer.Stretch
-                                    BorderColor: =App.Theme.Colors.Darker40
-                                    Color: =RGBA(0, 0, 0, 1)
-                                    DisabledColor: =RGBA(166, 166, 166, 1)
-                                    Font: =App.Theme.Font
-                                    Size: =13
-                                    Text: |-
-                                        ="Referral Type: "
-                                    Width: =Len(FraudCategoryTitle.Text) * 9
-                                    ZIndex: =3
-
-                                ReferralTypeSearch As text:
-                                    AlignInContainer: =AlignInContainer.Stretch
-                                    BorderStyle: =BorderStyle.None
-                                    Default: =""
-                                    Font: =App.Theme.Font
-                                    HintText: ="Search Referral Type"
-                                    HoverBorderColor: =Self.Fill
-                                    HoverFill: =RGBA(0, 0, 0, 0)
                                     ZIndex: =4
 
                             FraudCategoryFilterContainer As groupContainer.verticalAutoLayoutContainer:
