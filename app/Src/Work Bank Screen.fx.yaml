@@ -878,11 +878,25 @@
                             ( IsBlank(ClaimNoSearch.Text) || ClaimNoSearch.Text in '1st Claim Number' || ClaimNoSearch.Text in '2nd Claim Number' || ClaimNoSearch.Text in '3rd - Claim Number' ) &&
                             ReferralTypeSearch.Text in 'Referral Type' &&
                             ( IsBlank(AgenCodeAliasSearch.Text) || AgenCodeAliasSearch.Text in 'Reporter Alias') &&
-                            ( IsBlank(FraudCategoryFilterDropdown.Selected.Value) || 'Category of Fraud' = FraudCategoryFilterDropdown.Selected.Value)
+                            ( IsBlank(FraudCategoryFilterDropdown.Selected.Value) || 'Category of Fraud' = FraudCategoryFilterDropdown.Selected.Value) &&
+                            ( IsBlank(StateFilterDropdown.Selected.Value) 
+                                                    || '1st Auto Business - State Code' = StateFilterDropdown.Selected.Value
+                                                    || '1st Auto Personal - State Code' = StateFilterDropdown.Selected.Value
+                                                    || '1st Fire Business Lines - State Code' = StateFilterDropdown.Selected.Value
+                                                    || '1st Fire Personal Lines - State Code' = StateFilterDropdown.Selected.Value
+                                                    || '2nd Auto Business - State Code' = StateFilterDropdown.Selected.Value
+                                                    || '2nd Auto Personal - State Code' = StateFilterDropdown.Selected.Value
+                                                    || '2nd Fire - Business State Code' = StateFilterDropdown.Selected.Value
+                                                    || '2nd Fire Personal - State Code' = StateFilterDropdown.Selected.Value
+                                                    || '3rd Auto Business - State Code' = StateFilterDropdown.Selected.Value
+                                                    || '3rd Auto Personal - State Code' = StateFilterDropdown.Selected.Value
+                                                    || '3rd Fire - Business State Code' = StateFilterDropdown.Selected.Value
+                                                    || '3rd Fire Personal - State Code' = StateFilterDropdown.Selected.Value
+                            )
                             ), 
                             ID, SortOrder.Ascending )
                             
-                            //( IsBlank(FraudCategoryFilter.Selected.Value) || 'Category of Fraud' = FraudCategoryFilter.Selected.Value)
+                            //( IsBlank(StateFilterDropdown.Selected.Value) || 'Category of Fraud' = StateFilterDropdown.Selected.Value)
                         onCellValueChange: =false
                         onFilter: =false
                         onNavigate: =false
@@ -4117,17 +4131,6 @@
                                     Width: =Len(FraudCategoryTitle.Text) * 9
                                     ZIndex: =1
 
-                                FraudCategorySearch As text:
-                                    AlignInContainer: =AlignInContainer.Stretch
-                                    BorderStyle: =BorderStyle.None
-                                    Default: =""
-                                    FillPortions: =1
-                                    Font: =App.Theme.Font
-                                    HintText: ="Search Fraud Category"
-                                    HoverBorderColor: =Self.Fill
-                                    HoverFill: =RGBA(0, 0, 0, 0)
-                                    ZIndex: =2
-
                                 FraudCategoryFilterDropdown As Dropdown.pcfdataset:
                                     AlignInContainer: =AlignInContainer.Stretch
                                     Appearance: ='DropdownCanvas.Appearance'.FilledLighter
@@ -4169,15 +4172,24 @@
                                     Width: =Len(FraudCategoryTitle.Text) * 9
                                     ZIndex: =1
 
-                                StateSearch As text:
+                                StateFilterDropdown As Dropdown.pcfdataset:
                                     AlignInContainer: =AlignInContainer.Stretch
-                                    BorderStyle: =BorderStyle.None
-                                    Default: =""
-                                    Font: =App.Theme.Font
-                                    HintText: ="Search State"
-                                    HoverBorderColor: =Self.Fill
-                                    HoverFill: =RGBA(0, 0, 0, 0)
-                                    ZIndex: =2
+                                    Appearance: ='DropdownCanvas.Appearance'.FilledLighter
+                                    BasePaletteColor: =RGBA(249, 83, 109, 1)
+                                    DisplayMode: =DisplayMode.Edit
+                                    FillPortions: =1
+                                    FontSize: |
+                                        =17
+                                    Height: =32
+                                    Items: =["AL (1)", "AL (93)", "AK (2)", "AK (92)", "AZ (3)", "AZ (93)", "AR (4)", "AR (94)", "CA (5)", "CA (55)", "CA (55)", "CA (57)", "CA (71)", "CA (75)", "CA (75)", "CA (77)", "CA (90)", "CA (92)", "CA (92)", "CA (97)", "CO (6)", "CO (96)", "CT (7)", "CT (97)", "DE (8)", "DE (98)", "DC (9)", "DC (98)", "FL (59)", "FL (59)", "FL (79)", "FL (80)", "FL (80)", "FL (99)", "GA (11)", "GA (11)", "GA (81)", "HI (51)", "HI (91)", "ID (12)", "ID (93)", "IL (13)", "IL (13)", "IL (73)", "IL (93)", "IN (14)", "IN (94)", "IA (15)", "IA (15)", "IA (95)", "KS (16)", "KS (91)", "KY (17)", "KY (97)", "LA (18)", "LA (98)", "ME (19)", "ME (99)", "MD (20)", "MD (90)", "MA (21)", "MA (91)", "MI (22)", "MI (92)", "MN (23)", "MN (93)", "MS (24)", "MS (99)", "MO (25)", "MO (95)", "MT (26)", "MT (96)", "NE (27)", "NE (97)", "NV (28)", "NV (98)", "NH (29)", "NH (94)", "NJ (30)", "NJ (90)", "NM (31)", "NM (91)", "NY (32)", "NY (32)", "NY (52)", "NY (52)", "NY (56)", "NY (98)", "NC (33)", "NC (93)", "ND (34)", "ND (94)", "OH (35)", "OH (35)", "OH (70)", "OH (95)", "OK (36)", "OK (96)", "OR (37)", "OR (97)", "PA (38)", "PA (38)", "PA (78)", "PA (98)", "RI (39)", "RI (93)", "SC (40)", "SC (99)", "SD (41)", "SD (91)", "TN (42)", "TN (92)", "TX (43)", "TX (43)", "TX (53)", "TX (53)", "TX (58)", "TX (72)", "TX (83)", "TX (84)", "TX (85)", "TX (90)", "TX (93)", "UT (44)", "UT (94)", "VT (45)", "VT (95)", "VA (46)", "VA (96)", "WA (47)", "WA (98)", "WV (48)", "WV (98)", "WI (49)", "WI (99)", "WY (50)", "WY (90)"]
+                                    LayoutMinHeight: =32
+                                    LayoutMinWidth: =320
+                                    Required: =true
+                                    Visible: =true
+                                    Width: =275
+                                    X: =0
+                                    Y: =0
+                                    ZIndex: =3
 
                             StartDateFilterContainer As groupContainer.verticalAutoLayoutContainer:
                                 BorderStyle: =BorderStyle.None
@@ -4737,6 +4749,7 @@
                         ClearFilter As Button:
                             AlignInContainer: =AlignInContainer.Stretch
                             Appearance: ='ButtonCanvas.Appearance'.Secondary
+                            BasePaletteColor: =
                             BorderStyle: =BorderStyle.None
                             DisplayMode: =DisplayMode.Edit
                             FillPortions: =1
@@ -4753,7 +4766,7 @@
                                 Reset(DecisionFilterDropdown);
                                 Reset(ReferralTypeSearch);
                                 Reset(FraudCategoryFilterDropdown);
-                                Reset(StateSearch);
+                                Reset(StateFilterDropdown);
                                 Reset(StartDateSearch);
                                 Reset(EndDateSearch);
                             Text: ="Clear Filter"
