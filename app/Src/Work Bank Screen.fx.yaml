@@ -731,6 +731,8 @@
 
                 DataContainer As groupContainer.horizontalAutoLayoutContainer:
                     BorderStyle: =BorderStyle.None
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =250
                     LayoutMode: =LayoutMode.Auto
                     RadiusBottomLeft: =4
                     RadiusBottomRight: =4
@@ -746,6 +748,8 @@
                         Items: |-
                             =If(!IsBlank(Trim(EmployeeSearch.Text)), Office365Users.SearchUser({searchTerm: Trim(EmployeeSearch.Text), top: 15}))
                         Layout: =Layout.Vertical
+                        LayoutMinHeight: =27
+                        LayoutMinWidth: =72
                         OnSelect: |-
                             =Set(_selectedApprover, ThisItem);
                             Set(_selectedApproverPhoto, Office365Users.UserPhoto(ThisItem.Id));
@@ -893,12 +897,15 @@
                                                     || '3rd Auto Business - State Code' = StateFilterDropdown.Selected.Value
                                                     || '3rd Auto Personal - State Code' = StateFilterDropdown.Selected.Value
                                                     || '3rd Fire - Business State Code' = StateFilterDropdown.Selected.Value
-                                                    || '3rd Fire Personal - State Code' = StateFilterDropdown.Selected.Value
-                            )
+                                                    || '3rd Fire Personal - State Code' = StateFilterDropdown.Selected.Value ) &&
+                            ( IsBlank(StartDateFilter.SelectedDate) || 'Start Date' >= StartDateFilter.SelectedDate) &&
+                            ( IsBlank(EndDateFilter.SelectedDate) || 'End Date' >= EndDateFilter.SelectedDate)
                             ), 
                             ID, SortOrder.Ascending )
                             
-                            //( IsBlank(StateFilterDropdown.Selected.Value) || 'Category of Fraud' = StateFilterDropdown.Selected.Value)
+                            //( IsBlank(EndDateFilter.SelectedDate) || 'End Date' >= EndDateFilter.SelectedDate)
+                        LayoutMinHeight: =If(Self.Y + 500 > Parent.Height, Parent.Height - Self.Y, 500)
+                        LayoutMinWidth: =If(Self.X + 800 > Parent.Width, Parent.Width - Self.X, 800)
                         onCellValueChange: =false
                         onFilter: =false
                         onNavigate: =false
@@ -1093,6 +1100,8 @@
                             ZIndex: =52
 
                     EmptyCollectionWarning As groupContainer.horizontalAutoLayoutContainer:
+                        LayoutMinHeight: =100
+                        LayoutMinWidth: =250
                         LayoutMode: =LayoutMode.Auto
                         RadiusBottomLeft: =4
                         RadiusBottomRight: =4
@@ -1111,6 +1120,8 @@
                             FontStrikethrough: =false
                             FontUnderline: =false
                             Height: =32
+                            LayoutMinHeight: =32
+                            LayoutMinWidth: =96
                             Size: =20
                             Text: ="You have no cases assigned. Please check the Shared Work Bank for more work."
                             Weight: ='TextCanvas.Weight'.Regular
@@ -1123,6 +1134,9 @@
                         Fill: =RGBA(255, 255, 255, 1)
                         LayoutAlignItems: =LayoutAlignItems.Center
                         LayoutGap: =16
+                        LayoutJustifyContent: =LayoutJustifyContent.Center
+                        LayoutMinHeight: =100
+                        LayoutMinWidth: =250
                         LayoutMode: =LayoutMode.Auto
                         LayoutWrap: =true
                         PaddingBottom: =30
@@ -1142,12 +1156,14 @@
                             BorderColor: =RGBA(233, 79, 76, 1)
                             DropShadow: =DropShadow.Semibold
                             Fill: =RGBA(255, 255, 255, 1)
+                            FillPortions: =0
                             Height: =300
                             LayoutAlignItems: =LayoutAlignItems.Center
                             LayoutDirection: =LayoutDirection.Vertical
                             LayoutGap: =5
                             LayoutJustifyContent: =LayoutJustifyContent.Center
                             LayoutMinHeight: =400
+                            LayoutMinWidth: =250
                             LayoutMode: =LayoutMode.Auto
                             LayoutOverflowY: =LayoutOverflow.Scroll
                             PaddingBottom: =10
@@ -1158,15 +1174,17 @@
                             RadiusBottomRight: =4
                             RadiusTopLeft: =4
                             RadiusTopRight: =4
+                            Width: =AssignalTypeContainer.Width * 1/6
                             ZIndex: =5
 
                             ImageContainer3_1 As groupContainer.verticalAutoLayoutContainer:
                                 AlignInContainer: =AlignInContainer.Center
-                                FillPortions: =0
                                 LayoutAlignItems: =LayoutAlignItems.Center
                                 LayoutDirection: =LayoutDirection.Vertical
                                 LayoutGap: =5
                                 LayoutJustifyContent: =LayoutJustifyContent.End
+                                LayoutMinHeight: =100
+                                LayoutMinWidth: =250
                                 LayoutMode: =LayoutMode.Auto
                                 RadiusBottomLeft: =4
                                 RadiusBottomRight: =4
@@ -1185,6 +1203,8 @@
                             TitleContainer3_1 As groupContainer.verticalAutoLayoutContainer:
                                 AlignInContainer: =AlignInContainer.Center
                                 LayoutDirection: =LayoutDirection.Vertical
+                                LayoutMinHeight: =100
+                                LayoutMinWidth: =250
                                 LayoutMode: =LayoutMode.Auto
                                 PaddingTop: =20
                                 RadiusBottomLeft: =4
@@ -1202,6 +1222,8 @@
                                     FontSize: =20
                                     FontWeight: =FontWeight.Bold
                                     Height: =32
+                                    LayoutMinHeight: =32
+                                    LayoutMinWidth: =96
                                     OnSelect: |-
                                         =Refresh('Referral Intake Tool Submissions');
                                         
@@ -1317,7 +1339,7 @@
                                                     'Informant Phone Number':oldestRecord.'Informant Phone Number',
                                                     'Informant Email':oldestRecord.'Informant Email',
                                                     'Additional Info Y/N':oldestRecord.'Can we contact you for additional information',
-                                                    'Start Date':oldestRecord.'Start Date',
+                                                    'Start Date': Now(),
                                                     'End Date':oldestRecord.'End Date'
                                                 }
                                             );
@@ -1333,11 +1355,14 @@
                         "'APL Container' As groupContainer.verticalAutoLayoutContainer":
                             DropShadow: =DropShadow.Semibold
                             Fill: =RGBA(255, 255, 255, 1)
+                            FillPortions: =0
                             Height: ='ABL Container'.Height
                             LayoutAlignItems: =LayoutAlignItems.Center
                             LayoutDirection: =LayoutDirection.Vertical
                             LayoutGap: =5
                             LayoutJustifyContent: =LayoutJustifyContent.Center
+                            LayoutMinHeight: =100
+                            LayoutMinWidth: =250
                             LayoutMode: =LayoutMode.Auto
                             LayoutOverflowY: =LayoutOverflow.Scroll
                             PaddingBottom: =10
@@ -1348,14 +1373,16 @@
                             RadiusBottomRight: =4
                             RadiusTopLeft: =4
                             RadiusTopRight: =4
+                            Width: =AssignalTypeContainer.Width * 1/6
                             ZIndex: =11
 
                             ImageContainer23_1 As groupContainer.verticalAutoLayoutContainer:
-                                FillPortions: =0
                                 LayoutAlignItems: =LayoutAlignItems.Center
                                 LayoutDirection: =LayoutDirection.Vertical
                                 LayoutGap: =5
                                 LayoutJustifyContent: =LayoutJustifyContent.End
+                                LayoutMinHeight: =100
+                                LayoutMinWidth: =250
                                 LayoutMode: =LayoutMode.Auto
                                 RadiusBottomLeft: =4
                                 RadiusBottomRight: =4
@@ -1372,7 +1399,10 @@
                                     ZIndex: =1
 
                             TitleContainer23_1 As groupContainer.verticalAutoLayoutContainer:
+                                AlignInContainer: =AlignInContainer.SetByContainer
                                 LayoutDirection: =LayoutDirection.Vertical
+                                LayoutMinHeight: =100
+                                LayoutMinWidth: =250
                                 LayoutMode: =LayoutMode.Auto
                                 PaddingTop: =20
                                 RadiusBottomLeft: =4
@@ -1390,6 +1420,8 @@
                                     FontSize: =20
                                     FontWeight: =FontWeight.Bold
                                     Height: =32
+                                    LayoutMinHeight: =32
+                                    LayoutMinWidth: =96
                                     OnSelect: |-
                                         =Refresh('Referral Intake Tool Submissions');
                                         
@@ -1504,7 +1536,7 @@
                                                     'Informant Phone Number':oldestRecord.'Informant Phone Number',
                                                     'Informant Email':oldestRecord.'Informant Email',
                                                     'Additional Info Y/N':oldestRecord.'Can we contact you for additional information',
-                                                    'Start Date':oldestRecord.'Start Date',
+                                                    'Start Date':Now(),
                                                     'End Date':oldestRecord.'End Date'
                                                 }
                                             );
@@ -1520,11 +1552,14 @@
                         "'FBL Container' As groupContainer.verticalAutoLayoutContainer":
                             DropShadow: =DropShadow.Semibold
                             Fill: =RGBA(255, 255, 255, 1)
+                            FillPortions: =0
                             Height: ='ABL Container'.Height
                             LayoutAlignItems: =LayoutAlignItems.Center
                             LayoutDirection: =LayoutDirection.Vertical
                             LayoutGap: =5
                             LayoutJustifyContent: =LayoutJustifyContent.Center
+                            LayoutMinHeight: =100
+                            LayoutMinWidth: =250
                             LayoutMode: =LayoutMode.Auto
                             LayoutOverflowY: =LayoutOverflow.Scroll
                             PaddingBottom: =10
@@ -1535,13 +1570,17 @@
                             RadiusBottomRight: =4
                             RadiusTopLeft: =4
                             RadiusTopRight: =4
+                            Width: =AssignalTypeContainer.Width * 1/6
                             ZIndex: =17
 
                             ImageContainer33_1 As groupContainer.verticalAutoLayoutContainer:
+                                AlignInContainer: =AlignInContainer.SetByContainer
                                 LayoutAlignItems: =LayoutAlignItems.Center
                                 LayoutDirection: =LayoutDirection.Vertical
                                 LayoutGap: =5
                                 LayoutJustifyContent: =LayoutJustifyContent.End
+                                LayoutMinHeight: =100
+                                LayoutMinWidth: =250
                                 LayoutMode: =LayoutMode.Auto
                                 RadiusBottomLeft: =4
                                 RadiusBottomRight: =4
@@ -1558,7 +1597,10 @@
                                     ZIndex: =1
 
                             TitleContainer33_1 As groupContainer.verticalAutoLayoutContainer:
+                                AlignInContainer: =AlignInContainer.SetByContainer
                                 LayoutDirection: =LayoutDirection.Vertical
+                                LayoutMinHeight: =100
+                                LayoutMinWidth: =250
                                 LayoutMode: =LayoutMode.Auto
                                 PaddingTop: =20
                                 RadiusBottomLeft: =4
@@ -1576,6 +1618,8 @@
                                     FontSize: =20
                                     FontWeight: =FontWeight.Bold
                                     Height: =32
+                                    LayoutMinHeight: =32
+                                    LayoutMinWidth: =96
                                     OnSelect: |-
                                         =Refresh('Referral Intake Tool Submissions');
                                         
@@ -1690,7 +1734,7 @@
                                                     'Informant Phone Number':oldestRecord.'Informant Phone Number',
                                                     'Informant Email':oldestRecord.'Informant Email',
                                                     'Additional Info Y/N':oldestRecord.'Can we contact you for additional information',
-                                                    'Start Date':oldestRecord.'Start Date',
+                                                    'Start Date':Now(),
                                                     'End Date':oldestRecord.'End Date'
                                                 }
                                             );
@@ -1706,11 +1750,14 @@
                         "'FPL Container' As groupContainer.verticalAutoLayoutContainer":
                             DropShadow: =DropShadow.Semibold
                             Fill: =RGBA(255, 255, 255, 1)
+                            FillPortions: =0
                             Height: ='ABL Container'.Height
                             LayoutAlignItems: =LayoutAlignItems.Center
                             LayoutDirection: =LayoutDirection.Vertical
                             LayoutGap: =5
                             LayoutJustifyContent: =LayoutJustifyContent.Center
+                            LayoutMinHeight: =100
+                            LayoutMinWidth: =250
                             LayoutMode: =LayoutMode.Auto
                             LayoutOverflowY: =LayoutOverflow.Scroll
                             PaddingBottom: =10
@@ -1721,13 +1768,17 @@
                             RadiusBottomRight: =4
                             RadiusTopLeft: =4
                             RadiusTopRight: =4
+                            Width: =AssignalTypeContainer.Width * 1/6
                             ZIndex: =23
 
                             ImageContainer43_1 As groupContainer.verticalAutoLayoutContainer:
+                                AlignInContainer: =AlignInContainer.SetByContainer
                                 LayoutAlignItems: =LayoutAlignItems.Center
                                 LayoutDirection: =LayoutDirection.Vertical
                                 LayoutGap: =5
                                 LayoutJustifyContent: =LayoutJustifyContent.End
+                                LayoutMinHeight: =100
+                                LayoutMinWidth: =250
                                 LayoutMode: =LayoutMode.Auto
                                 RadiusBottomLeft: =4
                                 RadiusBottomRight: =4
@@ -1744,7 +1795,10 @@
                                     ZIndex: =1
 
                             TitleContainer43_1 As groupContainer.verticalAutoLayoutContainer:
+                                AlignInContainer: =AlignInContainer.SetByContainer
                                 LayoutDirection: =LayoutDirection.Vertical
+                                LayoutMinHeight: =100
+                                LayoutMinWidth: =250
                                 LayoutMode: =LayoutMode.Auto
                                 PaddingTop: =20
                                 RadiusBottomLeft: =4
@@ -1762,6 +1816,8 @@
                                     FontSize: =20
                                     FontWeight: =FontWeight.Bold
                                     Height: =32
+                                    LayoutMinHeight: =32
+                                    LayoutMinWidth: =96
                                     OnSelect: |-
                                         =Refresh('Referral Intake Tool Submissions');
                                         
@@ -1876,7 +1932,7 @@
                                                     'Informant Phone Number':oldestRecord.'Informant Phone Number',
                                                     'Informant Email':oldestRecord.'Informant Email',
                                                     'Additional Info Y/N':oldestRecord.'Can we contact you for additional information',
-                                                    'Start Date':oldestRecord.'Start Date',
+                                                    'Start Date':Now(),
                                                     'End Date':oldestRecord.'End Date'
                                                 }
                                             );
@@ -1892,11 +1948,14 @@
                         "'Multiple Container' As groupContainer.verticalAutoLayoutContainer":
                             DropShadow: =DropShadow.Semibold
                             Fill: =RGBA(255, 255, 255, 1)
+                            FillPortions: =0
                             Height: ='ABL Container'.Height
                             LayoutAlignItems: =LayoutAlignItems.Center
                             LayoutDirection: =LayoutDirection.Vertical
                             LayoutGap: =5
                             LayoutJustifyContent: =LayoutJustifyContent.Center
+                            LayoutMinHeight: =100
+                            LayoutMinWidth: =250
                             LayoutMode: =LayoutMode.Auto
                             LayoutOverflowY: =LayoutOverflow.Scroll
                             PaddingBottom: =10
@@ -1907,13 +1966,17 @@
                             RadiusBottomRight: =4
                             RadiusTopLeft: =4
                             RadiusTopRight: =4
+                            Width: =AssignalTypeContainer.Width * 1/6
                             ZIndex: =29
 
                             ImageContainer53_1 As groupContainer.verticalAutoLayoutContainer:
+                                AlignInContainer: =AlignInContainer.SetByContainer
                                 LayoutAlignItems: =LayoutAlignItems.Center
                                 LayoutDirection: =LayoutDirection.Vertical
                                 LayoutGap: =5
                                 LayoutJustifyContent: =LayoutJustifyContent.End
+                                LayoutMinHeight: =100
+                                LayoutMinWidth: =250
                                 LayoutMode: =LayoutMode.Auto
                                 RadiusBottomLeft: =4
                                 RadiusBottomRight: =4
@@ -1930,7 +1993,10 @@
                                     ZIndex: =1
 
                             TitleContainer53_1 As groupContainer.verticalAutoLayoutContainer:
+                                AlignInContainer: =AlignInContainer.SetByContainer
                                 LayoutDirection: =LayoutDirection.Vertical
+                                LayoutMinHeight: =100
+                                LayoutMinWidth: =250
                                 LayoutMode: =LayoutMode.Auto
                                 PaddingTop: =20
                                 RadiusBottomLeft: =4
@@ -1948,6 +2014,8 @@
                                     FontSize: =20
                                     FontWeight: =FontWeight.Bold
                                     Height: =32
+                                    LayoutMinHeight: =32
+                                    LayoutMinWidth: =96
                                     OnSelect: |-
                                         =Refresh('Referral Intake Tool Submissions');
                                         
@@ -2062,7 +2130,7 @@
                                                     'Informant Phone Number':oldestRecord.'Informant Phone Number',
                                                     'Informant Email':oldestRecord.'Informant Email',
                                                     'Additional Info Y/N':oldestRecord.'Can we contact you for additional information',
-                                                    'Start Date':oldestRecord.'Start Date',
+                                                    'Start Date':Now(),
                                                     'End Date':oldestRecord.'End Date'
                                                 }
                                             );
@@ -2078,6 +2146,8 @@
                     "'Referral Info Container' As groupContainer.verticalAutoLayoutContainer":
                         DropShadow: =DropShadow.Light
                         LayoutDirection: =LayoutDirection.Vertical
+                        LayoutMinHeight: =100
+                        LayoutMinWidth: =250
                         LayoutMode: =LayoutMode.Auto
                         RadiusBottomLeft: =4
                         RadiusBottomRight: =4
@@ -2097,6 +2167,8 @@
                             FillPortions: =0
                             Height: |
                                 =60
+                            LayoutMinHeight: =100
+                            LayoutMinWidth: =250
                             LayoutMode: =LayoutMode.Auto
                             RadiusBottomLeft: =4
                             RadiusBottomRight: =4
@@ -2174,6 +2246,8 @@
 
                         "'Referral Galleries Container' As groupContainer.horizontalAutoLayoutContainer":
                             LayoutDirection: =LayoutDirection.Vertical
+                            LayoutMinHeight: =100
+                            LayoutMinWidth: =250
                             LayoutMode: =LayoutMode.Auto
                             RadiusBottomLeft: =4
                             RadiusBottomRight: =4
@@ -2188,6 +2262,8 @@
                                 DisplayMode: =DisplayMode.Edit
                                 FillPortions: =1
                                 Height: =32
+                                LayoutMinHeight: =32
+                                LayoutMinWidth: =96
                                 Size: =20
                                 Text: ="Please select a referral from the list to the left."
                                 Visible: =If(IsEmpty(ItemValues), true, false)
@@ -2199,6 +2275,8 @@
                             ReferralInformation As groupContainer.horizontalAutoLayoutContainer:
                                 DropShadow: =DropShadow.Light
                                 LayoutDirection: =LayoutDirection.Vertical
+                                LayoutMinHeight: =100
+                                LayoutMinWidth: =250
                                 LayoutMode: =LayoutMode.Auto
                                 RadiusBottomLeft: =4
                                 RadiusBottomRight: =4
@@ -2209,6 +2287,8 @@
 
                                 "'PH Data' As groupContainer.horizontalAutoLayoutContainer":
                                     DropShadow: =DropShadow.Light
+                                    LayoutMinHeight: =100
+                                    LayoutMinWidth: =250
                                     LayoutMode: =LayoutMode.Auto
                                     RadiusBottomLeft: =4
                                     RadiusBottomRight: =4
@@ -2219,6 +2299,8 @@
                                     PolicyContainer As groupContainer.horizontalAutoLayoutContainer:
                                         DropShadow: =DropShadow.Light
                                         LayoutDirection: =LayoutDirection.Vertical
+                                        LayoutMinHeight: =100
+                                        LayoutMinWidth: =250
                                         LayoutMode: =LayoutMode.Auto
                                         PaddingLeft: =5
                                         PaddingTop: =5
@@ -2244,8 +2326,11 @@
                                             ZIndex: =1
 
                                         DecisionReasons As groupContainer.horizontalAutoLayoutContainer:
+                                            FillPortions: =0
                                             Height: =35
                                             LayoutAlignItems: =LayoutAlignItems.Center
+                                            LayoutMinHeight: =100
+                                            LayoutMinWidth: =250
                                             LayoutMode: =LayoutMode.Auto
                                             RadiusBottomLeft: =4
                                             RadiusBottomRight: =4
@@ -2273,6 +2358,8 @@
                                                     =17
                                                 Height: =32
                                                 Items: =["Adverse Action Already Taken", "File Development", "No Action", "Non-renewal", "Premium Change", "Initial Cancel", "Midterm Cancel", "No Action - Inconclusive", "No Action - PH Cancel", "WOTR", "Void"]
+                                                LayoutMinHeight: =32
+                                                LayoutMinWidth: =320
                                                 Required: =true
                                                 Visible: =If(decisionMode = true, true, false)
                                                 Width: =275
@@ -2287,6 +2374,8 @@
                                                 DisplayMode: =DisplayMode.Edit
                                                 FontColor: =RGBA(189, 49, 51, 1)
                                                 Height: =32
+                                                LayoutMinHeight: =32
+                                                LayoutMinWidth: =96
                                                 OnSelect: |-
                                                     =UpdateContext({decisionMode: true});
                                                 Text: ="Change Decision"
@@ -2303,6 +2392,8 @@
                                                 DisplayMode: =DisplayMode.Edit
                                                 FontColor: =RGBA(189, 49, 51, 1)
                                                 Height: =32
+                                                LayoutMinHeight: =32
+                                                LayoutMinWidth: =96
                                                 OnSelect: |-
                                                     =Set(selectedRecordID, 'Referral Queue Gallery'.Selected.ID);
                                                     Set(selectedRecordReferralType, 'Referral Queue Gallery'.Selected.'Referral Type');
@@ -2312,6 +2403,12 @@
                                                         LookUp('Referral Intake Tool Submissions', ID = selectedRecordID),
                                                         { 'Decision Reasons': DecisionDropdown.Selected.Value }
                                                     );
+                                                    If( DecisionDropdown.Selected.Value = "Adverse Action Already Taken" Or DecisionDropdown.Selected.Value = "Non-renewal" Or DecisionDropdown.Selected.Value = "Initial Cancel" Or DecisionDropdown.Selected.Value = "Midterm Cancel" Or DecisionDropdown.Selected.Value = "No Action - Inconclusive" Or DecisionDropdown.Selected.Value = "No Action - PH Cancel" Or DecisionDropdown.Selected.Value = "WOTR" Or DecisionDropdown.Selected.Value = "Void",
+                                                    Patch(
+                                                        'Referral Intake Tool Submissions',
+                                                        LookUp('Referral Intake Tool Submissions', ID = selectedRecordID),
+                                                        { 'End Date': Now() }
+                                                    ); );
                                                     Update(WorkBankCollection, LookUp(WorkBankCollection, ID = selectedRecordID), { 'Decision Reason': DecisionDropdown.Selected.Value });
                                                     Notify("Referral #" & selectedRecordID & " (" & selectedRecordReferralType & ") now has a status of " & DecisionDropdown.Selected.Value, NotificationType.Success);
                                                     UpdateContext({decisionMode: false});
@@ -2413,7 +2510,9 @@
                                                                     'Informant Last Name':'Informant Last Name',
                                                                     'Informant Phone Number':'Informant Phone Number',
                                                                     'Informant Email':'Informant Email',
-                                                                    'Additional Info Y/N':'Can we contact you for additional information'
+                                                                    'Additional Info Y/N':'Can we contact you for additional information',
+                                                                    'Start Date':'Start Date',
+                                                                    'End Date': 'End Date'
                                                                 }
                                                             )
                                                         )
@@ -2431,6 +2530,8 @@
                                                 DisplayMode: =DisplayMode.Edit
                                                 FontColor: =RGBA(189, 49, 51, 1)
                                                 Height: =32
+                                                LayoutMinHeight: =32
+                                                LayoutMinWidth: =96
                                                 OnSelect: |-
                                                     =Reset(DecisionDropdown);
                                                     UpdateContext({decisionMode: false});
@@ -2542,6 +2643,8 @@
                                     ReporterContainer As groupContainer.verticalAutoLayoutContainer:
                                         DropShadow: =DropShadow.Light
                                         LayoutDirection: =LayoutDirection.Vertical
+                                        LayoutMinHeight: =100
+                                        LayoutMinWidth: =250
                                         LayoutMode: =LayoutMode.Auto
                                         PaddingLeft: =5
                                         PaddingTop: =5
@@ -2686,6 +2789,8 @@
                                     DetailsContainer As groupContainer.verticalAutoLayoutContainer:
                                         DropShadow: =DropShadow.Light
                                         LayoutDirection: =LayoutDirection.Vertical
+                                        LayoutMinHeight: =100
+                                        LayoutMinWidth: =250
                                         LayoutMode: =LayoutMode.Auto
                                         PaddingLeft: =5
                                         PaddingTop: =5
@@ -2726,6 +2831,8 @@
                                     "'1stPolicyContainer' As groupContainer.verticalAutoLayoutContainer":
                                         DropShadow: =DropShadow.Light
                                         LayoutDirection: =LayoutDirection.Vertical
+                                        LayoutMinHeight: =100
+                                        LayoutMinWidth: =250
                                         LayoutMode: =LayoutMode.Auto
                                         RadiusBottomLeft: =4
                                         RadiusBottomRight: =4
@@ -3107,6 +3214,8 @@
                                         DropShadow: =DropShadow.Light
                                         LayoutAlignItems: =LayoutAlignItems.Stretch
                                         LayoutDirection: =LayoutDirection.Vertical
+                                        LayoutMinHeight: =100
+                                        LayoutMinWidth: =250
                                         LayoutMode: =LayoutMode.Auto
                                         RadiusBottomLeft: =4
                                         RadiusBottomRight: =4
@@ -3487,6 +3596,8 @@
                                         DropShadow: =DropShadow.Light
                                         LayoutAlignItems: =LayoutAlignItems.Stretch
                                         LayoutDirection: =LayoutDirection.Vertical
+                                        LayoutMinHeight: =100
+                                        LayoutMinWidth: =250
                                         LayoutMode: =LayoutMode.Auto
                                         RadiusBottomLeft: =4
                                         RadiusBottomRight: =4
@@ -3865,6 +3976,8 @@
 
                     FilterContainer As groupContainer.verticalAutoLayoutContainer:
                         DropShadow: =DropShadow.Light
+                        LayoutMinHeight: =100
+                        LayoutMinWidth: =250
                         LayoutMode: =LayoutMode.Auto
                         PaddingBottom: =15
                         PaddingLeft: =15
@@ -3880,6 +3993,8 @@
                         FilterContainer1 As groupContainer.horizontalAutoLayoutContainer:
                             BorderStyle: =BorderStyle.None
                             LayoutDirection: =LayoutDirection.Vertical
+                            LayoutMinHeight: =100
+                            LayoutMinWidth: =250
                             LayoutMode: =LayoutMode.Auto
                             PaddingLeft: =15
                             PaddingRight: =15
@@ -3892,6 +4007,8 @@
                             PHNameFilterContainer As groupContainer.verticalAutoLayoutContainer:
                                 BorderStyle: =BorderStyle.None
                                 Height: =50
+                                LayoutMinHeight: =40
+                                LayoutMinWidth: =250
                                 LayoutMode: =LayoutMode.Auto
                                 RadiusBottomLeft: =4
                                 RadiusBottomRight: =4
@@ -3920,11 +4037,14 @@
                                     HintText: ="Search Policyholder Name"
                                     HoverBorderColor: =Self.Fill
                                     HoverFill: =RGBA(0, 0, 0, 0)
+                                    LayoutMinHeight: =20
                                     ZIndex: =2
 
                             PolicyNoFilterContainer As groupContainer.verticalAutoLayoutContainer:
                                 BorderStyle: =BorderStyle.None
                                 Height: =50
+                                LayoutMinHeight: =40
+                                LayoutMinWidth: =250
                                 LayoutMode: =LayoutMode.Auto
                                 RadiusBottomLeft: =4
                                 RadiusBottomRight: =4
@@ -3958,6 +4078,8 @@
                             ClaimNoFilterContainer As groupContainer.verticalAutoLayoutContainer:
                                 BorderStyle: =BorderStyle.None
                                 Height: =50
+                                LayoutMinHeight: =40
+                                LayoutMinWidth: =250
                                 LayoutMode: =LayoutMode.Auto
                                 RadiusBottomLeft: =4
                                 RadiusBottomRight: =4
@@ -3990,6 +4112,8 @@
                             AgentCodeFilterContainer As groupContainer.verticalAutoLayoutContainer:
                                 BorderStyle: =BorderStyle.None
                                 Height: =50
+                                LayoutMinHeight: =40
+                                LayoutMinWidth: =250
                                 LayoutMode: =LayoutMode.Auto
                                 RadiusBottomLeft: =4
                                 RadiusBottomRight: =4
@@ -4023,6 +4147,8 @@
                             AssignedAliasFilterContainer As groupContainer.verticalAutoLayoutContainer:
                                 BorderStyle: =BorderStyle.None
                                 Height: =50
+                                LayoutMinHeight: =40
+                                LayoutMinWidth: =250
                                 LayoutMode: =LayoutMode.Auto
                                 RadiusBottomLeft: =4
                                 RadiusBottomRight: =4
@@ -4053,34 +4179,17 @@
                                     HoverFill: =RGBA(0, 0, 0, 0)
                                     ZIndex: =4
 
-                        Rectangle1 As rectangle:
-                            AlignInContainer: =AlignInContainer.Stretch
-                            BorderColor: =App.Theme.Colors.Darker40
-                            Fill: =App.Theme.Colors.Primary
-                            Width: =1
-                            ZIndex: =2
-
-                        FilterContainer2 As groupContainer.horizontalAutoLayoutContainer:
-                            BorderStyle: =BorderStyle.None
-                            LayoutDirection: =LayoutDirection.Vertical
-                            LayoutMode: =LayoutMode.Auto
-                            PaddingLeft: =15
-                            PaddingRight: =15
-                            RadiusBottomLeft: =4
-                            RadiusBottomRight: =4
-                            RadiusTopLeft: =4
-                            RadiusTopRight: =4
-                            ZIndex: =3
-
                             ReferralTypeFilterContainer As groupContainer.verticalAutoLayoutContainer:
                                 BorderStyle: =BorderStyle.None
                                 Height: =50
+                                LayoutMinHeight: =40
+                                LayoutMinWidth: =250
                                 LayoutMode: =LayoutMode.Auto
                                 RadiusBottomLeft: =4
                                 RadiusBottomRight: =4
                                 RadiusTopLeft: =4
                                 RadiusTopRight: =4
-                                ZIndex: =1
+                                ZIndex: =6
 
                                 ReferralType As label:
                                     AlignInContainer: =AlignInContainer.Stretch
@@ -4091,7 +4200,7 @@
                                     Size: =13
                                     Text: |-
                                         ="Referral Type: "
-                                    Width: =Len(FraudCategoryTitle.Text) * 9
+                                    Width: =Len(PHTitle.Text) * 9
                                     ZIndex: =3
 
                                 ReferralTypeSearch As text:
@@ -4104,9 +4213,32 @@
                                     HoverFill: =RGBA(0, 0, 0, 0)
                                     ZIndex: =4
 
+                        Rectangle1 As rectangle:
+                            AlignInContainer: =AlignInContainer.Stretch
+                            BorderColor: =App.Theme.Colors.Darker40
+                            Fill: =App.Theme.Colors.Primary
+                            Width: =1
+                            ZIndex: =2
+
+                        FilterContainer2 As groupContainer.horizontalAutoLayoutContainer:
+                            BorderStyle: =BorderStyle.None
+                            LayoutDirection: =LayoutDirection.Vertical
+                            LayoutMinHeight: =100
+                            LayoutMinWidth: =250
+                            LayoutMode: =LayoutMode.Auto
+                            PaddingLeft: =15
+                            PaddingRight: =15
+                            RadiusBottomLeft: =4
+                            RadiusBottomRight: =4
+                            RadiusTopLeft: =4
+                            RadiusTopRight: =4
+                            ZIndex: =3
+
                             StatusFilterContainer As groupContainer.horizontalAutoLayoutContainer:
                                 BorderStyle: =BorderStyle.None
                                 Height: =40
+                                LayoutMinHeight: =100
+                                LayoutMinWidth: =250
                                 LayoutMode: =LayoutMode.Auto
                                 RadiusBottomLeft: =4
                                 RadiusBottomRight: =4
@@ -4148,6 +4280,8 @@
                             FraudCategoryFilterContainer As groupContainer.verticalAutoLayoutContainer:
                                 BorderStyle: =BorderStyle.None
                                 Height: =50
+                                LayoutMinHeight: =100
+                                LayoutMinWidth: =250
                                 LayoutMode: =LayoutMode.Auto
                                 RadiusBottomLeft: =4
                                 RadiusBottomRight: =4
@@ -4189,6 +4323,8 @@
                             StateFilterContainer As groupContainer.verticalAutoLayoutContainer:
                                 BorderStyle: =BorderStyle.None
                                 Height: =50
+                                LayoutMinHeight: =100
+                                LayoutMinWidth: =250
                                 LayoutMode: =LayoutMode.Auto
                                 RadiusBottomLeft: =4
                                 RadiusBottomRight: =4
@@ -4230,6 +4366,8 @@
                             StartDateFilterContainer As groupContainer.verticalAutoLayoutContainer:
                                 BorderStyle: =BorderStyle.None
                                 Height: =50
+                                LayoutMinHeight: =100
+                                LayoutMinWidth: =250
                                 LayoutMode: =LayoutMode.Auto
                                 RadiusBottomLeft: =4
                                 RadiusBottomRight: =4
@@ -4249,15 +4387,22 @@
                                     Width: =Len(FraudCategoryTitle.Text) * 9
                                     ZIndex: =1
 
-                                StartDateSearch As text:
+                                StartDateFilter As datepicker:
                                     AlignInContainer: =AlignInContainer.Stretch
+                                    BorderColor: =App.Theme.Colors.Darker40
                                     BorderStyle: =BorderStyle.None
-                                    Default: =""
+                                    CalendarHeaderFill: =App.Theme.Colors.Primary
+                                    Color: =RGBA(0, 0, 0, 1)
+                                    DefaultDate: =
+                                    DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                                    DisabledColor: =RGBA(166, 166, 166, 1)
+                                    DisabledFill: =RGBA(244, 244, 244, 1)
                                     FillPortions: =1
                                     Font: =App.Theme.Font
-                                    HintText: ="Search Start Date"
-                                    HoverBorderColor: =Self.Fill
-                                    HoverFill: =RGBA(0, 0, 0, 0)
+                                    HoverDateFill: =App.Theme.Colors.Lighter70
+                                    IconBackground: =App.Theme.Colors.Primary
+                                    LayoutMinWidth: =1
+                                    SelectedDateFill: =App.Theme.Colors.Primary
                                     ZIndex: =2
 
                                 EndDate As label:
@@ -4266,21 +4411,29 @@
                                     Color: =RGBA(0, 0, 0, 1)
                                     DisabledColor: =RGBA(166, 166, 166, 1)
                                     Font: =App.Theme.Font
+                                    PaddingLeft: =10
                                     Size: =13
                                     Text: |-
                                         ="End Date: "
                                     Width: =Len(FraudCategoryTitle.Text) * 9
                                     ZIndex: =3
 
-                                EndDateSearch As text:
+                                EndDateFilter As datepicker:
                                     AlignInContainer: =AlignInContainer.Stretch
+                                    BorderColor: =App.Theme.Colors.Darker40
                                     BorderStyle: =BorderStyle.None
-                                    Default: =""
+                                    CalendarHeaderFill: =App.Theme.Colors.Primary
+                                    Color: =RGBA(0, 0, 0, 1)
+                                    DefaultDate: =
+                                    DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                                    DisabledColor: =RGBA(166, 166, 166, 1)
+                                    DisabledFill: =RGBA(244, 244, 244, 1)
                                     FillPortions: =1
                                     Font: =App.Theme.Font
-                                    HintText: ="Search End Date"
-                                    HoverBorderColor: =Self.Fill
-                                    HoverFill: =RGBA(0, 0, 0, 0)
+                                    HoverDateFill: =App.Theme.Colors.Lighter70
+                                    IconBackground: =App.Theme.Colors.Primary
+                                    LayoutMinWidth: =1
+                                    SelectedDateFill: =App.Theme.Colors.Primary
                                     ZIndex: =4
 
                 AssignContainer As groupContainer.verticalAutoLayoutContainer:
@@ -4378,18 +4531,19 @@
                                 // Check if there is an oldest record available
                                 If(
                                     IsBlank(oldestRecord),
-                                    Notify("No record found without a value in 'Assigned To' field.", NotificationType.Error),
+                                    Notify("There are no more referrals that have not be assigned. Please check again later", NotificationType.Error),
                                     // Patch the 'Assigned To' field of the oldest record with the selected approver
                                     Patch(
                                         'Referral Intake Tool Submissions',
                                         oldestRecord,
-                                        { 'Assigned To': _selectedApprover.MailNickname,'Assigned To Email': _selectedApprover.Mail}
+                                        { 'Assigned To': _selectedApprover.MailNickname,'Assigned To Email': _selectedApprover.Mail, 'Start Date': Now()}
                                     );
                                     
                                     // Update the clicked count
                                     UpdateContext({ clickedCount: clickedCount + 1 });
                                     
                                     // Collect the record into the user-specific queue
+                                    If(!IsBlank(_selectedApprover),
                                     Collect(
                                         WorkBankCollection,
                                         {
@@ -4469,7 +4623,7 @@
                                             '3rd Auto Business - State Code': oldestRecord.'3rd Auto Business - State Code',
                                             '3rd Auto - Business Name': oldestRecord.'3rd Auto - Business Name',
                                             '3rd Auto Personal - State Code': oldestRecord.'3rd Auto Personal - State Code',
-                                             Details: oldestRecord.Details,
+                                            Details: oldestRecord.Details,
                                             'Others Involved': oldestRecord.'Others Involved',
                                             'Reporter Email':oldestRecord.'Reporter Email',
                                             'Reporter Name':oldestRecord.'Reporter Name',
@@ -4482,11 +4636,14 @@
                                             'Informant Last Name':oldestRecord.'Informant Last Name',
                                             'Informant Phone Number':oldestRecord.'Informant Phone Number',
                                             'Informant Email':oldestRecord.'Informant Email',
-                                            'Additional Info Y/N':oldestRecord.'Can we contact you for additional information'
+                                            'Additional Info Y/N':oldestRecord.'Can we contact you for additional information',
+                                            'Start Date':Now(),
+                                            'End Date':oldestRecord.'End Date'
                                         }
                                     );
-                                    Notify("Referral #" & oldestRecord.ID & " (" & oldestRecord.'Referral Type' & ") has been assigned to " & _selectedApprover.DisplayName & " (" & _selectedApprover.MailNickname & ")", NotificationType.Success)
-                                );
+                                    Notify("Referral #" & oldestRecord.ID & " (" & oldestRecord.'Referral Type' & ") has been assigned to " & _selectedApprover.DisplayName & " (" & _selectedApprover.MailNickname & ")", NotificationType.Success),
+                                    Notify("No employee has been selected", NotificationType.Error);
+                                ));
                             Text: |-
                                 ="Assign To: " & _selectedApprover.DisplayName & " (" &_selectedApprover.MailNickname & ")"
                             Visible: =If(IsBlank(_selectedApprover), false, true) And If(sharedWorkBankMode = true, true, false)
@@ -4805,8 +4962,8 @@
                                 Reset(ReferralTypeSearch);
                                 Reset(FraudCategoryFilterDropdown);
                                 Reset(StateFilterDropdown);
-                                Reset(StartDateSearch);
-                                Reset(EndDateSearch);
+                                Reset(StartDateFilter);
+                                Reset(EndDateFilter);
                             Text: ="Clear Filter"
                             Visible: =If(myTeamMode = true, true, false)
                             Width: =96
