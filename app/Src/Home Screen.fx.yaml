@@ -88,105 +88,6 @@
                 RadiusTopRight: =4
                 ZIndex: =1
 
-                "'Work Bank Container' As groupContainer.verticalAutoLayoutContainer":
-                    BorderColor: =RGBA(189, 49, 51, 1)
-                    BorderStyle: =BorderStyle.None
-                    Fill: =RGBA(255, 255, 255, 1)
-                    LayoutAlignItems: =LayoutAlignItems.Center
-                    LayoutDirection: =LayoutDirection.Vertical
-                    LayoutGap: =5
-                    LayoutJustifyContent: =LayoutJustifyContent.Center
-                    LayoutMinHeight: =300
-                    LayoutMinWidth: =If('Home Screen'.Size = ScreenSize.Small, Parent.Width, 400)
-                    LayoutMode: =LayoutMode.Auto
-                    LayoutOverflowY: =LayoutOverflow.Scroll
-                    RadiusBottomLeft: =4
-                    RadiusBottomRight: =4
-                    RadiusTopLeft: =4
-                    RadiusTopRight: =4
-                    Width: =('Screens Container'.Width * 1/2) - 10
-                    ZIndex: =1
-
-                    ImageContainer31 As groupContainer.verticalAutoLayoutContainer:
-                        AlignInContainer: =AlignInContainer.SetByContainer
-                        FillPortions: =1.5
-                        LayoutAlignItems: =LayoutAlignItems.Center
-                        LayoutDirection: =LayoutDirection.Vertical
-                        LayoutGap: =5
-                        LayoutJustifyContent: =LayoutJustifyContent.End
-                        LayoutMinHeight: =100
-                        LayoutMinWidth: ='Work Bank Container'.Width
-                        LayoutMode: =LayoutMode.Auto
-                        RadiusBottomLeft: =4
-                        RadiusBottomRight: =4
-                        RadiusTopLeft: =4
-                        RadiusTopRight: =4
-                        Width: =Parent.Width
-                        ZIndex: =18
-
-                        Image31 As image:
-                            BorderColor: =App.Theme.Colors.Darker40
-                            DisabledBorderColor: =RGBA(166, 166, 166, 1)
-                            DisabledFill: =RGBA(244, 244, 244, 1)
-                            Image: =Pictogram_Bank_rgb
-                            ImagePosition: =ImagePosition.Fill
-                            ZIndex: =19
-
-                    TitleContainer31 As groupContainer.verticalAutoLayoutContainer:
-                        AlignInContainer: =AlignInContainer.SetByContainer
-                        LayoutDirection: =LayoutDirection.Vertical
-                        LayoutMinHeight: =100
-                        LayoutMinWidth: ='Work Bank Container'.Width
-                        LayoutMode: =LayoutMode.Auto
-                        PaddingTop: =20
-                        RadiusBottomLeft: =4
-                        RadiusBottomRight: =4
-                        RadiusTopLeft: =4
-                        RadiusTopRight: =4
-                        Width: =Parent.Width
-                        ZIndex: =20
-
-                        FeatureItemButton31 As Button:
-                            AccessibleLabel: ="Featured item button"
-                            Appearance: ='ButtonCanvas.Appearance'.Transparent
-                            BorderStyle: =""
-                            DisplayMode: =DisplayMode.Edit
-                            FontSize: =20
-                            FontWeight: =FontWeight.Bold
-                            Height: =32
-                            LayoutMinHeight: =32
-                            LayoutMinWidth: =Parent.Width
-                            OnSelect: =Navigate(WorkBankDisclaimer)
-                            Text: ="Work Bank"
-                            Width: =Parent.Width
-                            X: =0
-                            Y: =0
-                            ZIndex: =21
-
-                        DescriptionText31 As Text:
-                            Align: ='TextCanvas.Align'.Center
-                            BorderStyle: =""
-                            DisplayMode: =DisplayMode.Edit
-                            FillPortions: =1
-                            Height: =32
-                            LayoutMinHeight: =32
-                            LayoutMinWidth: =Parent.Width
-                            Size: =16
-                            Text: ="Assign and view submitted referrals"
-                            VerticalAlign: ='TextCanvas.VerticalAlign'.Top
-                            Width: =Parent.Width
-                            X: =0
-                            Y: =0
-                            ZIndex: =22
-
-                Rectangle7_1 As rectangle:
-                    AlignInContainer: =AlignInContainer.Stretch
-                    BorderColor: =App.Theme.Colors.Darker40
-                    Fill: =App.Theme.Colors.Primary
-                    Height: =1
-                    Width: =1
-                    ZIndex: =2
-
                 "'New Referral Container' As groupContainer.verticalAutoLayoutContainer":
                     Fill: =RGBA(255, 255, 255, 1)
                     LayoutAlignItems: =LayoutAlignItems.Center
@@ -202,7 +103,7 @@
                     RadiusTopLeft: =4
                     RadiusTopRight: =4
                     Width: ='Screens Container'.Width * 1/2
-                    ZIndex: =3
+                    ZIndex: =1
 
                     ImageContainer1 As groupContainer.verticalAutoLayoutContainer:
                         AlignInContainer: =AlignInContainer.SetByContainer
@@ -276,8 +177,107 @@
                             Y: =0
                             ZIndex: =10
 
-            Container6 As groupContainer.horizontalAutoLayoutContainer:
-                DropShadow: =DropShadow.Light
+                Rectangle7_1 As rectangle:
+                    AlignInContainer: =AlignInContainer.Stretch
+                    BorderColor: =App.Theme.Colors.Darker40
+                    Fill: =App.Theme.Colors.Primary
+                    Height: =1
+                    Width: =1
+                    ZIndex: =2
+
+                "'Work Bank Container' As groupContainer.verticalAutoLayoutContainer":
+                    BorderColor: =RGBA(189, 49, 51, 1)
+                    BorderStyle: =BorderStyle.None
+                    Fill: =RGBA(255, 255, 255, 1)
+                    LayoutAlignItems: =LayoutAlignItems.Center
+                    LayoutDirection: =LayoutDirection.Vertical
+                    LayoutGap: =5
+                    LayoutJustifyContent: =LayoutJustifyContent.Center
+                    LayoutMinHeight: =300
+                    LayoutMinWidth: =If('Home Screen'.Size = ScreenSize.Small, Parent.Width, 400)
+                    LayoutMode: =LayoutMode.Auto
+                    LayoutOverflowY: =LayoutOverflow.Scroll
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    Width: =('Screens Container'.Width * 1/2) - 10
+                    ZIndex: =3
+
+                    ImageContainer31 As groupContainer.verticalAutoLayoutContainer:
+                        AlignInContainer: =AlignInContainer.SetByContainer
+                        FillPortions: =1.5
+                        LayoutAlignItems: =LayoutAlignItems.Center
+                        LayoutDirection: =LayoutDirection.Vertical
+                        LayoutGap: =5
+                        LayoutJustifyContent: =LayoutJustifyContent.End
+                        LayoutMinHeight: =100
+                        LayoutMinWidth: ='Work Bank Container'.Width
+                        LayoutMode: =LayoutMode.Auto
+                        RadiusBottomLeft: =4
+                        RadiusBottomRight: =4
+                        RadiusTopLeft: =4
+                        RadiusTopRight: =4
+                        Width: =Parent.Width
+                        ZIndex: =18
+
+                        Image31 As image:
+                            BorderColor: =App.Theme.Colors.Darker40
+                            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                            DisabledFill: =RGBA(244, 244, 244, 1)
+                            Image: =Pictogram_Bank_rgb
+                            ImagePosition: =ImagePosition.Fill
+                            ZIndex: =19
+
+                    TitleContainer31 As groupContainer.verticalAutoLayoutContainer:
+                        AlignInContainer: =AlignInContainer.SetByContainer
+                        LayoutDirection: =LayoutDirection.Vertical
+                        LayoutMinHeight: =100
+                        LayoutMinWidth: ='Work Bank Container'.Width
+                        LayoutMode: =LayoutMode.Auto
+                        PaddingTop: =20
+                        RadiusBottomLeft: =4
+                        RadiusBottomRight: =4
+                        RadiusTopLeft: =4
+                        RadiusTopRight: =4
+                        Width: =Parent.Width
+                        ZIndex: =20
+
+                        FeatureItemButton31 As Button:
+                            AccessibleLabel: ="Featured item button"
+                            Appearance: ='ButtonCanvas.Appearance'.Transparent
+                            BorderStyle: =""
+                            DisplayMode: =DisplayMode.Edit
+                            FontSize: =20
+                            FontWeight: =FontWeight.Bold
+                            Height: =32
+                            LayoutMinHeight: =32
+                            LayoutMinWidth: =Parent.Width
+                            OnSelect: =Navigate(WorkBankDisclaimer)
+                            Text: ="Work Bank"
+                            Width: =Parent.Width
+                            X: =0
+                            Y: =0
+                            ZIndex: =21
+
+                        DescriptionText31 As Text:
+                            Align: ='TextCanvas.Align'.Center
+                            BorderStyle: =""
+                            DisplayMode: =DisplayMode.Edit
+                            FillPortions: =1
+                            Height: =32
+                            LayoutMinHeight: =32
+                            LayoutMinWidth: =Parent.Width
+                            Size: =16
+                            Text: ="Assign and view submitted referrals"
+                            VerticalAlign: ='TextCanvas.VerticalAlign'.Top
+                            Width: =Parent.Width
+                            X: =0
+                            Y: =0
+                            ZIndex: =22
+
+            RectangleContainer As groupContainer.horizontalAutoLayoutContainer:
+                BorderStyle: =BorderStyle.None
                 FillPortions: =0
                 Height: =1
                 LayoutMinHeight: =1
@@ -301,10 +301,11 @@
                 WhiteLine1 As rectangle:
                     AlignInContainer: =AlignInContainer.Stretch
                     BorderColor: =App.Theme.Colors.Darker40
-                    Fill: =RGBA(15, 108, 189, 1)
+                    BorderStyle: =BorderStyle.None
+                    Fill: =RGBA(255, 255, 255, 0)
                     Height: =1
                     LayoutMinWidth: =10
-                    Width: =10
+                    Width: =35
                     ZIndex: =2
 
                 RedLine2 As rectangle:
@@ -412,7 +413,7 @@
                             LayoutMinHeight: =32
                             LayoutMinWidth: =Parent.Width
                             Size: =16
-                            Text: ="Short description or engaging message"
+                            Text: ="Submit a Rescission/Void Claim Request"
                             VerticalAlign: ='TextCanvas.VerticalAlign'.Top
                             Width: =Parent.Width
                             X: =0
@@ -509,18 +510,10 @@
                             LayoutMinHeight: =32
                             LayoutMinWidth: =Parent.Width
                             Size: =16
-                            Text: ="Short description or engaging message"
+                            Text: ="View additional team and app information"
                             VerticalAlign: ='TextCanvas.VerticalAlign'.Top
                             Width: =Parent.Width
                             X: =0
                             Y: =0
                             ZIndex: =40
-
-            Rectangle7_3 As rectangle:
-                AlignInContainer: =AlignInContainer.Stretch
-                BorderColor: =App.Theme.Colors.Darker40
-                Fill: =App.Theme.Colors.Primary
-                Height: =1
-                Width: =1
-                ZIndex: =5
 
