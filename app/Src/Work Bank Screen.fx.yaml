@@ -875,9 +875,7 @@
                         HeaderFont: =""
                         Height: =If(Self.Y + 500 > Parent.Height, Parent.Height - Self.Y, 500)
                         Items: |-
-                            =//Sort('Referral Intake Tool Submissions', ID, If(SortOrder = SortOrder.Ascending, SortOrder.Descending, SortOrder.Ascending))
-                            
-                            Sort( Filter( 'Referral Intake Tool Submissions', 
+                            =Sort( Filter( 'Referral Intake Tool Submissions', 
                             AssignedAliasSearch.Text in 'Assigned To' && 
                             PHNameSearch.Text in 'Policyholder Full Name' && 
                             ( IsBlank(PolicyNoSearch.Text) || PolicyNoSearch.Text in '1st Policy Number' || PolicyNoSearch.Text in '2nd Policy Number' || PolicyNoSearch.Text in '3rd - Policy Number' ) && 
@@ -899,11 +897,10 @@
                                                     || '3rd Fire - Business State Code' = StateFilterDropdown.Selected.Value
                                                     || '3rd Fire Personal - State Code' = StateFilterDropdown.Selected.Value ) &&
                             ( IsBlank(StartDateFilter.SelectedDate) || 'Start Date' >= StartDateFilter.SelectedDate) &&
-                            ( IsBlank(EndDateFilter.SelectedDate) || 'End Date' >= EndDateFilter.SelectedDate)
+                            ( IsBlank(EndDateFilter.SelectedDate) || 'End Date' >= EndDateFilter.SelectedDate) &&
+                            ( IsBlank(SubmissionDateFilter.SelectedDate) || 'Completion Time' >= SubmissionDateFilter.SelectedDate)
                             ), 
                             ID, SortOrder.Ascending )
-                            
-                            //( IsBlank(EndDateFilter.SelectedDate) || 'End Date' >= EndDateFilter.SelectedDate)
                         LayoutMinHeight: =If(Self.Y + 500 > Parent.Height, Parent.Height - Self.Y, 500)
                         LayoutMinWidth: =If(Self.X + 800 > Parent.Width, Parent.Width - Self.X, 800)
                         onCellValueChange: =false
@@ -4310,7 +4307,7 @@
                                     FontSize: |
                                         =17
                                     Height: =32
-                                    Items: =Distinct('Referral Intake Tool Submissions','Category of Fraud')
+                                    Items: =["Address Discrepancy", "Potential Elgibility Concerns", "Suspicious ID Card / Binder / Certificate of Insurance", "Potential Territory Rate Evasion", "Potential Undisclosed Driver in Household ", "Other Underwriting Concerns", "Payment Concerns", "Suspected Identity Theft", "Material Misrepresentation", "Other Claim Related Concern", "Lack of Evidence for Loss", "Losses are Questionable", "Damage is inconsistent with accident facts", "History of prior claims (often of similar type losses)", "Losses occur just before or after coverage takes effect", "Recent financial hardship", "Theft, claims, or salvage history", "Vague or discrepancies on facts of loss"]
                                     LayoutMinHeight: =32
                                     LayoutMinWidth: =320
                                     Required: =true
@@ -4435,6 +4432,48 @@
                                     LayoutMinWidth: =1
                                     SelectedDateFill: =App.Theme.Colors.Primary
                                     ZIndex: =4
+
+                            SubmissionDateFilterContainer As groupContainer.horizontalAutoLayoutContainer:
+                                BorderStyle: =BorderStyle.None
+                                LayoutMinHeight: =100
+                                LayoutMinWidth: =250
+                                LayoutMode: =LayoutMode.Auto
+                                RadiusBottomLeft: =4
+                                RadiusBottomRight: =4
+                                RadiusTopLeft: =4
+                                RadiusTopRight: =4
+                                ZIndex: =6
+
+                                StartDate_1 As label:
+                                    AlignInContainer: =AlignInContainer.Stretch
+                                    BorderColor: =App.Theme.Colors.Darker40
+                                    Color: =RGBA(0, 0, 0, 1)
+                                    DisabledColor: =RGBA(166, 166, 166, 1)
+                                    Font: =App.Theme.Font
+                                    Size: =13
+                                    Text: |-
+                                        ="Submission Date: "
+                                    Width: =Len(FraudCategoryTitle.Text) * 9
+                                    ZIndex: =1
+
+                                SubmissionDateFilter As datepicker:
+                                    AlignInContainer: =AlignInContainer.Stretch
+                                    BorderColor: =App.Theme.Colors.Darker40
+                                    BorderStyle: =BorderStyle.None
+                                    CalendarHeaderFill: =App.Theme.Colors.Primary
+                                    Color: =RGBA(0, 0, 0, 1)
+                                    DefaultDate: =
+                                    DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                                    DisabledColor: =RGBA(166, 166, 166, 1)
+                                    DisabledFill: =RGBA(244, 244, 244, 1)
+                                    FillPortions: =1
+                                    Font: =App.Theme.Font
+                                    HoverDateFill: =App.Theme.Colors.Lighter70
+                                    IconBackground: =App.Theme.Colors.Primary
+                                    LayoutMinWidth: =1
+                                    SelectedDateFill: =App.Theme.Colors.Primary
+                                    Width: =StartDateFilter.Width
+                                    ZIndex: =2
 
                 AssignContainer As groupContainer.verticalAutoLayoutContainer:
                     FillPortions: =0
@@ -4964,6 +5003,7 @@
                                 Reset(StateFilterDropdown);
                                 Reset(StartDateFilter);
                                 Reset(EndDateFilter);
+                                Reset(SubmissionDateFilter);
                             Text: ="Clear Filter"
                             Visible: =If(myTeamMode = true, true, false)
                             Width: =96

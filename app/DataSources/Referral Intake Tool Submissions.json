@@ -6,7 +6,7 @@
     "IsSampleData": false,
     "IsWritable": true,
     "LogicalName": "cr065_fraudreportform",
-    "MaxGetRowsCount": 500,
+    "MaxGetRowsCount": 2000,
     "Name": "Referral Intake Tool Submissions",
     "NativeCDSDataSourceInfoNameMapping": {
       "_ownerid_value": "Owner",

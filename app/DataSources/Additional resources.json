@@ -6,6 +6,7 @@
     "IsSampleData": false,
     "IsWritable": true,
     "LogicalName": "cr065_additionalresources",
+    "MaxGetRowsCount": 2000,
     "Name": "Additional resources",
     "NativeCDSDataSourceInfoNameMapping": {
       "_ownerid_value": "Owner",
