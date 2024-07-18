@@ -4749,6 +4749,43 @@
                             Y: =0
                             ZIndex: =3
 
+                        RemoveReferral As Button:
+                            AlignInContainer: =AlignInContainer.Stretch
+                            Appearance: =AssignButton.Appearance
+                            BorderStyle: =BorderStyle.None
+                            DisplayMode: =DisplayMode.Edit
+                            FontColor: =RGBA(189, 49, 51, 1)
+                            Height: =32
+                            LayoutMinHeight: =32
+                            LayoutMinWidth: =96
+                            OnSelect: |-
+                                =UpdateContext({selectedRecord: 'Referral Queue Gallery'.Selected});
+                                If(
+                                    IsBlank(selectedRecord),
+                                    Notify("No record selected.", NotificationType.Error),
+                                    If(
+                                        IsBlank(selectedRecord.ID),
+                                        Notify("Invalid record selected.", NotificationType.Error),
+                                        Patch(
+                                            'Referral Intake Tool Submissions',
+                                            First(Filter('Referral Intake Tool Submissions', ID = selectedRecord.ID)),
+                                            { 'Assigned To': Blank(), 'Assigned To Email': Blank()}
+                                        );
+                                        UpdateContext({ removed: RemoveIf(WorkBankCollection, ID = selectedRecord.ID) });
+                                        If(
+                                            CountRows(removed) > 0,
+                                            Notify("Referral #" & selectedRecord.ID & " has been removed from your queue.", NotificationType.Success),
+                                            Notify("You have no referrals to remove from your queue" & _reassignedApprover.DisplayName & " (" & _reassignedApprover.MailNickname & ")", NotificationType.Error)
+                                        )
+                                    )
+                                )
+                            Text: ="Remove Referral"
+                            Visible: =If(IsBlank(_reassignedApprover), false, true) And If(myInTrayMode = true, true, false)
+                            Width: =Len(RemoveReferral.Text) * 8
+                            X: =0
+                            Y: =0
+                            ZIndex: =4
+
                         RemoveAssigned As Button:
                             AlignInContainer: =AlignInContainer.Stretch
                             Appearance: ='ButtonCanvas.Appearance'.Secondary
@@ -4779,7 +4816,7 @@
                             Width: =96
                             X: =0
                             Y: =0
-                            ZIndex: =4
+                            ZIndex: =5
 
                         ClearCollection As Button:
                             AlignInContainer: =AlignInContainer.Stretch
@@ -4801,7 +4838,7 @@
                             Width: =96
                             X: =0
                             Y: =0
-                            ZIndex: =5
+                            ZIndex: =6
 
                         LoadCollection As Button:
                             AlignInContainer: =AlignInContainer.Stretch
@@ -4921,7 +4958,7 @@
                             Width: =96
                             X: =0
                             Y: =0
-                            ZIndex: =6
+                            ZIndex: =7
 
                         DeveloperToggle As Button:
                             AlignInContainer: =AlignInContainer.Stretch
@@ -4940,7 +4977,7 @@
                             Width: =96
                             X: =0
                             Y: =0
-                            ZIndex: =7
+                            ZIndex: =8
 
                         FilterReferral As Button:
                             AlignInContainer: =AlignInContainer.Stretch
@@ -4959,7 +4996,7 @@
                             Width: =96
                             X: =0
                             Y: =0
-                            ZIndex: =8
+                            ZIndex: =9
 
                         SearchReferral As Button:
                             AlignInContainer: =AlignInContainer.Stretch
@@ -4978,7 +5015,7 @@
                             Width: =96
                             X: =0
                             Y: =0
-                            ZIndex: =9
+                            ZIndex: =10
 
                         ClearFilter As Button:
                             AlignInContainer: =AlignInContainer.Stretch
@@ -5009,5 +5046,5 @@
                             Width: =96
                             X: =0
                             Y: =0
-                            ZIndex: =10
+                            ZIndex: =11
 
