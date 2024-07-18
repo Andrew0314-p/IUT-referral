@@ -2,7 +2,7 @@
     Fill: =Color.White
     LoadingSpinnerColor: =App.Theme.Colors.Primary
     OnVisible: |-
-        =UpdateContext({sharedWorkBankMode: true, myInTrayMode: false, myTeamMode: false, reportsMode: false, searchMode: false,clickedCount: 0, pageCount: 0, decisionMode: false, filterMode: true});
+        =UpdateContext({sharedWorkBankMode: true, myInTrayMode: false, myTeamMode: false, reportsMode: false, searchMode: false,clickedCount: 0, pageCount: 0, decisionMode: false, filterMode: false});
         
         Refresh('Referral Intake Tool Submissions');
         If(!IsEmpty(WorkBankCollection), ClearCollect(WorkBankCollection, {}));
@@ -1104,7 +1104,7 @@
                         RadiusBottomRight: =4
                         RadiusTopLeft: =4
                         RadiusTopRight: =4
-                        Visible: =If(SelectContainer.Visible = true, false, true) And If(EmployeeBrowseGallery.Visible = false, true, false) And If(IsBlank('Referral Queue Gallery'), true, false) And If('Referral Info Container'.Visible = true, false, true) And If(myInTrayMode = true, true, false)
+                        Visible: =If(SelectContainer.Visible = true, false, true) And If(EmployeeBrowseGallery.Visible = false, true, false) And If(IsBlank('Referral Queue Gallery'), true, false) Or If('Referral Info Container'.Visible = true, false, true) And If(myInTrayMode = true, true, false)
                         ZIndex: =3
 
                         EmptyCollectionText As Text:
@@ -4754,6 +4754,7 @@
                             Appearance: =AssignButton.Appearance
                             BorderStyle: =BorderStyle.None
                             DisplayMode: =DisplayMode.Edit
+                            FillPortions: =1
                             FontColor: =RGBA(189, 49, 51, 1)
                             Height: =32
                             LayoutMinHeight: =32
@@ -4772,13 +4773,12 @@
                                             { 'Assigned To': Blank(), 'Assigned To Email': Blank()}
                                         );
                                         UpdateContext({ removed: RemoveIf(WorkBankCollection, ID = selectedRecord.ID) });
-                                        If(
-                                            CountRows(removed) > 0,
-                                            Notify("Referral #" & selectedRecord.ID & " has been removed from your queue.", NotificationType.Success),
-                                            Notify("You have no referrals to remove from your queue" & _reassignedApprover.DisplayName & " (" & _reassignedApprover.MailNickname & ")", NotificationType.Error)
-                                        )
+                                        Notify("Referral #" & selectedRecord.ID & " has been removed from your queue.", NotificationType.Success);
+                                        ClearCollect(ItemValues, {});
+                                        ClearCollect(ItemValues, {});
+                                        Remove(ItemValues, FirstN(ItemValues, 1));
                                     )
-                                )
+                                );
                             Text: ="Remove Referral"
                             Visible: =If(IsBlank(_reassignedApprover), false, true) And If(myInTrayMode = true, true, false)
                             Width: =Len(RemoveReferral.Text) * 8
@@ -4973,7 +4973,7 @@
                             OnSelect: |-
                                 =If(developerMode = false, UpdateContext({developerMode: true}), UpdateContext({developerMode: false}))
                             Text: ="Toggle Developer"
-                            Visible: =true
+                            Visible: =false
                             Width: =96
                             X: =0
                             Y: =0
