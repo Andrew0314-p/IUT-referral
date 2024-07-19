@@ -1104,7 +1104,7 @@
                         RadiusBottomRight: =4
                         RadiusTopLeft: =4
                         RadiusTopRight: =4
-                        Visible: =If(SelectContainer.Visible = true, false, true) And If(EmployeeBrowseGallery.Visible = false, true, false) And If(IsBlank('Referral Queue Gallery'), true, false) Or If('Referral Info Container'.Visible = true, false, true) And If(myInTrayMode = true, true, false)
+                        Visible: =If(myInTrayMode = true, true, false) And If(EmployeeBrowseGallery.Visible = false, true, false) And If('Referral Info Container'.Visible = true, false, true) 
                         ZIndex: =3
 
                         EmptyCollectionText As Text:
@@ -3471,7 +3471,8 @@
                                                     IsMatch(Trim('Referral Queue Gallery'.Selected.'2nd Fire Personal - State Code'), "DC",MatchOptions.Contains), "Washington, D.C.",
                                                     "N/A"
                                                 ),
-                                                (If(
+                                                (If((Trim('Referral Queue Gallery'.Selected.'Multiple Policy - 2nd Policy Type') &
+                                                    If(
                                                         Trim('Referral Queue Gallery'.Selected.'Multiple Policy - 2nd Policy Type') = "Auto",
                                                         Concatenate(" ", Trim('Referral Queue Gallery'.Selected.'2nd Auto - Line of Business')),
                                                         If(
@@ -3533,7 +3534,7 @@
                                                     IsMatch(Trim('Referral Queue Gallery'.Selected.'2nd Fire - Business State Code'), "WY",MatchOptions.Contains), "Wyoming", 
                                                     IsMatch(Trim('Referral Queue Gallery'.Selected.'2nd Fire - Business State Code'), "DC",MatchOptions.Contains), "Washington, D.C.", 
                                                     "N/A"
-                                                ))
+                                                ))))
                                             Visible: = If(Trim('Referral Queue Gallery'.Selected.'Multiple Policy - 2nd Policy Type') = "Fire", true,false)
                                             ZIndex: =9
 
@@ -3853,7 +3854,8 @@
                                                     IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire Personal - State Code'), "DC",MatchOptions.Contains), "Washington, D.C.",
                                                     "N/A"
                                                 ),
-                                                (If(
+                                                (If((Trim('Referral Queue Gallery'.Selected.'Multiple Policy - 3rd Policy Type') &
+                                                    If(
                                                         Trim('Referral Queue Gallery'.Selected.'Multiple Policy - 3rd Policy Type') = "Auto",
                                                         Concatenate(" ", Trim('Referral Queue Gallery'.Selected.'3rd Auto - Line of Business')),
                                                         If(
@@ -3915,7 +3917,7 @@
                                                     IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire - Business State Code'), "WY",MatchOptions.Contains), "Wyoming", 
                                                     IsMatch(Trim('Referral Queue Gallery'.Selected.'3rd Fire - Business State Code'), "DC",MatchOptions.Contains), "Washington, D.C.", 
                                                     "N/A"
-                                                ))
+                                                ))))
                                             Visible: = If(Trim('Referral Queue Gallery'.Selected.'Multiple Policy - 3rd Policy Type') = "Fire", true,false)
                                             ZIndex: =9
 
@@ -4770,7 +4772,7 @@
                                         Patch(
                                             'Referral Intake Tool Submissions',
                                             First(Filter('Referral Intake Tool Submissions', ID = selectedRecord.ID)),
-                                            { 'Assigned To': Blank(), 'Assigned To Email': Blank()}
+                                            { 'Assigned To': Blank(), 'Assigned To Email': Blank(), 'Start Date': Blank(), 'End Date': Blank()}
                                         );
                                         UpdateContext({ removed: RemoveIf(WorkBankCollection, ID = selectedRecord.ID) });
                                         Notify("Referral #" & selectedRecord.ID & " has been removed from your queue.", NotificationType.Success);
@@ -4785,6 +4787,43 @@
                             X: =0
                             Y: =0
                             ZIndex: =4
+
+                        FinishReferral As Button:
+                            AlignInContainer: =AlignInContainer.Stretch
+                            Appearance: =AssignButton.Appearance
+                            BorderStyle: =BorderStyle.None
+                            DisplayMode: =DisplayMode.Edit
+                            FillPortions: =1
+                            FontColor: =RGBA(189, 49, 51, 1)
+                            Height: =32
+                            LayoutMinHeight: =32
+                            LayoutMinWidth: =96
+                            OnSelect: |-
+                                =UpdateContext({selectedRecord: 'Referral Queue Gallery'.Selected});
+                                If(
+                                    IsBlank(selectedRecord),
+                                    Notify("No record selected.", NotificationType.Error),
+                                    If(
+                                        IsBlank(selectedRecord.ID),
+                                        Notify("Invalid record selected.", NotificationType.Error),
+                                        Patch(
+                                            'Referral Intake Tool Submissions',
+                                            First(Filter('Referral Intake Tool Submissions', ID = selectedRecord.ID)),
+                                            { 'Assigned To': "DONE", 'Assigned To Email': "DONE", 'End Date': Now()}
+                                        );
+                                        UpdateContext({ removed: RemoveIf(WorkBankCollection, ID = selectedRecord.ID) });
+                                        Notify("Referral #" & selectedRecord.ID & " has been completed.", NotificationType.Success);
+                                        ClearCollect(ItemValues, {});
+                                        ClearCollect(ItemValues, {});
+                                        Remove(ItemValues, FirstN(ItemValues, 1));
+                                    )
+                                );
+                            Text: ="Finish Referral"
+                            Visible: =If(IsBlank(_reassignedApprover), false, true) And If(myInTrayMode = true, true, false)
+                            Width: =Len(FinishReferral.Text) * 8
+                            X: =0
+                            Y: =0
+                            ZIndex: =5
 
                         RemoveAssigned As Button:
                             AlignInContainer: =AlignInContainer.Stretch
@@ -4816,7 +4855,7 @@
                             Width: =96
                             X: =0
                             Y: =0
-                            ZIndex: =5
+                            ZIndex: =6
 
                         ClearCollection As Button:
                             AlignInContainer: =AlignInContainer.Stretch
@@ -4838,7 +4877,7 @@
                             Width: =96
                             X: =0
                             Y: =0
-                            ZIndex: =6
+                            ZIndex: =7
 
                         LoadCollection As Button:
                             AlignInContainer: =AlignInContainer.Stretch
@@ -4958,7 +4997,7 @@
                             Width: =96
                             X: =0
                             Y: =0
-                            ZIndex: =7
+                            ZIndex: =8
 
                         DeveloperToggle As Button:
                             AlignInContainer: =AlignInContainer.Stretch
@@ -4977,7 +5016,7 @@
                             Width: =96
                             X: =0
                             Y: =0
-                            ZIndex: =8
+                            ZIndex: =9
 
                         FilterReferral As Button:
                             AlignInContainer: =AlignInContainer.Stretch
@@ -4996,7 +5035,7 @@
                             Width: =96
                             X: =0
                             Y: =0
-                            ZIndex: =9
+                            ZIndex: =10
 
                         SearchReferral As Button:
                             AlignInContainer: =AlignInContainer.Stretch
@@ -5015,7 +5054,7 @@
                             Width: =96
                             X: =0
                             Y: =0
-                            ZIndex: =10
+                            ZIndex: =11
 
                         ClearFilter As Button:
                             AlignInContainer: =AlignInContainer.Stretch
@@ -5046,5 +5085,5 @@
                             Width: =96
                             X: =0
                             Y: =0
-                            ZIndex: =11
+                            ZIndex: =12
 
