@@ -921,11 +921,8 @@
                             FieldName: ="cr065_completiontime"
                             FieldType: ="d"
                             FieldVariantName: ="textualColumn"
-                            Height: =100
                             Order: =5
                             Width: =0
-                            X: =0
-                            Y: =0
                             ZIndex: =7
 
                         ID1 As PowerAppsOneGridTemplate_dataField.textualColumn:
@@ -933,11 +930,8 @@
                             FieldName: ="cr065_id"
                             FieldType: ="s"
                             FieldVariantName: ="textualColumn"
-                            Height: =100
                             Order: =1
                             Width: =0
-                            X: =0
-                            Y: =0
                             ZIndex: =17
 
                         "'Assigned To1' As PowerAppsOneGridTemplate_dataField.textualColumn":
@@ -945,11 +939,8 @@
                             FieldName: ="cr065_assignedto"
                             FieldType: ="s"
                             FieldVariantName: ="textualColumn"
-                            Height: =100
                             Order: =8
                             Width: =0
-                            X: =0
-                            Y: =0
                             ZIndex: =22
 
                         "'Assigned To Email1' As PowerAppsOneGridTemplate_dataField.textualColumn":
@@ -957,11 +948,8 @@
                             FieldName: ="cr065_assignedtoemail"
                             FieldType: ="s"
                             FieldVariantName: ="textualColumn"
-                            Height: =100
                             Order: =8
                             Width: =0
-                            X: =0
-                            Y: =0
                             ZIndex: =34
 
                         "'Referral Type1' As PowerAppsOneGridTemplate_dataField.textualColumn":
@@ -969,11 +957,8 @@
                             FieldName: ="cr065_referraltype"
                             FieldType: ="s"
                             FieldVariantName: ="textualColumn"
-                            Height: =100
                             Order: =8
                             Width: =0
-                            X: =0
-                            Y: =0
                             ZIndex: =36
 
                         "'Policyholder Full Name1' As PowerAppsOneGridTemplate_dataField.textualColumn":
@@ -981,11 +966,8 @@
                             FieldName: ="cr065_policyholderfullname"
                             FieldType: ="s"
                             FieldVariantName: ="textualColumn"
-                            Height: =100
                             Order: =7
                             Width: =0
-                            X: =0
-                            Y: =0
                             ZIndex: =37
 
                         "'Category of Fraud1' As PowerAppsOneGridTemplate_dataField.textualColumn":
@@ -993,11 +975,8 @@
                             FieldName: ="cr065_categoryoffraud"
                             FieldType: ="s"
                             FieldVariantName: ="textualColumn"
-                            Height: =100
                             Order: =9
                             Width: =0
-                            X: =0
-                            Y: =0
                             ZIndex: =44
 
                         "'Decision Reasons1' As PowerAppsOneGridTemplate_dataField.textualColumn":
@@ -1005,11 +984,8 @@
                             FieldName: ="cr065_decisionreasons"
                             FieldType: ="s"
                             FieldVariantName: ="textualColumn"
-                            Height: =100
                             Order: =8
                             Width: =0
-                            X: =0
-                            Y: =0
                             ZIndex: =45
 
                         "'1st Policy Number2' As PowerAppsOneGridTemplate_dataField.textualColumn":
@@ -1017,11 +993,8 @@
                             FieldName: ="cr065__1stpolicynumber"
                             FieldType: ="s"
                             FieldVariantName: ="textualColumn"
-                            Height: =100
                             Order: =10
                             Width: =0
-                            X: =0
-                            Y: =0
                             ZIndex: =46
 
                         "'2nd Policy Number2' As PowerAppsOneGridTemplate_dataField.textualColumn":
@@ -1029,11 +1002,8 @@
                             FieldName: ="cr065__2ndpolicynumber"
                             FieldType: ="s"
                             FieldVariantName: ="textualColumn"
-                            Height: =100
                             Order: =11
                             Width: =0
-                            X: =0
-                            Y: =0
                             ZIndex: =47
 
                         "'3rd - Policy Number2' As PowerAppsOneGridTemplate_dataField.textualColumn":
@@ -1041,11 +1011,8 @@
                             FieldName: ="cr065__3rdpolicynumber"
                             FieldType: ="s"
                             FieldVariantName: ="textualColumn"
-                            Height: =100
                             Order: =12
                             Width: =0
-                            X: =0
-                            Y: =0
                             ZIndex: =48
 
                         "'1st Claim Number2' As PowerAppsOneGridTemplate_dataField.textualColumn":
@@ -1053,11 +1020,8 @@
                             FieldName: ="cr065__1stclaimnumber"
                             FieldType: ="s"
                             FieldVariantName: ="textualColumn"
-                            Height: =100
                             Order: =13
                             Width: =0
-                            X: =0
-                            Y: =0
                             ZIndex: =49
 
                         "'2nd Claim Number2' As PowerAppsOneGridTemplate_dataField.textualColumn":
@@ -1065,11 +1029,8 @@
                             FieldName: ="cr065__2ndclaimnumber"
                             FieldType: ="s"
                             FieldVariantName: ="textualColumn"
-                            Height: =100
                             Order: =14
                             Width: =0
-                            X: =0
-                            Y: =0
                             ZIndex: =50
 
                         "'3rd - Claim Number2' As PowerAppsOneGridTemplate_dataField.textualColumn":
@@ -1077,11 +1038,8 @@
                             FieldName: ="cr065__3rdclaimnumber"
                             FieldType: ="s"
                             FieldVariantName: ="textualColumn"
-                            Height: =100
                             Order: =15
                             Width: =0
-                            X: =0
-                            Y: =0
                             ZIndex: =51
 
                         "'Reporter Alias1' As PowerAppsOneGridTemplate_dataField.textualColumn":
@@ -1089,11 +1047,8 @@
                             FieldName: ="cr065_reporteralias"
                             FieldType: ="s"
                             FieldVariantName: ="textualColumn"
-                            Height: =100
                             Order: =9
                             Width: =0
-                            X: =0
-                            Y: =0
                             ZIndex: =52
 
                     EmptyCollectionWarning As groupContainer.horizontalAutoLayoutContainer:
